@@ -1,0 +1,3 @@
+# Конфигурация Supabase CLI. Используется только GitHub Actions
+# (supabase link / supabase db push). Локальный запуск не нужен.
+project_id = "uzbek-tutor"

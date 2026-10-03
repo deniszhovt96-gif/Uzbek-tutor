@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Uzbek Tutor</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <h1>Uzbek Tutor</h1>
+      <p class="muted">Шаг 1 — проверка инфраструктуры</p>
+      <section class="card">
+        <h2>Telegram</h2>
+        <p id="tg-status">Проверяю…</p>
+      </section>
+      <section class="card">
+        <h2>База данных (Supabase)</h2>
+        <p id="db-status">Подключаюсь…</p>
+        <div id="plans"></div>
+      </section>
+      <p class="muted small" id="build-info"></p>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
