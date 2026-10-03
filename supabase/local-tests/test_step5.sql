@@ -25,7 +25,7 @@ set app.now = '2026-10-05 10:00+05';
 select pg_temp.check((public.get_home()->>'plan_new')::int = 20, 'главный экран: 20 новых');
 create temp table s1 as select public.start_session() as r;
 select pg_temp.check((select (r->>'new_count')::int = 20 and (r->>'review_count')::int = 0 from s1), 'сеанс 1: 20 новых + 0 повторений');
-select pg_temp.check((select r->'items'->0->>'uz' = 'men' and r->'items'->0->>'stage' = 'new' from s1), 'первое слово — men, стадия new');
+select pg_temp.check((select r->'items'->0->>'uz' = 'men' and r->'items'->0->>'stage' = 'new' and (r->'items'->0->>'level')::int = 0 from s1), 'первое слово — men, стадия new, уровень 0');
 select pg_temp.check((select jsonb_array_length(r->'items'->0->'distractors') >= 3 from s1), 'есть кандидаты в неверные варианты');
 select pg_temp.check((select not exists (
   select 1 from jsonb_array_elements(r->'items'->2->'distractors') d where d->>'ru' ilike '%он%' and d->>'ru' ilike '%она%') from s1),

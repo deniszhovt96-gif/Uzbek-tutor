@@ -14,8 +14,13 @@ Telegram Mini App + Telegram Bot. Работает полностью в обл�
 ## Структура
 
 ```
-app/                          приложение (Vite)
-  index.html, src/main.js     шаг 1: страница-проверка
+app/                          приложение (Vite, чистый JavaScript)
+  src/main.js                 вход через Telegram, навигация
+  src/screens/                главный экран, сеанс, прогресс, темы, настройки
+  src/exercises.js            генерация 10 типов упражнений
+  src/session.js              очередь сеанса, повторы ошибок, отправка ответов пачками
+  src/normalize.js            нормализация ответов (как в базе)
+  src/i18n.js                 тексты RU / UZ / EN
 supabase/
   config.toml                 настройки Supabase CLI (для GitHub Actions)
   migrations/                 изменения базы — применяются автоматически
@@ -71,6 +76,13 @@ Actions → **Deploy App (приложение на GitHub Pages)** → Run work
 
 Webhook бота: открыть в браузере
 `https://api.telegram.org/bot<ТОКЕН>/setWebhook?url=https://jjvtkvritnmwqfpvlxrs.supabase.co/functions/v1/telegram-bot&secret_token=<СЕКРЕТ>`
+
+## Шаг 5–6: обучение
+
+- Алгоритм уровней 0–15 работает в базе: `start_session`, `submit_answers`, `finish_session`, `get_home`
+  (миграция `20261004150000_learning_engine.sql`), проверки — `supabase/local-tests/test_step5.sql`.
+- Ответ проверяется и на телефоне (мгновенная обратная связь), и в базе (окончательно, по тем же правилам).
+- Аудио: `https://deniszhovt96-gif.github.io/uzbek-audio/audio/` (адрес в `app/src/config.js`).
 
 ## Безопасность
 
