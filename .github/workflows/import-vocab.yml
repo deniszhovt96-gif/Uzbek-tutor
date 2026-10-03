@@ -1,0 +1,66 @@
+name: Import Vocabulary (импорт словаря)
+
+# Собирает словарь из data/source/vocabulary.xlsx + data/fixes.csv и загружает в Supabase.
+# Запускается при изменениях в data/ или scripts/, либо вручную (Actions → Run workflow).
+# Перед загрузкой применяет новые миграции базы — чтобы структура таблиц была актуальной.
+on:
+  push:
+    branches: [main]
+    paths: ['data/source/**', 'data/fixes.csv', 'scripts/**', '.github/workflows/import-vocab.yml']
+  workflow_dispatch:
+
+# одна очередь с Deploy Supabase: миграции и импорт не выполняются одновременно
+concurrency:
+  group: supabase-deploy
+  cancel-in-progress: false
+
+env:
+  DB_HOST: aws-0-ap-northeast-2.pooler.supabase.com
+  DB_PORT: '5432'
+  DB_USER: postgres.jjvtkvritnmwqfpvlxrs
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Сборка словаря
+        run: |
+          pip install --quiet openpyxl==3.1.5
+          python scripts/build_vocab.py
+          cat data/build/report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Сборка строки подключения
+        env:
+          DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: |
+          if [ -z "$DB_PASSWORD" ]; then
+            echo "::error::Не задан секрет SUPABASE_DB_PASSWORD"
+            exit 1
+          fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["DB_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          echo "SUPABASE_DB_URL=postgresql://${DB_USER}:${ENC}@${DB_HOST}:${DB_PORT}/postgres" >> "$GITHUB_ENV"
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Применение новых миграций
+        run: supabase db push --db-url "$SUPABASE_DB_URL"
+
+      - name: Загрузка в базу
+        run: psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f scripts/load_vocab.sql
+
+      - name: Сохранение отчёта
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vocab-build-report
+          path: data/build/report.md
+          if-no-files-found: ignore

@@ -1,0 +1,76 @@
+word_id,field,action,old,new,note
+302,ex2,hide,Terisi quyoshda yangi oттенок oldi.,,русское слово в узбекском примере — нужен узбекский текст; пример скрыт
+302,ex3,hide,Rassom ko‘k rangning turli оттенокларини aralashtirdi.,,русское слово в узбекском примере — нужен узбекский текст; пример скрыт
+302,ex4,hide,Suratdagi oттенокlar juda tabiiy chiqqan.,,русское слово в узбекском примере — нужен узбекский текст; пример скрыт
+302,ex5,hide,Bu оттенок menga ko‘proq yoqadi.,,русское слово в узбекском примере — нужен узбекский текст; пример скрыт
+427,ex1,replace,"U kelди, hamda gaplashdik.","U keldi, hamda gaplashdik.",кириллические буквы заменены латиницей
+587,ex1,replace,Bu mengа mangulikka o‘xshab tuyuldi.,Bu menga mangulikka o‘xshab tuyuldi.,кириллические буквы заменены латиницей
+893,ex1,replace,Og‘zim quriб qoldi.,Og‘zim qurib qoldi.,кириллические буквы заменены латиницей
+902,ex1,replace,Lablarim quriб qoldi.,Lablarim qurib qoldi.,кириллические буквы заменены латиницей
+902,ex5,replace,Lablaring quriб qolibdi.,Lablaring qurib qolibdi.,кириллические буквы заменены латиницей
+938,ex2,replace,Uning kaftlari kattа.,Uning kaftlari katta.,кириллические буквы заменены латиницей
+1023,ex4,replace,U bayram kechasi uchun eng chiroyli туфлиini tanladi.,U bayram kechasi uchun eng chiroyli tuflini tanladi.,исправлено вручную
+1136,ex4,replace,"Qishda qo‘llarim quriб qolganda, qo‘l uchun kremdan foydalanaman.","Qishda qo‘llarim qurib qolganda, qo‘l uchun kremdan foydalanaman.",кириллические буквы заменены латиницей
+1426,ex4,replace,"Buvim goшt taomiga bir necha dona qalampirmunchoq qo‘shib, o‘ziga xos ta’m berardi.","Buvim go‘sht taomiga bir necha dona qalampirmunchoq qo‘shib, o‘ziga xos ta’m berardi.",исправлено вручную
+1455,ex5,replace,Ozganмisan sen?,Ozganmisan sen?,кириллические буквы заменены латиницей
+2011,ex4,replace,"Kuchli raqibga qaramay, u охирги дакикада yutqizib qo‘ydi.","Kuchli raqibga qaramay, u oxirgi daqiqada yutqizib qo‘ydi.",исправлено вручную
+2243,ex1,replace,Men sog'ayяpman.,Men sog'ayyapman.,кириллические буквы заменены латиницей
+2687,ex3,replace,Tutqichni burаdim.,Tutqichni buradim.,кириллические буквы заменены латиницей
+2698,ex1,replace,Lo‘kidonni suriб qo‘ydim.,Lo‘kidonni surib qo‘ydim.,кириллические буквы заменены латиницей
+2698,ex4,replace,Xavfsizlik uchun tunda eshikka lo‘kidon suriб qo‘yilardi.,Xavfsizlik uchun tunda eshikka lo‘kidon surib qo‘yilardi.,кириллические буквы заменены латиницей
+3317,ex5,replace,Hisob raqamingiz nechа?,Hisob raqamingiz necha?,кириллические буквы заменены латиницей
+3443,ex5,replace,Hisobingiz nechа?,Hisobingiz necha?,кириллические буквы заменены латиницей
+4084,ex4,replace,Mashhur futbol klubi ko‘plab mухlislarga ega.,Mashhur futbol klubi ko‘plab muxlislarga ega.,кириллические буквы заменены латиницей
+4153,ex3,replace,Sharhlovchiga qulоq soldim.,Sharhlovchiga quloq soldim.,кириллические буквы заменены латиницей
+5142,ex2,replace,Pichoq bilan noн kesdi.,Pichoq bilan non kesdi.,кириллические буквы заменены латиницей
+5147,ex4,replace,"O'tmas pichoq bilan urinib, noнni qiynalib kesdim.","O'tmas pichoq bilan urinib, nonni qiynalib kesdim.",кириллические буквы заменены латиницей
+5188,ex1,replace,Men noнni kesaman.,Men nonni kesaman.,кириллические буквы заменены латиницей
+5298,ex4,replace,"Kapitan bo'roнда jamoani mohirona boshqarib, kemani xavfsiz saqlab qoldi.","Kapitan bo'ronda jamoani mohirona boshqarib, kemani xavfsiz saqlab qoldi.",кириллические буквы заменены латиницей
+5609,ex3,hide,Poyezd o'tayotganda переезд yopiladi.,,русское слово в узбекском примере — нужен узбекский текст; пример скрыт
+5708,ex4,replace,"Oddiy askar sifatida xizmatni boshlab, keyin sержант bo'lib yetishdi.","Oddiy askar sifatida xizmatni boshlab, keyin serjant bo'lib yetishdi.",кириллические буквы заменены латиницей
+5740,ex5,replace,O'ldirilganlar orasida tanish borми?,O'ldirilganlar orasida tanish bormi?,кириллические буквы заменены латиницей
+5890,ex3,replace,Tank zambarаgi kuchli edi.,Tank zambaragi kuchli edi.,кириллические буквы заменены латиницей
+5903,ex4,replace,Shpaga bilan fехtovaniye mashq qilishdi.,Shpaga bilan fextovaniye mashq qilishdi.,кириллические буквы заменены латиницей
+6055,ex1,replace,Chorrahada burilди.,Chorrahada burildi.,кириллические буквы заменены латиницей
+6055,ex2,replace,O'ngga burilди.,O'ngga burildi.,кириллические буквы заменены латиницей
+6478,ex1,replace,Daryo bassейni katta.,Daryo basseyni katta.,кириллические буквы заменены латиницей
+6478,ex2,replace,Bu bassеyn keng.,Bu basseyn keng.,кириллические буквы заменены латиницей
+6478,ex3,replace,Daryo bassеyni ko'p mintaqani qamrab oladi.,Daryo basseyni ko'p mintaqani qamrab oladi.,кириллические буквы заменены латиницей
+6478,ex4,replace,Daryo bassеynidagi iqlim o'zgarishi ekologiyaga ta'sir qilmoqda.,Daryo basseynidagi iqlim o'zgarishi ekologiyaga ta'sir qilmoqda.,кириллические буквы заменены латиницей
+6478,ex5,replace,Bu daryoning bassеyni qanchalik katta?,Bu daryoning basseyni qanchalik katta?,кириллические буквы заменены латиницей
+6600,ex5,replace,Harorat necha darajа ekan?,Harorat necha daraja ekan?,кириллические буквы заменены латиницей
+6638,ex5,replace,"Momaqaldiroq gumburlayapti, uyga kirайlik.","Momaqaldiroq gumburlayapti, uyga kiraylik.",кириллические буквы заменены латиницей
+6996,ex5,replace,Iguana daraxt bargларini yeydi.,Iguana daraxt barglarini yeydi.,кириллические буквы заменены латиницей
+7395,ex1,replace,Islandiya gейzerlari bilan mashhur.,Islandiya geyzerlari bilan mashhur.,кириллические буквы заменены латиницей
+7398,ex1,replace,Bu islandiyaliklarga oid gейзер juda kuchli otiladi.,Bu islandiyaliklarga oid geyzer juda kuchli otiladi.,кириллические буквы заменены латиницей
+7448,ex1,replace,U albаn.,U alban.,кириллические буквы заменены латиницей
+7455,ex4,replace,Vengriya termal bulоqlari bilan mashhur.,Vengriya termal buloqlari bilan mashhur.,кириллические буквы заменены латиницей
+7552,ex3,replace,Bu vetnamliklarga oid shляpa qishloqda keng tarqalgan.,Bu vetnamliklarga oid shlyapa qishloqda keng tarqalgan.,кириллические буквы заменены латиницей
+7692,ex3,replace,Avstraliyada kенгуру ko'p uchraydi.,Avstraliyada kenguru ko'p uchraydi.,кириллические буквы заменены латиницей
+7712,ex1,replace,Bordo shароb bilan mashhur.,Bordo sharob bilan mashhur.,кириллические буквы заменены латиницей
+7715,ex4,replace,Budapesht termal bulоqlari bilan mashhur.,Budapesht termal buloqlari bilan mashhur.,кириллические буквы заменены латиницей
+7821,ex5,replace,Kim bilan muzokoralar olib borасiz?,Kim bilan muzokoralar olib borasiz?,кириллические буквы заменены латиницей
+7843,ex4,replace,Ig'vo natijasida vaziyat yanada kескинlashib ketdi.,Ig'vo natijasida vaziyat yanada keskinlashib ketdi.,кириллические буквы заменены латиницей
+8303,ex5,replace,Qачон hujum qilamiz?,Qachon hujum qilamiz?,кириллические буквы заменены латиницей
+8501,ex4,replace,"Yangi pishirilgan noнning hidini hidlab, ishtahasi ochildi.","Yangi pishirilgan nonning hidini hidlab, ishtahasi ochildi.",кириллические буквы заменены латиницей
+8518,ex1,replace,Vaqtni cheklaшди.,Vaqtni cheklashdi.,кириллические буквы заменены латиницей
+8518,ex2,replace,Xarajatni cheklashди.,Xarajatni cheklashdi.,кириллические буквы заменены латиницей
+8518,ex3,replace,Har bir ishga vaqt cheklaшamiz.,Har bir ishga vaqt cheklashamiz.,кириллические буквы заменены латиницей
+8518,ex4,replace,"Byudjetni cheklashди, ortiqcha xarajatlar kamaydi.","Byudjetni cheklashdi, ortiqcha xarajatlar kamaydi.",кириллические буквы заменены латиницей
+8518,ex5,replace,Nimani cheklashди?,Nimani cheklashdi?,кириллические буквы заменены латиницей
+8546,ex1,replace,Noнni kesib oldi.,Nonni kesib oldi.,кириллические буквы заменены латиницей
+8555,ex4,replace,Yangi pishirilgan noн uydan yoqimli hid chiqarardi.,Yangi pishirilgan non uydan yoqimli hid chiqarardi.,кириллические буквы заменены латиницей
+8567,ex1,replace,Yerga tuфлади.,Yerga tufladi.,кириллические буквы заменены латиницей
+8567,ex2,replace,Achchig'idan tufладi.,Achchig'idan tufladi.,кириллические буквы заменены латиницей
+8567,ex4,replace,Norozilik belgisi sifatida yerga tufлади.,Norozilik belgisi sifatida yerga tufladi.,кириллические буквы заменены латиницей
+8567,ex5,replace,Nega tufлади?,Nega tufladi?,кириллические буквы заменены латиницей
+8597,ex1,replace,Choyni kофедан afzal ko'radi.,Choyni kofedan afzal ko'radi.,кириллические буквы заменены латиницей
+8649,ex4,replace,Yangi pishirilgan noн uydan yoqimli hid tarqatardi.,Yangi pishirilgan non uydan yoqimli hid tarqatardi.,кириллические буквы заменены латиницей
+8659,ex4,replace,"Qo'li titrab, idishni tushirib yuborди.","Qo'li titrab, idishni tushirib yubordi.",кириллические буквы заменены латиницей
+8700,ex3,replace,Har safar eшikni taqillatib kiraman.,Har safar eshikni taqillatib kiraman.,кириллические буквы заменены латиницей
+8700,ex4,replace,Kimdir eшikni qattiq taqillatdi.,Kimdir eshikni qattiq taqillatdi.,кириллические буквы заменены латиницей
+8721,ex3,replace,Har safar eшikni tortib ochaman.,Har safar eshikni tortib ochaman.,кириллические буквы заменены латиницей
+8739,ex1,replace,Uni darrov taniди.,Uni darrov tanidi.,кириллические буквы заменены латиницей
+8739,ex2,replace,Ovozidan taniди.,Ovozidan tanidi.,кириллические буквы заменены латиницей
+3791,ex4_audio,audio_off,,,битый аудиофайл word_3791_ex4.mp3 (720 байт)
+841,ex2_audio,audio_off,,,битый аудиофайл word_841_ex2.mp3 (2 КБ)

@@ -31,9 +31,7 @@ supabase/
 
 | Имя | Значение |
 |---|---|
-| `SUPABASE_ACCESS_TOKEN` | токен из Supabase: аватар → Account preferences → Access Tokens |
-| `SUPABASE_PROJECT_ID` | `jjvtkvritnmwqfpvlxrs` |
-| `SUPABASE_DB_PASSWORD` | пароль базы, заданный при создании проекта |
+| `SUPABASE_DB_PASSWORD` | пароль базы (Supabase → Project Settings → Database). Строка подключения собирается в workflow автоматически. |
 
 ### 2. Переменная (там же → вкладка **Variables** → New repository variable)
 
