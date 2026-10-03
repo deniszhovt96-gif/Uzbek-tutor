@@ -47,12 +47,8 @@ jobs:
           echo "::add-mask::$ENC"
           echo "SUPABASE_DB_URL=postgresql://${DB_USER}:${ENC}@${DB_HOST}:${DB_PORT}/postgres" >> "$GITHUB_ENV"
 
-      - uses: supabase/setup-cli@v1
-        with:
-          version: latest
-
       - name: Применение новых миграций
-        run: supabase db push --db-url "$SUPABASE_DB_URL"
+        run: bash scripts/migrate.sh
 
       - name: Загрузка в базу
         run: psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f scripts/load_vocab.sql

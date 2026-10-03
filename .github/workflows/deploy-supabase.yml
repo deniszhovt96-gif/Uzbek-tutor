@@ -7,7 +7,7 @@ name: Deploy Supabase (база данных)
 on:
   push:
     branches: [main]
-    paths: ['supabase/**', '.github/workflows/deploy-supabase.yml']
+    paths: ['supabase/**', 'scripts/migrate.sh', '.github/workflows/deploy-supabase.yml']
   workflow_dispatch:
 
 concurrency:
@@ -43,9 +43,5 @@ jobs:
         run: |
           psql "$SUPABASE_DB_URL" -tAc "select 'Подключение к базе OK, ' || version()"
 
-      - uses: supabase/setup-cli@v1
-        with:
-          version: latest
-
       - name: Применение миграций
-        run: supabase db push --db-url "$SUPABASE_DB_URL"
+        run: bash scripts/migrate.sh
