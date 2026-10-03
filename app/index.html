@@ -10,16 +10,38 @@
   <body>
     <main id="app">
       <h1>Uzbek Tutor</h1>
-      <p class="muted">Шаг 1 — проверка инфраструктуры</p>
+      <p class="muted">Проверка инфраструктуры (шаги 1–4)</p>
+
       <section class="card">
-        <h2>Telegram</h2>
+        <h2>Вход через Telegram</h2>
         <p id="tg-status">Проверяю…</p>
+        <div id="profile"></div>
       </section>
+
+      <section class="card" id="code-card" hidden>
+        <h2>Код подписки</h2>
+        <form id="code-form">
+          <input id="code-input" placeholder="XXXX-XXXX-XXXX" autocomplete="off" autocapitalize="characters" />
+          <button type="submit">Активировать</button>
+        </form>
+        <p id="code-status" class="small"></p>
+      </section>
+
+      <section class="card">
+        <h2>Аудио</h2>
+        <div class="row">
+          <button id="play-word" type="button">▶ Слово «men»</button>
+          <button id="play-example" type="button">▶ Пример «Men talabaman.»</button>
+        </div>
+        <p id="audio-status" class="small"></p>
+      </section>
+
       <section class="card">
         <h2>База данных (Supabase)</h2>
         <p id="db-status">Подключаюсь…</p>
         <div id="plans"></div>
       </section>
+
       <p class="muted small" id="build-info"></p>
     </main>
     <script type="module" src="./src/main.js"></script>

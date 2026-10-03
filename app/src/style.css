@@ -37,3 +37,14 @@ h2 { margin: 0 0 8px; font-size: 17px; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
 th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid color-mix(in srgb, var(--hint) 25%, transparent); }
 th { color: var(--hint); font-weight: 500; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+button {
+  font: inherit; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
+  background: var(--tg-theme-button-color, #2481cc); color: var(--tg-theme-button-text-color, #fff);
+}
+input {
+  font: inherit; width: 100%; padding: 10px 12px; margin-bottom: 8px; border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--hint) 40%, transparent); background: var(--bg); color: var(--text);
+  letter-spacing: 1px;
+}
+#profile p { margin: 6px 0; }

@@ -56,6 +56,22 @@ Actions → **Deploy App (приложение на GitHub Pages)** → Run work
 2. Адрес приложения: `https://deniszhovt96-gif.github.io/Uzbek-tutor/` — страница показывает «База данных: Подключено. Тарифов в базе: 8» и таблицу цен.
 3. Цены можно поменять прямо в Supabase (Table Editor → `plans`), обновить страницу — изменения видны сразу.
 
+## Шаг 4: вход через Telegram и бот
+
+Функции лежат в `supabase/functions/*/index.ts` и создаются в панели Supabase
+(Edge Functions → Deploy a new function → Via Editor), «Verify JWT» = выкл.
+
+Секреты функций (Edge Functions → Secrets):
+
+| Имя | Значение |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | токен бота от @BotFather |
+| `TELEGRAM_WEBHOOK_SECRET` | любая случайная строка из латинских букв и цифр |
+| `APP_URL` | `https://deniszhovt96-gif.github.io/Uzbek-tutor/` |
+
+Webhook бота: открыть в браузере
+`https://api.telegram.org/bot<ТОКЕН>/setWebhook?url=https://jjvtkvritnmwqfpvlxrs.supabase.co/functions/v1/telegram-bot&secret_token=<СЕКРЕТ>`
+
 ## Безопасность
 
 - Токен Supabase, пароль базы и (позже) токен бота хранятся только в секретах GitHub/Supabase, не в коде.
