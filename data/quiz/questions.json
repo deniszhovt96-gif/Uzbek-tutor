@@ -12256,5 +12256,4325 @@
    "The nearest bank branch"
   ],
   "quote_ru": "обращаться за консультацией к практикующему юристу, специализирующемуся на миграционном праве Узбекистана"
+ },
+ {
+  "course": "culture",
+  "n": 1,
+  "k": 1,
+  "q_ru": "Где находится тўр — самое почётное место в комнате?",
+  "options_ru": [
+   "В части комнаты, наиболее удалённой от входа",
+   "У самой двери, ближе к выходу",
+   "У окна, выходящего во двор",
+   "Рядом с кухней, где готовит хозяйка"
+  ],
+  "q_uz": "Eng hurmatli joy — toʻr xonaning qayerida joylashgan?",
+  "options_uz": [
+   "Xonaning eshikdan eng uzoq qismida",
+   "Eshikning yonida, chiqishga yaqin joyda",
+   "Hovliga qaragan deraza oldida",
+   "Uy bekasi taom tayyorlaydigan oshxona yonida"
+  ],
+  "q_en": "Where is the toʻr, the place of honour, located in the room?",
+  "options_en": [
+   "In the part of the room farthest from the entrance",
+   "Right by the door, close to the exit",
+   "By the window overlooking the courtyard",
+   "Next to the kitchen where the hostess cooks"
+  ],
+  "quote_ru": "Самое почётное место — тўр (toʻr), часть комнаты, наиболее удалённая от входа."
+ },
+ {
+  "course": "culture",
+  "n": 1,
+  "k": 2,
+  "q_ru": "Кто садится ближе к двери, чтобы было удобно подавать чай и блюда?",
+  "options_ru": [
+   "Хозяева и младшие",
+   "Самые уважаемые гости",
+   "Старшие по возрасту",
+   "Гости, пришедшие первыми"
+  ],
+  "q_uz": "Choy va taomlarni tortish qulay boʻlishi uchun kim eshikka yaqinroq oʻtiradi?",
+  "options_uz": [
+   "Mezbonlar va yoshlar",
+   "Eng hurmatli mehmonlar",
+   "Yoshi ulugʻ kishilar",
+   "Birinchi kelgan mehmonlar"
+  ],
+  "q_en": "Who sits closer to the door so that it is easier to serve tea and dishes?",
+  "options_en": [
+   "The hosts and younger people",
+   "The most respected guests",
+   "The oldest people",
+   "The guests who arrived first"
+  ],
+  "quote_ru": "Хозяева и младшие садятся ближе к двери, чтобы было удобно подавать чай и блюда."
+ },
+ {
+  "course": "culture",
+  "n": 1,
+  "k": 3,
+  "q_ru": "Что означает пословица «Mehmon otangdan ulugʻ»?",
+  "options_ru": [
+   "«Гость почётнее твоего отца»",
+   "«Гость приносит в дом богатство»",
+   "«Хлеб почётнее любого гостя»",
+   "«Хороший гость приходит без предупреждения»"
+  ],
+  "q_uz": "«Mehmon otangdan ulugʻ» maqoli qanday maʼnoni bildiradi?",
+  "options_uz": [
+   "«Mehmon otangdan ham hurmatli»",
+   "«Mehmon uyga boylik olib keladi»",
+   "«Non har qanday mehmondan aziz»",
+   "«Yaxshi mehmon ogohlantirmay keladi»"
+  ],
+  "q_en": "What does the proverb «Mehmon otangdan ulugʻ» mean?",
+  "options_en": [
+   "«A guest is more honoured than your father»",
+   "«A guest brings wealth to the house»",
+   "«Bread is more honoured than any guest»",
+   "«A good guest comes without warning»"
+  ],
+  "quote_ru": "известная пословица говорит: «Mehmon otangdan ulugʻ» — «Гость почётнее твоего отца»"
+ },
+ {
+  "course": "culture",
+  "n": 1,
+  "k": 4,
+  "q_ru": "Как по-узбекски называется хозяин, принимающий гостей?",
+  "options_ru": [
+   "mezbon",
+   "mehmon",
+   "oqsoqol",
+   "oshpaz"
+  ],
+  "q_uz": "Mehmonlarni qabul qiladigan uy egasi qanday ataladi?",
+  "options_uz": [
+   "mezbon",
+   "mehmon",
+   "oqsoqol",
+   "oshpaz"
+  ],
+  "q_en": "What is the Uzbek word for the host who receives guests?",
+  "options_en": [
+   "mezbon",
+   "mehmon",
+   "oqsoqol",
+   "oshpaz"
+  ],
+  "quote_ru": "Хозяин (mezbon) обычно выходит встречать гостя к воротам или к двери"
+ },
+ {
+  "course": "culture",
+  "n": 1,
+  "k": 5,
+  "q_ru": "Что принято делать перед входом в жилые комнаты?",
+  "options_ru": [
+   "Снимать обувь",
+   "Оставлять подарки у порога",
+   "Ждать третьего приглашения хозяина",
+   "Произносить пословицу о госте"
+  ],
+  "q_uz": "Yashash xonalariga kirishdan oldin nima qilish odat boʻlgan?",
+  "options_uz": [
+   "Oyoq kiyimni yechish",
+   "Sovgʻalarni ostonada qoldirish",
+   "Mezbonning uchinchi taklifini kutish",
+   "Mehmon haqidagi maqolni aytish"
+  ],
+  "q_en": "What is customary before entering the living rooms?",
+  "options_en": [
+   "Taking off one's shoes",
+   "Leaving the gifts at the threshold",
+   "Waiting for the host's third invitation",
+   "Saying a proverb about guests"
+  ],
+  "quote_ru": "Перед входом в жилые комнаты принято снимать обувь."
+ },
+ {
+  "course": "culture",
+  "n": 1,
+  "k": 6,
+  "q_ru": "С чем принято приходить в гости?",
+  "options_ru": [
+   "Со сладостями, фруктами или лепёшками",
+   "С деньгами в конверте для хозяйки",
+   "С готовым пловом в казане",
+   "Ни с чем: подарки приносить не принято"
+  ],
+  "q_uz": "Mehmonga nima bilan borish odat boʻlgan?",
+  "options_uz": [
+   "Shirinlik, meva yoki non bilan",
+   "Uy bekasi uchun konvertdagi pul bilan",
+   "Qozondagi tayyor osh bilan",
+   "Hech narsasiz: sovgʻa olib borish odat emas"
+  ],
+  "q_en": "What do people usually bring when visiting?",
+  "options_en": [
+   "Sweets, fruit or bread",
+   "Money in an envelope for the hostess",
+   "Ready-made plov in a cauldron",
+   "Nothing: bringing gifts is not customary"
+  ],
+  "quote_ru": "В гости принято приходить не с пустыми руками: со сладостями, фруктами или лепёшками."
+ },
+ {
+  "course": "culture",
+  "n": 1,
+  "k": 7,
+  "q_ru": "Как гостю лучше поступить, если хозяева постоянно предлагают угощение?",
+  "options_ru": [
+   "Хотя бы попробовать каждое блюдо",
+   "Вежливо отказаться от всех блюд",
+   "Есть только хлеб и чай",
+   "Дождаться, пока хозяева сами начнут есть"
+  ],
+  "q_uz": "Mezbonlar doimo taom taklif qilsa, mehmon qanday yoʻl tutgani maʼqul?",
+  "options_uz": [
+   "Har bir taomdan ozgina tatib koʻrish",
+   "Barcha taomlardan xushmuomalalik bilan voz kechish",
+   "Faqat non va choy bilan cheklanish",
+   "Mezbonlar oʻzlari ovqatlana boshlashini kutish"
+  ],
+  "q_en": "What should a guest do when the hosts keep offering food?",
+  "options_en": [
+   "Try at least a little of every dish",
+   "Politely refuse all the dishes",
+   "Have only bread and tea",
+   "Wait until the hosts start eating themselves"
+  ],
+  "quote_ru": "полностью отказываться считается невежливым: лучше хотя бы попробовать каждое блюдо."
+ },
+ {
+  "course": "culture",
+  "n": 1,
+  "k": 8,
+  "q_ru": "Как хозяева провожают гостя?",
+  "options_ru": [
+   "Провожают до ворот и приглашают приходить снова",
+   "Прощаются за дастарханом, не вставая",
+   "Провожают только до двери комнаты",
+   "Дают ему в провожатые старейшину махалли"
+  ],
+  "q_uz": "Mezbonlar mehmonni qanday kuzatib qoʻyishadi?",
+  "options_uz": [
+   "Darvozagacha kuzatib, yana kelishga taklif qilishadi",
+   "Dasturxon atrofida oʻrnidan turmay xayrlashishadi",
+   "Faqat xona eshigigacha kuzatishadi",
+   "Unga mahalla oqsoqolini hamroh qilib berishadi"
+  ],
+  "q_en": "How do the hosts see a guest off?",
+  "options_en": [
+   "They walk them to the gate and invite them to come again",
+   "They say goodbye at the dasturxon without getting up",
+   "They walk them only to the door of the room",
+   "They send the mahalla elder along with them"
+  ],
+  "quote_ru": "Когда гость уходит, хозяева провожают его до ворот, благодарят за визит и приглашают приходить снова."
+ },
+ {
+  "course": "culture",
+  "n": 2,
+  "k": 1,
+  "q_ru": "Что такое пиала (piyola)?",
+  "options_ru": [
+   "Небольшая чашка без ручки",
+   "Высокий стакан с подстаканником",
+   "Глиняный кувшин для воды",
+   "Большая кружка с ручкой"
+  ],
+  "q_uz": "Piyola nima?",
+  "options_uz": [
+   "Dastasiz kichik idish",
+   "Stakan ushlagichli baland stakan",
+   "Suv uchun loy koʻza",
+   "Dastali katta krujka"
+  ],
+  "q_en": "What is a piyola?",
+  "options_en": [
+   "A small cup without a handle",
+   "A tall glass in a metal holder",
+   "A clay jug for water",
+   "A large mug with a handle"
+  ],
+  "quote_ru": "Чай (choy) пьют из пиалы (piyola) — небольшой чашки без ручки."
+ },
+ {
+  "course": "culture",
+  "n": 2,
+  "k": 2,
+  "q_ru": "Сколько чая наливают гостю в пиалу?",
+  "options_ru": [
+   "Лишь немного, «на донышко»",
+   "Полную пиалу до краёв",
+   "Ровно до половины",
+   "Столько, сколько попросит гость"
+  ],
+  "q_uz": "Mehmonning piyolasiga qancha choy quyiladi?",
+  "options_uz": [
+   "Ozgina, piyolaning tubiga",
+   "Piyolani limmo-lim toʻldirib",
+   "Roppa-rosa yarmigacha",
+   "Mehmon qancha soʻrasa, shuncha"
+  ],
+  "q_en": "How much tea is poured into a guest's piyola?",
+  "options_en": [
+   "Only a little, «just to cover the bottom»",
+   "A full bowl, up to the brim",
+   "Exactly half full",
+   "As much as the guest asks for"
+  ],
+  "quote_ru": "пиалу наполняют лишь немного, «на донышко». Это знак уважения"
+ },
+ {
+  "course": "culture",
+  "n": 2,
+  "k": 3,
+  "q_ru": "Что такое qaytarish?",
+  "options_ru": [
+   "Переливание чая из пиалы обратно в чайник",
+   "Подача чая гостю двумя руками",
+   "Добавление в чай сахара навват",
+   "Повторное заваривание старой заварки"
+  ],
+  "q_uz": "Qaytarish nima?",
+  "options_uz": [
+   "Choyni piyoladan yana choynakka qaytarib solish",
+   "Mehmonga choyni ikki qoʻllab uzatish",
+   "Choyga novvot solish",
+   "Eski choyni qayta damlash"
+  ],
+  "q_en": "What is qaytarish?",
+  "options_en": [
+   "Pouring tea from the piyola back into the teapot",
+   "Handing tea to a guest with both hands",
+   "Adding novvot sugar to the tea",
+   "Brewing old tea leaves a second time"
+  ],
+  "quote_ru": "хозяин делает qaytarish, то есть «возврат»: наливает чай в пиалу и выливает обратно в чайник (choynak), повторяя это два-три раза."
+ },
+ {
+  "course": "culture",
+  "n": 2,
+  "k": 4,
+  "q_ru": "Какой рукой подают и принимают пиалу?",
+  "options_ru": [
+   "Правой рукой",
+   "Левой рукой",
+   "Любой, как удобно",
+   "Только через младшего члена семьи"
+  ],
+  "q_uz": "Piyola qaysi qoʻl bilan uzatiladi va olinadi?",
+  "options_uz": [
+   "Oʻng qoʻl bilan",
+   "Chap qoʻl bilan",
+   "Qaysi biri qulay boʻlsa",
+   "Faqat oilaning kichik aʼzosi orqali"
+  ],
+  "q_en": "Which hand is used to give and take a piyola?",
+  "options_en": [
+   "The right hand",
+   "The left hand",
+   "Whichever is more convenient",
+   "Only through the youngest family member"
+  ],
+  "quote_ru": "Пиалу подают и принимают правой рукой, нередко приложив левую к груди."
+ },
+ {
+  "course": "culture",
+  "n": 2,
+  "k": 5,
+  "q_ru": "Как называется кристаллический сахар, с которым пьют чай?",
+  "options_ru": [
+   "навват (novvot)",
+   "парварда (parvarda)",
+   "халва (holva)",
+   "зира (zira)"
+  ],
+  "q_uz": "Choy bilan isteʼmol qilinadigan kristall shakar qanday ataladi?",
+  "options_uz": [
+   "novvot",
+   "parvarda",
+   "holva",
+   "zira"
+  ],
+  "q_en": "What is the crystallised sugar eaten with tea called?",
+  "options_en": [
+   "novvot",
+   "parvarda",
+   "halva",
+   "zira"
+  ],
+  "quote_ru": "кристаллическим сахаром навват (novvot), конфетами парварда (parvarda), халвой."
+ },
+ {
+  "course": "culture",
+  "n": 2,
+  "k": 6,
+  "q_ru": "Каким пьют чай даже в сильную жару?",
+  "options_ru": [
+   "Горячим",
+   "Холодным, со льдом",
+   "Тёплым, с молоком",
+   "Остывшим до комнатной температуры"
+  ],
+  "q_uz": "Hatto qattiq issiqda ham choy qanday ichiladi?",
+  "options_uz": [
+   "Issiq holda",
+   "Sovuq holda, muz bilan",
+   "Iliq holda, sut bilan",
+   "Xona haroratigacha sovitilgan holda"
+  ],
+  "q_en": "How is tea drunk even in very hot weather?",
+  "options_en": [
+   "Hot",
+   "Cold, with ice",
+   "Warm, with milk",
+   "Cooled to room temperature"
+  ],
+  "quote_ru": "Даже в сильную жару чай пьют горячим: считается, что он лучше утоляет жажду, чем холодные напитки."
+ },
+ {
+  "course": "culture",
+  "n": 2,
+  "k": 7,
+  "q_ru": "С чего начинается застолье?",
+  "options_ru": [
+   "С хлеба и чая",
+   "С плова",
+   "С горячих блюд",
+   "С салатов и супа"
+  ],
+  "q_uz": "Ziyofat nima bilan boshlanadi?",
+  "options_uz": [
+   "Non va choy bilan",
+   "Osh bilan",
+   "Issiq taomlar bilan",
+   "Salat va shoʻrva bilan"
+  ],
+  "q_en": "What does a meal with guests start with?",
+  "options_en": [
+   "Bread and tea",
+   "Plov",
+   "Hot dishes",
+   "Salads and soup"
+  ],
+  "quote_ru": "Горячие блюда подают позже, а начинается застолье с хлеба и чая."
+ },
+ {
+  "course": "culture",
+  "n": 2,
+  "k": 8,
+  "q_ru": "Что означает выражение «щедрый дастархан»?",
+  "options_ru": [
+   "Гостеприимный дом",
+   "Богатый урожай",
+   "Большая свадьба",
+   "Праздничный плов"
+  ],
+  "q_uz": "«Dasturxoni keng» iborasi nimani bildiradi?",
+  "options_uz": [
+   "Mehmondoʻst xonadonni",
+   "Moʻl hosilni",
+   "Katta toʻyni",
+   "Bayram oshini"
+  ],
+  "q_en": "What does the expression «a generous dasturxon» mean?",
+  "options_en": [
+   "A hospitable home",
+   "A rich harvest",
+   "A big wedding",
+   "Festive plov"
+  ],
+  "quote_ru": "Слово часто употребляют в переносном смысле: «щедрый дастархан» означает гостеприимный дом."
+ },
+ {
+  "course": "culture",
+  "n": 3,
+  "k": 1,
+  "q_ru": "В чём традиционно пекут узбекские лепёшки?",
+  "options_ru": [
+   "В глиняной печи тандыр",
+   "В чугунном казане на огне",
+   "На сковороде на плите",
+   "В металлической духовке"
+  ],
+  "q_uz": "Oʻzbek noni anʼanaga koʻra qayerda yopiladi?",
+  "options_uz": [
+   "Loydan yasalgan tandirda",
+   "Olov ustidagi choʻyan qozonda",
+   "Plita ustidagi tovada",
+   "Metall duxovkada"
+  ],
+  "q_en": "Where are Uzbek flatbreads traditionally baked?",
+  "options_en": [
+   "In a clay oven called a tandir",
+   "In a cast-iron cauldron over a fire",
+   "In a frying pan on the stove",
+   "In a metal oven"
+  ],
+  "quote_ru": "Хлеб (non) — круглая лепёшка, которую пекут в глиняной печи тандыр (tandir)."
+ },
+ {
+  "course": "culture",
+  "n": 3,
+  "k": 2,
+  "q_ru": "Как называется штамп, которым украшают середину лепёшки?",
+  "options_ru": [
+   "chekich",
+   "patir",
+   "tandir",
+   "novvoy"
+  ],
+  "q_uz": "Non oʻrtasiga naqsh tushiradigan maxsus asbob qanday ataladi?",
+  "options_uz": [
+   "chekich",
+   "patir",
+   "tandir",
+   "novvoy"
+  ],
+  "q_en": "What is the stamp used to decorate the centre of a flatbread called?",
+  "options_en": [
+   "chekich",
+   "patir",
+   "tandir",
+   "novvoy"
+  ],
+  "quote_ru": "Середину перед выпечкой украшают узором с помощью специального штампа чекич (chekich)"
+ },
+ {
+  "course": "culture",
+  "n": 3,
+  "k": 3,
+  "q_ru": "Как называется пекарь?",
+  "options_ru": [
+   "novvoy",
+   "oshpaz",
+   "mezbon",
+   "sovchi"
+  ],
+  "q_uz": "Non yopadigan usta qanday ataladi?",
+  "options_uz": [
+   "novvoy",
+   "oshpaz",
+   "mezbon",
+   "sovchi"
+  ],
+  "q_en": "What is the word for a baker?",
+  "options_en": [
+   "novvoy",
+   "oshpaz",
+   "mezbon",
+   "sovchi"
+  ],
+  "quote_ru": "Пекарь (novvoy) прилепляет тесто к раскалённой стенке, и через несколько минут лепёшка готова."
+ },
+ {
+  "course": "culture",
+  "n": 3,
+  "k": 4,
+  "q_ru": "Что делают, если кусок хлеба упал на землю?",
+  "options_ru": [
+   "Поднимают и кладут на высокое место",
+   "Оставляют лежать на земле",
+   "Сразу выбрасывают в мусор",
+   "Отряхивают и отдают ребёнку"
+  ],
+  "q_uz": "Bir burda non yerga tushsa, nima qilishadi?",
+  "options_uz": [
+   "Uni olib, baland joyga qoʻyishadi",
+   "Yerda yotgan holida qoldirishadi",
+   "Darhol axlatga tashlashadi",
+   "Qoqib, bolaga berishadi"
+  ],
+  "q_en": "What do people do if a piece of bread falls on the ground?",
+  "options_en": [
+   "Pick it up and put it in a high place",
+   "Leave it lying on the ground",
+   "Throw it in the rubbish at once",
+   "Brush it off and give it to a child"
+  ],
+  "quote_ru": "Если кусок упал, его поднимают и кладут на высокое место."
+ },
+ {
+  "course": "culture",
+  "n": 3,
+  "k": 5,
+  "q_ru": "Что делают с черствым хлебом?",
+  "options_ru": [
+   "Отдают птицам или животным",
+   "Выбрасывают вместе с мусором",
+   "Сжигают в тандыре",
+   "Возвращают пекарю"
+  ],
+  "q_uz": "Qotgan non bilan nima qilishadi?",
+  "options_uz": [
+   "Qushlarga yoki hayvonlarga berishadi",
+   "Axlat bilan birga tashlab yuborishadi",
+   "Tandirda yoqib yuborishadi",
+   "Novvoyga qaytarib berishadi"
+  ],
+  "q_en": "What is done with stale bread?",
+  "options_en": [
+   "It is given to birds or animals",
+   "It is thrown away with the rubbish",
+   "It is burned in the tandir",
+   "It is returned to the baker"
+  ],
+  "quote_ru": "Черствый хлеб не выбрасывают, а отдают птицам или животным."
+ },
+ {
+  "course": "culture",
+  "n": 3,
+  "k": 6,
+  "q_ru": "Как делят лепёшку за столом?",
+  "options_ru": [
+   "Ломают руками",
+   "Режут ножом на ломтики",
+   "Каждый гость отрезает себе сам",
+   "Разрезают ножницами на четыре части"
+  ],
+  "q_uz": "Dasturxonda non qanday boʻlinadi?",
+  "options_uz": [
+   "Qoʻl bilan ushatiladi",
+   "Pichoq bilan boʻlaklarga kesiladi",
+   "Har bir mehmon oʻzi kesib oladi",
+   "Qaychi bilan toʻrt boʻlakka kesiladi"
+  ],
+  "q_en": "How is a flatbread divided at the table?",
+  "options_en": [
+   "It is broken by hand",
+   "It is cut into slices with a knife",
+   "Each guest cuts off a piece for themselves",
+   "It is cut into four with scissors"
+  ],
+  "quote_ru": "Лепёшку на столе обычно не режут ножом, а ломают руками; делает это хозяин или старший."
+ },
+ {
+  "course": "culture",
+  "n": 3,
+  "k": 7,
+  "q_ru": "Что делают с лепёшкой, когда человек уходит в дальнюю дорогу?",
+  "options_ru": [
+   "Он откусывает кусочек, а остальное хранят дома",
+   "Он забирает всю лепёшку с собой",
+   "Лепёшку раздают соседям по махалле",
+   "Лепёшку отдают птицам на удачу"
+  ],
+  "q_uz": "Kishi uzoq yoʻlga ketayotganda non bilan nima qilinadi?",
+  "options_uz": [
+   "U nondan bir tishlam tishlaydi, qolgani uyda saqlanadi",
+   "U butun nonni oʻzi bilan olib ketadi",
+   "Non mahalladagi qoʻshnilarga ulashiladi",
+   "Omad uchun non qushlarga beriladi"
+  ],
+  "q_en": "What is done with a flatbread when someone sets off on a long journey?",
+  "options_en": [
+   "They bite off a piece, and the rest is kept at home",
+   "They take the whole loaf with them",
+   "The loaf is shared out among the neighbours",
+   "The loaf is given to the birds for luck"
+  ],
+  "quote_ru": "Перед дальней дорогой человек откусывает кусочек лепёшки, а остальное хранят дома до его возвращения."
+ },
+ {
+  "course": "culture",
+  "n": 3,
+  "k": 8,
+  "q_ru": "Как называется тонкая слоёная лепёшка?",
+  "options_ru": [
+   "patir",
+   "obi non",
+   "chekich",
+   "novvot"
+  ],
+  "q_uz": "Yupqa qatlamli non qanday ataladi?",
+  "options_uz": [
+   "patir",
+   "obi non",
+   "chekich",
+   "novvot"
+  ],
+  "q_en": "What is the thin flaky flatbread called?",
+  "options_en": [
+   "patir",
+   "obi non",
+   "chekich",
+   "novvot"
+  ],
+  "quote_ru": "известны также тонкий слоёный патир (patir) и простой обиён нон (obi non)."
+ },
+ {
+  "course": "culture",
+  "n": 4,
+  "k": 1,
+  "q_ru": "В чём готовят плов?",
+  "options_ru": [
+   "В большом чугунном казане (qozon)",
+   "В глиняной печи тандыр (tandir)",
+   "В медном чайнике (choynak)",
+   "На большом блюде лаган (lagan)"
+  ],
+  "q_uz": "Osh nimada pishiriladi?",
+  "options_uz": [
+   "Katta choʻyan qozonda",
+   "Loydan yasalgan tandirda",
+   "Mis choynakda",
+   "Katta laganda"
+  ],
+  "q_en": "What is plov cooked in?",
+  "options_en": [
+   "A large cast-iron cauldron (qozon)",
+   "A clay tandir oven",
+   "A copper teapot (choynak)",
+   "A large lagan platter"
+  ],
+  "quote_ru": "Плов готовят в большом чугунном казане (qozon), обычно на открытом огне."
+ },
+ {
+  "course": "culture",
+  "n": 4,
+  "k": 2,
+  "q_ru": "Кого приглашают готовить плов на большие торжества?",
+  "options_ru": [
+   "Ошпаза (oshpaz)",
+   "Пекаря (novvoy)",
+   "Оқсоқола (oqsoqol)",
+   "Совчи (sovchi)"
+  ],
+  "q_uz": "Katta tadbirlarda oshni pishirish uchun kim taklif qilinadi?",
+  "options_uz": [
+   "Oshpaz",
+   "Novvoy",
+   "Oqsoqol",
+   "Sovchi"
+  ],
+  "q_en": "Who is invited to cook plov for big celebrations?",
+  "options_en": [
+   "An oshpaz",
+   "A novvoy",
+   "An oqsoqol",
+   "A sovchi"
+  ],
+  "quote_ru": "на большие торжества приглашают мастера-повара — ошпаза (oshpaz)."
+ },
+ {
+  "course": "culture",
+  "n": 4,
+  "k": 3,
+  "q_ru": "Что такое оши нахор (oshi nahor)?",
+  "options_ru": [
+   "Утренний плов в день свадьбы или важного события",
+   "Плов, который разносят соседям",
+   "Плов, который подают слоями",
+   "Плов, который готовят только женщины"
+  ],
+  "q_uz": "Oshi nahor nima?",
+  "options_uz": [
+   "Toʻy yoki muhim tadbir kuni tortiladigan ertalabki osh",
+   "Qoʻshnilarga eltib beriladigan osh",
+   "Qatlam-qatlam qilib tortiladigan osh",
+   "Faqat ayollar pishiradigan osh"
+  ],
+  "q_en": "What is oshi nahor?",
+  "options_en": [
+   "Morning plov on the day of a wedding or important event",
+   "Plov that is taken round to neighbours",
+   "Plov that is served in layers",
+   "Plov that only women cook"
+  ],
+  "quote_ru": "Его готовят ранним утром в день свадьбы или другого важного события и подают сразу после утренней молитвы."
+ },
+ {
+  "course": "culture",
+  "n": 4,
+  "k": 4,
+  "q_ru": "Кто в основном собирается на оши нахор?",
+  "options_ru": [
+   "Мужчины: соседи, родственники, друзья семьи",
+   "Женщины: родственницы и соседки",
+   "Только дети и молодёжь",
+   "Только жених и невеста с родителями"
+  ],
+  "q_uz": "Oshi nahorga asosan kimlar yigʻiladi?",
+  "options_uz": [
+   "Erkaklar: qoʻshnilar, qarindoshlar, oilaning doʻstlari",
+   "Ayollar: qarindosh ayollar va qoʻshnilar",
+   "Faqat bolalar va yoshlar",
+   "Faqat kuyov va kelin ota-onalari bilan"
+  ],
+  "q_en": "Who mainly comes to oshi nahor?",
+  "options_en": [
+   "Men: neighbours, relatives and family friends",
+   "Women: female relatives and neighbours",
+   "Only children and young people",
+   "Only the bride and groom with their parents"
+  ],
+  "quote_ru": "На оши нахор собираются в основном мужчины: соседи, родственники, друзья семьи."
+ },
+ {
+  "course": "culture",
+  "n": 4,
+  "k": 5,
+  "q_ru": "В чём состоит обычай osh tarqatish?",
+  "options_ru": [
+   "Часть плова относят соседям, родным и тем, кто не пришёл",
+   "Плов готовят слоями и не перемешивают",
+   "Плов едят руками с общего блюда",
+   "Гости по очереди помогают мешать плов"
+  ],
+  "q_uz": "Osh tarqatish odati nimadan iborat?",
+  "options_uz": [
+   "Oshning bir qismi qoʻshnilarga, qarindoshlarga va kela olmaganlarga eltib beriladi",
+   "Osh qatlam-qatlam pishiriladi va aralashtirilmaydi",
+   "Osh umumiy laganda qoʻl bilan yeyiladi",
+   "Mehmonlar navbat bilan oshni aralashtirishga yordam beradi"
+  ],
+  "q_en": "What is the custom of osh tarqatish?",
+  "options_en": [
+   "Some of the plov is taken to neighbours, relatives and those who could not come",
+   "Plov is cooked in layers and not stirred",
+   "Plov is eaten by hand from a shared platter",
+   "Guests take turns helping to stir the plov"
+  ],
+  "quote_ru": "часть приготовленного плова раскладывают по тарелкам и относят соседям, родным и тем, кто не смог прийти."
+ },
+ {
+  "course": "culture",
+  "n": 4,
+  "k": 6,
+  "q_ru": "Чем отличается самаркандский плов?",
+  "options_ru": [
+   "Его не перемешивают и подают слоями",
+   "Его готовят без моркови",
+   "Его пекут в тандыре",
+   "Его подают только с нутом и айвой"
+  ],
+  "q_uz": "Samarqand oshi nimasi bilan ajralib turadi?",
+  "options_uz": [
+   "U aralashtirilmaydi va qatlam-qatlam qilib tortiladi",
+   "U sabzisiz tayyorlanadi",
+   "U tandirda pishiriladi",
+   "U faqat noʻxat va behi bilan tortiladi"
+  ],
+  "q_en": "What is special about Samarkand plov?",
+  "options_en": [
+   "It is not stirred and is served in layers",
+   "It is cooked without carrots",
+   "It is baked in a tandir",
+   "It is served only with chickpeas and quince"
+  ],
+  "quote_ru": "В Самарканде его не перемешивают и подают слоями: внизу рис, сверху морковь и мясо."
+ },
+ {
+  "course": "culture",
+  "n": 4,
+  "k": 7,
+  "q_ru": "На чём подают плов?",
+  "options_ru": [
+   "На большом общем блюде (lagan)",
+   "В отдельных пиалах (piyola)",
+   "На лепёшках вместо тарелок",
+   "В небольших глиняных горшочках"
+  ],
+  "q_uz": "Osh nimada tortiladi?",
+  "options_uz": [
+   "Katta umumiy laganda",
+   "Alohida piyolalarda",
+   "Likopcha oʻrniga non ustida",
+   "Kichik sopol tuvaklarda"
+  ],
+  "q_en": "What is plov served on?",
+  "options_en": [
+   "A large shared platter (lagan)",
+   "Individual piyola bowls",
+   "Flatbreads instead of plates",
+   "Small clay pots"
+  ],
+  "quote_ru": "Подают его на большом общем блюде (lagan), и раньше было принято есть плов руками."
+ },
+ {
+  "course": "culture",
+  "n": 4,
+  "k": 8,
+  "q_ru": "Куда внесены культура и традиции плова в Узбекистане?",
+  "options_ru": [
+   "В список нематериального культурного наследия ЮНЕСКО",
+   "В список всемирного природного наследия ЮНЕСКО",
+   "В Красную книгу Узбекистана",
+   "В список памятников архитектуры"
+  ],
+  "q_uz": "Oʻzbekistondagi osh madaniyati va anʼanalari qaysi roʻyxatga kiritilgan?",
+  "options_uz": [
+   "YUNESKOning nomoddiy madaniy meros roʻyxatiga",
+   "YUNESKOning jahon tabiiy merosi roʻyxatiga",
+   "Oʻzbekiston Qizil kitobiga",
+   "Meʼmoriy yodgorliklar roʻyxatiga"
+  ],
+  "q_en": "What list are the culture and traditions of plov in Uzbekistan included in?",
+  "options_en": [
+   "UNESCO's list of Intangible Cultural Heritage",
+   "UNESCO's list of World Natural Heritage",
+   "The Red Book of Uzbekistan",
+   "The list of architectural monuments"
+  ],
+  "quote_ru": "Культура и традиции плова в Узбекистане внесены в список нематериального культурного наследия ЮНЕСКО."
+ },
+ {
+  "course": "culture",
+  "n": 5,
+  "k": 1,
+  "q_ru": "Что такое махалля (mahalla)?",
+  "options_ru": [
+   "Соседская община, квартал",
+   "Совместная добровольная работа",
+   "Свадебный зал",
+   "Совет старейшин города"
+  ],
+  "q_uz": "Mahalla nima?",
+  "options_uz": [
+   "Qoʻshnilar jamoasi, daha",
+   "Ixtiyoriy birgalikdagi mehnat",
+   "Toʻyxona",
+   "Shahar oqsoqollari kengashi"
+  ],
+  "q_en": "What is a mahalla?",
+  "options_en": [
+   "A neighbourhood community, a quarter",
+   "Voluntary joint work",
+   "A wedding hall",
+   "A council of the city's elders"
+  ],
+  "quote_ru": "Махалля (mahalla) — это соседская община, квартал, жители которого связаны не только адресом, но и общей жизнью."
+ },
+ {
+  "course": "culture",
+  "n": 5,
+  "k": 2,
+  "q_ru": "Что буквально значит слово оқсоқол (oqsoqol)?",
+  "options_ru": [
+   "«Белая борода»",
+   "«Старший брат»",
+   "«Мудрая голова»",
+   "«Отец квартала»"
+  ],
+  "q_uz": "Oqsoqol soʻzi aynan qanday maʼnoni beradi?",
+  "options_uz": [
+   "«Oq soqol»",
+   "«Katta aka»",
+   "«Dono bosh»",
+   "«Mahalla otasi»"
+  ],
+  "q_en": "What does the word oqsoqol literally mean?",
+  "options_en": [
+   "«White beard»",
+   "«Elder brother»",
+   "«Wise head»",
+   "«Father of the quarter»"
+  ],
+  "quote_ru": "оқсоқол (oqsoqol), что буквально значит «белая борода», — старейшина, мудрый и опытный человек."
+ },
+ {
+  "course": "culture",
+  "n": 5,
+  "k": 3,
+  "q_ru": "Как называется место для собраний в махалле?",
+  "options_ru": [
+   "guzar",
+   "toʻr",
+   "toʻyxona",
+   "hashar"
+  ],
+  "q_uz": "Mahalladagi yigʻilish joyi qanday ataladi?",
+  "options_uz": [
+   "guzar",
+   "toʻr",
+   "toʻyxona",
+   "hashar"
+  ],
+  "q_en": "What is the gathering place in a mahalla called?",
+  "options_en": [
+   "guzar",
+   "toʻr",
+   "toʻyxona",
+   "hashar"
+  ],
+  "quote_ru": "Традиционно в центре жизни махалли находились мечеть, чайхана и место для собраний — гузар (guzar)."
+ },
+ {
+  "course": "culture",
+  "n": 5,
+  "k": 4,
+  "q_ru": "Что такое хашар (hashar)?",
+  "options_ru": [
+   "Добровольная совместная работа соседей",
+   "Совет старейшин махалли",
+   "Праздник первого урожая",
+   "Ежемесячный сбор денег с жителей"
+  ],
+  "q_uz": "Hashar nima?",
+  "options_uz": [
+   "Qoʻshnilarning ixtiyoriy birgalikdagi mehnati",
+   "Mahalla oqsoqollari kengashi",
+   "Birinchi hosil bayrami",
+   "Aholidan har oy pul yigʻish"
+  ],
+  "q_en": "What is hashar?",
+  "options_en": [
+   "Voluntary joint work by neighbours",
+   "The council of mahalla elders",
+   "A first-harvest festival",
+   "A monthly collection of money from residents"
+  ],
+  "quote_ru": "С махаллёй тесно связан хашар (hashar) — добровольная совместная работа."
+ },
+ {
+  "course": "culture",
+  "n": 5,
+  "k": 5,
+  "q_ru": "Берут ли деньги за работу на хашаре?",
+  "options_ru": [
+   "Нет, сегодня ты помогаешь соседу, завтра он тебе",
+   "Да, по договорённости с хозяином",
+   "Да, работу оплачивает махалля",
+   "Да, но только старшие помощники"
+  ],
+  "q_uz": "Hashardagi ish uchun pul olinadimi?",
+  "options_uz": [
+   "Yoʻq: bugun sen qoʻshningga yordam berasan, ertaga u senga",
+   "Ha, uy egasi bilan kelishuvga koʻra",
+   "Ha, ishga mahalla haq toʻlaydi",
+   "Ha, lekin faqat katta yoshdagi yordamchilar"
+  ],
+  "q_en": "Do people get paid for working at a hashar?",
+  "options_en": [
+   "No: today you help your neighbour, tomorrow they help you",
+   "Yes, by agreement with the host",
+   "Yes, the mahalla pays for the work",
+   "Yes, but only the older helpers"
+  ],
+  "quote_ru": "Денег за такую работу не берут: сегодня ты помогаешь соседу, завтра соседи помогут тебе."
+ },
+ {
+  "course": "culture",
+  "n": 5,
+  "k": 6,
+  "q_ru": "Что обязательно делает хозяин после хашара?",
+  "options_ru": [
+   "Угощает помощников, часто пловом и чаем",
+   "Дарит каждому помощнику лепёшку с собой",
+   "Устраивает праздник для всего города",
+   "Записывает имена помощников в книгу махалли"
+  ],
+  "q_uz": "Hashardan soʻng uy egasi albatta nima qiladi?",
+  "options_uz": [
+   "Yordamchilarni koʻpincha osh va choy bilan mehmon qiladi",
+   "Har bir yordamchiga non berib yuboradi",
+   "Butun shahar uchun bayram uyushtiradi",
+   "Yordamchilarning ismlarini mahalla daftariga yozadi"
+  ],
+  "q_en": "What does the host always do after a hashar?",
+  "options_en": [
+   "Treats the helpers, often to plov and tea",
+   "Gives each helper a flatbread to take home",
+   "Holds a celebration for the whole city",
+   "Writes the helpers' names in the mahalla book"
+  ],
+  "quote_ru": "После работы хозяин обязательно угощает помощников, часто пловом и чаем."
+ },
+ {
+  "course": "culture",
+  "n": 5,
+  "k": 7,
+  "q_ru": "Чем ещё является махалля сегодня?",
+  "options_ru": [
+   "Официальным органом местного самоуправления",
+   "Частной строительной фирмой",
+   "Районным судом",
+   "Городской налоговой службой"
+  ],
+  "q_uz": "Bugun mahalla yana nima hisoblanadi?",
+  "options_uz": [
+   "Rasmiy fuqarolar oʻzini oʻzi boshqarish organi",
+   "Xususiy qurilish firmasi",
+   "Tuman sudi",
+   "Shahar soliq xizmati"
+  ],
+  "q_en": "What else is a mahalla today?",
+  "options_en": [
+   "An official body of local self-government",
+   "A private construction firm",
+   "A district court",
+   "The city tax service"
+  ],
+  "quote_ru": "Сегодня махалля также является официальным органом местного самоуправления, который занимается делами жителей."
+ },
+ {
+  "course": "culture",
+  "n": 5,
+  "k": 8,
+  "q_ru": "Что делают соседи, когда семья в махалле готовится к свадьбе?",
+  "options_ru": [
+   "Приходят помочь: ставят столы, готовят еду, встречают гостей",
+   "Присылают деньги вместо помощи",
+   "Не вмешиваются в дела семьи",
+   "Приходят только на сам праздник как гости"
+  ],
+  "q_uz": "Mahalladagi oila toʻyga tayyorlanayotganda qoʻshnilar nima qiladi?",
+  "options_uz": [
+   "Yordamga kelishadi: stollar qoʻyishadi, ovqat tayyorlashadi, mehmonlarni kutib olishadi",
+   "Yordam oʻrniga pul yuborishadi",
+   "Oilaning ishlariga aralashmaydi",
+   "Faqat bayramning oʻziga mehmon boʻlib kelishadi"
+  ],
+  "q_en": "What do neighbours do when a family in the mahalla prepares for a wedding?",
+  "options_en": [
+   "Come to help: set up tables, cook food and welcome guests",
+   "Send money instead of helping",
+   "Stay out of the family's affairs",
+   "Come only to the celebration itself as guests"
+  ],
+  "quote_ru": "соседи приходят помочь: ставят столы, готовят еду, встречают гостей."
+ },
+ {
+  "course": "culture",
+  "n": 6,
+  "k": 1,
+  "q_ru": "Кто здоровается первым?",
+  "options_ru": [
+   "Младший",
+   "Старший",
+   "Хозяин дома",
+   "Тот, кто стоит ближе к двери"
+  ],
+  "q_uz": "Kim birinchi boʻlib salom beradi?",
+  "options_uz": [
+   "Yoshi kichik odam",
+   "Yoshi katta odam",
+   "Uy egasi",
+   "Eshikka yaqin turgan odam"
+  ],
+  "q_en": "Who greets first?",
+  "options_en": [
+   "The younger person",
+   "The older person",
+   "The master of the house",
+   "Whoever is standing nearer the door"
+  ],
+  "quote_ru": "Здороваясь, младший приветствует первым и часто кладёт правую руку на сердце."
+ },
+ {
+  "course": "culture",
+  "n": 6,
+  "k": 2,
+  "q_ru": "Как отвечают на приветствие «Assalomu alaykum»?",
+  "options_ru": [
+   "«Va alaykum assalom»",
+   "«Xush kelibsiz»",
+   "«Rahmat»",
+   "«Marhamat»"
+  ],
+  "q_uz": "«Assalomu alaykum» salomiga qanday javob qaytariladi?",
+  "options_uz": [
+   "«Va alaykum assalom»",
+   "«Xush kelibsiz»",
+   "«Rahmat»",
+   "«Marhamat»"
+  ],
+  "q_en": "How do people reply to the greeting «Assalomu alaykum»?",
+  "options_en": [
+   "«Va alaykum assalom»",
+   "«Xush kelibsiz»",
+   "«Rahmat»",
+   "«Marhamat»"
+  ],
+  "quote_ru": "Обычное приветствие — «Ассалому алайкум» (Assalomu alaykum), а ответ на него — «Ваалайкум ассалом» (Va alaykum assalom)."
+ },
+ {
+  "course": "culture",
+  "n": 6,
+  "k": 3,
+  "q_ru": "Что означает слово опа (opa)?",
+  "options_ru": [
+   "Старшая сестра",
+   "Младшая сестра",
+   "Тётя по матери",
+   "Бабушка"
+  ],
+  "q_uz": "Opa soʻzi kimni bildiradi?",
+  "options_uz": [
+   "Katta opani",
+   "Kichik singilni",
+   "Onaning opa-singlisini",
+   "Buvini"
+  ],
+  "q_en": "What does the word opa mean?",
+  "options_en": [
+   "Elder sister",
+   "Younger sister",
+   "Aunt on the mother's side",
+   "Grandmother"
+  ],
+  "quote_ru": "ака (aka) — старший брат, опа (opa) — старшая сестра, ука (uka) — младший брат"
+ },
+ {
+  "course": "culture",
+  "n": 6,
+  "k": 4,
+  "q_ru": "Кто такой амаки (amaki)?",
+  "options_ru": [
+   "Дядя по отцу",
+   "Старший брат",
+   "Младший брат",
+   "Тётя по матери"
+  ],
+  "q_uz": "Amaki kim?",
+  "options_uz": [
+   "Otaning aka-ukasi",
+   "Katta aka",
+   "Kichik uka",
+   "Onaning opa-singlisi"
+  ],
+  "q_en": "Who is an amaki?",
+  "options_en": [
+   "An uncle on the father's side",
+   "An elder brother",
+   "A younger brother",
+   "An aunt on the mother's side"
+  ],
+  "quote_ru": "хола (xola) — тётя по матери, амаки (amaki) — дядя по отцу."
+ },
+ {
+  "course": "culture",
+  "n": 6,
+  "k": 5,
+  "q_ru": "Какое ласковое окончание делает обращение теплее?",
+  "options_ru": [
+   "-jon",
+   "-lar",
+   "-chi",
+   "-da"
+  ],
+  "q_uz": "Qaysi mehrli qoʻshimcha murojaatni yanada iliq qiladi?",
+  "options_uz": [
+   "-jon",
+   "-lar",
+   "-chi",
+   "-da"
+  ],
+  "q_en": "Which affectionate ending makes a form of address warmer?",
+  "options_en": [
+   "-jon",
+   "-lar",
+   "-chi",
+   "-da"
+  ],
+  "quote_ru": "Ласковое окончание «-жон» (-jon) делает обращение теплее: «Акмалжон», «Нодира-опа»."
+ },
+ {
+  "course": "culture",
+  "n": 6,
+  "k": 6,
+  "q_ru": "К кому обращаются на вежливое «сиз» (siz)?",
+  "options_ru": [
+   "К старшим, незнакомым людям и коллегам",
+   "Только к маленьким детям",
+   "К близким друзьям и младшим родственникам",
+   "Только к продавцам на базаре"
+  ],
+  "q_uz": "Kimlarga hurmat shakli — «siz» bilan murojaat qilinadi?",
+  "options_uz": [
+   "Kattalarga, notanish odamlarga va hamkasblarga",
+   "Faqat kichik bolalarga",
+   "Yaqin doʻstlarga va kichik qarindoshlarga",
+   "Faqat bozordagi sotuvchilarga"
+  ],
+  "q_en": "Who is addressed with the polite «siz»?",
+  "options_en": [
+   "Elders, strangers and colleagues",
+   "Only small children",
+   "Close friends and younger relatives",
+   "Only sellers at the bazaar"
+  ],
+  "quote_ru": "На «сиз» обращаются к старшим, незнакомым людям и коллегам, а «сен» говорят детям, близким друзьям и младшим родственникам."
+ },
+ {
+  "course": "culture",
+  "n": 6,
+  "k": 7,
+  "q_ru": "Что делают молодые, когда в комнату входит пожилой человек?",
+  "options_ru": [
+   "Встают и уступают ему место",
+   "Продолжают сидеть, кивнув головой",
+   "Выходят из комнаты",
+   "Сразу наливают ему полную пиалу"
+  ],
+  "q_uz": "Xonaga keksa odam kirganda yoshlar nima qiladi?",
+  "options_uz": [
+   "Oʻrnidan turib, unga joy beradi",
+   "Bosh irgʻab, oʻtirishda davom etadi",
+   "Xonadan chiqib ketadi",
+   "Darhol unga toʻla piyola choy quyadi"
+  ],
+  "q_en": "What do young people do when an elderly person enters the room?",
+  "options_en": [
+   "Stand up and offer them a seat",
+   "Nod and stay seated",
+   "Leave the room",
+   "Immediately pour them a full piyola"
+  ],
+  "quote_ru": "Когда в комнату входит пожилой человек, молодые встают и уступают место."
+ },
+ {
+  "course": "culture",
+  "n": 6,
+  "k": 8,
+  "q_ru": "Кому за столом первым подают чай и еду?",
+  "options_ru": [
+   "Старшему",
+   "Самому младшему",
+   "Хозяйке дома",
+   "Детям"
+  ],
+  "q_uz": "Dasturxonda choy va taom birinchi boʻlib kimga uzatiladi?",
+  "options_uz": [
+   "Kattaga",
+   "Eng kichik odamga",
+   "Uy bekasiga",
+   "Bolalarga"
+  ],
+  "q_en": "At the table, who is served tea and food first?",
+  "options_en": [
+   "The eldest",
+   "The youngest",
+   "The hostess",
+   "The children"
+  ],
+  "quote_ru": "За столом старшему первым подают чай и еду, и трапезу обычно начинают после него."
+ },
+ {
+  "course": "culture",
+  "n": 7,
+  "k": 1,
+  "q_ru": "Как называются первые сорок дней после родов?",
+  "options_ru": [
+   "chilla",
+   "beshik toʻy",
+   "suyunchi",
+   "fotiha"
+  ],
+  "q_uz": "Tugʻruqdan keyingi dastlabki qirq kun qanday ataladi?",
+  "options_uz": [
+   "chilla",
+   "beshik toʻy",
+   "suyunchi",
+   "fotiha"
+  ],
+  "q_en": "What are the first forty days after birth called?",
+  "options_en": [
+   "chilla",
+   "beshik toʻy",
+   "suyunchi",
+   "fotiha"
+  ],
+  "quote_ru": "Первые сорок дней после родов называются чилла (chilla)."
+ },
+ {
+  "course": "culture",
+  "n": 7,
+  "k": 2,
+  "q_ru": "Что такое суюнчи (suyunchi)?",
+  "options_ru": [
+   "Подарок тому, кто первым принёс добрую весть",
+   "Угощение для соседок в дни чиллы",
+   "Наряд, который дарят молодой маме",
+   "Сладости, которые раздают детям махалли"
+  ],
+  "q_uz": "Suyunchi nima?",
+  "options_uz": [
+   "Xushxabarni birinchi yetkazgan odamga beriladigan sovgʻa",
+   "Chilla kunlarida qoʻshni ayollarga beriladigan taom",
+   "Yosh onaga sovgʻa qilinadigan kiyim",
+   "Mahalla bolalariga ulashiladigan shirinlik"
+  ],
+  "q_en": "What is suyunchi?",
+  "options_en": [
+   "A gift to the person who first brings the good news",
+   "Food for the neighbours during the chilla",
+   "An outfit given to the young mother",
+   "Sweets handed out to the mahalla children"
+  ],
+  "quote_ru": "Того, кто первым принёс добрую весть, по обычаю благодарят небольшим подарком — это называется суюнчи (suyunchi)."
+ },
+ {
+  "course": "culture",
+  "n": 7,
+  "k": 3,
+  "q_ru": "Как называется праздник, когда ребёнка впервые укладывают в колыбель?",
+  "options_ru": [
+   "beshik toʻy",
+   "fotiha toʻy",
+   "kelin salom",
+   "oshi nahor"
+  ],
+  "q_uz": "Bolani ilk bor beshikka belash bayrami qanday ataladi?",
+  "options_uz": [
+   "beshik toʻy",
+   "fotiha toʻy",
+   "kelin salom",
+   "oshi nahor"
+  ],
+  "q_en": "What is the celebration of first laying a baby in the cradle called?",
+  "options_en": [
+   "beshik toʻy",
+   "fotiha toʻy",
+   "kelin salom",
+   "oshi nahor"
+  ],
+  "quote_ru": "Праздник, когда ребёнка впервые укладывают в бешик, называется бешик-туй (beshik toʻy)."
+ },
+ {
+  "course": "culture",
+  "n": 7,
+  "k": 4,
+  "q_ru": "Кто по обычаю привозит колыбель и всё необходимое для неё?",
+  "options_ru": [
+   "Родители молодой мамы",
+   "Родители отца ребёнка",
+   "Соседи по махалле",
+   "Старейшина махалли"
+  ],
+  "q_uz": "Odatga koʻra beshikni va unga kerakli narsalarni kim olib keladi?",
+  "options_uz": [
+   "Yosh onaning ota-onasi",
+   "Bolaning otasining ota-onasi",
+   "Mahalladagi qoʻshnilar",
+   "Mahalla oqsoqoli"
+  ],
+  "q_en": "By custom, who brings the cradle and everything needed for it?",
+  "options_en": [
+   "The young mother's parents",
+   "The baby's father's parents",
+   "The mahalla neighbours",
+   "The mahalla elder"
+  ],
+  "quote_ru": "По обычаю колыбель и всё необходимое для неё — одеяльца, подушечки, покрывала — привозят родители молодой мамы."
+ },
+ {
+  "course": "culture",
+  "n": 7,
+  "k": 5,
+  "q_ru": "Кто на бешик-туе укладывает малыша в колыбель?",
+  "options_ru": [
+   "Уважаемая пожилая женщина",
+   "Отец ребёнка",
+   "Старший брат ребёнка",
+   "Старейшина махалли"
+  ],
+  "q_uz": "Beshik toʻyda chaqaloqni beshikka kim belaydi?",
+  "options_uz": [
+   "Hurmatli keksa ayol",
+   "Bolaning otasi",
+   "Bolaning katta akasi",
+   "Mahalla oqsoqoli"
+  ],
+  "q_en": "Who lays the baby in the cradle at the beshik toʻy?",
+  "options_en": [
+   "A respected elderly woman",
+   "The baby's father",
+   "The baby's elder brother",
+   "The mahalla elder"
+  ],
+  "quote_ru": "уважаемая пожилая женщина укладывает малыша в бешик и произносит добрые пожелания."
+ },
+ {
+  "course": "culture",
+  "n": 7,
+  "k": 6,
+  "q_ru": "Из чего сделан традиционный бешик?",
+  "options_ru": [
+   "Из дерева",
+   "Из металла",
+   "Из глины",
+   "Из войлока"
+  ],
+  "q_uz": "Anʼanaviy beshik nimadan yasalgan?",
+  "options_uz": [
+   "Yogʻochdan",
+   "Metalldan",
+   "Loydan",
+   "Kigizdan"
+  ],
+  "q_en": "What is a traditional beshik made of?",
+  "options_en": [
+   "Wood",
+   "Metal",
+   "Clay",
+   "Felt"
+  ],
+  "quote_ru": "Это деревянная колыбель на изогнутых полозьях с дугой-ручкой сверху"
+ },
+ {
+  "course": "culture",
+  "n": 7,
+  "k": 7,
+  "q_ru": "Кто часто выбирает имя ребёнку?",
+  "options_ru": [
+   "Старшие члены семьи — дедушка, бабушка или уважаемый родственник",
+   "Соседи по махалле на общем собрании",
+   "Только мать ребёнка",
+   "Старшая сестра ребёнка"
+  ],
+  "q_uz": "Bolaga ismni koʻpincha kim tanlaydi?",
+  "options_uz": [
+   "Oilaning kattalari — bobosi, buvisi yoki hurmatli qarindoshi",
+   "Mahalla qoʻshnilari umumiy yigʻilishda",
+   "Faqat bolaning onasi",
+   "Bolaning katta opasi"
+  ],
+  "q_en": "Who often chooses the child's name?",
+  "options_en": [
+   "Senior family members: a grandfather, grandmother or respected relative",
+   "The mahalla neighbours at a general meeting",
+   "Only the child's mother",
+   "The child's elder sister"
+  ],
+  "quote_ru": "Имя ребёнку часто выбирают старшие члены семьи — дедушка, бабушка или уважаемый родственник."
+ },
+ {
+  "course": "culture",
+  "n": 7,
+  "k": 8,
+  "q_ru": "Что означает имя Нодира (Nodira)?",
+  "options_ru": [
+   "«Редкая, драгоценная»",
+   "«Счастливая»",
+   "«Луна»",
+   "«Первая весть»"
+  ],
+  "q_uz": "Nodira ismi qanday maʼnoni bildiradi?",
+  "options_uz": [
+   "«Noyob, qimmatli»",
+   "«Baxtli»",
+   "«Oy»",
+   "«Birinchi xabar»"
+  ],
+  "q_en": "What does the name Nodira mean?",
+  "options_en": [
+   "«Rare, precious»",
+   "«Happy»",
+   "«Moon»",
+   "«First news»"
+  ],
+  "quote_ru": "Бахтиёр — «счастливый», Нодира — «редкая, драгоценная», в именах Ойбек и Ойгул есть слово «ой» (oy) — луна."
+ },
+ {
+  "course": "culture",
+  "n": 8,
+  "k": 1,
+  "q_ru": "Как называются сваты, которые приходят в дом девушки?",
+  "options_ru": [
+   "sovchi",
+   "kuyov",
+   "oqsoqol",
+   "oshpaz"
+  ],
+  "q_uz": "Qizning uyiga qiz soʻrab boradigan odamlar qanday ataladi?",
+  "options_uz": [
+   "sovchi",
+   "kuyov",
+   "oqsoqol",
+   "oshpaz"
+  ],
+  "q_en": "What are the matchmakers who visit the girl's home called?",
+  "options_en": [
+   "sovchi",
+   "kuyov",
+   "oqsoqol",
+   "oshpaz"
+  ],
+  "quote_ru": "Сватовство называется совчилик (sovchilik), а сваты — совчи (sovchi)."
+ },
+ {
+  "course": "culture",
+  "n": 8,
+  "k": 2,
+  "q_ru": "Кто обычно выступает сватами?",
+  "options_ru": [
+   "Уважаемые женщины со стороны жениха",
+   "Сам жених со своими друзьями",
+   "Старейшина махалли",
+   "Родители невесты"
+  ],
+  "q_uz": "Odatda kimlar sovchi boʻlib boradi?",
+  "options_uz": [
+   "Yigit tomonidan hurmatli ayollar",
+   "Yigitning oʻzi doʻstlari bilan",
+   "Mahalla oqsoqoli",
+   "Qizning ota-onasi"
+  ],
+  "q_en": "Who usually act as matchmakers?",
+  "options_en": [
+   "Respected women from the groom's side",
+   "The groom himself with his friends",
+   "The mahalla elder",
+   "The bride's parents"
+  ],
+  "quote_ru": "Обычно это уважаемые женщины со стороны жениха: мать, тётя, соседка или близкая знакомая семьи."
+ },
+ {
+  "course": "culture",
+  "n": 8,
+  "k": 3,
+  "q_ru": "Как по обычаю отвечает сватам семья невесты?",
+  "options_ru": [
+   "Не отвечает сразу и просит время подумать",
+   "Даёт согласие в тот же день",
+   "Отвечает только письмом",
+   "Сразу назначает день свадьбы"
+  ],
+  "q_uz": "Odatga koʻra qiz tomoni sovchilarga qanday javob beradi?",
+  "options_uz": [
+   "Darhol javob bermaydi, oʻylab koʻrish uchun vaqt soʻraydi",
+   "Shu kunning oʻzida rozilik beradi",
+   "Faqat xat orqali javob beradi",
+   "Darhol toʻy kunini belgilaydi"
+  ],
+  "q_en": "By custom, how does the bride's family answer the matchmakers?",
+  "options_en": [
+   "It does not answer at once and asks for time to think",
+   "It agrees the same day",
+   "It answers only in a letter",
+   "It sets the wedding date straight away"
+  ],
+  "quote_ru": "Семья невесты по обычаю не отвечает сразу: она просит время подумать, узнаёт о семье жениха, советуется с родственниками."
+ },
+ {
+  "course": "culture",
+  "n": 8,
+  "k": 4,
+  "q_ru": "Что означает фотиха (fotiha)?",
+  "options_ru": [
+   "Благословение",
+   "Сватовство",
+   "Подарочный комплект одежды",
+   "Свадебный зал"
+  ],
+  "q_uz": "Fotiha nimani bildiradi?",
+  "options_uz": [
+   "Duo, ezgu tilak",
+   "Sovchilik",
+   "Sovgʻa kiyimlar toʻplami",
+   "Toʻyxona"
+  ],
+  "q_en": "What does fotiha mean?",
+  "options_en": [
+   "A blessing",
+   "Matchmaking",
+   "A set of gift clothes",
+   "A wedding hall"
+  ],
+  "quote_ru": "Когда обе семьи согласны, наступает важный момент — фотиха (fotiha), благословение."
+ },
+ {
+  "course": "culture",
+  "n": 8,
+  "k": 5,
+  "q_ru": "Каким обрядом семьи скрепляют договорённость о браке?",
+  "options_ru": [
+   "Преломлением лепёшки (non sindirish)",
+   "Обменом кольцами",
+   "Совместным приготовлением плова",
+   "Пением песни «Ёр-ёр»"
+  ],
+  "q_uz": "Ikki oila nikoh haqidagi kelishuvni qaysi marosim bilan mustahkamlaydi?",
+  "options_uz": [
+   "Non sindirish bilan",
+   "Uzuk almashish bilan",
+   "Birgalikda osh damlash bilan",
+   "«Yor-yor» qoʻshigʻini kuylash bilan"
+  ],
+  "q_en": "What ritual seals the families' agreement to the marriage?",
+  "options_en": [
+   "Breaking a flatbread (non sindirish)",
+   "Exchanging rings",
+   "Cooking plov together",
+   "Singing the song «Yor-yor»"
+  ],
+  "quote_ru": "представители семей разламывают лепёшку, и с этого момента договорённость считается заключённой."
+ },
+ {
+  "course": "culture",
+  "n": 8,
+  "k": 6,
+  "q_ru": "Как называют комплект подарочной одежды?",
+  "options_ru": [
+   "sarpo",
+   "beshik",
+   "lagan",
+   "dasturxon"
+  ],
+  "q_uz": "Sovgʻa qilinadigan kiyimlar toʻplami qanday ataladi?",
+  "options_uz": [
+   "sarpo",
+   "beshik",
+   "lagan",
+   "dasturxon"
+  ],
+  "q_en": "What is a set of gift clothes called?",
+  "options_en": [
+   "sarpo",
+   "beshik",
+   "lagan",
+   "dasturxon"
+  ],
+  "quote_ru": "Комплект подарочной одежды называют сарпо (sarpo)."
+ },
+ {
+  "course": "culture",
+  "n": 8,
+  "k": 7,
+  "q_ru": "Кем становятся друг для друга родители жениха и невесты?",
+  "options_ru": [
+   "quda",
+   "kenja",
+   "mezbon",
+   "oqsoqol"
+  ],
+  "q_uz": "Kuyov va kelinning ota-onalari bir-biriga kim boʻlib qoladi?",
+  "options_uz": [
+   "quda",
+   "kenja",
+   "mezbon",
+   "oqsoqol"
+  ],
+  "q_en": "What do the parents of the bride and groom become to each other?",
+  "options_en": [
+   "quda",
+   "kenja",
+   "mezbon",
+   "oqsoqol"
+  ],
+  "quote_ru": "родители жениха и невесты становятся друг для друга куда (quda) — сватами."
+ },
+ {
+  "course": "culture",
+  "n": 8,
+  "k": 8,
+  "q_ru": "Кто на празднике помолвки привозит подарки для невесты и её родных?",
+  "options_ru": [
+   "Семья жениха",
+   "Соседи невесты",
+   "Старейшина махалли",
+   "Подруги невесты"
+  ],
+  "q_uz": "Fotiha toʻyda kelin va uning qarindoshlari uchun sovgʻalarni kim olib keladi?",
+  "options_uz": [
+   "Kuyov tomoni",
+   "Kelinning qoʻshnilari",
+   "Mahalla oqsoqoli",
+   "Kelinning dugonalari"
+  ],
+  "q_en": "Who brings gifts for the bride and her relatives at the engagement celebration?",
+  "options_en": [
+   "The groom's family",
+   "The bride's neighbours",
+   "The mahalla elder",
+   "The bride's friends"
+  ],
+  "quote_ru": "Семья жениха привозит подарки для невесты и её родных: ткани, одежду, украшения, сладости."
+ },
+ {
+  "course": "culture",
+  "n": 9,
+  "k": 1,
+  "q_ru": "Как называется мусульманский брачный обряд?",
+  "options_ru": [
+   "nikoh",
+   "kelin salom",
+   "fotiha",
+   "yor-yor"
+  ],
+  "q_uz": "Musulmoncha nikoh marosimi qanday ataladi?",
+  "options_uz": [
+   "nikoh",
+   "kelin salom",
+   "fotiha",
+   "yor-yor"
+  ],
+  "q_en": "What is the Muslim marriage ceremony called?",
+  "options_en": [
+   "nikoh",
+   "kelin salom",
+   "fotiha",
+   "yor-yor"
+  ],
+  "quote_ru": "Мусульманский брачный обряд называется никох (nikoh): имам читает молитву в присутствии свидетелей и родственников"
+ },
+ {
+  "course": "culture",
+  "n": 9,
+  "k": 2,
+  "q_ru": "Что даёт браку юридическую силу?",
+  "options_ru": [
+   "Регистрация в загсе",
+   "Праздник в свадебном зале",
+   "Обряд приветствия невесты",
+   "Благословение старейшин махалли"
+  ],
+  "q_uz": "Nikohga qonuniy kuch nima beradi?",
+  "options_uz": [
+   "FHDYO organida roʻyxatdan oʻtish",
+   "Toʻyxonadagi bayram",
+   "Kelinning salom marosimi",
+   "Mahalla oqsoqollarining duosi"
+  ],
+  "q_en": "What gives a marriage legal force?",
+  "options_en": [
+   "Registration at the civil registry office",
+   "The celebration in the wedding hall",
+   "The bride's greeting ritual",
+   "The blessing of the mahalla elders"
+  ],
+  "quote_ru": "брак официально регистрируют в загсе — именно эта регистрация даёт ему юридическую силу."
+ },
+ {
+  "course": "culture",
+  "n": 9,
+  "k": 3,
+  "q_ru": "Как называется большой свадебный зал?",
+  "options_ru": [
+   "toʻyxona",
+   "choyxona",
+   "guzar",
+   "mahalla"
+  ],
+  "q_uz": "Katta toʻy zali qanday ataladi?",
+  "options_uz": [
+   "toʻyxona",
+   "choyxona",
+   "guzar",
+   "mahalla"
+  ],
+  "q_en": "What is a large wedding hall called?",
+  "options_en": [
+   "toʻyxona",
+   "choyxona",
+   "guzar",
+   "mahalla"
+  ],
+  "quote_ru": "Главная часть праздника обычно проходит в большом свадебном зале — туйхоне (toʻyxona) — или во дворе дома."
+ },
+ {
+  "course": "culture",
+  "n": 9,
+  "k": 4,
+  "q_ru": "Какую песню поют женщины, когда невеста прощается с родительским домом?",
+  "options_ru": [
+   "«Ёр-ёр» (yor-yor)",
+   "«Келин салом» (kelin salom)",
+   "«Муборак бўлсин» (muborak boʻlsin)",
+   "«Хуш келибсиз» (xush kelibsiz)"
+  ],
+  "q_uz": "Kelin ota-ona uyi bilan xayrlashayotganda ayollar qaysi qoʻshiqni kuylashadi?",
+  "options_uz": [
+   "«Yor-yor»",
+   "«Kelin salom»",
+   "«Muborak boʻlsin»",
+   "«Xush kelibsiz»"
+  ],
+  "q_en": "Which song do the women sing when the bride says goodbye to her parents' home?",
+  "options_en": [
+   "«Yor-yor»",
+   "«Kelin salom»",
+   "«Muborak boʻlsin»",
+   "«Xush kelibsiz»"
+  ],
+  "quote_ru": "Невеста прощается с родительским домом, и в этот момент женщины поют старинную свадебную песню «Ёр-ёр» (yor-yor)."
+ },
+ {
+  "course": "culture",
+  "n": 9,
+  "k": 5,
+  "q_ru": "Что такое карнай (karnay)?",
+  "options_ru": [
+   "Длинная медная труба",
+   "Бубен",
+   "Свадебная песня",
+   "Большое блюдо для плова"
+  ],
+  "q_uz": "Karnay nima?",
+  "options_uz": [
+   "Uzun mis truba",
+   "Doira — childirma",
+   "Toʻy qoʻshigʻi",
+   "Osh uchun katta lagan"
+  ],
+  "q_en": "What is a karnay?",
+  "options_en": [
+   "A long brass trumpet",
+   "A frame drum",
+   "A wedding song",
+   "A large platter for plov"
+  ],
+  "quote_ru": "Гостей встречают громкие звуки длинных медных труб карнай (karnay), духового инструмента сурнай (surnay) и ритм бубна дойра (doira)."
+ },
+ {
+  "course": "culture",
+  "n": 9,
+  "k": 6,
+  "q_ru": "Что происходит в обряде келин салом (kelin salom)?",
+  "options_ru": [
+   "Невеста кланяется родственникам и соседям мужа",
+   "Невеста прощается с родительским домом",
+   "Сваты впервые приходят в дом девушки",
+   "Гостям-мужчинам подают утренний плов"
+  ],
+  "q_uz": "Kelin salom marosimida nima boʻladi?",
+  "options_uz": [
+   "Kelin erining qarindoshlari va qoʻshnilariga taʼzim qiladi",
+   "Kelin ota-ona uyi bilan xayrlashadi",
+   "Sovchilar qizning uyiga birinchi marta keladi",
+   "Erkak mehmonlarga ertalabki osh tortiladi"
+  ],
+  "q_en": "What happens in the kelin salom ritual?",
+  "options_en": [
+   "The bride bows to her husband's relatives and neighbours",
+   "The bride says goodbye to her parents' home",
+   "The matchmakers visit the girl's home for the first time",
+   "Morning plov is served to the male guests"
+  ],
+  "quote_ru": "Молодая жена в нарядной одежде кланяется родственникам и соседям мужа, а одна из старших женщин называет каждого гостя."
+ },
+ {
+  "course": "culture",
+  "n": 9,
+  "k": 7,
+  "q_ru": "Чем во многих местах начинаются свадебные дни?",
+  "options_ru": [
+   "Утренним пловом — оши нахор",
+   "Обрядом келин салом",
+   "Сватовством",
+   "Регистрацией в загсе"
+  ],
+  "q_uz": "Koʻp joylarda toʻy kunlari nima bilan boshlanadi?",
+  "options_uz": [
+   "Ertalabki osh — oshi nahor bilan",
+   "Kelin salom marosimi bilan",
+   "Sovchilik bilan",
+   "FHDYOda roʻyxatdan oʻtish bilan"
+  ],
+  "q_en": "In many places, how do the wedding days begin?",
+  "options_en": [
+   "With the morning plov, oshi nahor",
+   "With the kelin salom ritual",
+   "With matchmaking",
+   "With registration at the civil registry office"
+  ],
+  "quote_ru": "Во многих местах свадебные дни начинаются рано утром с оши нахор (oshi nahor) — утреннего плова, который подают гостям-мужчинам."
+ },
+ {
+  "course": "culture",
+  "n": 9,
+  "k": 8,
+  "q_ru": "Как махалля помогает на свадьбе?",
+  "options_ru": [
+   "Соседи готовят еду, расставляют столы и встречают гостей",
+   "Махалля оплачивает свадебный зал",
+   "Соседи только присылают поздравления",
+   "Старейшины регистрируют брак вместо загса"
+  ],
+  "q_uz": "Mahalla toʻyda qanday yordam beradi?",
+  "options_uz": [
+   "Qoʻshnilar ovqat tayyorlaydi, stollarni joylashtiradi va mehmonlarni kutib oladi",
+   "Mahalla toʻyxona uchun pul toʻlaydi",
+   "Qoʻshnilar faqat tabrik yoʻllaydi",
+   "Oqsoqollar nikohni FHDYO oʻrniga roʻyxatdan oʻtkazadi"
+  ],
+  "q_en": "How does the mahalla help at a wedding?",
+  "options_en": [
+   "Neighbours cook, set out tables and welcome guests",
+   "The mahalla pays for the wedding hall",
+   "Neighbours only send their congratulations",
+   "The elders register the marriage instead of the registry office"
+  ],
+  "quote_ru": "соседи приходят готовить еду, расставлять столы и встречать гостей, а уважаемые старейшины помогают советом в организации."
+ },
+ {
+  "course": "culture",
+  "n": 10,
+  "k": 1,
+  "q_ru": "Как называют младшего сына, который остаётся жить с родителями?",
+  "options_ru": [
+   "kenja",
+   "kelin",
+   "quda",
+   "oqsoqol"
+  ],
+  "q_uz": "Ota-onasi bilan qoladigan kichik oʻgʻil qanday ataladi?",
+  "options_uz": [
+   "kenja",
+   "kelin",
+   "quda",
+   "oqsoqol"
+  ],
+  "q_en": "What is the youngest son who stays with his parents called?",
+  "options_en": [
+   "kenja",
+   "kelin",
+   "quda",
+   "oqsoqol"
+  ],
+  "quote_ru": "Младший сын, кенжа, обычно остаётся с родителями и заботится о них в старости."
+ },
+ {
+  "course": "culture",
+  "n": 10,
+  "k": 2,
+  "q_ru": "Что по традиции делают старшие сыновья после женитьбы?",
+  "options_ru": [
+   "Со временем отделяются и строят собственные дома",
+   "Навсегда остаются жить в доме родителей",
+   "Переезжают жить в семью жены",
+   "Получают родительский дом в наследство"
+  ],
+  "q_uz": "Anʼanaga koʻra katta oʻgʻillar uylangach nima qiladi?",
+  "options_uz": [
+   "Vaqt oʻtib alohida chiqib, oʻz uylarini quradi",
+   "Umrbod ota-ona uyida qoladi",
+   "Xotinining oilasiga koʻchib oʻtadi",
+   "Ota-ona uyini meros qilib oladi"
+  ],
+  "q_en": "By tradition, what do the elder sons do after they marry?",
+  "options_en": [
+   "In time they move out and build their own houses",
+   "They stay in their parents' house for good",
+   "They move in with their wife's family",
+   "They inherit their parents' house"
+  ],
+  "quote_ru": "По традиции старшие сыновья после женитьбы со временем отделяются и строят собственные дома, а младший сын остаётся жить с родителями."
+ },
+ {
+  "course": "culture",
+  "n": 10,
+  "k": 3,
+  "q_ru": "Где по традиции живёт невестка (kelin) после свадьбы?",
+  "options_ru": [
+   "В семье мужа",
+   "В доме своих родителей",
+   "У своей старшей сестры",
+   "Отдельно от обеих семей"
+  ],
+  "q_uz": "Anʼanaga koʻra kelin toʻydan keyin qayerda yashaydi?",
+  "options_uz": [
+   "Erining oilasida",
+   "Oʻz ota-onasining uyida",
+   "Katta opasinikida",
+   "Ikkala oiladan alohida"
+  ],
+  "q_en": "By tradition, where does the daughter-in-law (kelin) live after the wedding?",
+  "options_en": [
+   "With her husband's family",
+   "In her own parents' house",
+   "With her elder sister",
+   "Apart from both families"
+  ],
+  "quote_ru": "Невестка — келин (kelin) — по традиции приходит жить в семью мужа."
+ },
+ {
+  "course": "culture",
+  "n": 10,
+  "k": 4,
+  "q_ru": "Как по-узбекски «свекровь»?",
+  "options_ru": [
+   "qaynona",
+   "qaynota",
+   "buvi",
+   "xola"
+  ],
+  "q_uz": "Ruscha «свекровь» soʻzi oʻzbekchada qanday ataladi?",
+  "options_uz": [
+   "qaynona",
+   "qaynota",
+   "buvi",
+   "xola"
+  ],
+  "q_en": "What is the Uzbek word for «mother-in-law» (the husband's mother)?",
+  "options_en": [
+   "qaynona",
+   "qaynota",
+   "buvi",
+   "xola"
+  ],
+  "quote_ru": "с уважением относится к свёкру и свекрови — кайнота и кайнона (qaynota, qaynona)."
+ },
+ {
+  "course": "culture",
+  "n": 10,
+  "k": 5,
+  "q_ru": "Что взрослые дети обязательно делают по праздникам?",
+  "options_ru": [
+   "Навещают родителей",
+   "Уезжают в путешествие без родителей",
+   "Собирают хашар во дворе",
+   "Устраивают оши нахор для махалли"
+  ],
+  "q_uz": "Voyaga yetgan farzandlar bayramlarda albatta nima qiladi?",
+  "options_uz": [
+   "Ota-onasini ziyorat qiladi",
+   "Ota-onasiz sayohatga ketadi",
+   "Hovlida hashar uyushtiradi",
+   "Mahalla uchun oshi nahor beradi"
+  ],
+  "q_en": "What do adult children always do on holidays?",
+  "options_en": [
+   "Visit their parents",
+   "Go travelling without their parents",
+   "Organise a hashar in the yard",
+   "Hold an oshi nahor for the mahalla"
+  ],
+  "quote_ru": "Взрослые дети советуются с родителями в важных делах, помогают им и обязательно навещают их по праздникам."
+ },
+ {
+  "course": "culture",
+  "n": 10,
+  "k": 6,
+  "q_ru": "Что бабушки и дедушки передают внукам?",
+  "options_ru": [
+   "Сказки, обычаи и семейную историю",
+   "Только родительский дом",
+   "Секреты выпечки лепёшек",
+   "Обязанности по хозяйству"
+  ],
+  "q_uz": "Bobo-buvilar nevaralariga nimalarni oʻrgatadi?",
+  "options_uz": [
+   "Ertaklar, urf-odatlar va oila tarixini",
+   "Faqat ota uyini",
+   "Non yopish sirlarini",
+   "Uy-roʻzgʻor yumushlarini"
+  ],
+  "q_en": "What do grandparents pass on to their grandchildren?",
+  "options_en": [
+   "Fairy tales, customs and family history",
+   "Only the family house",
+   "The secrets of baking flatbread",
+   "Household chores"
+  ],
+  "quote_ru": "Внуки проводят много времени с бабушками и дедушками, которые передают им сказки, обычаи и семейную историю."
+ },
+ {
+  "course": "culture",
+  "n": 10,
+  "k": 7,
+  "q_ru": "Что означает слово кариндошлар (qarindoshlar)?",
+  "options_ru": [
+   "Родственники, родня",
+   "Соседи по махалле",
+   "Гости на свадьбе",
+   "Внуки"
+  ],
+  "q_uz": "Qarindoshlar soʻzi kimlarni bildiradi?",
+  "options_uz": [
+   "Qarindosh-urugʻni",
+   "Mahalladagi qoʻshnilarni",
+   "Toʻydagi mehmonlarni",
+   "Nevaralarni"
+  ],
+  "q_en": "What does the word qarindoshlar mean?",
+  "options_en": [
+   "Relatives, kin",
+   "Mahalla neighbours",
+   "Wedding guests",
+   "Grandchildren"
+  ],
+  "quote_ru": "Важен и широкий круг родни — кариндошлар (qarindoshlar)"
+ },
+ {
+  "course": "culture",
+  "n": 10,
+  "k": 8,
+  "q_ru": "Как традиционно жила узбекская семья?",
+  "options_ru": [
+   "Несколько поколений под одной крышей или в одном дворе",
+   "Каждое поколение в отдельном городе",
+   "Только родители с маленькими детьми",
+   "Молодые супруги в доме родителей жены"
+  ],
+  "q_uz": "Anʼanaga koʻra oʻzbek oilasi qanday yashagan?",
+  "options_uz": [
+   "Bir tom ostida yoki bir hovlida bir necha avlod",
+   "Har bir avlod alohida shaharda",
+   "Faqat ota-ona kichik bolalari bilan",
+   "Yosh er-xotin xotinining ota-onasi uyida"
+  ],
+  "q_en": "How did an Uzbek family traditionally live?",
+  "options_en": [
+   "Several generations under one roof or in one courtyard",
+   "Each generation in a different town",
+   "Only parents with their young children",
+   "The young couple in the wife's parents' house"
+  ],
+  "quote_ru": "Традиционно под одной крышей или в одном дворе жили несколько поколений: дедушка и бабушка, их сыновья с жёнами и внуки."
+ },
+ {
+  "course": "culture",
+  "n": 11,
+  "k": 1,
+  "q_ru": "Как называется выражение соболезнования семье, потерявшей близкого?",
+  "options_ru": [
+   "Таъзия (taʼziya)",
+   "Эҳсон (ehson)",
+   "Фатиха (fotiha)",
+   "Зиёфат (ziyofat)"
+  ],
+  "q_uz": "Musibat koʻrgan oilaga hamdardlik bildirish qanday ataladi?",
+  "options_uz": [
+   "Taʼziya",
+   "Ehson",
+   "Fotiha",
+   "Ziyofat"
+  ],
+  "q_en": "What is the expression of condolence to a bereaved family called?",
+  "options_en": [
+   "Taʼziya",
+   "Ehson",
+   "Fotiha",
+   "Ziyofat"
+  ],
+  "quote_ru": "Выражение соболезнования называется таъзия (taʼziya)"
+ },
+ {
+  "course": "culture",
+  "n": 11,
+  "k": 2,
+  "q_ru": "Какой жест сопровождает короткую молитву-фатиху во время таъзии?",
+  "options_ru": [
+   "Поднимают раскрытые ладони и проводят ими по лицу",
+   "Кладут правую руку на сердце и кланяются",
+   "Пожимают руку каждому из хозяев дома",
+   "Трижды касаются ладонью дастархана"
+  ],
+  "q_uz": "Taʼziyada qisqa duo — fotiha oʻqilganda qanday harakat qilinadi?",
+  "options_uz": [
+   "Ochiq kaftlar koʻtariladi va yuzga tortiladi",
+   "Oʻng qoʻl koʻksiga qoʻyilib, taʼzim qilinadi",
+   "Uy egalarining har biri bilan qoʻl berib koʻrishiladi",
+   "Kaft bilan dasturxonga uch marta tegiladi"
+  ],
+  "q_en": "What gesture accompanies the short prayer, the fotiha, during taʼziya?",
+  "options_en": [
+   "Open palms are raised and then passed over the face",
+   "The right hand is placed on the heart with a bow",
+   "Each of the hosts is greeted with a handshake",
+   "The dastarkhan is touched three times with the palm"
+  ],
+  "quote_ru": "поднимают раскрытые ладони, а затем проводят ими по лицу"
+ },
+ {
+  "course": "culture",
+  "n": 11,
+  "k": 3,
+  "q_ru": "В какие дни чаще всего собираются близкие, чтобы почтить память умершего?",
+  "options_ru": [
+   "На седьмой день, сороковой день и в годовщину",
+   "На третий день, девятый день и в годовщину",
+   "На пятый день, двадцатый день и через полгода",
+   "На второй день, тридцатый день и через два года"
+  ],
+  "q_uz": "Marhum xotirasini yod etish uchun yaqinlar odatda qaysi kunlarda yigʻiladi?",
+  "options_uz": [
+   "Yettinchi kun, qirqinchi kun va bir yilligida",
+   "Uchinchi kun, toʻqqizinchi kun va bir yilligida",
+   "Beshinchi kun, yigirmanchi kun va olti oyligida",
+   "Ikkinchi kun, oʻttizinchi kun va ikki yilligida"
+  ],
+  "q_en": "On which days do relatives most often gather to honour the memory of the deceased?",
+  "options_en": [
+   "The seventh day, the fortieth day and the anniversary",
+   "The third day, the ninth day and the anniversary",
+   "The fifth day, the twentieth day and after six months",
+   "The second day, the thirtieth day and after two years"
+  ],
+  "quote_ru": "Чаще всего близкие собираются на седьмой день, на сороковой день (qirqi) и в годовщину (yil oshi)."
+ },
+ {
+  "course": "culture",
+  "n": 11,
+  "k": 4,
+  "q_ru": "Как называют поминальный день в годовщину смерти?",
+  "options_ru": [
+   "Йил оши (yil oshi)",
+   "Қирқи (qirqi)",
+   "Сайил (sayil)",
+   "Зиёфат (ziyofat)"
+  ],
+  "q_uz": "Vafotning bir yilligidagi xotira kuni qanday ataladi?",
+  "options_uz": [
+   "Yil oshi",
+   "Qirqi",
+   "Sayil",
+   "Ziyofat"
+  ],
+  "q_en": "What is the memorial gathering on the anniversary of a death called?",
+  "options_en": [
+   "Yil oshi",
+   "Qirqi",
+   "Sayil",
+   "Ziyofat"
+  ],
+  "quote_ru": "на сороковой день (qirqi) и в годовщину (yil oshi)"
+ },
+ {
+  "course": "culture",
+  "n": 11,
+  "k": 5,
+  "q_ru": "Что называют эҳсон (ehson)?",
+  "options_ru": [
+   "Угощение и помощь нуждающимся в память об умершем",
+   "Короткую молитву с поднятыми ладонями",
+   "Выражение соболезнования семье умершего",
+   "Сороковой день после смерти человека"
+  ],
+  "q_uz": "Ehson deb nimaga aytiladi?",
+  "options_uz": [
+   "Marhum xotirasiga atab qilingan siylov va muhtojlarga yordam",
+   "Kaftlarni koʻtarib oʻqiladigan qisqa duo",
+   "Marhumning oilasiga hamdardlik bildirish",
+   "Vafotdan keyingi qirqinchi kun"
+  ],
+  "q_en": "What is ehson?",
+  "options_en": [
+   "Treating people and helping the needy in memory of the deceased",
+   "A short prayer said with raised palms",
+   "Expressing condolences to the family of the deceased",
+   "The fortieth day after a person's death"
+  ],
+  "quote_ru": "Угощение и помощь нуждающимся в память об умершем называют эҳсон (ehson) — благое дело."
+ },
+ {
+  "course": "culture",
+  "n": 11,
+  "k": 6,
+  "q_ru": "Что важнее всего, когда приходят выразить соболезнование?",
+  "options_ru": [
+   "Само присутствие рядом с семьёй",
+   "Дорогой подарок для хозяев",
+   "Длинная речь о покойном",
+   "Громкое чтение стихов"
+  ],
+  "q_uz": "Hamdardlik bildirgani borganda eng muhimi nima?",
+  "options_uz": [
+   "Oila yonida ekanini bildirish",
+   "Uy egalariga qimmat sovgʻa olib borish",
+   "Marhum haqida uzun nutq soʻzlash",
+   "Baland ovozda sheʼr oʻqish"
+  ],
+  "q_en": "What matters most when you come to offer condolences?",
+  "options_en": [
+   "Simply being present with the family",
+   "Bringing an expensive gift for the hosts",
+   "Giving a long speech about the deceased",
+   "Reading poems aloud"
+  ],
+  "quote_ru": "Многословие и громкие разговоры неуместны, гораздо важнее само присутствие."
+ },
+ {
+  "course": "culture",
+  "n": 11,
+  "k": 7,
+  "q_ru": "Какое слово узбеки часто добавляют, говоря об умерших близких?",
+  "options_ru": [
+   "rahmatli",
+   "hamdardlik",
+   "sabr",
+   "marosim"
+  ],
+  "q_uz": "Vafot etgan yaqinlari haqida gapirganda oʻzbeklar koʻpincha qaysi soʻzni qoʻshadi?",
+  "options_uz": [
+   "rahmatli",
+   "hamdardlik",
+   "sabr",
+   "marosim"
+  ],
+  "q_en": "Which word do Uzbeks often add when speaking of deceased relatives?",
+  "options_en": [
+   "rahmatli",
+   "hamdardlik",
+   "sabr",
+   "marosim"
+  ],
+  "quote_ru": "Говоря об умерших близких, узбеки часто добавляют слово «rahmatli»"
+ },
+ {
+  "course": "culture",
+  "n": 11,
+  "k": 8,
+  "q_ru": "Во время каких праздников родные и соседи навещают семьи, где в течение года случилась утрата?",
+  "options_ru": [
+   "Рамазан-хайит и Курбан-хайит",
+   "Новый год и 8 Марта",
+   "День независимости и День Конституции",
+   "День учителя и праздник дыни"
+  ],
+  "q_uz": "Qaysi bayramlarda qarindosh va qoʻshnilar yil davomida musibat koʻrgan xonadonlarga borib, ularni yupatadi?",
+  "options_uz": [
+   "Ramazon hayiti va Qurbon hayiti",
+   "Yangi yil va 8-mart",
+   "Mustaqillik kuni va Konstitutsiya kuni",
+   "Oʻqituvchilar kuni va qovun sayli"
+  ],
+  "q_en": "During which holidays do relatives and neighbours visit families who suffered a loss during the year?",
+  "options_en": [
+   "Ramazon Hayit and Qurbon Hayit",
+   "New Year and 8 March",
+   "Independence Day and Constitution Day",
+   "Teachers' Day and the melon festival"
+  ],
+  "quote_ru": "Во время праздников Рамазан-хайит и Курбан-хайит родные и соседи по традиции навещают семьи, где в течение года случилась утрата"
+ },
+ {
+  "course": "culture",
+  "n": 12,
+  "k": 1,
+  "q_ru": "Что означает слово «Навруз» в переводе с персидского?",
+  "options_ru": [
+   "«Новый день»",
+   "«Новая весна»",
+   "«Светлый год»",
+   "«Добрый урожай»"
+  ],
+  "q_uz": "Navroʻz soʻzi forschadan tarjima qilinganda qanday maʼnoni anglatadi?",
+  "options_uz": [
+   "«Yangi kun»",
+   "«Yangi bahor»",
+   "«Yorugʻ yil»",
+   "«Moʻl hosil»"
+  ],
+  "q_en": "What does the word \"Navruz\" mean in Persian?",
+  "options_en": [
+   "\"New day\"",
+   "\"New spring\"",
+   "\"Bright year\"",
+   "\"Good harvest\""
+  ],
+  "quote_ru": "Навруз (Navroʻz) в переводе с персидского означает «новый день»"
+ },
+ {
+  "course": "culture",
+  "n": 12,
+  "k": 2,
+  "q_ru": "Когда отмечают Навруз?",
+  "options_ru": [
+   "21 марта, в дни весеннего равноденствия",
+   "1 сентября, в начале учебного года",
+   "1 января, в новогоднюю ночь",
+   "9 мая, в День памяти и почестей"
+  ],
+  "q_uz": "Navroʻz qachon nishonlanadi?",
+  "options_uz": [
+   "21-martda, bahorgi tengkunlik kunlarida",
+   "1-sentabrda, oʻquv yili boshida",
+   "1-yanvarda, Yangi yil kechasida",
+   "9-mayda, Xotira va qadrlash kunida"
+  ],
+  "q_en": "When is Navruz celebrated?",
+  "options_en": [
+   "On 21 March, at the spring equinox",
+   "On 1 September, at the start of the school year",
+   "On 1 January, on New Year's night",
+   "On 9 May, on the Day of Remembrance and Honour"
+  ],
+  "quote_ru": "Навруз отмечают в дни весеннего равноденствия, 21 марта"
+ },
+ {
+  "course": "culture",
+  "n": 12,
+  "k": 3,
+  "q_ru": "Из чего готовят сумалак?",
+  "options_ru": [
+   "Из пророщенной пшеницы, муки и масла",
+   "Из пшеницы и мяса",
+   "Из риса, моркови и мяса",
+   "Из теста и свежей зелени"
+  ],
+  "q_uz": "Sumalak nimadan tayyorlanadi?",
+  "options_uz": [
+   "Undirilgan bugʻdoy, un va yogʻdan",
+   "Bugʻdoy va goʻshtdan",
+   "Guruch, sabzi va goʻshtdan",
+   "Xamir va yangi koʻkatdan"
+  ],
+  "q_en": "What is sumalak made from?",
+  "options_en": [
+   "Sprouted wheat, flour and oil",
+   "Wheat and meat",
+   "Rice, carrots and meat",
+   "Dough and fresh greens"
+  ],
+  "quote_ru": "Его готовят из пророщенной пшеницы, муки и масла в большом казане."
+ },
+ {
+  "course": "culture",
+  "n": 12,
+  "k": 4,
+  "q_ru": "Зачем на дно казана с сумалаком кладут чистые камешки?",
+  "options_ru": [
+   "Чтобы масса не пригорала",
+   "Чтобы сумалак стал слаще",
+   "Чтобы вода быстрее закипела",
+   "Чтобы казан не опрокинулся"
+  ],
+  "q_uz": "Sumalak qozonining tubiga nima uchun toza toshchalar solinadi?",
+  "options_uz": [
+   "Taom kuymasligi uchun",
+   "Sumalak shirinroq boʻlishi uchun",
+   "Suv tezroq qaynashi uchun",
+   "Qozon agʻdarilmasligi uchun"
+  ],
+  "q_en": "Why are clean pebbles put at the bottom of the sumalak cauldron?",
+  "options_en": [
+   "So that the mixture does not burn",
+   "So that the sumalak becomes sweeter",
+   "So that the water boils faster",
+   "So that the cauldron does not tip over"
+  ],
+  "quote_ru": "На дно казана кладут чистые камешки, чтобы масса не пригорала."
+ },
+ {
+  "course": "culture",
+  "n": 12,
+  "k": 5,
+  "q_ru": "Что, по поверью, нужно сделать, пробуя сумалак?",
+  "options_ru": [
+   "Загадать желание",
+   "Выпить пиалу чая",
+   "Подарить соседу лепёшку",
+   "Прочитать стихотворение"
+  ],
+  "q_uz": "Ishonchga koʻra, sumalakni tatib koʻrayotganda nima qilish kerak?",
+  "options_uz": [
+   "Niyat qilish",
+   "Bir piyola choy ichish",
+   "Qoʻshniga non hadya qilish",
+   "Sheʼr oʻqish"
+  ],
+  "q_en": "According to belief, what should you do when tasting sumalak?",
+  "options_en": [
+   "Make a wish",
+   "Drink a bowl of tea",
+   "Give a neighbour a flatbread",
+   "Recite a poem"
+  ],
+  "quote_ru": "Считается, что, пробуя его, нужно загадать желание."
+ },
+ {
+  "course": "culture",
+  "n": 12,
+  "k": 6,
+  "q_ru": "Кто чаще всего готовит халим?",
+  "options_ru": [
+   "Мужчины",
+   "Женщины махалли",
+   "Дети",
+   "Гости из других городов"
+  ],
+  "q_uz": "Halimni koʻpincha kim tayyorlaydi?",
+  "options_uz": [
+   "Erkaklar",
+   "Mahalla ayollari",
+   "Bolalar",
+   "Boshqa shaharlardan kelgan mehmonlar"
+  ],
+  "q_en": "Who most often prepares halim?",
+  "options_en": [
+   "Men",
+   "The women of the mahalla",
+   "Children",
+   "Guests from other cities"
+  ],
+  "quote_ru": "халим (halim), густая каша из пшеницы и мяса, которую тоже готовят долго, чаще мужчины"
+ },
+ {
+  "course": "culture",
+  "n": 12,
+  "k": 7,
+  "q_ru": "Что символизирует зелень в весенних блюдах Навруза?",
+  "options_ru": [
+   "Пробуждение природы",
+   "Окончание поста",
+   "Память о предках",
+   "Начало учебного года"
+  ],
+  "q_uz": "Navroʻzdagi bahorgi taomlarda koʻkat nimani anglatadi?",
+  "options_uz": [
+   "Tabiatning uygʻonishini",
+   "Roʻzaning tugashini",
+   "Ajdodlar xotirasini",
+   "Oʻquv yilining boshlanishini"
+  ],
+  "q_en": "What do the greens in Navruz spring dishes symbolise?",
+  "options_en": [
+   "The awakening of nature",
+   "The end of the fast",
+   "The memory of ancestors",
+   "The start of the school year"
+  ],
+  "quote_ru": "кўк чучвара (koʻk chuchvara) — пельмени с травами. Зелень символизирует пробуждение природы."
+ },
+ {
+  "course": "culture",
+  "n": 12,
+  "k": 8,
+  "q_ru": "Какое поверье связано с праздничным дастарханом на Навруз?",
+  "options_ru": [
+   "Каким будет стол, таким будет и весь год",
+   "Стол накрывают только после захода солнца",
+   "За стол первыми садятся дети",
+   "На стол ставят одни только сладости"
+  ],
+  "q_uz": "Navroʻz bayram dasturxoni bilan qanday ishonch bogʻliq?",
+  "options_uz": [
+   "Dasturxon qanday boʻlsa, butun yil ham shunday oʻtadi",
+   "Dasturxon faqat quyosh botgandan keyin yoziladi",
+   "Dasturxonga birinchi boʻlib bolalar oʻtiradi",
+   "Dasturxonga faqat shirinliklar qoʻyiladi"
+  ],
+  "q_en": "What belief is connected with the festive Navruz dastarkhan?",
+  "options_en": [
+   "As the table is, so will the whole year be",
+   "The table is set only after sunset",
+   "Children are the first to sit at the table",
+   "Only sweets are put on the table"
+  ],
+  "quote_ru": "по поверью, каким будет стол на Навруз, таким будет и весь год"
+ },
+ {
+  "course": "culture",
+  "n": 13,
+  "k": 1,
+  "q_ru": "Как называется ранний завтрак перед рассветом во время поста?",
+  "options_ru": [
+   "Саҳарлик (saharlik)",
+   "Ифтар (iftor)",
+   "Садака (sadaqa)",
+   "Ҳайит (hayit)"
+  ],
+  "q_uz": "Roʻza paytida tong otmasdan qilinadigan nonushta qanday ataladi?",
+  "options_uz": [
+   "Saharlik",
+   "Iftor",
+   "Sadaqa",
+   "Hayit"
+  ],
+  "q_en": "What is the early meal before dawn during the fast called?",
+  "options_en": [
+   "Saharlik",
+   "Iftor",
+   "Sadaqa",
+   "Hayit"
+  ],
+  "quote_ru": "встают до рассвета на ранний завтрак — саҳарлик (saharlik)"
+ },
+ {
+  "course": "culture",
+  "n": 13,
+  "k": 2,
+  "q_ru": "Как ещё называют вечернее разговение — ифтар?",
+  "options_ru": [
+   "Оғиз очиш (ogʻiz ochish)",
+   "Саҳарлик (saharlik)",
+   "Рўза (roʻza)",
+   "Садака (sadaqa)"
+  ],
+  "q_uz": "Kechki iftor yana qanday ataladi?",
+  "options_uz": [
+   "Ogʻiz ochish",
+   "Saharlik",
+   "Roʻza",
+   "Sadaqa"
+  ],
+  "q_en": "What is another name for iftor, the evening breaking of the fast?",
+  "options_en": [
+   "Ogʻiz ochish",
+   "Saharlik",
+   "Roʻza",
+   "Sadaqa"
+  ],
+  "quote_ru": "Вечернее разговение называется ифтар (iftor) или «оғиз очиш» (ogʻiz ochish)"
+ },
+ {
+  "course": "culture",
+  "n": 13,
+  "k": 3,
+  "q_ru": "Почему даты Рамазана и хайитов каждый год меняются?",
+  "options_ru": [
+   "Мусульманский календарь лунный",
+   "Их привязывают к сбору урожая",
+   "Их переносят на ближайшие выходные",
+   "Их связывают с весенним равноденствием"
+  ],
+  "q_uz": "Nima uchun Ramazon va hayitlar sanasi har yili oʻzgaradi?",
+  "options_uz": [
+   "Musulmon taqvimi oy taqvimi boʻlgani uchun",
+   "Ular hosil yigʻimiga bogʻlangani uchun",
+   "Ular eng yaqin dam olish kuniga koʻchirilgani uchun",
+   "Ular bahorgi tengkunlikka bogʻlangani uchun"
+  ],
+  "q_en": "Why do the dates of Ramadan and the Hayit holidays change every year?",
+  "options_en": [
+   "The Muslim calendar is lunar",
+   "They are tied to the harvest",
+   "They are moved to the nearest weekend",
+   "They are tied to the spring equinox"
+  ],
+  "quote_ru": "Мусульманский календарь лунный, поэтому даты Рамазана и хайитов каждый год сдвигаются"
+ },
+ {
+  "course": "culture",
+  "n": 13,
+  "k": 4,
+  "q_ru": "Кого традиция освобождает от поста?",
+  "options_ru": [
+   "Детей, пожилых, больных и путников",
+   "Только жителей больших городов",
+   "Всех, кто работает днём",
+   "Только гостей из других стран"
+  ],
+  "q_uz": "Anʼanaga koʻra kimlar roʻza tutmasligi mumkin?",
+  "options_uz": [
+   "Bolalar, keksalar, bemorlar va musofirlar",
+   "Faqat katta shaharlar aholisi",
+   "Kunduzi ishlaydigan barcha kishilar",
+   "Faqat chet ellik mehmonlar"
+  ],
+  "q_en": "Whom does tradition exempt from fasting?",
+  "options_en": [
+   "Children, the elderly, the sick and travellers",
+   "Only residents of big cities",
+   "Everyone who works during the day",
+   "Only guests from other countries"
+  ],
+  "quote_ru": "Детей, пожилых, больных и путников традиция освобождает от поста."
+ },
+ {
+  "course": "culture",
+  "n": 13,
+  "k": 5,
+  "q_ru": "Чем традиционно начинают разговляться после дня поста?",
+  "options_ru": [
+   "Финиками или водой",
+   "Пловом и лепёшкой",
+   "Сумалаком",
+   "Чак-чаком и хворостом"
+  ],
+  "q_uz": "Roʻza anʼanaga koʻra nima bilan ochiladi?",
+  "options_uz": [
+   "Xurmo yoki suv bilan",
+   "Osh va non bilan",
+   "Sumalak bilan",
+   "Chakchak va kush tili bilan"
+  ],
+  "q_en": "What is the fast traditionally broken with?",
+  "options_en": [
+   "Dates or water",
+   "Plov and flatbread",
+   "Sumalak",
+   "Chak-chak and kush tili"
+  ],
+  "quote_ru": "Пост традиционно начинают разговлять финиками или водой"
+ },
+ {
+  "course": "culture",
+  "n": 13,
+  "k": 6,
+  "q_ru": "Какими словами принято поздравлять с Рамазан-хайитом?",
+  "options_ru": [
+   "«Hayitingiz muborak boʻlsin!»",
+   "«Navroʻz muborak!»",
+   "«Alloh rahmat qilsin»",
+   "«Xudo sabr bersin»"
+  ],
+  "q_uz": "Ramazon hayiti bilan qanday soʻzlar bilan tabriklash odat tusiga kirgan?",
+  "options_uz": [
+   "«Hayitingiz muborak boʻlsin!»",
+   "«Navroʻz muborak!»",
+   "«Alloh rahmat qilsin»",
+   "«Xudo sabr bersin»"
+  ],
+  "q_en": "What words are customarily used to congratulate people on Ramazon Hayit?",
+  "options_en": [
+   "\"Hayitingiz muborak boʻlsin!\"",
+   "\"Navroʻz muborak!\"",
+   "\"Alloh rahmat qilsin\"",
+   "\"Xudo sabr bersin\""
+  ],
+  "quote_ru": "Принято поздравлять словами «Hayitingiz muborak boʻlsin!»"
+ },
+ {
+  "course": "culture",
+  "n": 13,
+  "k": 7,
+  "q_ru": "Как поступают с мясом жертвенного животного на Курбан-хайит?",
+  "options_ru": [
+   "Делят между семьёй, родственниками, соседями и нуждающимися",
+   "Продают на базаре, а деньги отдают махалле",
+   "Оставляют только для своей семьи",
+   "Готовят из него плов только для гостей"
+  ],
+  "q_uz": "Qurbon hayitida qurbonlik goʻshti bilan nima qilinadi?",
+  "options_uz": [
+   "Oila, qarindoshlar, qoʻshnilar va muhtojlar oʻrtasida taqsimlanadi",
+   "Bozorda sotilib, puli mahallaga beriladi",
+   "Faqat oʻz oilasi uchun olib qolinadi",
+   "Undan faqat mehmonlar uchun osh damlanadi"
+  ],
+  "q_en": "What is done with the meat of the sacrificed animal on Qurbon Hayit?",
+  "options_en": [
+   "It is shared among family, relatives, neighbours and the needy",
+   "It is sold at the bazaar and the money given to the mahalla",
+   "It is kept only for one's own family",
+   "It is used to cook plov only for guests"
+  ],
+  "quote_ru": "мясо делят между семьёй, родственниками, соседями и нуждающимися"
+ },
+ {
+  "course": "culture",
+  "n": 13,
+  "k": 8,
+  "q_ru": "Какой статус имеют Рамазан-хайит и Курбан-хайит в Узбекистане?",
+  "options_ru": [
+   "Это официальные выходные дни",
+   "Это обычные рабочие дни",
+   "Их отмечают только в школах",
+   "Их отмечают только в сёлах"
+  ],
+  "q_uz": "Ramazon hayiti va Qurbon hayiti Oʻzbekistonda qanday maqomga ega?",
+  "options_uz": [
+   "Rasmiy dam olish kunlari",
+   "Oddiy ish kunlari",
+   "Faqat maktablarda nishonlanadi",
+   "Faqat qishloqlarda nishonlanadi"
+  ],
+  "q_en": "What status do Ramazon Hayit and Qurbon Hayit have in Uzbekistan?",
+  "options_en": [
+   "They are official days off",
+   "They are ordinary working days",
+   "They are celebrated only in schools",
+   "They are celebrated only in villages"
+  ],
+  "quote_ru": "Рамазан-хайит и Курбан-хайит являются в Узбекистане официальными выходными днями."
+ },
+ {
+  "course": "culture",
+  "n": 14,
+  "k": 1,
+  "q_ru": "Когда отмечают День независимости Узбекистана?",
+  "options_ru": [
+   "1 сентября",
+   "21 марта",
+   "9 мая",
+   "1 января"
+  ],
+  "q_uz": "Oʻzbekistonda Mustaqillik kuni qachon nishonlanadi?",
+  "options_uz": [
+   "1-sentabrda",
+   "21-martda",
+   "9-mayda",
+   "1-yanvarda"
+  ],
+  "q_en": "When is Independence Day celebrated in Uzbekistan?",
+  "options_en": [
+   "On 1 September",
+   "On 21 March",
+   "On 9 May",
+   "On 1 January"
+  ],
+  "quote_ru": "Главный государственный праздник — День независимости (Mustaqillik kuni), его отмечают 1 сентября."
+ },
+ {
+  "course": "culture",
+  "n": 14,
+  "k": 2,
+  "q_ru": "Как называется 9 мая в Узбекистане?",
+  "options_ru": [
+   "День памяти и почестей",
+   "День Конституции",
+   "День учителя и наставника",
+   "Международный женский день"
+  ],
+  "q_uz": "Oʻzbekistonda 9-may qanday ataladi?",
+  "options_uz": [
+   "Xotira va qadrlash kuni",
+   "Konstitutsiya kuni",
+   "Oʻqituvchi va murabbiylar kuni",
+   "Xalqaro xotin-qizlar kuni"
+  ],
+  "q_en": "What is 9 May called in Uzbekistan?",
+  "options_en": [
+   "The Day of Remembrance and Honour",
+   "Constitution Day",
+   "Teachers' and Mentors' Day",
+   "International Women's Day"
+  ],
+  "quote_ru": "9 мая в Узбекистане — День памяти и почестей (Xotira va qadrlash kuni)."
+ },
+ {
+  "course": "culture",
+  "n": 14,
+  "k": 3,
+  "q_ru": "Как по-узбекски называют Деда Мороза?",
+  "options_ru": [
+   "Qor bobo",
+   "Qorqiz",
+   "Archa",
+   "Ustoz"
+  ],
+  "q_uz": "Rus tilidagi «Ded Moroz» oʻzbekcha qanday ataladi?",
+  "options_uz": [
+   "Qor bobo",
+   "Qorqiz",
+   "Archa",
+   "Ustoz"
+  ],
+  "q_en": "What is Ded Moroz (Father Frost) called in Uzbek?",
+  "options_en": [
+   "Qor bobo",
+   "Qorqiz",
+   "Archa",
+   "Ustoz"
+  ],
+  "quote_ru": "к детям приходят Дед Мороз — Қор бобо (Qor bobo)"
+ },
+ {
+  "course": "culture",
+  "n": 14,
+  "k": 4,
+  "q_ru": "В какое время года отмечают День Конституции?",
+  "options_ru": [
+   "Зимой",
+   "Весной",
+   "Летом",
+   "Осенью"
+  ],
+  "q_uz": "Konstitutsiya kuni yilning qaysi faslida nishonlanadi?",
+  "options_uz": [
+   "Qishda",
+   "Bahorda",
+   "Yozda",
+   "Kuzda"
+  ],
+  "q_en": "In which season is Constitution Day celebrated?",
+  "options_en": [
+   "In winter",
+   "In spring",
+   "In summer",
+   "In autumn"
+  ],
+  "quote_ru": "его отмечают зимой торжественными мероприятиями"
+ },
+ {
+  "course": "culture",
+  "n": 14,
+  "k": 5,
+  "q_ru": "Что означает пословица «Ustoz otangdek ulugʻ»?",
+  "options_ru": [
+   "«Учитель велик, как твой отец»",
+   "«Учитель — свет каждого дома»",
+   "«Ученик превзойдёт учителя»",
+   "«Знание дороже золота»"
+  ],
+  "q_uz": "«Ustoz otangdek ulugʻ» maqoli nimani anglatadi?",
+  "options_uz": [
+   "Ustoz ota kabi ulugʻ va hurmatli",
+   "Ustoz har bir uyning nuri",
+   "Shogird ustozidan oshib ketadi",
+   "Bilim oltindan qimmat"
+  ],
+  "q_en": "What does the proverb \"Ustoz otangdek ulugʻ\" mean?",
+  "options_en": [
+   "\"A teacher is as great as your father\"",
+   "\"A teacher is the light of every home\"",
+   "\"The student will surpass the teacher\"",
+   "\"Knowledge is worth more than gold\""
+  ],
+  "quote_ru": "«Ustoz otangdek ulugʻ» — «Учитель велик, как твой отец»"
+ },
+ {
+  "course": "culture",
+  "n": 14,
+  "k": 6,
+  "q_ru": "Что начинается у школьников вскоре после Дня независимости?",
+  "options_ru": [
+   "Новый учебный год",
+   "Зимние каникулы",
+   "Летние каникулы",
+   "Годовые экзамены"
+  ],
+  "q_uz": "Mustaqillik kunidan keyin, sentabr boshida, maktab oʻquvchilarida nima boshlanadi?",
+  "options_uz": [
+   "Yangi oʻquv yili",
+   "Qishki taʼtil",
+   "Yozgi taʼtil",
+   "Yillik imtihonlar"
+  ],
+  "q_en": "What begins for schoolchildren soon after Independence Day?",
+  "options_en": [
+   "The new school year",
+   "The winter holidays",
+   "The summer holidays",
+   "The end-of-year exams"
+  ],
+  "quote_ru": "Вскоре после праздника, в начале сентября, у школьников начинается новый учебный год."
+ },
+ {
+  "course": "culture",
+  "n": 14,
+  "k": 7,
+  "q_ru": "Чем украшают улицы в День независимости?",
+  "options_ru": [
+   "Флагами",
+   "Ёлками",
+   "Сюзане",
+   "Воздушными змеями"
+  ],
+  "q_uz": "Mustaqillik kunida koʻchalar nima bilan bezatiladi?",
+  "options_uz": [
+   "Bayroqlar bilan",
+   "Archalar bilan",
+   "Suzanalar bilan",
+   "Varraklar bilan"
+  ],
+  "q_en": "What are streets decorated with on Independence Day?",
+  "options_en": [
+   "Flags",
+   "Fir trees",
+   "Suzanis",
+   "Kites"
+  ],
+  "quote_ru": "улицы украшают флагами, вечером во многих местах устраивают салют"
+ },
+ {
+  "course": "culture",
+  "n": 14,
+  "k": 8,
+  "q_ru": "Что дети заранее готовят для мам к 8 Марта?",
+  "options_ru": [
+   "Открытки и поделки своими руками",
+   "Праздничный плов в казане",
+   "Сумалак на всю махаллю",
+   "Новый чапан из атласа"
+  ],
+  "q_uz": "8-martga bolalar onalari uchun oldindan nima tayyorlaydi?",
+  "options_uz": [
+   "Oʻz qoʻllari bilan tabriknoma va sovgʻalar",
+   "Qozonda bayram oshi",
+   "Butun mahalla uchun sumalak",
+   "Atlasdan yangi chopon"
+  ],
+  "q_en": "What do children prepare in advance for their mothers for 8 March?",
+  "options_en": [
+   "Handmade cards and crafts",
+   "Festive plov in a cauldron",
+   "Sumalak for the whole mahalla",
+   "A new chopon made of atlas"
+  ],
+  "quote_ru": "Дети заранее готовят для мам открытки и поделки своими руками."
+ },
+ {
+  "course": "culture",
+  "n": 15,
+  "k": 1,
+  "q_ru": "Какой вид спорта — самый известный национальный вид спорта узбеков?",
+  "options_ru": [
+   "Кураш (kurash)",
+   "Улоқ (uloq)",
+   "Чиллак (chillak)",
+   "Ошиқ (oshiq)"
+  ],
+  "q_uz": "Eng mashhur oʻzbek milliy sport turi qaysi?",
+  "options_uz": [
+   "Kurash",
+   "Uloq",
+   "Chillak",
+   "Oshiq"
+  ],
+  "q_en": "What is the most famous Uzbek national sport?",
+  "options_en": [
+   "Kurash",
+   "Uloq",
+   "Chillak",
+   "Oshiq"
+  ],
+  "quote_ru": "Самый известный национальный вид спорта — кураш (kurash), традиционная борьба стоя."
+ },
+ {
+  "course": "culture",
+  "n": 15,
+  "k": 2,
+  "q_ru": "Как в кураше называется чистая победа?",
+  "options_ru": [
+   "Ҳалол (halol)",
+   "Полвон (polvon)",
+   "Чавандоз (chavandoz)",
+   "Ҳосил (hosil)"
+  ],
+  "q_uz": "Kurashda toza gʻalaba qanday ataladi?",
+  "options_uz": [
+   "Halol",
+   "Polvon",
+   "Chavandoz",
+   "Hosil"
+  ],
+  "q_en": "What is a clean victory in kurash called?",
+  "options_en": [
+   "Halol",
+   "Polvon",
+   "Chavandoz",
+   "Hosil"
+  ],
+  "quote_ru": "Чистая победа называется ҳалол (halol), то есть «честная»."
+ },
+ {
+  "course": "culture",
+  "n": 15,
+  "k": 3,
+  "q_ru": "Какова цель борца в кураше?",
+  "options_ru": [
+   "Бросить соперника на спину, держась за пояс или одежду",
+   "Вытолкнуть соперника за пределы круга",
+   "Прижать соперника к земле на минуту",
+   "Сорвать с соперника пояс"
+  ],
+  "q_uz": "Kurashda polvonning maqsadi nima?",
+  "options_uz": [
+   "Belbogʻ yoki kiyimdan ushlab, raqibni yelkasi bilan yiqitish",
+   "Raqibni doira chegarasidan itarib chiqarish",
+   "Raqibni bir daqiqa yerga bosib turish",
+   "Raqibning belbogʻini yechib olish"
+  ],
+  "q_en": "What is a wrestler's aim in kurash?",
+  "options_en": [
+   "To throw the opponent onto his back, holding the belt or clothing",
+   "To push the opponent out of the circle",
+   "To pin the opponent to the ground for a minute",
+   "To pull off the opponent's belt"
+  ],
+  "quote_ru": "цель — бросить соперника на спину, держась за пояс или одежду"
+ },
+ {
+  "course": "culture",
+  "n": 15,
+  "k": 4,
+  "q_ru": "За что борются всадники в улоқе (кўпкари)?",
+  "options_ru": [
+   "За тушу козла",
+   "За кожаный мяч",
+   "За шёлковый флаг",
+   "За пояс победителя"
+  ],
+  "q_uz": "Uloqda (koʻpkarida) chavandozlar nima uchun kurashadi?",
+  "options_uz": [
+   "Takaning tanasi uchun",
+   "Charm toʻp uchun",
+   "Ipak bayroq uchun",
+   "Gʻolibning belbogʻi uchun"
+  ],
+  "q_en": "What do the riders fight over in uloq (koʻpkari)?",
+  "options_en": [
+   "A goat carcass",
+   "A leather ball",
+   "A silk flag",
+   "The winner's belt"
+  ],
+  "quote_ru": "Всадники на поле борются за тушу козла"
+ },
+ {
+  "course": "culture",
+  "n": 15,
+  "k": 5,
+  "q_ru": "С чем играют в ошиқ (oshiq)?",
+  "options_ru": [
+   "С бараньими косточками",
+   "С палочками",
+   "С воздушным змеем",
+   "С мячом"
+  ],
+  "q_uz": "Oshiq nima bilan oʻynaladi?",
+  "options_uz": [
+   "Qoʻy suyakchalari bilan",
+   "Tayoqchalar bilan",
+   "Varrak bilan",
+   "Toʻp bilan"
+  ],
+  "q_en": "What is oshiq played with?",
+  "options_en": [
+   "Sheep knucklebones",
+   "Sticks",
+   "A kite",
+   "A ball"
+  ],
+  "quote_ru": "в ошиқ (oshiq) — игру с бараньими косточками"
+ },
+ {
+  "course": "culture",
+  "n": 15,
+  "k": 6,
+  "q_ru": "Что такое varrak?",
+  "options_ru": [
+   "Воздушный змей",
+   "Качели",
+   "Прятки",
+   "Игра с палочками"
+  ],
+  "q_uz": "Varrak nima?",
+  "options_uz": [
+   "Havoga uchiriladigan oʻyinchoq",
+   "Osma argʻimchoq",
+   "Yashirinib oʻynaladigan oʻyin",
+   "Tayoqchalar bilan oʻynaladigan oʻyin"
+  ],
+  "q_en": "What is a varrak?",
+  "options_en": [
+   "A kite",
+   "A swing",
+   "Hide-and-seek",
+   "A game with sticks"
+  ],
+  "quote_ru": "Весной запускают воздушных змеев (varrak)"
+ },
+ {
+  "course": "culture",
+  "n": 15,
+  "k": 7,
+  "q_ru": "Когда проходят праздники урожая, например праздник дыни?",
+  "options_ru": [
+   "Осенью",
+   "Весной",
+   "Зимой",
+   "В начале лета"
+  ],
+  "q_uz": "Qovun sayli kabi hosil bayramlari qachon oʻtkaziladi?",
+  "options_uz": [
+   "Kuzda",
+   "Bahorda",
+   "Qishda",
+   "Yoz boshida"
+  ],
+  "q_en": "When are harvest festivals, such as the melon festival, held?",
+  "options_en": [
+   "In autumn",
+   "In spring",
+   "In winter",
+   "At the start of summer"
+  ],
+  "quote_ru": "Осенью, когда собирают урожай, во многих местах проходят праздники урожая (hosil bayrami)."
+ },
+ {
+  "course": "culture",
+  "n": 15,
+  "k": 8,
+  "q_ru": "Что делают борцы кураша перед схваткой и после неё?",
+  "options_ru": [
+   "Приветствуют друг друга",
+   "Обмениваются поясами",
+   "Вместе пьют чай",
+   "Обходят ковёр по кругу"
+  ],
+  "q_uz": "Kurashda polvonlar bellashuvdan oldin va keyin nima qiladi?",
+  "options_uz": [
+   "Bir-biri bilan salomlashadi",
+   "Belbogʻlarini almashadi",
+   "Birga choy ichadi",
+   "Gilam atrofini aylanib chiqadi"
+  ],
+  "q_en": "What do kurash wrestlers do before and after a bout?",
+  "options_en": [
+   "They greet each other",
+   "They exchange belts",
+   "They drink tea together",
+   "They walk around the mat"
+  ],
+  "quote_ru": "перед схваткой и после неё борцы приветствуют друг друга"
+ },
+ {
+  "course": "culture",
+  "n": 16,
+  "k": 1,
+  "q_ru": "На чём традиционно сидят гости чайханы?",
+  "options_ru": [
+   "На деревянных помостах — сури",
+   "На стульях у высоких столов",
+   "На скамейках вдоль стен",
+   "На коврах прямо на земле"
+  ],
+  "q_uz": "Anʼanaviy choyxonada mehmonlar nimada oʻtirishadi?",
+  "options_uz": [
+   "Yogʻoch soʻrilarda",
+   "Baland stol yonidagi stullarda",
+   "Devor boʻylab qoʻyilgan oʻrindiqlarda",
+   "Toʻgʻridan-toʻgʻri yerga solingan gilamlarda"
+  ],
+  "q_en": "What do guests traditionally sit on in a teahouse?",
+  "options_en": [
+   "Wooden platforms called soʻri",
+   "Chairs at high tables",
+   "Benches along the walls",
+   "Rugs spread directly on the ground"
+  ],
+  "quote_ru": "Гости сидят не на стульях, а на широких деревянных помостах — сури (soʻri)"
+ },
+ {
+  "course": "culture",
+  "n": 16,
+  "k": 2,
+  "q_ru": "Где часто стоит традиционная чайхана?",
+  "options_ru": [
+   "У воды — у арыка или пруда",
+   "У ворот базара",
+   "На крыше караван-сарая",
+   "Во дворе медресе"
+  ],
+  "q_uz": "Anʼanaviy choyxona koʻpincha qayerda joylashadi?",
+  "options_uz": [
+   "Suv boʻyida — ariq yoki hovuz yonida",
+   "Bozor darvozasi yonida",
+   "Karvonsaroy tomida",
+   "Madrasa hovlisida"
+  ],
+  "q_en": "Where does a traditional teahouse often stand?",
+  "options_en": [
+   "By the water, near a canal or pond",
+   "By the bazaar gate",
+   "On the roof of a caravanserai",
+   "In a madrasa courtyard"
+  ],
+  "quote_ru": "Традиционная чайхана часто стоит у воды — у арыка (ariq) или пруда (hovuz) — под большими деревьями."
+ },
+ {
+  "course": "culture",
+  "n": 16,
+  "k": 3,
+  "q_ru": "Какой напиток — главный в чайхане?",
+  "options_ru": [
+   "Зелёный чай",
+   "Чёрный чай с молоком",
+   "Кофе",
+   "Компот"
+  ],
+  "q_uz": "Choyxonaning asosiy ichimligi qaysi?",
+  "options_uz": [
+   "Koʻk choy",
+   "Sutli qora choy",
+   "Qahva",
+   "Kompot"
+  ],
+  "q_en": "What is the main drink in a teahouse?",
+  "options_en": [
+   "Green tea",
+   "Black tea with milk",
+   "Coffee",
+   "Fruit compote"
+  ],
+  "quote_ru": "Главный напиток чайханы — зелёный чай (koʻk choy), который подают в чайниках и пьют из пиал."
+ },
+ {
+  "course": "culture",
+  "n": 16,
+  "k": 4,
+  "q_ru": "Что такое гап (gap), или гап-гаштак?",
+  "options_ru": [
+   "Регулярные встречи постоянной компании",
+   "Большой котёл для плова",
+   "Стёганый тюфячок для сидения",
+   "Низкий столик для дастархана"
+  ],
+  "q_uz": "Gap yoki gap-gashtak nima?",
+  "options_uz": [
+   "Doimiy davraning muntazam uchrashuvlari",
+   "Osh damlanadigan katta qozon",
+   "Oʻtirish uchun qavima koʻrpacha",
+   "Dasturxon uchun past xontaxta"
+  ],
+  "q_en": "What is a gap, or gap-gashtak?",
+  "options_en": [
+   "Regular meetings of a steady circle of people",
+   "A large cauldron for plov",
+   "A quilted sitting mat",
+   "A low table for the dastarkhan"
+  ],
+  "quote_ru": "Это регулярные встречи постоянной компании"
+ },
+ {
+  "course": "culture",
+  "n": 16,
+  "k": 5,
+  "q_ru": "Кто угощает всех участников на очередном гапе?",
+  "options_ru": [
+   "Тот, чья очередь",
+   "Самый старший участник",
+   "Самый младший участник",
+   "Хозяин чайханы"
+  ],
+  "q_uz": "Navbatdagi gapda hammani kim mehmon qiladi?",
+  "options_uz": [
+   "Navbati kelgan kishi",
+   "Davradagi eng katta kishi",
+   "Davradagi eng kichik kishi",
+   "Choyxona egasi"
+  ],
+  "q_en": "Who treats everyone at a gap meeting?",
+  "options_en": [
+   "The member whose turn it is",
+   "The oldest member",
+   "The youngest member",
+   "The teahouse owner"
+  ],
+  "quote_ru": "тот, чья очередь, угощает всех"
+ },
+ {
+  "course": "culture",
+  "n": 16,
+  "k": 6,
+  "q_ru": "Что главное в гапе?",
+  "options_ru": [
+   "Дружба",
+   "Еда",
+   "Музыка",
+   "Игры"
+  ],
+  "q_uz": "Gapda eng muhimi nima?",
+  "options_uz": [
+   "Doʻstlik",
+   "Taom",
+   "Musiqa",
+   "Oʻyinlar"
+  ],
+  "q_en": "What matters most in a gap?",
+  "options_en": [
+   "Friendship",
+   "Food",
+   "Music",
+   "Games"
+  ],
+  "quote_ru": "Главное в гапе — не еда, а дружба"
+ },
+ {
+  "course": "culture",
+  "n": 16,
+  "k": 7,
+  "q_ru": "Что означает слово зиёфат (ziyofat)?",
+  "options_ru": [
+   "Угощение, званый приём",
+   "Неспешная беседа",
+   "Глиняный чайник",
+   "Тень под деревьями"
+  ],
+  "q_uz": "Ziyofat soʻzi nimani bildiradi?",
+  "options_uz": [
+   "Mehmonlar uchun dasturxon, tantanali qabul",
+   "Bemalol suhbat",
+   "Sopol choynak",
+   "Daraxtlar soyasi"
+  ],
+  "q_en": "What does the word ziyofat mean?",
+  "options_en": [
+   "A feast, a formal reception for guests",
+   "A leisurely conversation",
+   "A clay teapot",
+   "Shade under the trees"
+  ],
+  "quote_ru": "Слово зиёфат (ziyofat) означает угощение, званый приём."
+ },
+ {
+  "course": "culture",
+  "n": 16,
+  "k": 8,
+  "q_ru": "Чьим местом общения традиционно была чайхана?",
+  "options_ru": [
+   "Мужчин махалли",
+   "Женщин махалли",
+   "Детей и подростков",
+   "Приезжих купцов"
+  ],
+  "q_uz": "Anʼanaga koʻra choyxona kimlarning suhbat joyi boʻlgan?",
+  "options_uz": [
+   "Mahalla erkaklarining",
+   "Mahalla ayollarining",
+   "Bolalar va oʻsmirlarning",
+   "Kelgan savdogarlarning"
+  ],
+  "q_en": "Whose meeting place was the teahouse traditionally?",
+  "options_en": [
+   "The men of the mahalla",
+   "The women of the mahalla",
+   "Children and teenagers",
+   "Visiting merchants"
+  ],
+  "quote_ru": "Традиционно чайхана была местом мужского общения в махалле"
+ },
+ {
+  "course": "culture",
+  "n": 17,
+  "k": 1,
+  "q_ru": "Что такое дуппи (doʻppi)?",
+  "options_ru": [
+   "Тюбетейка",
+   "Стёганый халат",
+   "Пояс-кушак",
+   "Платок"
+  ],
+  "q_uz": "Doʻppi nima?",
+  "options_uz": [
+   "Bosh kiyim",
+   "Qavima toʻn",
+   "Kamar",
+   "Roʻmol"
+  ],
+  "q_en": "What is a doʻppi?",
+  "options_en": [
+   "A skullcap",
+   "A quilted robe",
+   "A sash",
+   "A headscarf"
+  ],
+  "quote_ru": "Самый известный головной убор — тюбетейка, дуппи (doʻppi)."
+ },
+ {
+  "course": "culture",
+  "n": 17,
+  "k": 2,
+  "q_ru": "Как выглядит знаменитая чустская тюбетейка?",
+  "options_ru": [
+   "Чёрная, с белым узором в виде стручков перца",
+   "Белая, с синим цветочным узором",
+   "Красная, с золотой вышивкой",
+   "Зелёная, с узором из звёзд"
+  ],
+  "q_uz": "Mashhur Chust doʻppisi qanday koʻrinishga ega?",
+  "options_uz": [
+   "Qora, oq qalampir naqshli",
+   "Oq, koʻk gulli naqshli",
+   "Qizil, oltin kashtali",
+   "Yashil, yulduzli naqshli"
+  ],
+  "q_en": "What does the famous Chust skullcap look like?",
+  "options_en": [
+   "Black with a white pepper-pod pattern",
+   "White with a blue floral pattern",
+   "Red with gold embroidery",
+   "Green with a star pattern"
+  ],
+  "quote_ru": "Особенно известна чустская тюбетейка: чёрная, с белым узором в виде стручков перца (qalampir)."
+ },
+ {
+  "course": "culture",
+  "n": 17,
+  "k": 3,
+  "q_ru": "Что означает надеть человеку на плечи новый чапан?",
+  "options_ru": [
+   "Знак большого уважения",
+   "Знак траура",
+   "Просьбу о помощи",
+   "Приглашение на свадьбу"
+  ],
+  "q_uz": "Kishining yelkasiga yangi chopon yopish nimani bildiradi?",
+  "options_uz": [
+   "Katta hurmat belgisini",
+   "Motam belgisini",
+   "Yordam soʻrashni",
+   "Toʻyga taklifni"
+  ],
+  "q_en": "What does putting a new chopon on someone's shoulders mean?",
+  "options_en": [
+   "A sign of great respect",
+   "A sign of mourning",
+   "A request for help",
+   "An invitation to a wedding"
+  ],
+  "quote_ru": "Надеть человеку на плечи новый чапан — знак большого уважения"
+ },
+ {
+  "course": "culture",
+  "n": 17,
+  "k": 4,
+  "q_ru": "Как называется пояс, которым подпоясывают чапан?",
+  "options_ru": [
+   "Белбог (belbogʻ)",
+   "Лозим (lozim)",
+   "Рўмол (roʻmol)",
+   "Кўйлак (koʻylak)"
+  ],
+  "q_uz": "Chopon qanday bel bogʻichi bilan bogʻlanadi?",
+  "options_uz": [
+   "Belbogʻ",
+   "Lozim",
+   "Roʻmol",
+   "Koʻylak"
+  ],
+  "q_en": "What is the sash tied around a chopon called?",
+  "options_en": [
+   "Belbogʻ",
+   "Lozim",
+   "Roʻmol",
+   "Koʻylak"
+  ],
+  "quote_ru": "Чапан традиционно подпоясывают поясом — белбог (belbogʻ)."
+ },
+ {
+  "course": "culture",
+  "n": 17,
+  "k": 5,
+  "q_ru": "Чем адрас отличается от атласа?",
+  "options_ru": [
+   "Он полушёлковый и более плотный",
+   "Он шерстяной и более тёплый",
+   "Он хлопковый и более тонкий",
+   "Он льняной и более лёгкий"
+  ],
+  "q_uz": "Adras atlasdan nimasi bilan farq qiladi?",
+  "options_uz": [
+   "Yarim ipak va qalinroq",
+   "Jundan va issiqroq",
+   "Paxtadan va yupqaroq",
+   "Zigʻirdan va yengilroq"
+  ],
+  "q_en": "How does adras differ from atlas?",
+  "options_en": [
+   "It is half-silk and denser",
+   "It is woollen and warmer",
+   "It is cotton and thinner",
+   "It is linen and lighter"
+  ],
+  "quote_ru": "Атлас — блестящая шёлковая ткань, адрас — полушёлковая, более плотная."
+ },
+ {
+  "course": "culture",
+  "n": 17,
+  "k": 6,
+  "q_ru": "Что значит слово абр (abr), которым называют стиль узора атласа и адраса?",
+  "options_ru": [
+   "«Облако»",
+   "«Река»",
+   "«Цветок»",
+   "«Солнце»"
+  ],
+  "q_uz": "Atlas va adras naqshi uslubini bildiruvchi abr soʻzi nimani anglatadi?",
+  "options_uz": [
+   "«Bulut»",
+   "«Daryo»",
+   "«Gul»",
+   "«Quyosh»"
+  ],
+  "q_en": "What does the word abr, the name of the atlas and adras pattern style, mean?",
+  "options_en": [
+   "\"Cloud\"",
+   "\"River\"",
+   "\"Flower\"",
+   "\"Sun\""
+  ],
+  "quote_ru": "Такой стиль называют абр (abr), что значит «облако»."
+ },
+ {
+  "course": "culture",
+  "n": 17,
+  "k": 7,
+  "q_ru": "Какой город — известный центр производства атласа?",
+  "options_ru": [
+   "Маргилан",
+   "Риштан",
+   "Чуст",
+   "Хива"
+  ],
+  "q_uz": "Qaysi shahar atlas ishlab chiqarishning mashhur markazi?",
+  "options_uz": [
+   "Margʻilon",
+   "Rishton",
+   "Chust",
+   "Xiva"
+  ],
+  "q_en": "Which city is a famous centre of atlas production?",
+  "options_en": [
+   "Margilan",
+   "Rishtan",
+   "Chust",
+   "Khiva"
+  ],
+  "quote_ru": "Известный центр производства атласа — город Маргилан (Margʻilon) в Ферганской долине"
+ },
+ {
+  "course": "culture",
+  "n": 17,
+  "k": 8,
+  "q_ru": "Что в традиционном женском костюме надевают под платье?",
+  "options_ru": [
+   "Шаровары",
+   "Жилет",
+   "Лёгкий халат",
+   "Платок"
+  ],
+  "q_uz": "Ayollarning anʼanaviy kiyimida koʻylak ostidan nima kiyiladi?",
+  "options_uz": [
+   "Lozim",
+   "Nimcha",
+   "Yengil toʻn",
+   "Roʻmol"
+  ],
+  "q_en": "What is worn under the dress in a traditional women's outfit?",
+  "options_en": [
+   "Wide trousers (lozim)",
+   "A vest",
+   "A light robe",
+   "A headscarf"
+  ],
+  "quote_ru": "свободное платье (koʻylak) из атласа или адраса, под ним — шаровары (lozim)"
+ },
+ {
+  "course": "culture",
+  "n": 18,
+  "k": 1,
+  "q_ru": "Как по-узбекски называется ученик мастера?",
+  "options_ru": [
+   "Shogird",
+   "Usta",
+   "Hunarmand",
+   "Temirchi"
+  ],
+  "q_uz": "Ustadan hunar oʻrganayotgan kishi qanday ataladi?",
+  "options_uz": [
+   "Shogird",
+   "Usta",
+   "Hunarmand",
+   "Temirchi"
+  ],
+  "q_en": "What is a master's apprentice called in Uzbek?",
+  "options_en": [
+   "Shogird",
+   "Usta",
+   "Hunarmand",
+   "Temirchi"
+  ],
+  "quote_ru": "от мастера, усто (usta), к ученику (shogird)"
+ },
+ {
+  "course": "culture",
+  "n": 18,
+  "k": 2,
+  "q_ru": "Для чего девушки традиционно вышивали сюзане?",
+  "options_ru": [
+   "К свадьбе, как часть приданого",
+   "К празднику урожая",
+   "Для продажи на базаре",
+   "Для украшения чайханы"
+  ],
+  "q_uz": "Anʼanaga koʻra qizlar suzanani nima uchun tikishgan?",
+  "options_uz": [
+   "Toʻyga sep sifatida",
+   "Hosil bayramiga",
+   "Bozorda sotish uchun",
+   "Choyxonani bezash uchun"
+  ],
+  "q_en": "Why did girls traditionally embroider suzanis?",
+  "options_en": [
+   "For the wedding, as part of the dowry",
+   "For the harvest festival",
+   "To sell at the bazaar",
+   "To decorate the teahouse"
+  ],
+  "quote_ru": "Традиционно девушки вместе с матерью и родственницами вышивали сюзане к свадьбе как часть приданого."
+ },
+ {
+  "course": "culture",
+  "n": 18,
+  "k": 3,
+  "q_ru": "Как выполняют золотое шитьё Бухары (zardoʻzlik)?",
+  "options_ru": [
+   "Золотыми нитями по бархату",
+   "Серебряными нитями по коже",
+   "Шёлковыми нитями по хлопку",
+   "Бисером по атласу"
+  ],
+  "q_uz": "Buxoro zardoʻzligi qanday bajariladi?",
+  "options_uz": [
+   "Baxmal ustiga oltin iplar bilan",
+   "Charm ustiga kumush iplar bilan",
+   "Paxta mato ustiga ipak iplar bilan",
+   "Atlas ustiga munchoq bilan"
+  ],
+  "q_en": "How is Bukhara gold embroidery (zardoʻzlik) done?",
+  "options_en": [
+   "With gold thread on velvet",
+   "With silver thread on leather",
+   "With silk thread on cotton",
+   "With beads on atlas"
+  ],
+  "quote_ru": "мастера вышивают золотыми нитями по бархату"
+ },
+ {
+  "course": "culture",
+  "n": 18,
+  "k": 4,
+  "q_ru": "По чему легко узнать керамику Риштана?",
+  "options_ru": [
+   "По сине-бирюзовой глазури",
+   "По красно-коричневой глине без глазури",
+   "По чёрно-белому узору",
+   "По золотой росписи"
+  ],
+  "q_uz": "Rishton sopol buyumlarini nimadan oson tanib olish mumkin?",
+  "options_uz": [
+   "Koʻk-feruza siridan",
+   "Sirsiz qizil-jigarrang loyidan",
+   "Qora-oq naqshidan",
+   "Oltin bezagidan"
+  ],
+  "q_en": "How can Rishtan ceramics easily be recognised?",
+  "options_en": [
+   "By the blue-turquoise glaze",
+   "By unglazed red-brown clay",
+   "By a black-and-white pattern",
+   "By gold painting"
+  ],
+  "quote_ru": "Керамику Риштана (Rishton) в Ферганской долине легко узнать по сине-бирюзовой глазури и растительным узорам."
+ },
+ {
+  "course": "culture",
+  "n": 18,
+  "k": 5,
+  "q_ru": "Что такое ганч (ganch)?",
+  "options_ru": [
+   "Особый гипсовый материал для резьбы",
+   "Глина для посуды",
+   "Плотная полушёлковая ткань",
+   "Металл для кузнечного дела"
+  ],
+  "q_uz": "Ganch nima?",
+  "options_uz": [
+   "Oʻymakorlik uchun gipssimon material",
+   "Idish uchun loy",
+   "Qalin yarim ipak mato",
+   "Temirchilik uchun metall"
+  ],
+  "q_en": "What is ganch?",
+  "options_en": [
+   "A special gypsum material for carving",
+   "Clay for pottery",
+   "A dense half-silk fabric",
+   "A metal for blacksmithing"
+  ],
+  "quote_ru": "резьба по ганчу (ganch), особому гипсовому материалу, и по дереву"
+ },
+ {
+  "course": "culture",
+  "n": 18,
+  "k": 6,
+  "q_ru": "В каком городе можно увидеть знаменитые резные деревянные колонны?",
+  "options_ru": [
+   "В Хиве",
+   "В Риштане",
+   "В Чусте",
+   "В Маргилане"
+  ],
+  "q_uz": "Mashhur oʻymakor yogʻoch ustunlarni qaysi shaharda koʻrish mumkin?",
+  "options_uz": [
+   "Xivada",
+   "Rishtonda",
+   "Chustda",
+   "Margʻilonda"
+  ],
+  "q_en": "In which city can you see the famous carved wooden columns?",
+  "options_en": [
+   "In Khiva",
+   "In Rishtan",
+   "In Chust",
+   "In Margilan"
+  ],
+  "quote_ru": "Знаменитые резные деревянные колонны можно увидеть, например, в Хиве."
+ },
+ {
+  "course": "culture",
+  "n": 18,
+  "k": 7,
+  "q_ru": "Чем известен город Чуст в Наманганской области?",
+  "options_ru": [
+   "Ножами",
+   "Керамикой",
+   "Золотым шитьём",
+   "Резьбой по ганчу"
+  ],
+  "q_uz": "Namangan viloyatidagi Chust shahri nimasi bilan mashhur?",
+  "options_uz": [
+   "Pichoqlari bilan",
+   "Sopol buyumlari bilan",
+   "Zardoʻzligi bilan",
+   "Ganch oʻymakorligi bilan"
+  ],
+  "q_en": "What is the town of Chust in Namangan region known for?",
+  "options_en": [
+   "Its knives",
+   "Its ceramics",
+   "Its gold embroidery",
+   "Its ganch carving"
+  ],
+  "quote_ru": "Город Чуст в Наманганской области известен ножами — Chust pichoq."
+ },
+ {
+  "course": "culture",
+  "n": 18,
+  "k": 8,
+  "q_ru": "Для кого нож считается хорошим подарком?",
+  "options_ru": [
+   "Для мужчины, особенно любящего готовить плов",
+   "Для невесты на свадьбу",
+   "Для ребёнка-школьника",
+   "Для учительницы на её праздник"
+  ],
+  "q_uz": "Pichoq kim uchun yaxshi sovgʻa hisoblanadi?",
+  "options_uz": [
+   "Erkak kishi uchun, ayniqsa osh pishirishni yaxshi koʻradigan",
+   "Toʻyda kelin uchun",
+   "Maktab oʻquvchisi bola uchun",
+   "Bayramida ustoz ayol uchun"
+  ],
+  "q_en": "For whom is a knife considered a good gift?",
+  "options_en": [
+   "For a man, especially one who likes cooking plov",
+   "For a bride at her wedding",
+   "For a schoolchild",
+   "For a female teacher on her holiday"
+  ],
+  "quote_ru": "нож считается хорошим подарком для мужчины, особенно для того, кто любит готовить плов"
+ },
+ {
+  "course": "culture",
+  "n": 19,
+  "k": 1,
+  "q_ru": "Что означает название Шашмаком (Shashmaqom)?",
+  "options_ru": [
+   "«Шесть макомов»",
+   "«Семь мелодий»",
+   "«Пять песен»",
+   "«Двенадцать ладов»"
+  ],
+  "q_uz": "Shashmaqom nomi qanday maʼnoni anglatadi?",
+  "options_uz": [
+   "«Olti maqom»",
+   "«Yetti kuy»",
+   "«Besh qoʻshiq»",
+   "«Oʻn ikki parda»"
+  ],
+  "q_en": "What does the name Shashmaqom mean?",
+  "options_en": [
+   "\"Six maqoms\"",
+   "\"Seven melodies\"",
+   "\"Five songs\"",
+   "\"Twelve modes\""
+  ],
+  "quote_ru": "Шашмаком (Shashmaqom), что значит «шесть макомов»"
+ },
+ {
+  "course": "culture",
+  "n": 19,
+  "k": 2,
+  "q_ru": "С каким городом тесно связан Шашмаком?",
+  "options_ru": [
+   "С Бухарой",
+   "С Хивой",
+   "С Маргиланом",
+   "С Чустом"
+  ],
+  "q_uz": "Shashmaqom qaysi shahar bilan chambarchas bogʻliq?",
+  "options_uz": [
+   "Buxoro",
+   "Xiva",
+   "Margʻilon",
+   "Chust"
+  ],
+  "q_en": "Which city is Shashmaqom closely linked with?",
+  "options_en": [
+   "Bukhara",
+   "Khiva",
+   "Margilan",
+   "Chust"
+  ],
+  "quote_ru": "Он тесно связан с Бухарой"
+ },
+ {
+  "course": "culture",
+  "n": 19,
+  "k": 3,
+  "q_ru": "Сколько струн у дутара?",
+  "options_ru": [
+   "Две",
+   "Три",
+   "Четыре",
+   "Пять"
+  ],
+  "q_uz": "Dutorning nechta tori bor?",
+  "options_uz": [
+   "Ikkita",
+   "Uchta",
+   "Toʻrtta",
+   "Beshta"
+  ],
+  "q_en": "How many strings does the dutor have?",
+  "options_en": [
+   "Two",
+   "Three",
+   "Four",
+   "Five"
+  ],
+  "quote_ru": "Дутар (dutor) — струнный инструмент с длинным грифом и двумя струнами"
+ },
+ {
+  "course": "culture",
+  "n": 19,
+  "k": 4,
+  "q_ru": "Что такое дойра (doira)?",
+  "options_ru": [
+   "Большой бубен с металлическими колечками",
+   "Длинная медная труба",
+   "Струнный инструмент с длинным грифом",
+   "Духовой инструмент со звонким голосом"
+  ],
+  "q_uz": "Doira nima?",
+  "options_uz": [
+   "Metall halqachali katta childirma",
+   "Uzun mis surnay",
+   "Uzun dastali torli cholgʻu",
+   "Jarangdor ovozli puflama cholgʻu"
+  ],
+  "q_en": "What is a doira?",
+  "options_en": [
+   "A large frame drum with metal rings",
+   "A long copper trumpet",
+   "A long-necked string instrument",
+   "A wind instrument with a ringing voice"
+  ],
+  "quote_ru": "Дойра (doira) — большой бубен с металлическими колечками внутри обода"
+ },
+ {
+  "course": "culture",
+  "n": 19,
+  "k": 5,
+  "q_ru": "Что понимают все вокруг, когда вместе звучат карнай, сурнай и дойра?",
+  "options_ru": [
+   "Начинается праздник, свадьба или гулянье",
+   "Начинается месяц поста",
+   "Начинаются поминки",
+   "Закрывается базар"
+  ],
+  "q_uz": "Karnay, surnay va doira birga yangraganda atrofdagilar nimani tushunadi?",
+  "options_uz": [
+   "Bayram, toʻy yoki xalq sayli boshlanmoqda",
+   "Roʻza oyi boshlanmoqda",
+   "Xotira marosimi boshlanmoqda",
+   "Bozor yopilmoqda"
+  ],
+  "q_en": "What does everyone understand when the karnay, surnay and doira sound together?",
+  "options_en": [
+   "A celebration, wedding or festival is starting",
+   "The month of fasting is starting",
+   "A memorial gathering is starting",
+   "The bazaar is closing"
+  ],
+  "quote_ru": "Когда вместе звучат карнай, сурнай и дойра, все вокруг понимают: начинается праздник, свадьба или народное гулянье."
+ },
+ {
+  "course": "culture",
+  "n": 19,
+  "k": 6,
+  "q_ru": "Какой длинногрифный струнный инструмент особенно важен при исполнении макомов?",
+  "options_ru": [
+   "Танбур",
+   "Карнай",
+   "Сурнай",
+   "Дойра"
+  ],
+  "q_uz": "Maqomlarni ijro etishda qaysi uzun dastali torli cholgʻu ayniqsa muhim?",
+  "options_uz": [
+   "Tanbur",
+   "Karnay",
+   "Surnay",
+   "Doira"
+  ],
+  "q_en": "Which long-necked string instrument is especially important in performing maqoms?",
+  "options_en": [
+   "Tanbur",
+   "Karnay",
+   "Surnay",
+   "Doira"
+  ],
+  "quote_ru": "Танбур (tanbur) — тоже длинногрифный струнный инструмент, он особенно важен при исполнении макомов."
+ },
+ {
+  "course": "culture",
+  "n": 19,
+  "k": 7,
+  "q_ru": "Какого региона самый известный танец — лазги (lazgi)?",
+  "options_ru": [
+   "Хорезма",
+   "Ферганы",
+   "Бухары",
+   "Ташкента"
+  ],
+  "q_uz": "Lazgi qaysi hududning eng mashhur raqsi?",
+  "options_uz": [
+   "Xorazm",
+   "Fargʻona",
+   "Buxoro",
+   "Toshkent"
+  ],
+  "q_en": "Lazgi is the most famous dance of which region?",
+  "options_en": [
+   "Khorezm",
+   "Fergana",
+   "Bukhara",
+   "Tashkent"
+  ],
+  "quote_ru": "Самый известный хорезмский танец — лазги (lazgi)."
+ },
+ {
+  "course": "culture",
+  "n": 19,
+  "k": 8,
+  "q_ru": "Как развивается танец лазги?",
+  "options_ru": [
+   "Начинается медленно, а затем всё ускоряется",
+   "Начинается быстро и постепенно замедляется",
+   "От начала до конца исполняется медленно",
+   "Исполняется без музыки, под хлопки"
+  ],
+  "q_uz": "Lazgi raqsi qanday rivojlanib boradi?",
+  "options_uz": [
+   "Sekin boshlanadi, keyin tobora tezlashadi",
+   "Tez boshlanadi, keyin asta-sekin sekinlashadi",
+   "Boshidan oxirigacha sekin ijro etiladi",
+   "Musiqasiz, faqat qarsak ostida ijro etiladi"
+  ],
+  "q_en": "How does the lazgi dance develop?",
+  "options_en": [
+   "It starts slowly and then gets faster and faster",
+   "It starts fast and gradually slows down",
+   "It is performed slowly from start to finish",
+   "It is performed without music, to clapping only"
+  ],
+  "quote_ru": "Он начинается медленно, а затем становится всё быстрее и веселее"
+ },
+ {
+  "course": "culture",
+  "n": 20,
+  "k": 1,
+  "q_ru": "Что такое узелок (tugun), в котором приносят гостинцы?",
+  "options_ru": [
+   "Красивый платок с завязанными лепёшками и сладостями",
+   "Глиняное блюдо с крышкой",
+   "Плетёная корзина для фруктов",
+   "Деревянный сундучок"
+  ],
+  "q_uz": "Mehmonga sovgʻa olib boriladigan tugun nima?",
+  "options_uz": [
+   "Ichiga non va shirinliklar tugilgan chiroyli roʻmol",
+   "Qopqoqli sopol lagan",
+   "Mevalar uchun toʻqima savat",
+   "Yogʻoch sandiqcha"
+  ],
+  "q_en": "What is a tugun, in which gifts are brought?",
+  "options_en": [
+   "A pretty cloth with flatbread and sweets tied inside",
+   "A clay dish with a lid",
+   "A wicker basket for fruit",
+   "A small wooden chest"
+  ],
+  "quote_ru": "Гостинцы иногда приносят в узелке (tugun) — красивом платке, в который завязаны лепёшки и сладости."
+ },
+ {
+  "course": "culture",
+  "n": 20,
+  "k": 2,
+  "q_ru": "Кому передают гостинец при входе в дом?",
+  "options_ru": [
+   "Хозяйке",
+   "Самому старшему мужчине",
+   "Детям хозяев",
+   "Соседям хозяев"
+  ],
+  "q_uz": "Uyga kirganda sovgʻa kimga topshiriladi?",
+  "options_uz": [
+   "Uy bekasiga",
+   "Eng katta yoshdagi erkakka",
+   "Uy egalarining bolalariga",
+   "Uy egalarining qoʻshnilariga"
+  ],
+  "q_en": "Who is the gift handed to on entering the house?",
+  "options_en": [
+   "The hostess",
+   "The oldest man",
+   "The hosts' children",
+   "The hosts' neighbours"
+  ],
+  "quote_ru": "Гостинец передают хозяйке при входе"
+ },
+ {
+  "course": "culture",
+  "n": 20,
+  "k": 3,
+  "q_ru": "Что главное в подарке?",
+  "options_ru": [
+   "Внимание и уважение к хозяевам",
+   "Высокая цена",
+   "Большой размер",
+   "Красивая упаковка"
+  ],
+  "q_uz": "Sovgʻada eng muhimi nima?",
+  "options_uz": [
+   "Mezbonlarga eʼtibor va hurmat",
+   "Yuqori baho",
+   "Katta hajm",
+   "Chiroyli oʻram"
+  ],
+  "q_en": "What matters most in a gift?",
+  "options_en": [
+   "Attention and respect for the hosts",
+   "A high price",
+   "A large size",
+   "Beautiful wrapping"
+  ],
+  "quote_ru": "Главное в подарке не цена, а внимание и уважение к хозяевам."
+ },
+ {
+  "course": "culture",
+  "n": 20,
+  "k": 4,
+  "q_ru": "Что часто привозят в подарок из Самарканда?",
+  "options_ru": [
+   "Самаркандские лепёшки",
+   "Риштанскую керамику",
+   "Чустские ножи",
+   "Маргиланский атлас"
+  ],
+  "q_uz": "Samarqanddan koʻpincha qanday sovgʻa olib kelishadi?",
+  "options_uz": [
+   "Samarqand nonini",
+   "Rishton sopolini",
+   "Chust pichogʻini",
+   "Margʻilon atlasini"
+  ],
+  "q_en": "What is often brought back as a gift from Samarkand?",
+  "options_en": [
+   "Samarkand flatbread",
+   "Rishtan ceramics",
+   "Chust knives",
+   "Margilan atlas"
+  ],
+  "quote_ru": "из Самарканда часто везут знаменитые самаркандские лепёшки"
+ },
+ {
+  "course": "culture",
+  "n": 20,
+  "k": 5,
+  "q_ru": "Как возвращают посуду, в которой соседи принесли угощение?",
+  "options_ru": [
+   "С ответным угощением",
+   "Пустой и чисто вымытой",
+   "Вместе с деньгами за угощение",
+   "Только через неделю"
+  ],
+  "q_uz": "Qoʻshnilar taom olib kelgan idish qanday qaytariladi?",
+  "options_uz": [
+   "Javob taom bilan",
+   "Boʻsh va toza yuvilgan holda",
+   "Taom uchun pul bilan birga",
+   "Faqat bir haftadan keyin"
+  ],
+  "q_en": "How is a dish returned after neighbours have brought food in it?",
+  "options_en": [
+   "With a treat in return",
+   "Empty and washed clean",
+   "Together with money for the food",
+   "Only a week later"
+  ],
+  "quote_ru": "посуду возвращают с ответным угощением"
+ },
+ {
+  "course": "culture",
+  "n": 20,
+  "k": 6,
+  "q_ru": "Что показывают гостинцы, привезённые из поездки?",
+  "options_ru": [
+   "Что человек помнил о близких и в дороге",
+   "Что поездка была очень дорогой",
+   "Что человек скоро снова уедет",
+   "Что человек побывал за границей"
+  ],
+  "q_uz": "Safardan olib kelingan sovgʻalar nimani koʻrsatadi?",
+  "options_uz": [
+   "Kishi safarda ham yaqinlarini yodda tutganini",
+   "Safar juda qimmatga tushganini",
+   "Kishi tez orada yana ketishini",
+   "Kishi chet elda boʻlganini"
+  ],
+  "q_en": "What do gifts brought back from a trip show?",
+  "options_en": [
+   "That the person remembered loved ones while away",
+   "That the trip was very expensive",
+   "That the person will soon leave again",
+   "That the person has been abroad"
+  ],
+  "quote_ru": "Такие подарки показывают, что человек помнил о близких и в дороге."
+ },
+ {
+  "course": "culture",
+  "n": 20,
+  "k": 7,
+  "q_ru": "Как ведут себя на праздники гости, которым предстоит обойти много домов?",
+  "options_ru": [
+   "Выпивают пиалу чая, поздравляют и идут дальше",
+   "Остаются у хозяев до вечера",
+   "Ждут, пока подадут плов",
+   "Остаются у хозяев ночевать"
+  ],
+  "q_uz": "Bayramda koʻp xonadonga borishi kerak boʻlgan mehmonlar qanday yoʻl tutadi?",
+  "options_uz": [
+   "Bir piyola choy ichib, tabriklab, yoʻlida davom etadi",
+   "Mezbonlarnikida kechgacha qoladi",
+   "Osh tortilishini kutadi",
+   "Mezbonlarnikida tunab qoladi"
+  ],
+  "q_en": "On holidays, how do guests who have many homes to visit behave?",
+  "options_en": [
+   "They drink a bowl of tea, congratulate the hosts and move on",
+   "They stay with the hosts until evening",
+   "They wait until plov is served",
+   "They stay overnight with the hosts"
+  ],
+  "quote_ru": "выпивают пиалу чая, поздравляют хозяев и идут дальше"
+ },
+ {
+  "course": "culture",
+  "n": 20,
+  "k": 8,
+  "q_ru": "Что принято делать, если в доме, куда идут в гости, есть дети?",
+  "options_ru": [
+   "Взять для них что-нибудь отдельно",
+   "Прийти без гостинца",
+   "Отложить визит до праздника",
+   "Прийти поздно вечером"
+  ],
+  "q_uz": "Mehmonga boriladigan uyda bolalar boʻlsa, nima qilish odat?",
+  "options_uz": [
+   "Ular uchun alohida biror narsa olish",
+   "Sovgʻasiz borish",
+   "Tashrifni bayramgacha qoldirish",
+   "Kechqurun kech borish"
+  ],
+  "q_en": "What is customary if there are children in the home you are visiting?",
+  "options_en": [
+   "To bring something separately for them",
+   "To come without a gift",
+   "To postpone the visit until a holiday",
+   "To come late in the evening"
+  ],
+  "quote_ru": "Если в доме есть дети, для них берут что-нибудь отдельно."
  }
 ]

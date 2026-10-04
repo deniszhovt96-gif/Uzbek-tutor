@@ -6,7 +6,7 @@ name: Import Courses (импорт курсов)
 on:
   push:
     branches: [main]
-    paths: ['data/source/grammar.xlsx', 'data/source/history.xlsx', 'data/source/civics.xlsx',
+    paths: ['data/source/grammar.xlsx', 'data/source/history.xlsx', 'data/source/civics.xlsx', 'data/source/culture.xlsx',
             'data/quiz/questions.json', 'scripts/build_courses.py', '.github/workflows/import-courses.yml']
   workflow_dispatch:
 

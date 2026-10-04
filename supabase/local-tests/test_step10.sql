@@ -18,7 +18,7 @@ end $$;
 create temp table u as select id from public.course_units where course_id = 'history' and source_no = 12;
 grant select on u to authenticated;
 
-select pg_temp.check((select count(*) = 454 from public.unit_tasks where kind = 'choice'), '454 вопроса загружены черновиками');
+select pg_temp.check((select count(*) = 614 from public.unit_tasks where kind = 'choice'), '614 вопросов загружены (с культурой)');
 select pg_temp.check((select bool_and(source_quote is not null and jsonb_array_length(options->'ru') = 4
                                       and jsonb_array_length(options->'uz') = 4 and jsonb_array_length(options->'en') = 4)
                       from public.unit_tasks where kind = 'choice'), 'у каждого вопроса цитата и по 4 варианта на трёх языках');
@@ -31,7 +31,7 @@ select pg_temp.check(public.admin_review_summary()->>'error' = 'forbidden', 'н�
 select pg_temp.check(public.admin_set_question(null, 'approved', (select id from u))->>'error' = 'forbidden', 'не администратор не может одобрять');
 
 set request.jwt.claim.sub = 'abcdabcd-0000-0000-0000-000000000001';
-select pg_temp.check((public.admin_review_summary()->>'draft')::int = 454, 'администратор: 454 черновика');
+select pg_temp.check((public.admin_review_summary()->>'draft')::int = 614, 'администратор: 614 черновиков');
 select pg_temp.check(jsonb_array_length(public.admin_unit_questions((select id from u))->'questions') = 8, 'администратор: 8 вопросов темы с цитатами');
 select pg_temp.check((public.admin_set_question((select (q->>'id')::int from jsonb_array_elements(public.admin_unit_questions((select id from u))->'questions') q limit 1), 'rejected')->>'updated')::int = 1,
   'отклонить один вопрос');

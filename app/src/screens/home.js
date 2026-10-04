@@ -106,6 +106,7 @@ export async function renderHome(app) {
     tile('grammar', t('secGrammar'), () => app.go('course', { course: 'grammar' })),
     tile('history', t('secHistory'), () => app.go('course', { course: 'history' })),
     tile('civics', t('secCivics'), () => app.go('course', { course: 'civics' })),
+    tile('culture', t('secCulture'), () => app.go('course', { course: 'culture' }), { badge: lockBadge('culture') }),
     tile('dictionary', t('secDictionary'), () => app.go('dictionary')),
     tile('progress', t('secProgress'), () => app.go('progress')),
     tile('settings', t('secSettings'), () => app.tab('settings')));

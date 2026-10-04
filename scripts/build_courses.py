@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Курсы «Грамматика», «История», «Обществознание»: xlsx → SQL (повторный запуск безопасен, прогресс сохраняется).
+"""Курсы «Грамматика», «История», «Обществознание», «Культура»: xlsx → SQL (повторный запуск безопасен, прогресс сохраняется).
 
 Запуск:  python3 scripts/build_courses.py data/source data/build/courses.sql
 Файлы:   data/source/grammar.xlsx, history.xlsx, civics.xlsx (имена — как ниже в SOURCES).
@@ -17,7 +17,7 @@ from pathlib import Path
 
 import openpyxl
 
-SOURCES = {'grammar': 'grammar.xlsx', 'history': 'history.xlsx', 'civics': 'civics.xlsx'}
+SOURCES = {'grammar': 'grammar.xlsx', 'history': 'history.xlsx', 'civics': 'civics.xlsx', 'culture': 'culture.xlsx'}
 
 SECTION_TR = {
     'Фонетика': ('Fonetika', 'Phonetics'),
@@ -29,10 +29,15 @@ SECTION_TR = {
     'Право в повседневной жизни': ('Kundalik hayotda huquq', 'Law in everyday life'),
     'Для иностранцев в Узбекистане': ('Oʻzbekistondagi chet elliklar uchun', 'For foreigners in Uzbekistan'),
     'Обществознание': ('Jamiyatshunoslik', 'Social studies'),
+    'Гостеприимство и повседневная жизнь': ('Mehmondoʻstlik va kundalik hayot', 'Hospitality and everyday life'),
+    'Семейные обряды': ('Oilaviy marosimlar', 'Family rituals'),
+    'Праздники': ('Bayramlar', 'Holidays'),
+    'Ремёсла, одежда и искусство': ('Hunarmandchilik, kiyim va sanʼat', 'Crafts, clothing and art'),
 }
 SECTION_ORDER = {
     'grammar': ['Фонетика', 'Морфология: имя', 'Морфология: местоимения', 'Морфология: глагол', 'Синтаксис'],
     'civics': ['Государство и право', 'Право в повседневной жизни', 'Для иностранцев в Узбекистане', 'Обществознание'],
+    'culture': ['Гостеприимство и повседневная жизнь', 'Семейные обряды', 'Праздники', 'Ремёсла, одежда и искусство'],
 }
 
 # Названия тем грамматики на узбекском и английском (в файле одно поле «Тема (RU / UZ / EN)»)

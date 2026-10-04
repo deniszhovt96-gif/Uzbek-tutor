@@ -19,8 +19,8 @@ create temp table ids as select course_id, source_no, id from public.course_unit
 grant select on ids to authenticated;
 
 -- контент
-select pg_temp.check((select count(*) = 62 from public.course_units), '62 темы: грамматика 20, история 22, обществознание 20');
-select pg_temp.check((select count(*) = 310 from public.unit_tasks where status = 'approved' and kind = 'open'), '310 заданий (по 5 на тему)');
+select pg_temp.check((select count(*) = 82 from public.course_units), '82 темы: грамматика 20, история 22, обществознание 20, культура 20');
+select pg_temp.check((select count(*) = 410 from public.unit_tasks where status = 'approved' and kind = 'open'), '410 заданий (по 5 на тему)');
 select pg_temp.check((select bool_and(express_ru is not null and express_uz is not null and express_en is not null
                                      and detailed_ru is not null and detailed_uz is not null and detailed_en is not null) from public.course_units),
   'у каждой темы кратко и подробно на трёх языках');

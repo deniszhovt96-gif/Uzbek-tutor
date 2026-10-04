@@ -663,7 +663,7 @@ Object.assign(ru, {
   manageSub: 'Управлять',
   freeLimits: '1 сеанс в день, 15 слов',
   featBasic: ['Безлимитное изучение слов, до 60 слов за сеанс', 'Повторение в любое время', 'Тренировка и игры', 'Грамматика полностью', 'Тесты уровней'],
-  featAdvanced: ['Всё из «Базовой»', 'История Узбекистана', 'Обществознание и право', 'Филворд', 'Расширенная статистика'],
+  featAdvanced: ['Всё из «Базовой»', 'История Узбекистана', 'Обществознание и право', 'Культура: традиции и обычаи', 'Филворд', 'Расширенная статистика'],
   perMonth: (n) => `${n} ⭐ в месяц`,
   payStars: (n) => `Оплатить ${n} ⭐`,
   otherPay: (uzs, usd) => `Оплата в сумах (${uzs} сум) или долларах ($${usd}) — через администратора: напишите боту /paysupport, после оплаты вы получите код подписки.`,
@@ -682,7 +682,7 @@ Object.assign(uz, {
   manageSub: 'Boshqarish',
   freeLimits: 'Kuniga 1 mashgʻulot, 15 soʻz',
   featBasic: ['Cheksiz soʻz oʻrganish, mashgʻulotda 60 tagacha soʻz', 'Istalgan vaqtda takrorlash', 'Mashq va oʻyinlar', 'Grammatika toʻliq', 'Daraja testlari'],
-  featAdvanced: ['«Asosiy»dagi hammasi', 'Oʻzbekiston tarixi', 'Jamiyatshunoslik va huquq', 'Filvord', 'Kengaytirilgan statistika'],
+  featAdvanced: ['«Asosiy»dagi hammasi', 'Oʻzbekiston tarixi', 'Jamiyatshunoslik va huquq', 'Madaniyat: urf-odat va anʼanalar', 'Filvord', 'Kengaytirilgan statistika'],
   perMonth: (n) => `oyiga ${n} ⭐`,
   payStars: (n) => `${n} ⭐ toʻlash`,
   otherPay: (uzs, usd) => `Soʻmda (${uzs} soʻm) yoki dollarda ($${usd}) toʻlash — administrator orqali: botga /paysupport yozing, toʻlovdan soʻng obuna kodini olasiz.`,
@@ -701,7 +701,7 @@ Object.assign(en, {
   manageSub: 'Manage',
   freeLimits: '1 session a day, 15 words',
   featBasic: ['Unlimited word learning, up to 60 words per session', 'Review any time', 'Practice and games', 'Full grammar', 'Level tests'],
-  featAdvanced: ['Everything in Basic', 'History of Uzbekistan', 'Civics and law', 'Word search', 'Extended statistics'],
+  featAdvanced: ['Everything in Basic', 'History of Uzbekistan', 'Civics and law', 'Culture: traditions and customs', 'Word search', 'Extended statistics'],
   perMonth: (n) => `${n} ⭐ per month`,
   payStars: (n) => `Pay ${n} ⭐`,
   otherPay: (uzs, usd) => `To pay in UZS (${uzs}) or USD ($${usd}), contact the administrator: send /paysupport to the bot and you will get a subscription code after payment.`,
@@ -799,7 +799,7 @@ Object.assign(en, {
 // ---------------------------------------------------------------- шаг 11: лимиты подписок, экспресс-проверка, контрольная
 Object.assign(ru, {
   featBasic: ['Изучение слов: лёгкая программа — 30 слов, до 20 новых', 'До 2 сеансов с новыми словами в день', 'Повторение без ограничений', 'Тренировка и игры', 'Грамматика полностью', 'Тесты уровней'],
-  featAdvanced: ['Всё из «Базовой»', 'Средняя и интенсивная программа (до 60 слов, до 30 новых)', 'Сеансы без ограничений', 'История Узбекистана', 'Обществознание и право', 'Филворд', 'Расширенная статистика'],
+  featAdvanced: ['Всё из «Базовой»', 'Средняя и интенсивная программа (до 60 слов, до 30 новых)', 'Сеансы без ограничений', 'История Узбекистана', 'Обществознание и право', 'Культура: традиции и обычаи', 'Филворд', 'Расширенная статистика'],
   nextPlan: (tier, date) => `Затем: «${tier}» до ${date}`,
   basicIntensityNote: 'В «Базовой» — лёгкая программа. Средняя и интенсивная доступны в «Продвинутой».',
   dailyLimitBasic: (n) => `Сеансы с новыми словами на сегодня пройдены (${n} из ${n}). Повторять слова можно без ограничений, новые — завтра.`,
@@ -838,7 +838,7 @@ Object.assign(ru, {
 });
 Object.assign(uz, {
   featBasic: ['Soʻz oʻrganish: yengil dastur — 30 soʻz, 20 tagacha yangi', 'Kuniga 2 tagacha yangi soʻzli mashgʻulot', 'Cheksiz takrorlash', 'Mashq va oʻyinlar', 'Grammatika toʻliq', 'Daraja testlari'],
-  featAdvanced: ['«Asosiy»dagi hammasi', 'Oʻrta va jadal dastur (60 tagacha soʻz, 30 tagacha yangi)', 'Cheksiz mashgʻulotlar', 'Oʻzbekiston tarixi', 'Jamiyatshunoslik va huquq', 'Filvord', 'Kengaytirilgan statistika'],
+  featAdvanced: ['«Asosiy»dagi hammasi', 'Oʻrta va jadal dastur (60 tagacha soʻz, 30 tagacha yangi)', 'Cheksiz mashgʻulotlar', 'Oʻzbekiston tarixi', 'Jamiyatshunoslik va huquq', 'Madaniyat: urf-odat va anʼanalar', 'Filvord', 'Kengaytirilgan statistika'],
   nextPlan: (tier, date) => `Soʻng: «${tier}» ${date} gacha`,
   basicIntensityNote: '«Asosiy» obunada — yengil dastur. Oʻrta va jadal dastur «Kengaytirilgan»da.',
   dailyLimitBasic: (n) => `Bugungi yangi soʻzli mashgʻulotlar tugadi (${n}/${n}). Takrorlash cheksiz, yangi soʻzlar — ertaga.`,
@@ -874,7 +874,7 @@ Object.assign(uz, {
 });
 Object.assign(en, {
   featBasic: ['Word learning: light plan — 30 words, up to 20 new', 'Up to 2 sessions with new words a day', 'Unlimited review', 'Practice and games', 'Full grammar', 'Level tests'],
-  featAdvanced: ['Everything in Basic', 'Medium and intensive plans (up to 60 words, 30 new)', 'Unlimited sessions', 'History of Uzbekistan', 'Civics and law', 'Word search', 'Extended statistics'],
+  featAdvanced: ['Everything in Basic', 'Medium and intensive plans (up to 60 words, 30 new)', 'Unlimited sessions', 'History of Uzbekistan', 'Civics and law', 'Culture: traditions and customs', 'Word search', 'Extended statistics'],
   nextPlan: (tier, date) => `Then: ${tier} until ${date}`,
   basicIntensityNote: 'Basic includes the light plan. Medium and intensive plans are in Advanced.',
   dailyLimitBasic: (n) => `Today’s sessions with new words are done (${n} of ${n}). Review is unlimited; new words tomorrow.`,

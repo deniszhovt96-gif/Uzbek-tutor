@@ -21,9 +21,11 @@ const INTENSITY = {
   intense: { session_size: 60, new_max: 30 },
 };
 
-export async function renderSettings(app) {
-  mount(spinner(t('loading')));
-  const me = await app.refreshMe();
+export async function renderSettings(app, params = {}) {
+  // после изменения настройки — перерисовка на месте: без экрана загрузки и без прокрутки наверх
+  const keep = Boolean(params.keep && app.me);
+  if (!keep) mount(spinner(t('loading')));
+  const me = keep ? app.me : await app.refreshMe();
   const settings = me.settings || {};
   // «Базовая» — только лёгкая интенсивность; средняя и интенсивная — в «Продвинутой»
   const intensity = me.tier === 'advanced' ? settings.intensity || 'light' : 'light';
@@ -35,7 +37,7 @@ export async function renderSettings(app) {
     app.me = await rpc('update_settings', { p_ui_lang: lang, p_settings: patch });
     if (lang) setLang(lang);
     haptic('success');
-    renderSettings(app);
+    renderSettings(app, { keep: true });
   };
 
   const seg = (items, current, onPick) => h('div', { class: 'segmented' }, items.map(([value, label]) =>
@@ -116,5 +118,5 @@ export async function renderSettings(app) {
       h('div', {},
         h('b', {}, tierName(me.tier)),
         h('div', { class: 'small muted' }, me.tier === 'free' ? t('freeLimits') : t('tierUntil', formatDate(me.tier_ends_at)))),
-      h('span', { class: 'chip accent' }, t(me.tier === 'free' ? 'upgrade' : 'manageSub')))));
+      h('span', { class: 'chip accent' }, t(me.tier === 'free' ? 'upgrade' : 'manageSub')))), { keepScroll: keep });
 }

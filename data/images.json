@@ -645,5 +645,407 @@
     "caption_en": "Tashkent Metro"
    }
   ]
+ },
+ "culture": {
+  "1": [
+   {
+    "q": "Uzbek dastarkhan hospitality",
+    "must": [
+     "uzbek"
+    ],
+    "caption_ru": "Накрытый дастархан ждёт гостей",
+    "caption_uz": "Mehmonlarni kutayotgan tuzalgan dasturxon",
+    "caption_en": "A laid dasturxon awaiting guests"
+   },
+   {
+    "q": "Uzbek hospitality table",
+    "must": [
+     "uzbek"
+    ],
+    "caption_ru": "Накрытый дастархан ждёт гостей",
+    "caption_uz": "Mehmonlarni kutayotgan tuzalgan dasturxon",
+    "caption_en": "A laid dasturxon awaiting guests"
+   }
+  ],
+  "2": [
+   {
+    "q": "Uzbek tea piyola teapot",
+    "must": [
+     "tea"
+    ],
+    "caption_ru": "Чайник и пиалы с зелёным чаем",
+    "caption_uz": "Choynak va koʻk choyli piyolalar",
+    "caption_en": "A teapot and bowls of green tea"
+   },
+   {
+    "q": "Uzbek teapot",
+    "must": [
+     "teapot"
+    ],
+    "caption_ru": "Чайник и пиалы с зелёным чаем",
+    "caption_uz": "Choynak va koʻk choyli piyolalar",
+    "caption_en": "A teapot and bowls of green tea"
+   }
+  ],
+  "3": [
+   {
+    "q": "Uzbek non bread tandir",
+    "must": [
+     "bread"
+    ],
+    "caption_ru": "Узбекские лепёшки с узором чекича",
+    "caption_uz": "Chekich naqshli oʻzbek nonlari",
+    "caption_en": "Uzbek round loaves with stamped patterns"
+   },
+   {
+    "q": "Uzbek bread non",
+    "must": [
+     "non"
+    ],
+    "caption_ru": "Узбекские лепёшки с узором чекича",
+    "caption_uz": "Chekich naqshli oʻzbek nonlari",
+    "caption_en": "Uzbek round loaves with stamped patterns"
+   }
+  ],
+  "4": [
+   {
+    "q": "Uzbek plov kazan",
+    "must": [
+     "plov"
+    ],
+    "caption_ru": "Плов готовится в большом казане",
+    "caption_uz": "Katta qozonda osh pishmoqda",
+    "caption_en": "Plov cooking in a large cauldron"
+   },
+   {
+    "q": "Uzbek pilaf",
+    "must": [
+     "pilaf"
+    ],
+    "caption_ru": "Плов готовится в большом казане",
+    "caption_uz": "Katta qozonda osh pishmoqda",
+    "caption_en": "Plov cooking in a large cauldron"
+   }
+  ],
+  "5": [
+   {
+    "q": "Uzbekistan mahalla street",
+    "must": [
+     "mahalla"
+    ],
+    "caption_ru": "Улица традиционной махалли",
+    "caption_uz": "Anʼanaviy mahalla koʻchasi",
+    "caption_en": "A street in a traditional mahalla"
+   },
+   {
+    "q": "Tashkent old city street",
+    "must": [
+     "tashkent"
+    ],
+    "caption_ru": "Улица традиционной махалли",
+    "caption_uz": "Anʼanaviy mahalla koʻchasi",
+    "caption_en": "A street in a traditional mahalla"
+   }
+  ],
+  "6": [
+   {
+    "q": "Uzbek elderly men",
+    "must": [
+     "uzbek"
+    ],
+    "caption_ru": "Пожилые узбеки беседуют за чаем",
+    "caption_uz": "Keksa oʻzbeklar choy ustida suhbatlashmoqda",
+    "caption_en": "Elderly Uzbek men talking over tea"
+   },
+   {
+    "q": "Uzbek old man",
+    "must": [
+     "uzbek"
+    ],
+    "caption_ru": "Пожилые узбеки беседуют за чаем",
+    "caption_uz": "Keksa oʻzbeklar choy ustida suhbatlashmoqda",
+    "caption_en": "Elderly Uzbek men talking over tea"
+   }
+  ],
+  "7": [
+   {
+    "q": "Uzbek beshik cradle",
+    "must": [
+     "cradle"
+    ],
+    "caption_ru": "Традиционная деревянная колыбель — бешик",
+    "caption_uz": "Anʼanaviy yogʻoch beshik",
+    "caption_en": "A traditional wooden beshik cradle"
+   },
+   {
+    "q": "Uzbek cradle",
+    "must": [
+     "cradle"
+    ],
+    "caption_ru": "Традиционная деревянная колыбель — бешик",
+    "caption_uz": "Anʼanaviy yogʻoch beshik",
+    "caption_en": "A traditional wooden beshik cradle"
+   }
+  ],
+  "8": [
+   {
+    "q": "Uzbek non bread",
+    "must": [
+     "bread"
+    ],
+    "caption_ru": "Узбекская лепёшка — символ согласия",
+    "caption_uz": "Oʻzbek noni — rozilik ramzi",
+    "caption_en": "Uzbek flatbread, a symbol of agreement"
+   },
+   {
+    "q": "Uzbek lepyoshka bread",
+    "must": [
+     "bread"
+    ],
+    "caption_ru": "Узбекская лепёшка — символ согласия",
+    "caption_uz": "Oʻzbek noni — rozilik ramzi",
+    "caption_en": "Uzbek flatbread, a symbol of agreement"
+   }
+  ],
+  "9": [
+   {
+    "q": "Uzbek wedding",
+    "must": [
+     "wedding"
+    ],
+    "caption_ru": "Узбекская свадьба: невеста и жених",
+    "caption_uz": "Oʻzbek toʻyi: kelin va kuyov",
+    "caption_en": "An Uzbek wedding: bride and groom"
+   },
+   {
+    "q": "Uzbek bride",
+    "must": [
+     "bride"
+    ],
+    "caption_ru": "Узбекская свадьба: невеста и жених",
+    "caption_uz": "Oʻzbek toʻyi: kelin va kuyov",
+    "caption_en": "An Uzbek wedding: bride and groom"
+   }
+  ],
+  "10": [
+   {
+    "q": "Uzbek family",
+    "must": [
+     "uzbek"
+    ],
+    "caption_ru": "Узбекская семья нескольких поколений",
+    "caption_uz": "Bir necha avlodli oʻzbek oilasi",
+    "caption_en": "An Uzbek family of several generations"
+   },
+   {
+    "q": "Uzbek family",
+    "must": [
+     "family"
+    ],
+    "caption_ru": "Узбекская семья нескольких поколений",
+    "caption_uz": "Bir necha avlodli oʻzbek oilasi",
+    "caption_en": "An Uzbek family of several generations"
+   }
+  ],
+  "11": [
+   {
+    "q": "Shah-i-Zinda Samarkand",
+    "must": [
+     "zinda"
+    ],
+    "caption_ru": "Мемориальный ансамбль Шахи-Зинда в Самарканде",
+    "caption_uz": "Samarqanddagi Shohi Zinda majmuasi",
+    "caption_en": "Shah-i-Zinda memorial ensemble in Samarkand"
+   },
+   {
+    "q": "Shah-i-Zinda",
+    "must": [
+     "shah"
+    ],
+    "caption_ru": "Мемориальный ансамбль Шахи-Зинда в Самарканде",
+    "caption_uz": "Samarqanddagi Shohi Zinda majmuasi",
+    "caption_en": "Shah-i-Zinda memorial ensemble in Samarkand"
+   }
+  ],
+  "12": [
+   {
+    "q": "Sumalak Navruz",
+    "must": [
+     "sumalak"
+    ],
+    "caption_ru": "Приготовление сумалака на Навруз",
+    "caption_uz": "Navroʻzda sumalak pishirish",
+    "caption_en": "Cooking sumalak for Navruz"
+   },
+   {
+    "q": "Navruz Uzbekistan",
+    "must": [
+     "navruz"
+    ],
+    "caption_ru": "Приготовление сумалака на Навруз",
+    "caption_uz": "Navroʻzda sumalak pishirish",
+    "caption_en": "Cooking sumalak for Navruz"
+   }
+  ],
+  "13": [
+   {
+    "q": "Kalyan Mosque Bukhara",
+    "must": [
+     "kalyan"
+    ],
+    "caption_ru": "Мечеть Калян в Бухаре",
+    "caption_uz": "Buxorodagi Kalon masjidi",
+    "caption_en": "Kalyan Mosque in Bukhara"
+   },
+   {
+    "q": "Hazrati Imam complex Tashkent",
+    "must": [
+     "imam"
+    ],
+    "caption_ru": "Мечеть Калян в Бухаре",
+    "caption_uz": "Buxorodagi Kalon masjidi",
+    "caption_en": "Kalyan Mosque in Bukhara"
+   }
+  ],
+  "14": [
+   {
+    "q": "Independence Square Tashkent",
+    "must": [
+     "independence"
+    ],
+    "caption_ru": "Площадь Независимости в Ташкенте",
+    "caption_uz": "Toshkentdagi Mustaqillik maydoni",
+    "caption_en": "Independence Square in Tashkent"
+   },
+   {
+    "q": "Independence Day Uzbekistan",
+    "must": [
+     "uzbekistan"
+    ],
+    "caption_ru": "Площадь Независимости в Ташкенте",
+    "caption_uz": "Toshkentdagi Mustaqillik maydoni",
+    "caption_en": "Independence Square in Tashkent"
+   }
+  ],
+  "15": [
+   {
+    "q": "Kurash wrestling Uzbekistan",
+    "must": [
+     "kurash"
+    ],
+    "caption_ru": "Поединок по национальной борьбе кураш",
+    "caption_uz": "Milliy kurash bellashuvi",
+    "caption_en": "A bout of kurash, national wrestling"
+   },
+   {
+    "q": "Kupkari",
+    "must": [
+     "kupkari"
+    ],
+    "caption_ru": "Поединок по национальной борьбе кураш",
+    "caption_uz": "Milliy kurash bellashuvi",
+    "caption_en": "A bout of kurash, national wrestling"
+   }
+  ],
+  "16": [
+   {
+    "q": "Uzbek chaikhana teahouse",
+    "must": [
+     "chaikhana"
+    ],
+    "caption_ru": "Традиционная чайхана с деревянными сури",
+    "caption_uz": "Soʻrilari bor anʼanaviy choyxona",
+    "caption_en": "A traditional teahouse with wooden platforms"
+   },
+   {
+    "q": "teahouse Uzbekistan",
+    "must": [
+     "tea"
+    ],
+    "caption_ru": "Традиционная чайхана с деревянными сури",
+    "caption_uz": "Soʻrilari bor anʼanaviy choyxona",
+    "caption_en": "A traditional teahouse with wooden platforms"
+   }
+  ],
+  "17": [
+   {
+    "q": "Uzbek national costume",
+    "must": [
+     "uzbek"
+    ],
+    "caption_ru": "Узбекская национальная одежда и тюбетейки",
+    "caption_uz": "Oʻzbek milliy kiyimi va doʻppilar",
+    "caption_en": "Uzbek national clothing and skullcaps"
+   },
+   {
+    "q": "Uzbek doppi skullcap",
+    "must": [
+     "doppi"
+    ],
+    "caption_ru": "Узбекская национальная одежда и тюбетейки",
+    "caption_uz": "Oʻzbek milliy kiyimi va doʻppilar",
+    "caption_en": "Uzbek national clothing and skullcaps"
+   }
+  ],
+  "18": [
+   {
+    "q": "Rishtan ceramics plate",
+    "must": [
+     "rishtan"
+    ],
+    "caption_ru": "Риштанская керамика с бирюзовой глазурью",
+    "caption_uz": "Feruza sirli Rishton sopol buyumlari",
+    "caption_en": "Rishtan ceramics with turquoise glaze"
+   },
+   {
+    "q": "Suzani embroidery",
+    "must": [
+     "suzani"
+    ],
+    "caption_ru": "Риштанская керамика с бирюзовой глазурью",
+    "caption_uz": "Feruza sirli Rishton sopol buyumlari",
+    "caption_en": "Rishtan ceramics with turquoise glaze"
+   }
+  ],
+  "19": [
+   {
+    "q": "Uzbek doira drum musician",
+    "must": [
+     "doira"
+    ],
+    "caption_ru": "Музыкант играет на узбекской дойре",
+    "caption_uz": "Sozanda doira chalmoqda",
+    "caption_en": "A musician playing the Uzbek doira"
+   },
+   {
+    "q": "Uzbek dutar",
+    "must": [
+     "dutar"
+    ],
+    "caption_ru": "Музыкант играет на узбекской дойре",
+    "caption_uz": "Sozanda doira chalmoqda",
+    "caption_en": "A musician playing the Uzbek doira"
+   }
+  ],
+  "20": [
+   {
+    "q": "Uzbek dastarkhan sweets table",
+    "must": [
+     "dastarkhan"
+    ],
+    "caption_ru": "Дастархан со сладостями для гостей",
+    "caption_uz": "Mehmonlar uchun shirinliklar bilan dasturxon",
+    "caption_en": "A dastarkhan with sweets for guests"
+   },
+   {
+    "q": "Uzbek sweets",
+    "must": [
+     "uzbek"
+    ],
+    "caption_ru": "Дастархан со сладостями для гостей",
+    "caption_uz": "Mehmonlar uchun shirinliklar bilan dasturxon",
+    "caption_en": "A dastarkhan with sweets for guests"
+   }
+  ]
  }
 }
