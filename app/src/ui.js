@@ -1,5 +1,6 @@
 // Мини-помощники для построения интерфейса без фреймворка.
 // Текст всегда вставляется как текст (textContent) — защита от внедрения HTML.
+import { icon } from './icons.js';
 
 export function h(tag, attrs = {}, ...children) {
   const el = document.createElement(tag);
@@ -43,5 +44,34 @@ export function spinner(text) {
 }
 
 export function audioButton(onClick, label) {
-  return h('button', { class: 'audio-btn', type: 'button', 'aria-label': label || 'audio', onClick }, '🔊');
+  return h('button', { class: 'audio-btn', type: 'button', 'aria-label': label || 'audio', onClick }, icon('sound'));
+}
+
+// Нижняя шторка: закрывается касанием фона. Возвращает функцию закрытия.
+export function sheet(...content) {
+  const back = h('div', { class: 'sheet-back' });
+  const close = () => back.remove();
+  back.addEventListener('click', (e) => { if (e.target === back) close(); });
+  back.append(h('div', { class: 'sheet' }, h('div', { class: 'sheet-grip' }), ...content));
+  document.body.append(back);
+  return close;
+}
+
+// Кольцо прогресса (0…1) для кружков на карте
+export function ring(fraction, size = 64) {
+  const NS = 'http://www.w3.org/2000/svg';
+  const r = size / 2 - 3;
+  const c = 2 * Math.PI * r;
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('class', 'ring');
+  svg.setAttribute('viewBox', `0 0 ${size} ${size}`);
+  const bg = document.createElementNS(NS, 'circle');
+  const fg = document.createElementNS(NS, 'circle');
+  for (const el of [bg, fg]) { el.setAttribute('cx', size / 2); el.setAttribute('cy', size / 2); el.setAttribute('r', r); }
+  bg.setAttribute('class', 'ring-bg');
+  fg.setAttribute('class', 'ring-fg');
+  fg.setAttribute('stroke-dasharray', `${(Math.max(0, Math.min(1, fraction)) * c).toFixed(1)} ${c.toFixed(1)}`);
+  svg.append(bg);
+  if (fraction > 0) svg.append(fg);
+  return svg;
 }

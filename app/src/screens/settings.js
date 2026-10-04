@@ -1,6 +1,17 @@
 import { rpc, fetchPlans } from '../api.js';
 import { t, setLang, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, haptic } from '../ui.js';
+import { applyTheme, currentTheme } from '../theme.js';
+
+// Превью тем: фон, карточка, акцент, текст
+const SWATCH = {
+  telegram: ['var(--tg-theme-secondary-bg-color, #eef0f3)', 'var(--tg-theme-bg-color, #ffffff)', 'var(--tg-theme-button-color, #2481cc)', 'var(--tg-theme-text-color, #222)'],
+  light: ['#f5f6f8', '#ffffff', '#0e7c86', '#15171c'],
+  dark: ['#0f1115', '#181b21', '#2bb3be', '#eceef2'],
+  gray: ['#e6e7ea', '#f3f3f5', '#3f6e8c', '#222327'],
+  sand: ['#f3ede2', '#fbf8f2', '#1f7a8c', '#2b2620'],
+  midnight: ['#0b1424', '#121d31', '#e0a43a', '#e6ecf5'],
+};
 
 const INTENSITY = {
   light: { session_size: 30, new_max: 20 },
@@ -61,6 +72,19 @@ export async function renderSettings(app) {
 
     h('h2', {}, t('language')),
     seg([['ru', 'Русский'], ['uz', 'Oʻzbekcha'], ['en', 'English']], me.ui_lang, (v) => save(v, null)),
+
+    h('h2', {}, t('theme')),
+    h('div', { class: 'themes' }, Object.entries(SWATCH).map(([name, [bg, card, accent, text]]) =>
+      h('button', { type: 'button', class: `theme-opt ${name === currentTheme() ? 'active' : ''}`, onClick: () => {
+        if (name === currentTheme()) return;
+        applyTheme(name);          // сразу, без ожидания сервера
+        save(null, { theme: name });
+      } },
+        h('div', { class: 'swatch', style: { background: bg } },
+          h('i', { style: { background: card, width: '100%' } }),
+          h('i', { style: { background: accent, width: '60%' } }),
+          h('i', { style: { background: text, width: '40%', opacity: '.7' } })),
+        h('span', {}, (t('themeNames') || {})[name] || name)))),
 
     h('h2', {}, t('intensity')),
     me.tier === 'free'

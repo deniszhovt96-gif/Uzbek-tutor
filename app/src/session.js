@@ -18,6 +18,7 @@ export class Session {
     for (const it of data.items) {
       this.state.set(it.id, { level: it.level, stage: it.stage, lastType: null, retries: 0, shown: it.stage !== 'new' });
     }
+    this.sentencePool = data.items.flatMap((it) => (it.examples || []).map((e) => e.ru));
     this.queue = buildQueue(data.items);
     this.pending = [];
     this.seq = (Math.floor(Date.now() / 1000) % 1000000) * 1000;
@@ -37,7 +38,7 @@ export class Session {
     const item = this.items.get(task.wordId);
     const st = this.state.get(task.wordId);
     if (task.kind === 'card') return { kind: 'card', item };
-    const ex = pickExercise(item, st.level, st.lastType, { audio: this.opts.audio });
+    const ex = pickExercise(item, st.level, st.lastType, { audio: this.opts.audio, sentencePool: this.sentencePool });
     st.lastType = ex.type;
     return { kind: 'ex', ex, attempt: task.attempt, item };
   }

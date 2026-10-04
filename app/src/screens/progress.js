@@ -39,7 +39,7 @@ export async function renderProgress() {
       stat(tot.learning || 0, t('pLearning')),
       stat(tot.basic || 0, t('pBasic')),
       stat(tot.strong || 0, t('pStrong'))),
-    h('div', { class: 'stats' },
+    h('div', { class: 'stats two' },
       stat(tot.due_today || 0, t('pDue')),
       stat(`${accuracy}%`, t('pAccuracy'))),
     h('h2', {}, t('pLast14')),
