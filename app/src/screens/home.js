@@ -52,8 +52,16 @@ export async function renderHome(app) {
         me.tier === 'basic' ? t('toAdvanced') : t('toSubscription')));
   } else {
     const hasPlan = home.plan_new + home.plan_review > 0;
+    const rd = home.review_day || {};
+    const rdBox = rd.active
+      ? h('div', { class: `review-day ${rd.locked ? '' : 'done'}` }, icon('review'),
+          h('div', {}, h('b', {}, t('reviewDayTitle')),
+            h('div', { class: 'small' }, rd.locked ? t('reviewDayLocked', rd.need, Math.min(rd.done, rd.need)) : t('reviewDayDone')),
+            rd.locked ? h('div', { class: 'track' }, h('div', { class: 'fill strong', style: { width: `${Math.round((Math.min(rd.done, rd.need) / rd.need) * 100)}%` } })) : null))
+      : rd.tomorrow ? h('div', { class: 'review-day soon' }, icon('review'), h('div', { class: 'small' }, t('reviewDayTomorrow'))) : null;
     plan = h('div', { class: 'card hero' },
       h('div', { class: 'label' }, t('planTitle')),
+      rdBox,
       home.need_test && home.plan_review === 0
         ? h('div', {}, h('h3', {}, t('needTestTitle', home.unlocked)), h('p', { class: 'muted small' }, t('needTestText', home.unlocked)))
         : hasPlan
@@ -98,7 +106,7 @@ export async function renderHome(app) {
     tile('grammar', t('secGrammar'), () => app.go('course', { course: 'grammar' })),
     tile('history', t('secHistory'), () => app.go('course', { course: 'history' })),
     tile('civics', t('secCivics'), () => app.go('course', { course: 'civics' })),
-    tile('culture', t('secCulture'), soon('secCulture', 'culture'), { badge: t('soon'), cls: 'dim' }),
+    tile('dictionary', t('secDictionary'), () => app.go('dictionary')),
     tile('progress', t('secProgress'), () => app.go('progress')),
     tile('settings', t('secSettings'), () => app.tab('settings')));
 

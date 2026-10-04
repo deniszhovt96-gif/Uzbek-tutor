@@ -69,12 +69,13 @@ async function runGame(app, key) {
 }
 
 // Общий экран результата игры
-export function gameResult({ app, again, title, big, text, record }) {
+export function gameResult({ app, again, title, big, sub, text, record }) {
   mount(h('div', { class: 'screen' },
     h('div', { class: 'card result-hero' },
       h('div', { class: 'result-icon ok' }, icon('trophy')),
       h('h1', {}, title),
       h('div', { class: 'big' }, big),
+      sub ? h('div', { class: 'small muted' }, sub) : null,
       text ? h('p', { class: 'muted' }, text) : null,
       record ? h('span', { class: 'chip gold' }, icon('star'), t('newRecord')) : null),
     h('button', { class: 'btn btn-big', onClick: again }, t('again')),

@@ -4,7 +4,10 @@
 
 Вход:
   data/source/vocabulary.xlsx  — исходная таблица (лист `words`), НЕ изменяется
-  data/fixes.csv               — утверждённые правки (replace / hide / audio_off)
+  data/fixes.csv               — утверждённые правки примеров (replace / hide / audio_off)
+  data/word_fixes.csv          — правки самих слов: uz / ru (исправление) и off (повреждённая запись — слово отключено)
+  data/levels.csv              — уровень CEFR по каждому слову (перепроверка 04.10.2026; в источнике уровень стоял по теме)
+  data/source/colloquial.json  — разговорная лексика Ташкента (отдельные темы «Разговорная речь. …», ID с 20001)
 
 Выход (data/build/):
   topics.csv, words.csv, examples.csv — данные для загрузки (scripts/load_vocab.sql)
@@ -16,6 +19,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import re
 import sys
 import unicodedata
@@ -27,6 +31,10 @@ import openpyxl
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "source" / "vocabulary.xlsx"
 FIXES = ROOT / "data" / "fixes.csv"
+WORD_FIXES = ROOT / "data" / "word_fixes.csv"
+LEVELS = ROOT / "data" / "levels.csv"
+COLLOQUIAL = ROOT / "data" / "source" / "colloquial.json"
+COLLOQ_PREFIX = "Разговорная речь. "
 OUT = ROOT / "data" / "build"
 
 CEFR_RANK = {"A1": 1, "A2": 2, "B1": 3, "B2": 4}
@@ -170,6 +178,72 @@ def read_fixes():
     return fixes
 
 
+def apply_word_fixes(data):
+    """Исправления слов. Старое значение сверяется с источником — если источник изменился, сборка останавливается."""
+    by_id = {d["id"]: d for d in data}
+    off, changed = set(), set()
+    if not WORD_FIXES.exists():
+        return data, changed
+    with open(WORD_FIXES, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            wid, field = int(row["word_id"]), row["field"]
+            d = by_id.get(wid)
+            if d is None:
+                sys.exit(f"word_fixes.csv: нет слова с ID {wid}")
+            cur = display_uz(d["uz"]) if field in ("uz", "off") else d["ru"]
+            if cur.strip() != row["old"].strip():
+                sys.exit(f"word_fixes.csv: {wid}/{field} в источнике изменилось: ожидалось {row['old']!r}, в файле {cur!r}")
+            if field == "off":
+                off.add(wid)
+            elif field == "uz":
+                d["uz"] = row["new"]
+                changed.add(wid)          # аудио слова записано для старого текста — отключаем
+            elif field == "ru":
+                d["ru"] = row["new"]
+            else:
+                sys.exit(f"word_fixes.csv: неизвестное поле {field}")
+    return [d for d in data if d["id"] not in off], changed
+
+
+def apply_levels(data):
+    if not LEVELS.exists():
+        return 0
+    by_id = {d["id"]: d for d in data}
+    n = 0
+    with open(LEVELS, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            d = by_id.get(int(row["word_id"]))
+            if d is None:
+                continue                  # слово отключено правкой
+            if row["new"] not in CEFR_RANK:
+                sys.exit(f"levels.csv: неизвестный уровень {row['new']} у {row['word_id']}")
+            d["cefr"] = row["new"]
+            d["level_fixed"] = True
+            n += 1
+    return n
+
+
+def read_colloquial(existing_keys):
+    """Разговорная лексика: слово + литературный вариант + пометка; до двух примеров. Без аудио."""
+    if not COLLOQUIAL.exists():
+        return [], []
+    items = json.loads(COLLOQUIAL.read_text(encoding="utf-8"))
+    out, skipped = [], []
+    for e in items:
+        if key_uz(e["uz"]) in existing_keys:
+            skipped.append(e["uz"])      # такое слово уже есть в словаре
+            continue
+        ex = [(e.get("ex_uz"), e.get("ex_ru")), (e.get("ex2_uz"), e.get("ex2_ru"))]
+        out.append({
+            "id": int(e["id"]), "topic": COLLOQ_PREFIX + e["topic"].strip(), "topic_no": None,
+            "ru": e["ru"].strip(), "uz": e["uz"].strip(), "cefr": e["cefr"],
+            "ex": [x for x in ex if x[0] and x[1]],
+            "register": "colloquial", "literary": e.get("literary") or "", "note": e.get("note") or "",
+            "en": e.get("en") or "", "level_fixed": True,
+        })
+    return out, skipped
+
+
 def csv_array(items) -> str:
     """Массив Postgres в текстовом формате для COPY CSV: {"a","b"}."""
     esc = ['"' + str(x).replace("\\", "\\\\").replace('"', '\\"') + '"' for x in items]
@@ -179,8 +253,14 @@ def csv_array(items) -> str:
 # --------------------------------------------------------------------------- сборка
 def main():
     data = read_source()
+    data, uz_changed = apply_word_fixes(data)
+    n_levels = apply_levels(data)
+    colloq, colloq_skipped = read_colloquial({key_uz(d["uz"]) for d in data})
+    data += colloq
     by_id = {d["id"]: d for d in data}
     problems = []
+    if colloq_skipped:
+        problems.append(f"Разговорная лексика: пропущено (уже есть в словаре): {', '.join(colloq_skipped)}")
 
     # -- правки
     hidden, audio_off_ex, edited = set(), set(), set()
@@ -213,8 +293,6 @@ def main():
         t["cefr"].add(d["cefr"])
     for i, t in enumerate(sorted(topics.values(), key=lambda t: t["first"]), start=1):
         t["id"] = i
-        if len(t["cefr"]) > 1:
-            problems.append(f"Тема «{t['name']}» содержит разные уровни: {sorted(t['cefr'])}")
         t["cefr"] = min(t["cefr"], key=lambda c: CEFR_RANK.get(c, 9))
 
     # -- слова
@@ -238,6 +316,13 @@ def main():
     groups = defaultdict(list)
     for d in data:
         groups[(d["uz_key"], d["ru_key"])].append(d["id"])
+    # уровень перепроверялся по основной карточке — дубли получают тот же уровень
+    for ids in groups.values():
+        fixed = [by_id[i]["cefr"] for i in ids if by_id[i].get("level_fixed")]
+        if fixed:
+            lvl = min(fixed, key=lambda c: CEFR_RANK[c])
+            for i in ids:
+                by_id[i]["cefr"] = lvl
     for ids in groups.values():
         main_id = min(ids, key=learn_pos)
         for i in ids:
@@ -280,7 +365,8 @@ def main():
                 "blank_start": blank[0] if blank else "",
                 "blank_len": blank[1] if blank else "",
                 "blank_answer": uz_disp[blank[0]:blank[0] + blank[1]] if blank else "",
-                "audio_ok": "f" if ((d["id"], n) in audio_off_ex or (d["id"], n) in edited or is_hidden) else "t",
+                "audio_ok": "f" if ((d["id"], n) in audio_off_ex or (d["id"], n) in edited or is_hidden
+                                  or d.get("register") == "colloquial") else "t",
                 "is_hidden": "t" if is_hidden else "f",
             })
 
@@ -299,11 +385,14 @@ def main():
     with open(OUT / "words.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["id", "topic_id", "cefr", "uz", "ru", "uz_key", "accept_ru", "accept_uz",
-                    "word_class", "canonical_id", "audio_ok", "sort_key"])
+                    "word_class", "canonical_id", "audio_ok", "sort_key", "register", "literary", "note", "en"])
         for d in sorted(data, key=lambda x: x["id"]):
+            audio = "f" if (d["id"] in uz_changed or d.get("register") == "colloquial") else "t"
             w.writerow([d["id"], topics[d["topic"]]["id"], d["cefr"], d["uz_disp"], d["ru"], d["uz_key"],
                         csv_array(d["accept_ru"]), csv_array(d["accept_uz"]), d["class"],
-                        d["canonical"] if d["canonical"] else "", "t", d["sort_key"]])
+                        d["canonical"] if d["canonical"] else "", audio, d["sort_key"],
+                        d.get("register", "lit"), display_uz(d["literary"]) if d.get("literary") else "",
+                        d.get("note", ""), d.get("en", "")])
     with open(OUT / "examples.csv", "w", newline="", encoding="utf-8") as f:
         cols = ["word_id", "n", "uz", "ru", "blank_start", "blank_len", "blank_answer", "audio_ok", "is_hidden"]
         w = csv.DictWriter(f, fieldnames=cols)
@@ -321,6 +410,8 @@ def main():
         f"- Тем: **{len(topics)}**",
         f"- Примеров: **{len(examples)}** — " + ", ".join(f"{k}: {v}" for k, v in sorted(blank_stats.items())),
         f"- Правки: заменено {len(edited)}, скрыто {len(hidden)}, аудио отключено {len(audio_off_ex | edited | hidden)}",
+        f"- Правки слов: исправлено узб. {len(uz_changed)}, уровней из levels.csv {n_levels}, "
+        f"разговорных {len(colloq)}",
         f"- Классы слов: " + ", ".join(f"{k}: {v}" for k, v in sorted(classes.items())),
         f"- По уровням: " + ", ".join(f"{c}: {sum(1 for d in data if d['cefr'] == c)}" for c in CEFR_RANK),
         "", "## Проблемы", "",

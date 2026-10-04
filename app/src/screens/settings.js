@@ -87,6 +87,10 @@ export async function renderSettings(app) {
       h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('review') },
         h('span', { class: 'tile-icon gold' }, icon('test')),
         h('div', {}, h('b', {}, t('reviewTitle')), h('div', { class: 'small muted' }, t('reviewShort'))),
+        icon('chevron', 'ic chev')),
+      h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('wordflags') },
+        h('span', { class: 'tile-icon gold' }, icon('learn')),
+        h('div', {}, h('b', {}, t('flagsTitle')), h('div', { class: 'small muted' }, t('flagsShort'))),
         icon('chevron', 'ic chev'))] : null,
 
     h('h2', {}, t('subscription')),

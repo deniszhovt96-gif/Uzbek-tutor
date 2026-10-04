@@ -88,3 +88,16 @@ export async function createInvoice(planId, retried = false) {
   if (!res.ok || !data.link) throw new ApiError(data.error || `http_${res.status}`);
   return data.link;
 }
+
+// Сообщить боту о новых пометках уровня слов — он отправит уведомление администраторам.
+// Ошибки не мешают пользователю: пометка уже сохранена, уведомление уйдёт при следующей пометке.
+export async function notifyFlags() {
+  try {
+    if (!session) await login();
+    await fetch(`${SUPABASE_URL}/functions/v1/telegram-bot/flags`, {
+      method: 'POST',
+      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
+      body: '{}',
+    });
+  } catch { /* не критично */ }
+}

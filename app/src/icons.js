@@ -29,6 +29,8 @@ const ICONS = {
   history: '<path d="M3 9.5 12 4.5l9 5"/><path d="M5.5 10v7.5M10 10v7.5M14 10v7.5M18.5 10v7.5"/><path d="M3.5 20.5h17"/>',
   civics: '<path d="M12 4v16M7.5 20h9M5 7.5h14"/><path d="M5 7.5 2.5 13a2.6 2.6 0 0 0 5 0zM19 7.5 16.5 13a2.6 2.6 0 0 0 5 0z"/>',
   culture: '<path d="M6 10.5h10V14a5 5 0 0 1-10 0z"/><path d="M16 11.5h1.4a2 2 0 0 1 0 4H15.6"/><path d="M6 12.5 3 10.2"/><path d="M8.5 10.5c0-1.6 1.2-2.5 2.5-2.5s2.5.9 2.5 2.5M11 8V6.5"/>',
+  dictionary: '<path d="M5 4.5h11a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="M9 8h6M9 11h4"/>',
+  chat: '<path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h10a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 17 16h-6l-4.5 3.5V16H7a2.5 2.5 0 0 1-2.5-2.5z"/>',
   progress: '<path d="M4 20V12M9.5 20V6M15 20v-9M20.5 20V4"/>',
   lock: '<rect x="5" y="11" width="14" height="9.5" rx="2.2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
   check: '<path d="M5 12.5 10 17.5 19 7"/>',

@@ -13,7 +13,8 @@ create temp table s_topics (
 
 create temp table s_words (
   id int, topic_id smallint, cefr text, uz text, ru text, uz_key text,
-  accept_ru text[], accept_uz text[], word_class text, canonical_id int, audio_ok boolean, sort_key int
+  accept_ru text[], accept_uz text[], word_class text, canonical_id int, audio_ok boolean, sort_key int,
+  register text, literary text, note text, en text
 ) on commit drop;
 \copy s_words from 'data/build/words.csv' with (format csv, header true)
 
@@ -31,14 +32,20 @@ on conflict (id) do update set
 
 -- слова: сначала без ссылок на дубли, затем ссылки
 insert into public.words (id, topic_id, cefr, uz, ru, uz_key, accept_ru, accept_uz, word_class,
-                          canonical_id, audio_ok, is_active, sort_key)
-select id, topic_id, cefr, uz, ru, uz_key, accept_ru, accept_uz, word_class, null, audio_ok, true, sort_key
+                          canonical_id, audio_ok, is_active, sort_key, register, literary, note, en)
+select id, topic_id, cefr, uz, ru, uz_key, accept_ru, accept_uz, word_class, null, audio_ok, true, sort_key,
+       coalesce(nullif(register, ''), 'lit'), nullif(literary, ''), nullif(note, ''), nullif(en, '')
 from s_words
 on conflict (id) do update set
   topic_id = excluded.topic_id, cefr = excluded.cefr, uz = excluded.uz, ru = excluded.ru,
   uz_key = excluded.uz_key, accept_ru = excluded.accept_ru, accept_uz = excluded.accept_uz,
   word_class = excluded.word_class, audio_ok = excluded.audio_ok, is_active = true,
-  sort_key = excluded.sort_key;
+  sort_key = excluded.sort_key, register = excluded.register, literary = excluded.literary,
+  note = excluded.note, en = excluded.en;
+
+-- уровни, изменённые администраторами по пометкам пользователей, сохраняются при повторном импорте
+update public.word_level_overrides o set base_cefr = s.cefr from s_words s where s.id = o.word_id;
+update public.words w set cefr = o.cefr from public.word_level_overrides o where o.word_id = w.id;
 
 update public.words w set canonical_id = s.canonical_id
 from s_words s where s.id = w.id and w.canonical_id is distinct from s.canonical_id;
@@ -55,6 +62,9 @@ on conflict (word_id, n) do update set
 
 delete from public.examples e
 where not exists (select 1 from s_examples s where s.word_id = e.word_id and s.n = e.n);
+
+-- отключённые слова (повреждённые записи) больше не приходят на повторение
+delete from public.word_progress wp using public.words w where w.id = wp.word_id and not w.is_active;
 
 -- итоговая проверка: если цифры не сходятся, транзакция откатывается
 do $$

@@ -45,6 +45,18 @@ function placeCorrect(correct, wrong, rnd) {
 
 // ---------------------------------------------------------------- буквы
 // Плитки: каждая буква отдельно (sh, ch, ng тоже), но oʻ и gʻ — одна плитка; ʼ прилипает к предыдущей букве.
+// Примеры по силам: пока слово только учится — короткие предложения, потом длиннее.
+// уровень слова 0–2 → до 6 слов в предложении, 3–6 → до 9, дальше — любые. Если подходящих нет — самое короткое.
+export function examplesFor(item) {
+  const all = item.examples || [];
+  const level = item.level || 0;
+  const max = level <= 2 ? 6 : level <= 6 ? 9 : Infinity;
+  const words = (e) => String(e.uz || '').split(/\s+/).filter(Boolean).length;
+  const fit = all.filter((e) => words(e) <= max);
+  if (fit.length || !all.length) return fit;
+  return [all.reduce((a, b) => (words(b) < words(a) ? b : a))];
+}
+
 export function tilesOf(text) {
   const tiles = [];
   const chars = [...text];
@@ -170,7 +182,7 @@ export function buildExercise(item, type, opts = {}) {
     }
     case 'fill_choice':
     case 'fill_input': {
-      const exs = shuffle((item.examples || []).filter((e) => e.blank_start !== null && e.blank_start !== undefined), rnd);
+      const exs = shuffle(examplesFor(item).filter((e) => e.blank_start !== null && e.blank_start !== undefined), rnd);
       const ex = exs[0];
       if (!ex) return null;
       const chars = [...ex.uz];
@@ -205,10 +217,10 @@ export function buildExercise(item, type, opts = {}) {
       return { ...base, target: 'uz', prompt: item.ru, promptKind: 'ru', input: 'uz', distorted: d.text };
     }
     case 'sentence_choice': {
-      const exs = shuffle((item.examples || []).filter((e) => e.ru && e.uz), rnd);
+      const exs = shuffle(examplesFor(item).filter((e) => e.ru && e.uz), rnd);
       const ex = exs[0];
       if (!ex) return null;
-      const own = new Set((item.examples || []).map((e) => keyRu(e.ru)));
+      const own = new Set(examplesFor(item).map((e) => keyRu(e.ru)));
       const wrong = uniqueBy(shuffle(opts.sentencePool || [], rnd), keyRu, [...own])
         .filter((ru) => ru.length < 140).slice(0, 3);
       if (wrong.length < 3) return null;
@@ -217,7 +229,7 @@ export function buildExercise(item, type, opts = {}) {
                example: { word_id: ex.word_id, n: ex.n }, exampleAudio: ex.audio_ok && audioOn, options, correctIndex };
     }
     case 'sentence_build': {
-      const candidates = shuffle((item.examples || []).filter((e) => {
+      const candidates = shuffle(examplesFor(item).filter((e) => {
         const n = chipsOf(e.uz).chips.length;
         return n >= 3 && n <= 8;
       }), rnd);
@@ -255,7 +267,7 @@ export function buildExercise(item, type, opts = {}) {
     }
     case 'audio_sentence': {
       if (!audioOn) return null;
-      const exs = shuffle((item.examples || []).filter((e) => e.audio_ok && e.blank_start !== null && e.blank_start !== undefined), rnd);
+      const exs = shuffle(examplesFor(item).filter((e) => e.audio_ok && e.blank_start !== null && e.blank_start !== undefined), rnd);
       const ex = exs[0];
       if (!ex) return null;
       const chars = [...ex.uz];

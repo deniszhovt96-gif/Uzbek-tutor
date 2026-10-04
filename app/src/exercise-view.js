@@ -3,7 +3,7 @@ import { t } from './i18n.js';
 import { h, haptic, audioButton } from './ui.js';
 import { icon } from './icons.js';
 import { play, wordAudio, exampleAudio } from './audio.js';
-import { correctAnswerText } from './exercises.js';
+import { correctAnswerText, examplesFor } from './exercises.js';
 import { diffChars, displayUz } from './normalize.js';
 
 export const PROMPT_KEY = {
@@ -17,7 +17,7 @@ export const PROMPT_KEY = {
 // ---------------------------------------------------------------- карточка нового слова
 export function renderCard(item, { audioEnabled, onNext }) {
   if (item.audio_ok && audioEnabled) play(wordAudio(item.id));
-  const examples = (item.examples || []).slice(0, 3).map((ex) =>
+  const examples = examplesFor(item).slice(0, 3).map((ex) =>
     h('div', { class: 'example' },
       h('div', { class: 'ex-uz' }, h('span', {}, ex.uz), ex.audio_ok && audioEnabled ? audioButton(() => play(exampleAudio(ex.word_id, ex.n))) : null),
       h('div', { class: 'ex-ru muted' }, ex.ru)));
@@ -26,6 +26,11 @@ export function renderCard(item, { audioEnabled, onNext }) {
     h('div', { class: 'card word-card' },
       h('div', { class: 'word-uz' }, item.uz, item.audio_ok && audioEnabled ? audioButton(() => play(wordAudio(item.id))) : null),
       h('div', { class: 'word-ru' }, item.ru),
+      item.register === 'colloquial'
+        ? h('div', { class: 'colloq-note' }, h('span', { class: 'chip gold' }, t('colloquial')),
+            item.literary && item.literary !== item.uz ? h('span', { class: 'small' }, ` ${t('literaryForm')}: `, h('b', {}, item.literary)) : null,
+            item.note ? h('div', { class: 'tiny muted' }, item.note) : null)
+        : null,
       examples.length ? h('div', { class: 'examples' }, h('div', { class: 'label' }, t('examples')), examples) : null),
     h('button', { class: 'btn btn-big', onClick: onNext }, t('gotIt')));
 }

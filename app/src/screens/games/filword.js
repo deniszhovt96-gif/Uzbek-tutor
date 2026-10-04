@@ -8,9 +8,26 @@ import { gameResult, setBest } from '../games.js';
 
 const COLORS = ['#0e7c86', '#c8962e', '#7a5af5', '#d0393b', '#1d8a4c', '#2f6fd6', '#b5651d', '#c2428a', '#4d7c0f', '#0891b2'];
 
+// ---------------------------------------------------------------- размер поля
+const SOLVED_KEY = 'ut_filword_solved';
+function solvedCount() {
+  try { return Number(localStorage.getItem(SOLVED_KEY)) || 0; } catch { return 0; }
+}
+function addSolved() {
+  try { localStorage.setItem(SOLVED_KEY, String(solvedCount() + 1)); } catch { /* нет доступа */ }
+}
+export function filwordSize(app) {
+  const started = (app.homeData && app.homeData.words_started) || 0;
+  const grow = Math.floor(solvedCount() / 3) + Math.floor(started / 300);
+  return Math.max(5, Math.min(8, 5 + grow));
+}
+
 // ---------------------------------------------------------------- игра
 export function playFilword({ app, items, key, again }) {
-  const puzzle = buildFilword(items, 5) || buildFilword(items, 4);
+  // поле растёт со временем: от 5×5 до 8×8 — по числу решённых филвордов и изученных слов
+  const size = filwordSize(app);
+  let puzzle = null;
+  for (let n = size; n >= 4 && !puzzle; n--) puzzle = buildFilword(items, n);
   if (!puzzle) {
     mount(h('div', { class: 'screen' }, h('h1', {}, t('gameFilword')),
       h('div', { class: 'card empty' }, icon('filword'), h('p', {}, t('practiceNotEnough', 12)),
@@ -26,7 +43,7 @@ export function playFilword({ app, items, key, again }) {
   const started = Date.now();
 
   const cells = grid.map((ch, i) => h('div', { class: 'fw-cell', 'data-i': String(i) }, ch));
-  const board = h('div', { class: 'fw-grid', style: { gridTemplateColumns: `repeat(${n}, 1fr)`, maxWidth: `${n * 66}px` } }, cells);
+  const board = h('div', { class: `fw-grid n${n}`, style: { gridTemplateColumns: `repeat(${n}, 1fr)`, maxWidth: `${n * 66}px` } }, cells);
   const hints = words.map((w) => h('span', { class: 'fw-hint' }, w.item.ru));
   const counter = h('b', {}, `0 / ${words.length}`);
 
@@ -104,8 +121,9 @@ export function playFilword({ app, items, key, again }) {
 
   const finish = () => {
     const secs = Math.round((Date.now() - started) / 1000);
-    const record = setBest(key, secs, (a, b) => a < b);
-    gameResult({ app, again, title: t('fwDone'), big: `${secs} c`, text: words.map((w) => w.item.uz).join(', '), record });
+    addSolved();
+    const record = setBest(n === 5 ? key : `${key}${n}`, secs, (a, b) => a < b);   // рекорд — для каждого размера поля
+    gameResult({ app, again, title: t('fwDone'), big: `${secs} c`, sub: `${n}×${n}`, text: words.map((w) => w.item.uz).join(', '), record });
   };
 
   mount(h('div', { class: 'screen' },

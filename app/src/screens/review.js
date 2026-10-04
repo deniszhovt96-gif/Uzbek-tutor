@@ -44,11 +44,13 @@ export async function renderReview(app, { unit } = {}) {
     const el = h('div', { class: 'card review-q', 'data-status': q.status },
       h('div', { class: 'row' }, h('b', {}, `${q.k}.`), h('span', { class: 'spacer' }), h('span', { class: 'chip q-status' }, t(`status_${q.status}`))),
       h('p', {}, h('b', {}, q.prompt_ru)),
-      h('ol', { class: 'q-opts' }, q.options.ru.map((o, k) => h('li', { class: k === 0 ? 'ok' : '' }, o, k === 0 ? ' ✓' : ''))),
+      // варианты в том же перемешанном виде, как в тесте (в базе верный хранится первым) — верный отмечен ✓
+      h('ol', { class: 'q-opts', type: 'A' }, mixOrder(q.id, q.options.ru.length).map((k) =>
+        h('li', { class: k === 0 ? 'ok' : '' }, q.options.ru[k], k === 0 ? ' ✓' : ''))),
       h('div', { class: 'quote small' }, icon('learn'), h('span', {}, `«${q.quote_ru}»`)),
       h('details', {}, h('summary', { class: 'small muted' }, 'UZ / EN'),
-        h('p', { class: 'small' }, h('b', {}, q.prompt_uz), h('br'), q.options.uz.join(' · ')),
-        h('p', { class: 'small' }, h('b', {}, q.prompt_en), h('br'), q.options.en.join(' · '))),
+        h('p', { class: 'small' }, h('b', {}, q.prompt_uz), h('br'), mixOrder(q.id, q.options.uz.length).map((k) => q.options.uz[k]).join(' · ')),
+        h('p', { class: 'small' }, h('b', {}, q.prompt_en), h('br'), mixOrder(q.id, q.options.en.length).map((k) => q.options.en[k]).join(' · '))),
       h('div', { class: 'review-btns' },
         h('button', { class: 'btn btn-small btn-ok', type: 'button', onClick: () => set(q.id, 'approved', el) }, icon('check'), t('approve')),
         h('button', { class: 'btn btn-small btn-no', type: 'button', onClick: () => set(q.id, 'rejected', el) }, icon('close'), t('reject'))));
@@ -63,4 +65,22 @@ export async function renderReview(app, { unit } = {}) {
       app.replace('review', { unit });
     } }, icon('check'), t('approveAllDrafts')),
     ...cards));
+}
+
+// Стабильный порядок вариантов для вопроса (один и тот же при каждом открытии)
+function mixOrder(seed, n) {
+  let a = (Number(seed) * 0x9e3779b9) >>> 0;
+  const rnd = () => {            // mulberry32
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const idx = Array.from({ length: n }, (_, i) => i);
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [idx[i], idx[j]] = [idx[j], idx[i]];
+  }
+  return idx;
 }

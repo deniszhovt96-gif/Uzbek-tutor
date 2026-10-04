@@ -100,7 +100,7 @@ select pg_temp.check((select (r->>'total')::int = (select count(*) from public.w
   'проверка темы: все слова темы');
 select pg_temp.check((select not exists (select 1 from jsonb_array_elements(r->'questions') q where q ? 'answer') from tc), 'верные ответы не отдаются');
 select pg_temp.check((select count(distinct q->>'type') = 2 from tc, jsonb_array_elements(r->'questions') q), 'вопросы в обе стороны (RU→UZ и UZ→RU)');
-select pg_temp.check(public.start_topic_check((select id from public.topics where cefr = 'B2' order by sort_order limit 1))->>'error' = 'level_locked',
+select pg_temp.check(public.start_topic_check((select topic_id from public.words where is_active group by topic_id having min(cefr) > 'A1' order by topic_id limit 1))->>'error' = 'level_locked',
   'тема закрытого уровня — недоступна');
 reset role;
 create temp table qa as

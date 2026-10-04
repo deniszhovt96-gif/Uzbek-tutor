@@ -18,6 +18,8 @@ import { renderCourse, renderUnit } from './screens/course.js';
 import { renderWordCheck } from './screens/wordcheck.js';
 import { renderUnitTest } from './screens/unittest.js';
 import { renderReview } from './screens/review.js';
+import { renderDictionary } from './screens/dictionary.js';
+import { renderWordFlags } from './screens/wordflags.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -74,6 +76,8 @@ const SCREENS = {
   unittest: renderUnitTest,
   wordcheck: renderWordCheck,
   review: renderReview,
+  dictionary: renderDictionary,
+  wordflags: renderWordFlags,
 };
 
 // ---------------------------------------------------------------- нижняя навигация

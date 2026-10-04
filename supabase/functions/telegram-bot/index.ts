@@ -13,6 +13,7 @@
 //
 // Оплата звёздами:
 //   POST …/telegram-bot/invoice  (из приложения, с токеном пользователя) → ссылка на счёт
+//   POST …/telegram-bot/flags    (из приложения после пометки слова) → уведомление администраторам о новых пометках
 //   pre_checkout_query → проверка тарифа и цены; successful_payment → продление подписки
 //
 // Секреты функции: TELEGRAM_BOT_TOKEN, TELEGRAM_WEBHOOK_SECRET, APP_URL.
@@ -242,6 +243,31 @@ async function notifyAdmins(db: any, token: string, text: string, html = false):
   }
 }
 
+// ---------------------------------------------------------------- пометки уровня слов → администраторам
+// POST …/telegram-bot/flags, заголовок Authorization: Bearer <токен пользователя>. Собирает все ещё не отправленные
+// пометки (от любых пользователей) одним сообщением — повторные вызовы ничего не дублируют.
+async function notifyFlags(req: Request, token: string): Promise<Response> {
+  const jwt = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+  if (!jwt) return json({ error: "not_authenticated" }, 401);
+  const db = dbClient();
+  const { data: auth, error: authErr } = await db.auth.getUser(jwt);
+  if (authErr || !auth?.user) return json({ error: "not_authenticated" }, 401);
+  const { data, error } = await db.rpc("take_flag_notifications", {});
+  if (error) throw error;
+  const items = (data ?? []) as any[];
+  if (!items.length) return json({ ok: true, sent: 0 });
+  const kind = (k: string) => (k === "rare" ? "малоиспользуемое" : "не используется");
+  const lines = items.slice(0, 30).map((f) => {
+    const who = `${escapeHtml(f.name ?? "")}${f.username ? ` @${escapeHtml(f.username)}` : ""}`;
+    const done = f.status === "approved" ? " — <i>применено администратором</i>" : "";
+    return `• <b>${escapeHtml(f.uz)}</b> — ${escapeHtml(f.ru)}: ${kind(f.kind)}, ${f.from} → ${f.to} (${who})${done}`;
+  });
+  if (items.length > 30) lines.push(`…и ещё ${items.length - 30}`);
+  await notifyAdmins(db, token,
+    `🏷 <b>Пометки уровня слов</b>\n${lines.join("\n")}\n\nРешение: приложение → Настройки → «Пометки слов».`, true);
+  return json({ ok: true, sent: items.length });
+}
+
 const TIER_RU: Record<string, string> = { free: "Бесплатная", basic: "Базовая", advanced: "Продвинутая" };
 
 // Карточка платежа для администратора (HTML): кто, что, до какой даты; ID и команда возврата копируются нажатием
@@ -301,6 +327,14 @@ async function handler(req: Request): Promise<Response> {
   if (!token || !secret || !appUrl) {
     console.error("telegram-bot: secrets are not configured");
     return ok();
+  }
+  if (new URL(req.url).pathname.endsWith("/flags")) {
+    try {
+      return await notifyFlags(req, token);
+    } catch (e) {
+      console.error("flags error", e);
+      return json({ error: "server_error" }, 500);
+    }
   }
   if (new URL(req.url).pathname.endsWith("/invoice")) {
     try {

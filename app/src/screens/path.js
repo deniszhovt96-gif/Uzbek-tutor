@@ -65,12 +65,13 @@ export async function renderPath(app) {
 
       lvTopics.forEach((tp, i) => {
         const x = cx + amp * Math.sin(k * 0.9 + 0.6);
-        const isCurrent = current && tp.id === current.id;
+        const isCurrent = current && tp.key === current.key;
         const state = tp.locked ? 'locked' : tp.started >= tp.total ? 'done' : isCurrent ? 'current' : tp.started > 0 ? 'started' : '';
         const node = h('button', { class: `node ${state}`, type: 'button', style: { left: `${x}px`, top: `${y}px` },
           'aria-label': topicName(tp), onClick: () => { haptic(); topicSheet(tp); } },
           state === 'done' || state === 'locked' ? null : ring(tp.started / tp.total, isCurrent ? 76 : 64),
-          state === 'done' ? icon('check') : state === 'locked' ? icon('lock') : h('span', { class: 'n' }, String(i + 1)));
+          state === 'done' ? icon('check') : state === 'locked' ? icon('lock') : h('span', { class: 'n' }, String(i + 1)),
+          tp.colloquial ? h('span', { class: 'colloq-badge', title: t('colloquial') }, icon('chat')) : null);
         els.push(node);
         if (isCurrent) {
           currentY = y;
@@ -150,6 +151,7 @@ export async function renderPath(app) {
     const close = sheet(
       h('div', { class: 'label' }, `${tp.cefr} · ${t(`city${tp.cefr}`)}`),
       h('h3', {}, topicName(tp)),
+      tp.colloquial ? h('p', { class: 'small' }, h('span', { class: 'chip gold' }, t('colloquial')), ' ', t('colloquialTopicHint')) : null,
       h('p', { class: 'muted' }, t('topicWords', tp.started, tp.total), ' · ', t('topicLearned', tp.learned)),
       h('div', { class: 'track' },
         h('div', { class: 'fill', style: { width: `${Math.round((tp.started / tp.total) * 100)}%` } }),
@@ -167,7 +169,11 @@ export async function renderPath(app) {
             app.go('wordcheck', { mode: 'topic', topicId: tp.id, topicName: topicName(tp) });
           } }, icon('sparkle'), t('checkTopicBtn'))
         : null,
-      !tp.locked && tp.learned < tp.total ? h('p', { class: 'tiny muted' }, t('checkTopicHint')) : null);
+      !tp.locked && tp.learned < tp.total ? h('p', { class: 'tiny muted' }, t('checkTopicHint')) : null,
+      h('button', { class: 'btn btn-ghost topic-words', type: 'button', onClick: () => {
+        close();
+        app.go('dictionary', { topicId: tp.id, topicName: topicName(tp) });
+      } }, icon('dictionary'), t('topicWordsBtn')));
   }
 
   function gateTap(cefr, state) {
