@@ -96,7 +96,7 @@ export async function renderSubscription(app, params = {}) {
         renderSubscription(app, { tier, months });
       } else if (result === 'failed') {
         haptic('error');
-        status.textContent = t('payError');
+        status.textContent = `${t('payError')} ${t('payFailedHint')}`;
         status.className = 'small err';
       }
     });

@@ -90,9 +90,9 @@ export async function renderHome(app) {
     tile('filword', t('secWordsearch'), gated('filword', () => app.go('games', { game: 'filword' })), { badge: lockBadge('filword'), cls: 'gold' }),
     tile('test', t('secTest'), () => (testLevel ? app.go('test', { cefr: testLevel.cefr }) : app.tab('path')),
       { badge: testLevel ? testLevel.cefr : null, cls: 'gold' }),
-    tile('grammar', t('secGrammar'), soon('secGrammar', 'grammar'), { badge: t('soon'), cls: 'dim' }),
-    tile('history', t('secHistory'), soon('secHistory', 'history'), { badge: t('soon'), cls: 'dim' }),
-    tile('civics', t('secCivics'), soon('secCivics', 'civics'), { badge: t('soon'), cls: 'dim' }),
+    tile('grammar', t('secGrammar'), () => app.go('course', { course: 'grammar' })),
+    tile('history', t('secHistory'), () => app.go('course', { course: 'history' })),
+    tile('civics', t('secCivics'), () => app.go('course', { course: 'civics' })),
     tile('culture', t('secCulture'), soon('secCulture', 'culture'), { badge: t('soon'), cls: 'dim' }),
     tile('progress', t('secProgress'), () => app.go('progress')),
     tile('settings', t('secSettings'), () => app.tab('settings')));

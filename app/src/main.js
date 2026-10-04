@@ -14,6 +14,7 @@ import { renderPractice } from './screens/practice.js';
 import { renderGames } from './screens/games.js';
 import { renderTest } from './screens/test.js';
 import { renderSubscription } from './screens/subscription.js';
+import { renderCourse, renderUnit } from './screens/course.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -64,6 +65,8 @@ const SCREENS = {
   games: renderGames,
   test: renderTest,
   subscription: renderSubscription,
+  course: renderCourse,
+  unit: renderUnit,
 };
 
 // ---------------------------------------------------------------- нижняя навигация

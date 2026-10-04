@@ -713,6 +713,47 @@ Object.assign(en, {
   codeHint: 'If you received a subscription code (e.g. after paying in UZS), enter it here.',
 });
 
+// ---------------------------------------------------------------- шаг 9: курсы
+Object.assign(ru, {
+  courseTopics: 'Темы', courseVocab: 'Базовая лексика', courseTimeline: 'Хронология', courseContacts: 'Куда обращаться',
+  readCount: (r, n) => `Прочитано ${r} из ${n}`,
+  tasksDone: (d, n) => `Заданий выполнено: ${d} из ${n}`,
+  previewNote: (n, tier) => `Без подписки открыты первые ${n} темы. Все темы — в подписке «${tier}».`,
+  civicsDisclaimer: 'Материал справочный и не является юридической консультацией. Законы меняются — перед решениями проверяйте действующую редакцию на lex.uz, gov.uz, my.gov.uz или консультируйтесь с юристом.',
+  unitExpress: 'Кратко', unitDetailed: 'Подробно', readMore: 'Читать полностью',
+  unitExamples: 'Примеры из словаря', moreExamples: 'Ещё примеры',
+  unitTasks: 'Задания для самопроверки', tasksHint: 'Выполните письменно или вслух и отметьте выполненные.',
+  markRead: 'Отметить как прочитанное', markedRead: 'Прочитано',
+  prevUnit: '← Предыдущая', nextUnit: 'Следующая →', unitSource: 'Источник',
+  payFailedHint: 'Если звёзд не хватает, купите их в Telegram: Настройки → «Мои звёзды», и повторите оплату. Или оплатите в сумах через /paysupport.',
+});
+Object.assign(uz, {
+  courseTopics: 'Mavzular', courseVocab: 'Asosiy lugʻat', courseTimeline: 'Xronologiya', courseContacts: 'Qayerga murojaat qilish',
+  readCount: (r, n) => `${n} tadan ${r} tasi oʻqildi`,
+  tasksDone: (d, n) => `Bajarilgan topshiriqlar: ${n} tadan ${d}`,
+  previewNote: (n, tier) => `Obunasiz dastlabki ${n} ta mavzu ochiq. Barcha mavzular — «${tier}» obunasida.`,
+  civicsDisclaimer: 'Material maʼlumot uchun boʻlib, yuridik maslahat emas. Qonunlar oʻzgaradi — qaror qabul qilishdan oldin amaldagi tahririni lex.uz, gov.uz, my.gov.uz saytlarida tekshiring yoki yuristga murojaat qiling.',
+  unitExpress: 'Qisqacha', unitDetailed: 'Batafsil', readMore: 'Toʻliq oʻqish',
+  unitExamples: 'Lugʻatdan misollar', moreExamples: 'Yana misollar',
+  unitTasks: 'Oʻzini tekshirish uchun topshiriqlar', tasksHint: 'Yozma yoki ogʻzaki bajaring va bajarilganlarini belgilang.',
+  markRead: 'Oʻqilgan deb belgilash', markedRead: 'Oʻqildi',
+  prevUnit: '← Oldingi', nextUnit: 'Keyingi →', unitSource: 'Manba',
+  payFailedHint: 'Yulduzlar yetmasa, ularni Telegramda sotib oling: Sozlamalar → «Mening yulduzlarim», soʻng qayta toʻlang. Yoki /paysupport orqali soʻmda toʻlang.',
+});
+Object.assign(en, {
+  courseTopics: 'Topics', courseVocab: 'Basic vocabulary', courseTimeline: 'Timeline', courseContacts: 'Where to turn',
+  readCount: (r, n) => `Read ${r} of ${n}`,
+  tasksDone: (d, n) => `Tasks done: ${d} of ${n}`,
+  previewNote: (n, tier) => `Without a subscription the first ${n} topics are open. All topics come with the ${tier} plan.`,
+  civicsDisclaimer: 'This material is for reference only and is not legal advice. Laws change — check the current version on lex.uz, gov.uz, my.gov.uz or consult a lawyer before making decisions.',
+  unitExpress: 'In short', unitDetailed: 'In detail', readMore: 'Read in full',
+  unitExamples: 'Examples from the dictionary', moreExamples: 'More examples',
+  unitTasks: 'Self-check tasks', tasksHint: 'Do them in writing or aloud and tick the ones you have done.',
+  markRead: 'Mark as read', markedRead: 'Read',
+  prevUnit: '← Previous', nextUnit: 'Next →', unitSource: 'Source',
+  payFailedHint: 'If you do not have enough stars, buy them in Telegram: Settings → My Stars, then pay again. Or pay in UZS via /paysupport.',
+});
+
 const dict = { ru, uz, en };
 let lang = 'ru';
 

@@ -1,0 +1,57 @@
+name: Import Courses (импорт курсов)
+
+# Собирает курсы из data/source/grammar.xlsx, history.xlsx, civics.xlsx и загружает в Supabase.
+# Повторный запуск безопасен: темы и задания обновляются, прогресс пользователей сохраняется.
+# Запускается при изменении этих файлов или скрипта, либо вручную (Actions → Run workflow).
+on:
+  push:
+    branches: [main]
+    paths: ['data/source/grammar.xlsx', 'data/source/history.xlsx', 'data/source/civics.xlsx',
+            'scripts/build_courses.py', '.github/workflows/import-courses.yml']
+  workflow_dispatch:
+
+concurrency:
+  group: supabase-deploy
+  cancel-in-progress: false
+
+env:
+  DB_HOST: aws-0-ap-northeast-2.pooler.supabase.com
+  DB_PORT: '5432'
+  DB_USER: postgres.jjvtkvritnmwqfpvlxrs
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Сборка курсов
+        run: |
+          pip install --quiet openpyxl==3.1.5
+          python scripts/build_courses.py data/source data/build/courses.sql | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Сборка строки подключения
+        env:
+          DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: |
+          if [ -z "$DB_PASSWORD" ]; then
+            echo "::error::Не задан секрет SUPABASE_DB_PASSWORD"
+            exit 1
+          fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["DB_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          echo "SUPABASE_DB_URL=postgresql://${DB_USER}:${ENC}@${DB_HOST}:${DB_PORT}/postgres" >> "$GITHUB_ENV"
+
+      - name: Применение новых миграций
+        run: bash scripts/migrate.sh
+
+      - name: Загрузка в базу
+        run: psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f data/build/courses.sql
+
+      - name: Проверка
+        run: |
+          psql "$SUPABASE_DB_URL" -tA -c "select course_id || ': ' || count(*) || ' тем' from public.course_units group by course_id order by 1" | tee -a "$GITHUB_STEP_SUMMARY"
