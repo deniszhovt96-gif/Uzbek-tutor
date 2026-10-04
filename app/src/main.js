@@ -20,6 +20,7 @@ import { renderUnitTest } from './screens/unittest.js';
 import { renderReview } from './screens/review.js';
 import { renderDictionary } from './screens/dictionary.js';
 import { renderWordFlags } from './screens/wordflags.js';
+import { renderWelcome } from './screens/welcome.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -78,6 +79,7 @@ const SCREENS = {
   review: renderReview,
   dictionary: renderDictionary,
   wordflags: renderWordFlags,
+  welcome: renderWelcome,
 };
 
 // ---------------------------------------------------------------- нижняя навигация
@@ -143,7 +145,9 @@ async function start() {
     await login();
     await app.refreshMe();
     app.info = await rpc('get_app_info').catch(() => ({}));
-    app.home();
+    // первый вход — короткое знакомство с приложением
+    if (!(app.me && app.me.settings && app.me.settings.onboarded)) app.tab('welcome');
+    else app.home();
   } catch (err) {
     showError(err instanceof ApiError ? err : new ApiError(String(err)));
   }

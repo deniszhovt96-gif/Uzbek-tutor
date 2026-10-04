@@ -2,7 +2,7 @@
 // Пользователи уровня B1+ и администраторы могут пометить слово A1/A2 как малоиспользуемое (→ B1) или
 // неиспользуемое (→ B2); пометки пользователей проверяют администраторы.
 import { rpc, notifyFlags } from '../api.js';
-import { t, formatDate } from '../i18n.js';
+import { t, formatDate, getLang } from '../i18n.js';
 import { h, mount, spinner, sheet, haptic, audioButton } from '../ui.js';
 import { icon } from '../icons.js';
 import { play, wordAudio, exampleAudio } from '../audio.js';
@@ -89,7 +89,9 @@ export async function renderDictionary(app, params = {}) {
     for (const k of keys) {
       const g = groups.get(k);
       if (shown >= limit) { more += g.length; continue; }
-      const title = topicMode ? `${k} · ${t(`city${k}`)}` : group === 'abc' ? k.toUpperCase() : (topics[k] || '');
+      const tn = topics[k];
+      const tname = Array.isArray(tn) ? tn[{ ru: 0, uz: 1, en: 2 }[getLang()] || 0] || tn[0] : tn || '';
+      const title = topicMode ? `${k} · ${t(`city${k}`)}` : group === 'abc' ? k.toUpperCase() : tname;
       out.push(h('div', { class: 'dict-group' }, h('div', { class: 'label' }, title, h('span', { class: 'muted' }, ` · ${g.length}`)),
         h('div', { class: 'card dict-card' }, g.map((w) => wordRow(w, open)))));
       shown += g.length;
@@ -166,7 +168,7 @@ export async function wordSheet(app, id, onChanged) {
     h('div', { class: 'ex-ru muted' }, ex.ru)));
 
   sheet(
-    h('div', { class: 'label' }, `${w.cefr} · ${w.topic || ''}`),
+    h('div', { class: 'label' }, `${w.cefr} · ${(getLang() === 'uz' && w.topic_uz) || (getLang() === 'en' && w.topic_en) || w.topic || ''}`),
     h('div', { class: 'word-uz' }, w.uz, w.audio_ok && audioOn ? audioButton(() => play(wordAudio(w.id))) : null),
     h('div', { class: 'word-ru' }, w.ru),
     w.en ? h('div', { class: 'small muted', style: { textAlign: 'center' } }, w.en) : null,

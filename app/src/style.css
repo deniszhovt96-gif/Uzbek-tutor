@@ -678,3 +678,34 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .dict-row { border: 0; border-bottom: 1px solid var(--line, rgba(127,127,127,.12)); border-radius: 0; color: inherit; font: inherit; }
 .sheet .word-uz { display: flex; justify-content: center; align-items: center; gap: 10px; text-align: center; }
 .sheet .word-ru { text-align: center; }
+.acc-row { padding: 8px 0; border-bottom: 1px solid var(--line, rgba(127,127,127,.12)); }
+.acc-row:last-child { border-bottom: none; }
+.acc-top { display: flex; justify-content: space-between; margin-bottom: 6px; gap: 8px; }
+.acc-top .ok { color: var(--ok); } .acc-top .err { color: var(--err); }
+.err-chip { background: var(--err-soft); color: var(--err); margin-left: 4px; }
+.ok-chip { background: var(--ok-soft); color: var(--ok); margin-left: 4px; }
+.daytime { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 6px; }
+.daytime > div { display: grid; gap: 2px; }
+.daytime b { font-size: 20px; }
+.ext-locked .feature-list { margin: 10px 0; }
+
+/* ---------------------------------------------------------------- шаг 13: знакомство, напоминания, отзыв */
+.welcome { display: flex; flex-direction: column; gap: 12px; min-height: 100vh; padding-top: 24px; }
+.welcome h1 { margin: 4px 0 0; }
+.welcome .dots { display: flex; gap: 6px; justify-content: center; }
+.welcome .dots i { width: 8px; height: 8px; border-radius: 4px; background: var(--line, rgba(127,127,127,.25)); transition: width .2s; }
+.welcome .dots i.on { width: 22px; background: var(--accent); }
+.welcome-art { display: grid; place-items: center; height: 150px; }
+.welcome-art .art { width: 130px; height: 130px; }
+.welcome-nav { display: grid; grid-template-columns: auto 1fr; gap: 10px; margin-top: auto; align-items: center; }
+.remind-toggle { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; background: none; color: inherit; font: inherit; border: 0; padding: 0; }
+.remind-toggle > div { flex: 1; }
+.card.remind-toggle { padding: 14px; background: var(--surface); }
+.switch { flex: none; width: 46px; height: 28px; border-radius: 14px; background: var(--line, rgba(127,127,127,.3)); position: relative; transition: background .2s; }
+.switch i { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: left .2s; }
+.switch.on { background: var(--accent); }
+.switch.on i { left: 21px; }
+.remind-card { display: grid; gap: 12px; }
+.remind-hour { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.remind-hour select { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line, rgba(127,127,127,.3)); background: var(--surface); color: inherit; }
+.feedback-card { display: grid; gap: 10px; }

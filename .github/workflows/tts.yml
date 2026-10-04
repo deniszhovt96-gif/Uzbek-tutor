@@ -1,0 +1,96 @@
+# Озвучка недостающего аудио: разговорная лексика, исправленные слова и примеры.
+# Запуск вручную: Actions → «Озвучка» → Run workflow.
+#   1. собирает словарь и находит слова/примеры без аудио (scripts/tts.py);
+#   2. озвучивает их бесплатным голосом Google (как исходные файлы), запасной вариант — голос Microsoft;
+#   3. если задан секрет AUDIO_REPO_TOKEN — кладёт файлы в репозиторий uzbek-audio (папка audio/) и
+#      отмечает их в data/audio_voiced.txt, после чего запускает «Import Vocab» — в приложении появляются кнопки звука;
+#      без секрета — файлы можно скачать архивом (Artifacts) и загрузить в uzbek-audio вручную.
+name: Озвучка
+
+on:
+  workflow_dispatch:
+    inputs:
+      engine:
+        description: 'Голос: gtts — Google (как у исходных файлов), edge — Microsoft'
+        default: gtts
+        type: choice
+        options: [gtts, edge]
+      voice:
+        description: 'Голос Microsoft (только для edge)'
+        default: uz-UZ-MadinaNeural
+        type: choice
+        options: [uz-UZ-MadinaNeural, uz-UZ-SardorNeural]
+      limit:
+        description: 'Не больше файлов за запуск'
+        default: '1000'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: tts
+  cancel-in-progress: false
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      AUDIO_REPO_TOKEN: ${{ secrets.AUDIO_REPO_TOKEN }}
+      AUDIO_REPO: deniszhovt96-gif/uzbek-audio
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Зависимости
+        run: pip install openpyxl gTTS edge-tts
+
+      - name: Сборка словаря
+        run: python3 scripts/build_vocab.py
+
+      - name: Озвучка
+        run: |
+          python3 scripts/tts.py --out out/audio --engine "${{ inputs.engine }}" --voice "${{ inputs.voice }}" --limit "${{ inputs.limit }}" | tee tts.log
+          echo "## Озвучка" >> "$GITHUB_STEP_SUMMARY"
+          tail -n 3 tts.log >> "$GITHUB_STEP_SUMMARY"
+          echo "Файлов: $(ls out/audio | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Архив с файлами (если нет доступа к uzbek-audio)
+        if: env.AUDIO_REPO_TOKEN == ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: audio-and-list
+          path: |
+            out/audio
+            data/audio_voiced.txt
+
+      - name: Файлы → uzbek-audio
+        if: env.AUDIO_REPO_TOKEN != ''
+        run: |
+          [ -n "$(ls out/audio)" ] || { echo "Новых файлов нет"; exit 0; }
+          git clone --depth 1 "https://x-access-token:${AUDIO_REPO_TOKEN}@github.com/${AUDIO_REPO}.git" audio-repo
+          mkdir -p audio-repo/audio
+          cp out/audio/*.mp3 audio-repo/audio/
+          cd audio-repo
+          git config user.name "uzbek-tutor bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add audio
+          git commit -m "Озвучка: $(ls ../out/audio | wc -l) файлов" || exit 0
+          git push
+
+      - name: Отметить озвученные файлы и обновить словарь
+        if: env.AUDIO_REPO_TOKEN != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "uzbek-tutor bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audio_voiced.txt
+          git commit -m "Озвучено: $(ls out/audio | wc -l) файлов" || { echo "Список не изменился"; exit 0; }
+          git push
+          # коммит от GITHUB_TOKEN сам не запускает другие workflow — запускаем импорт словаря явно
+          gh workflow run import-vocab.yml --ref "${GITHUB_REF_NAME}"

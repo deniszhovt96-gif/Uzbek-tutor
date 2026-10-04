@@ -28,6 +28,8 @@ export async function renderSettings(app) {
   // «Базовая» — только лёгкая интенсивность; средняя и интенсивная — в «Продвинутой»
   const intensity = me.tier === 'advanced' ? settings.intensity || 'light' : 'light';
   const audioOn = settings.audio_exercises !== false;
+  const remindOn = settings.remind !== false;
+  const remindHour = Number(settings.remind_hour || 19);
 
   const save = async (lang, patch) => {
     app.me = await rpc('update_settings', { p_ui_lang: lang, p_settings: patch });
@@ -72,8 +74,23 @@ export async function renderSettings(app) {
             v !== 'light' && me.tier !== 'advanced' ? icon('lock') : null))),
     me.tier === 'basic' ? h('p', { class: 'small muted' }, t('basicIntensityNote')) : null,
 
+    h('h2', {}, t('remindTitle')),
+    h('div', { class: 'card remind-card' },
+      h('button', { type: 'button', class: `remind-toggle ${remindOn ? 'on' : ''}`, onClick: () => save(null, { remind: !remindOn }) },
+        h('div', {}, h('b', {}, t('remindDaily')), h('div', { class: 'small muted' }, t('remindHint'))),
+        h('span', { class: `switch ${remindOn ? 'on' : ''}` }, h('i'))),
+      remindOn ? h('label', { class: 'remind-hour' }, h('span', {}, t('remindAt')),
+        h('select', { onChange: (e) => save(null, { remind_hour: Number(e.target.value) }) },
+          Array.from({ length: 18 }, (_, k) => k + 6).map((hh) => h('option', { value: String(hh), selected: hh === remindHour }, `${String(hh).padStart(2, '0')}:00`)))) : null),
+
     h('h2', {}, t('audioEx')),
     seg([['on', t('on')], ['off', t('off')]], audioOn ? 'on' : 'off', (v) => save(null, { audio_exercises: v === 'on' })),
+
+    h('h2', {}, t('helpTitle')),
+    h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('welcome', { replay: true }) },
+      h('span', { class: 'tile-icon' }, icon('learn')),
+      h('div', {}, h('b', {}, t('guideTitle')), h('div', { class: 'small muted' }, t('guideShort'))),
+      icon('chevron', 'ic chev')),
 
     app.info && app.info.community_url ? [
       h('h2', {}, t('community')),

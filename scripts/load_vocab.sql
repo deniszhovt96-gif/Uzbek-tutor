@@ -28,7 +28,8 @@ create temp table s_examples (
 insert into public.topics (id, source_no, name_ru, name_uz, name_en, cefr, sort_order)
 select id, source_no, name_ru, nullif(name_uz, ''), nullif(name_en, ''), cefr, sort_order from s_topics
 on conflict (id) do update set
-  source_no = excluded.source_no, name_ru = excluded.name_ru, cefr = excluded.cefr, sort_order = excluded.sort_order;
+  source_no = excluded.source_no, name_ru = excluded.name_ru, cefr = excluded.cefr, sort_order = excluded.sort_order,
+  name_uz = coalesce(excluded.name_uz, public.topics.name_uz), name_en = coalesce(excluded.name_en, public.topics.name_en);
 
 -- слова: сначала без ссылок на дубли, затем ссылки
 insert into public.words (id, topic_id, cefr, uz, ru, uz_key, accept_ru, accept_uz, word_class,

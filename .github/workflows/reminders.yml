@@ -1,0 +1,40 @@
+# Напоминания от бота. Раз в час: кладёт в базу одноразовый пропуск и вызывает бота (маршрут /cron);
+# бот сам решает, кому пора написать (час напоминания у каждого свой, по его часовому поясу).
+# Новых секретов не нужно: используется тот же пароль базы, что и для миграций (SUPABASE_DB_PASSWORD).
+name: Напоминания
+
+on:
+  schedule:
+    - cron: '7 * * * *'      # каждый час в :07 (GitHub может запускать с задержкой в несколько минут)
+  workflow_dispatch:
+
+concurrency:
+  group: reminders
+  cancel-in-progress: false
+
+env:
+  DB_HOST: aws-0-ap-northeast-2.pooler.supabase.com
+  DB_PORT: '5432'
+  DB_USER: postgres.jjvtkvritnmwqfpvlxrs
+  BOT_URL: https://jjvtkvritnmwqfpvlxrs.supabase.co/functions/v1/telegram-bot/cron
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Пропуск и вызов бота
+        env:
+          DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: |
+          if [ -z "$DB_PASSWORD" ]; then echo "::error::Не задан секрет SUPABASE_DB_PASSWORD"; exit 1; fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["DB_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          URL="postgresql://${DB_USER}:${ENC}@${DB_HOST}:${DB_PORT}/postgres"
+          TOKEN=$(python3 -c 'import secrets; print(secrets.token_urlsafe(32))')
+          echo "::add-mask::$TOKEN"
+          psql "$URL" -v ON_ERROR_STOP=1 -q -c "insert into public.cron_tokens (token) values ('$TOKEN')"
+          RES=$(curl -sS -m 300 -X POST "$BOT_URL" -H "X-Cron-Token: $TOKEN" -H 'Content-Type: application/json' -d '{}')
+          echo "Ответ бота: $RES"
+          echo "Напоминания: $RES" >> "$GITHUB_STEP_SUMMARY"
+          echo "$RES" | grep -q '"ok":true'

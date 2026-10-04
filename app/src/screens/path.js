@@ -14,7 +14,8 @@ const GATE_H = 84;
 
 function topicName(tp) {
   const lang = getLang();
-  const name = (lang === 'uz' && tp.name_uz) || (lang === 'en' && tp.name_en) || tp.name || '';
+  const name = ((lang === 'uz' && tp.name_uz) || (lang === 'en' && tp.name_en) || tp.name || '')
+    .replace(/^(Soʻzlashuv nutqi\. |Spoken: )/, '');
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
 

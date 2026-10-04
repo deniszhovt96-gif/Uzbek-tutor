@@ -35,6 +35,8 @@ WORD_FIXES = ROOT / "data" / "word_fixes.csv"
 LEVELS = ROOT / "data" / "levels.csv"
 COLLOQUIAL = ROOT / "data" / "source" / "colloquial.json"
 COLLOQ_PREFIX = "Разговорная речь. "
+TOPIC_NAMES = ROOT / "data" / "topic_names.csv"   # переводы названий тем: name_ru,name_uz,name_en
+AUDIO_VOICED = ROOT / "data" / "audio_voiced.txt"  # файлы, озвученные workflow «Озвучка» (scripts/tts.py)
 OUT = ROOT / "data" / "build"
 
 CEFR_RANK = {"A1": 1, "A2": 2, "B1": 3, "B2": 4}
@@ -370,6 +372,21 @@ def main():
                 "is_hidden": "t" if is_hidden else "f",
             })
 
+    # -- переводы названий тем и дозаписанное аудио
+    topic_tr = {}
+    if TOPIC_NAMES.exists():
+        with open(TOPIC_NAMES, encoding="utf-8") as f:
+            topic_tr = {r["name_ru"]: r for r in csv.DictReader(f)}
+    missing_tr = [t["name"] for t in topics.values() if t["name"] not in topic_tr]
+    if missing_tr:
+        problems.append(f"Нет перевода названия темы: {', '.join(missing_tr)}")
+    voiced = set()
+    if AUDIO_VOICED.exists():
+        voiced = {x.strip() for x in AUDIO_VOICED.read_text(encoding="utf-8").split() if x.strip()}
+    for e in examples:
+        if e["audio_ok"] == "f" and e["is_hidden"] == "f" and f"word_{e['word_id']}_ex{e['n']}.mp3" in voiced:
+            e["audio_ok"] = "t"
+
     # -- запись
     OUT.mkdir(parents=True, exist_ok=True)
     with open(OUT / "topics.csv", "w", newline="", encoding="utf-8") as f:
@@ -381,13 +398,16 @@ def main():
                 no = int(float(no)) if no not in (None, "") else ""
             except ValueError:
                 no = ""
-            w.writerow([t["id"], no, t["name"], "", "", t["cefr"], t["id"]])
+            tr = topic_tr.get(t["name"], {})
+            w.writerow([t["id"], no, t["name"], tr.get("name_uz", ""), tr.get("name_en", ""), t["cefr"], t["id"]])
     with open(OUT / "words.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["id", "topic_id", "cefr", "uz", "ru", "uz_key", "accept_ru", "accept_uz",
                     "word_class", "canonical_id", "audio_ok", "sort_key", "register", "literary", "note", "en"])
         for d in sorted(data, key=lambda x: x["id"]):
             audio = "f" if (d["id"] in uz_changed or d.get("register") == "colloquial") else "t"
+            if f"word_{d['id']}.mp3" in voiced:
+                audio = "t"
             w.writerow([d["id"], topics[d["topic"]]["id"], d["cefr"], d["uz_disp"], d["ru"], d["uz_key"],
                         csv_array(d["accept_ru"]), csv_array(d["accept_uz"]), d["class"],
                         d["canonical"] if d["canonical"] else "", audio, d["sort_key"],

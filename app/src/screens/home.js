@@ -139,8 +139,22 @@ export async function renderHome(app) {
           h('div', { class: 'fill strong', style: { width: pct(l.learned) } }))));
   }));
 
+  // просьба об отзыве: один раз, когда человек уже позанимался (40+ слов)
+  const settingsNow = (me && me.settings) || {};
+  let feedbackCard = null;
+  if (!settingsNow.feedback_asked && home.words_started >= 40 && app.info && app.info.community_url) {
+    const dismiss = () => { feedbackCard.remove(); rpc('update_settings', { p_ui_lang: null, p_settings: { feedback_asked: true } }).catch(() => {}); };
+    feedbackCard = h('div', { class: 'card feedback-card' },
+      h('div', { class: 'row' }, h('span', { class: 'tile-icon gold' }, icon('users')),
+        h('div', {}, h('b', {}, t('fbTitle')), h('div', { class: 'small muted' }, t('fbText')))),
+      h('div', { class: 'flag-btns' },
+        h('button', { class: 'btn btn-small', type: 'button', onClick: () => { openLink(app.info.community_url); dismiss(); } }, t('fbGo')),
+        h('button', { class: 'btn btn-small btn-secondary', type: 'button', onClick: dismiss }, t('fbLater'))));
+  }
+
   mount(h('div', { class: 'screen' },
     profile,
+    feedbackCard,
     plan,
     h('h2', {}, t('sections')),
     tiles,

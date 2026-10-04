@@ -14,6 +14,8 @@
 // Оплата звёздами:
 //   POST …/telegram-bot/invoice  (из приложения, с токеном пользователя) → ссылка на счёт
 //   POST …/telegram-bot/flags    (из приложения после пометки слова) → уведомление администраторам о новых пометках
+//   POST …/telegram-bot/cron     (раз в час из GitHub Actions, заголовок X-Cron-Token — одноразовый пропуск из базы)
+//                                 → напоминания: ежедневное в выбранный час, день повторения, конец подписки
 //   pre_checkout_query → проверка тарифа и цены; successful_payment → продление подписки
 //
 // Секреты функции: TELEGRAM_BOT_TOKEN, TELEGRAM_WEBHOOK_SECRET, APP_URL.
@@ -268,6 +270,85 @@ async function notifyFlags(req: Request, token: string): Promise<Response> {
   return json({ ok: true, sent: items.length });
 }
 
+// ---------------------------------------------------------------- напоминания
+function plural(n: number, one: string, few: string, many: string): string {
+  const a = n % 10, b = n % 100;
+  return a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many;
+}
+const REMIND = {
+  ru: {
+    hi: (name: string) => `Привет${name ? `, ${name}` : ""}! 👋`,
+    due: (n: number) => `Сегодня ждут повторения ${n} ${plural(n, "слово", "слова", "слов")}. 10 минут — и они останутся в памяти.`,
+    fresh: "Самое время выучить новые слова — сеанс займёт около 10 минут.",
+    first: "Начните первый урок узбекского — это около 10 минут.",
+    rdToday: "Сегодня пятница — день повторения: сначала повторяем изученное, потом откроются новые слова.",
+    rdTomorrow: "Завтра пятница — день повторения.",
+    off: "Изменить время или отключить напоминания: Настройки в приложении.",
+    subEnd: (tier: string, date: string) => `Подписка «${tier}» заканчивается ${date}. Продлить можно в приложении: Настройки → Подписка.`,
+    open: "Открыть приложение",
+    tiers: { basic: "Базовая", advanced: "Продвинутая" } as Record<string, string>,
+  },
+  uz: {
+    hi: (name: string) => `Salom${name ? `, ${name}` : ""}! 👋`,
+    due: (n: number) => `Bugun ${n} ta soʻz takrorlashni kutmoqda. 10 daqiqa — va ular xotirada qoladi.`,
+    fresh: "Yangi soʻzlarni oʻrganish vaqti — mashgʻulot taxminan 10 daqiqa.",
+    first: "Oʻzbek tilidan birinchi darsni boshlang — taxminan 10 daqiqa.",
+    rdToday: "Bugun juma — takrorlash kuni: avval oʻrganilganlarni takrorlaymiz, keyin yangi soʻzlar ochiladi.",
+    rdTomorrow: "Ertaga juma — takrorlash kuni.",
+    off: "Vaqtni oʻzgartirish yoki eslatmalarni oʻchirish: ilovadagi Sozlamalar.",
+    subEnd: (tier: string, date: string) => `«${tier}» obunasi ${date} da tugaydi. Uzaytirish: ilovada Sozlamalar → Obuna.`,
+    open: "Ilovani ochish",
+    tiers: { basic: "Asosiy", advanced: "Kengaytirilgan" } as Record<string, string>,
+  },
+  en: {
+    hi: (name: string) => `Hi${name ? `, ${name}` : ""}! 👋`,
+    due: (n: number) => `${n} ${n === 1 ? "word is" : "words are"} waiting for review today. 10 minutes — and they stay in your memory.`,
+    fresh: "Time to learn some new words — a session takes about 10 minutes.",
+    first: "Start your first Uzbek lesson — about 10 minutes.",
+    rdToday: "Today is Friday, review day: first we review, then new words unlock.",
+    rdTomorrow: "Tomorrow is Friday, review day.",
+    off: "Change the time or turn reminders off: Settings in the app.",
+    subEnd: (tier: string, date: string) => `Your ${tier} plan ends on ${date}. You can renew it in the app: Settings → Subscription.`,
+    open: "Open the app",
+    tiers: { basic: "Basic", advanced: "Advanced" } as Record<string, string>,
+  },
+};
+
+async function runReminders(req: Request, token: string, appUrl: string): Promise<Response> {
+  const cronToken = req.headers.get("X-Cron-Token") || "";
+  if (!cronToken) return json({ error: "forbidden" }, 403);
+  const db = dbClient();
+  const { data, error } = await db.rpc("reminders_take", { p_token: cronToken });
+  if (error) throw error;
+  if (!data?.ok) return json({ error: data?.error ?? "forbidden" }, 403);
+  let sent = 0, blocked = 0;
+  for (const r of (data.items ?? []) as any[]) {
+    const L = REMIND[(r.lang === "uz" || r.lang === "en") ? r.lang : "ru" as "ru" | "uz" | "en"];
+    let text: string;
+    if (r.kind === "sub_end") {
+      const date = new Date(r.ends_at).toLocaleDateString(r.lang === "en" ? "en-GB" : "ru-RU");
+      text = L.subEnd(L.tiers[r.tier] ?? r.tier, date);
+    } else {
+      const lines = [L.hi(r.name ?? "")];
+      if (r.review_day_today) lines.push(L.rdToday);
+      lines.push(r.due > 0 ? L.due(r.due) : r.started > 0 ? L.fresh : L.first);
+      if (r.review_day_tomorrow) lines.push(L.rdTomorrow);
+      lines.push("", L.off);
+      text = lines.join("\n");
+    }
+    const res = await tgApi(token, "sendMessage", {
+      chat_id: r.tg_id, text, reply_markup: { inline_keyboard: [[{ text: L.open, web_app: { url: appUrl } }]] },
+    });
+    if (res?.ok) sent++;
+    else if (res?.error_code === 403) {           // пользователь заблокировал бота
+      blocked++;
+      await db.rpc("set_bot_blocked", { p_tg_id: r.tg_id, p_blocked: true });
+    }
+    await new Promise((ok) => setTimeout(ok, 40));   // не больше ~25 сообщений в секунду
+  }
+  return json({ ok: true, sent, blocked });
+}
+
 const TIER_RU: Record<string, string> = { free: "Бесплатная", basic: "Базовая", advanced: "Продвинутая" };
 
 // Карточка платежа для администратора (HTML): кто, что, до какой даты; ID и команда возврата копируются нажатием
@@ -327,6 +408,14 @@ async function handler(req: Request): Promise<Response> {
   if (!token || !secret || !appUrl) {
     console.error("telegram-bot: secrets are not configured");
     return ok();
+  }
+  if (new URL(req.url).pathname.endsWith("/cron")) {
+    try {
+      return await runReminders(req, token, appUrl);
+    } catch (e) {
+      console.error("cron error", e);
+      return json({ error: "server_error" }, 500);
+    }
   }
   if (new URL(req.url).pathname.endsWith("/flags")) {
     try {
@@ -389,6 +478,7 @@ async function handler(req: Request): Promise<Response> {
 
   try {
     if (command === "/start") {
+      await db.rpc("set_bot_blocked", { p_tg_id: from.id, p_blocked: false });
       await tgCall(token, "sendMessage", {
         chat_id: chatId,
         text: t.start(from.first_name || ""),
