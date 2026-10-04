@@ -8,7 +8,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export async function renderSubscription(app, params = {}) {
   mount(spinner(t('loading')));
-  const [me, plans, payments] = await Promise.all([app.refreshMe(), rpc('get_plans'), rpc('get_my_payments')]);
+  const [me, plans, payments, queue] = await Promise.all([app.refreshMe(), rpc('get_plans'), rpc('get_my_payments'),
+    rpc('get_my_subscriptions').catch(() => [])]);
+  // после текущей подписки: другой уровень продолжится на оставшийся срок
+  const next = (queue || []).filter((q) => q.tier !== me.tier);
   let tier = params.tier || (me.tier === 'advanced' ? 'advanced' : me.tier === 'basic' ? 'basic' : 'basic');
   let months = params.months || 3;
 
@@ -51,7 +54,8 @@ export async function renderSubscription(app, params = {}) {
       h('div', { class: 'card hero' },
         h('div', { class: 'label' }, t('currentPlan')),
         h('h3', {}, tierName(me.tier)),
-        h('p', { class: 'muted small' }, me.tier === 'free' ? t('freeLimits') : t('tierUntil', formatDate(me.tier_ends_at)))),
+        h('p', { class: 'muted small' }, me.tier === 'free' ? t('freeLimits') : t('tierUntil', formatDate(me.tier_ends_at))),
+        next.map((q) => h('p', { class: 'small queue-note' }, icon('clock'), t('nextPlan', tierName(q.tier), formatDate(q.ends_at))))),
       h('h2', {}, t(me.tier === 'free' ? 'choosePlan' : 'extendPlan')),
       tierSeg,
       h('div', { class: 'card' }, features),

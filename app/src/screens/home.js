@@ -45,8 +45,11 @@ export async function renderHome(app) {
   if (home.daily_limit_reached) {
     plan = h('div', { class: 'card hero' },
       h('div', { class: 'label' }, t('planTitle')),
-      h('p', {}, t('dailyLimit')),
-      h('button', { class: 'btn', onClick: () => app.go('subscription') }, t('toSubscription')));
+      h('p', {}, me.tier === 'basic' ? t('dailyLimitBasic', home.sessions_limit) : t('dailyLimit')),
+      me.tier === 'basic' && home.due_total > 0
+        ? h('button', { class: 'btn btn-big', onClick: () => app.go('learn', { mode: 'review' }) }, t('reviewOnly', home.due_total)) : null,
+      h('button', { class: `btn ${me.tier === 'basic' ? 'btn-secondary' : ''}`, onClick: () => app.go('subscription') },
+        me.tier === 'basic' ? t('toAdvanced') : t('toSubscription')));
   } else {
     const hasPlan = home.plan_new + home.plan_review > 0;
     plan = h('div', { class: 'card hero' },
@@ -54,7 +57,8 @@ export async function renderHome(app) {
       home.need_test && home.plan_review === 0
         ? h('div', {}, h('h3', {}, t('needTestTitle', home.unlocked)), h('p', { class: 'muted small' }, t('needTestText', home.unlocked)))
         : hasPlan
-          ? h('div', { class: 'plan-nums' }, num(home.plan_new, t('planNew')), num(home.plan_review, t('planReview')))
+          ? h('div', { class: 'plan-nums' }, num(home.plan_new, t('planNew')), num(home.plan_review, t('planReview')),
+              home.sessions_limit > 0 ? num(`${home.sessions_used}/${home.sessions_limit}`, t('planSessions')) : null)
           : h('p', {}, t('todayNothing')),
       hasPlan || !home.need_test
         ? h('button', { class: 'btn btn-big', onClick: () => app.go('learn', { mode: 'normal' }) },
@@ -88,6 +92,7 @@ export async function renderHome(app) {
     tile('practice', t('secPractice'), gated('practice', () => app.go('practice')), { badge: lockBadge('practice') }),
     tile('games', t('secGames'), gated('games', () => app.go('games')), { badge: lockBadge('games') }),
     tile('filword', t('secWordsearch'), gated('filword', () => app.go('games', { game: 'filword' })), { badge: lockBadge('filword'), cls: 'gold' }),
+    tile('sparkle', t('secQuiz'), () => app.go('wordcheck', { mode: 'review' }), { cls: 'gold' }),
     tile('test', t('secTest'), () => (testLevel ? app.go('test', { cefr: testLevel.cefr }) : app.tab('path')),
       { badge: testLevel ? testLevel.cefr : null, cls: 'gold' }),
     tile('grammar', t('secGrammar'), () => app.go('course', { course: 'grammar' })),

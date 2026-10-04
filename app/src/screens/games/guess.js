@@ -7,7 +7,7 @@ import { gameResult, setBest } from '../games.js';
 
 const LIVES = 6;
 const WORDS = 10;
-const KEYS = ['a', 'b', 'd', 'e', 'f', 'g', 'gʻ', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'oʻ', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z'];
+const KEYS = ['a', 'b', 'd', 'e', 'f', 'g', 'gʻ', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'oʻ', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z', 'sh', 'ch', 'ng'];
 
 const norm = (ch) => ch.toLowerCase().replace('ʼ', '');
 

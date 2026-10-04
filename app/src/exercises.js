@@ -55,6 +55,12 @@ export function tilesOf(text) {
       tiles[tiles.length - 1].ch += ch;
       continue;
     }
+    // sh, ch, ng — одна буква узбекского алфавита, одна плитка (решение владельца, шаг 11)
+    if (/[hgHG]/.test(ch) && tiles.length && /^[scnSCN]$/.test(tiles[tiles.length - 1].ch || '')
+        && /^(sh|ch|ng)$/i.test(tiles[tiles.length - 1].ch + ch)) {
+      tiles[tiles.length - 1].ch += ch;
+      continue;
+    }
     if (ch === 'ʼ' && tiles.length && !tiles[tiles.length - 1].space) {
       tiles[tiles.length - 1].ch += ch;
       continue;
@@ -70,7 +76,7 @@ function isLetterTile(t) { return !t.space && /[a-zA-Z]/.test(t.ch); }
 // Реалистичные замены одной буквы (типичные ошибки): oʻ↔o, gʻ↔g, x↔h, q↔k, a↔o, i↔e, u↔oʻ
 const SUBS = {
   'oʻ': ['o', 'u'], 'gʻ': ['g'], o: ['a', 'oʻ'], g: ['gʻ'], a: ['o'],
-  x: ['h'], h: ['x'], q: ['k', 'gʻ'], k: ['q'], i: ['e'], e: ['i'], u: ['oʻ'],
+  x: ['h'], h: ['x'], q: ['k', 'gʻ'], k: ['q'], i: ['e'], e: ['i'], u: ['oʻ'], sh: ['s'], ch: ['sh'], ng: ['n'],
 };
 
 export function distort(word, forbiddenKeys = new Set(), rnd = Math.random) {
@@ -79,7 +85,8 @@ export function distort(word, forbiddenKeys = new Set(), rnd = Math.random) {
   tiles.forEach((t, i) => {
     if (t.space) return;
     const base = t.ch.toLowerCase().replace('ʼ', '');
-    for (const rep of SUBS[base] || []) candidates.push({ i, rep: t.ch === t.ch.toUpperCase() && t.ch !== t.ch.toLowerCase() ? rep.toUpperCase() : rep });
+    const upper = t.ch[0] !== t.ch[0].toLowerCase();
+    for (const rep of SUBS[base] || []) candidates.push({ i, rep: upper ? rep[0].toUpperCase() + rep.slice(1) : rep });
   });
   for (const c of shuffle(candidates, rnd)) {
     const wrongTiles = tiles.map((t, i) => (i === c.i ? { ch: c.rep + (t.ch.endsWith('ʼ') ? 'ʼ' : '') } : t));

@@ -3,6 +3,7 @@ import { t, setLang, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, haptic, openLink } from '../ui.js';
 import { icon } from '../icons.js';
 import { applyTheme, currentTheme } from '../theme.js';
+import { lockedSheet } from './home.js';
 
 // Превью тем: фон, карточка, акцент, текст
 const SWATCH = {
@@ -24,7 +25,8 @@ export async function renderSettings(app) {
   mount(spinner(t('loading')));
   const me = await app.refreshMe();
   const settings = me.settings || {};
-  const intensity = settings.intensity || 'light';
+  // «Базовая» — только лёгкая интенсивность; средняя и интенсивная — в «Продвинутой»
+  const intensity = me.tier === 'advanced' ? settings.intensity || 'light' : 'light';
   const audioOn = settings.audio_exercises !== false;
 
   const save = async (lang, patch) => {
@@ -60,9 +62,15 @@ export async function renderSettings(app) {
     me.tier === 'free'
       ? h('p', { class: 'muted' }, t('freeIntensity'))
       : h('div', { class: 'radio-list' }, ['light', 'medium', 'intense'].map((v) =>
-          h('button', { type: 'button', class: `radio ${v === intensity ? 'active' : ''}`,
-            onClick: () => v !== intensity && save(null, { intensity: v, ...INTENSITY[v] }) },
-            t(v === 'light' ? 'intLight' : v === 'medium' ? 'intMedium' : 'intIntense')))),
+          h('button', { type: 'button', class: `radio ${v === intensity ? 'active' : ''} ${v !== 'light' && me.tier !== 'advanced' ? 'locked' : ''}`,
+            onClick: () => {
+              if (v === intensity) return;
+              if (v !== 'light' && me.tier !== 'advanced') return lockedSheet(app, 'advanced');
+              return save(null, { intensity: v, ...INTENSITY[v] });
+            } },
+            h('span', { class: 'spacer' }, t(v === 'light' ? 'intLight' : v === 'medium' ? 'intMedium' : 'intIntense')),
+            v !== 'light' && me.tier !== 'advanced' ? icon('lock') : null))),
+    me.tier === 'basic' ? h('p', { class: 'small muted' }, t('basicIntensityNote')) : null,
 
     h('h2', {}, t('audioEx')),
     seg([['on', t('on')], ['off', t('off')]], audioOn ? 'on' : 'off', (v) => save(null, { audio_exercises: v === 'on' })),

@@ -527,6 +527,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .radio-list { display: grid; gap: 8px; }
 .radio { text-align: left; border: 1.5px solid transparent; background: var(--surface); border-radius: 14px; padding: 13px 15px; box-shadow: var(--shadow); }
 .radio.active { border-color: var(--accent); font-weight: 650; }
+.radio { display: flex; align-items: center; gap: 8px; }
+.radio.locked { color: var(--muted); }
+.radio .ic { width: 16px; height: 16px; }
 .themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .theme-opt {
   border: 2px solid transparent; border-radius: 16px; padding: 8px; background: var(--surface); box-shadow: var(--shadow);
@@ -636,3 +639,10 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .review-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
 .review-btns .btn { width: 100%; justify-content: center; }
 .community { margin-top: 14px; }
+
+/* ---------------------------------------------------------------- экспресс-проверка и контрольная */
+.ex-controls { display: grid; gap: 10px; margin-top: 14px; }
+.ex-controls .options { margin: 0; }
+.ex-card .feedback b { display: block; margin-bottom: 2px; }
+.queue-note { display: flex; align-items: center; gap: 6px; }
+.queue-note .ic { width: 18px; height: 18px; color: var(--accent); flex: none; }

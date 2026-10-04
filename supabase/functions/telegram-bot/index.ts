@@ -7,6 +7,9 @@
 //   /paysupport        — помощь с оплатой (обязательна для оплаты звёздами)
 //   /terms             — условия подписки
 //   /refund ID         — (только админ) вернуть звёзды по платежу (ID из уведомления об оплате)
+//   /grant U T M       — (только админ) выдать подписку T (basic|advanced) на M месяцев пользователю U
+//                        (Telegram ID или @username). Старшая подписка действует первой, младшая — после неё.
+//   /id                — пользователь узнаёт свой Telegram ID (чтобы сообщить администратору)
 //
 // Оплата звёздами:
 //   POST …/telegram-bot/invoice  (из приложения, с токеном пользователя) → ссылка на счёт
@@ -25,8 +28,8 @@ const TEXT = {
     start: (name: string) =>
       `Ассалому алайкум, ${name}! 👋\n\nЭто самоучитель узбекского языка: 8 700+ слов с озвучкой, примеры, грамматика, история и обществознание Узбекистана.\n\nНажмите кнопку ниже, чтобы начать.`,
     open: "Открыть приложение",
-    help: "Команды:\n/start — открыть приложение\n/paysupport — помощь с оплатой\n/terms — условия подписки\n/help — помощь",
-    adminHelp: "\n\nАдминистратор:\n/gencode basic|advanced 1|3|6|12 количество [активаций]\nНапример: /gencode basic 1 5\n/refund ID_платежа — вернуть звёзды",
+    help: "Команды:\n/start — открыть приложение\n/paysupport — помощь с оплатой\n/terms — условия подписки\n/id — мой Telegram ID\n/help — помощь",
+    adminHelp: "\n\nАдминистратор:\n/gencode basic|advanced 1|3|6|12 количество [активаций]\nНапример: /gencode basic 1 5\n/refund ID_платежа — вернуть звёзды\n/grant ID|@username basic|advanced месяцев — выдать подписку\nНапример: /grant 123456789 advanced 1",
     tierName: (tier: string) => (tier === "basic" ? "Базовая" : "Продвинутая"),
     invoiceTitle: (tier: string, months: number) => `Подписка «${tier === "basic" ? "Базовая" : "Продвинутая"}» · ${months} мес.`,
     invoiceDesc: (tier: string, months: number) =>
@@ -38,7 +41,7 @@ const TEXT = {
     paySupport: (admin: string) =>
       `Помощь с оплатой.\n\nЕсли звёзды списались, а подписка не появилась, или нужна отмена — напишите администратору: ${admin}.\nУкажите дату оплаты. Возврат звёзд возможен, если подпиской ещё не пользовались.`,
     terms:
-      "Условия подписки\n\n• Подписка оплачивается звёздами Telegram на 1, 3, 6 или 12 месяцев и не продлевается автоматически.\n• Новая оплата того же уровня продлевает подписку с даты её окончания.\n• «Базовая»: безлимитные слова, тренировка, игры, грамматика. «Продвинутая»: дополнительно история, обществознание, культура, филворд, расширенная статистика.\n• Вопросы и возвраты — /paysupport.",
+      "Условия подписки\n\n• Подписка оплачивается звёздами Telegram на 1, 3, 6 или 12 месяцев и не продлевается автоматически.\n• Новая оплата того же уровня продлевает подписку с даты её окончания. Если действуют обе подписки, сначала работает «Продвинутая», а «Базовая» продолжается после неё на оставшийся срок.\n• «Базовая»: лёгкая программа, до 2 сеансов с новыми словами в день (повторение без ограничений), тренировка, игры, грамматика. «Продвинутая»: любая интенсивность и сеансы без ограничений, дополнительно история, обществознание, культура, филворд, расширенная статистика.\n• Вопросы и возвраты — /paysupport.",
     refundUsage: "Формат: /refund ID_платежа",
     refundDone: (stars: number) => `Возврат выполнен: ${stars} ⭐. Подписка по этому платежу отменена.`,
     refundFail: (e: string) => `Возврат не выполнен: ${e}`,
@@ -52,8 +55,8 @@ const TEXT = {
     start: (name: string) =>
       `Assalomu alaykum, ${name}! 👋\n\nBu oʻzbek tilini oʻrganish ilovasi: 8 700+ soʻz ovozli, misollar, grammatika, tarix va jamiyatshunoslik.\n\nBoshlash uchun quyidagi tugmani bosing.`,
     open: "Ilovani ochish",
-    help: "Buyruqlar:\n/start — ilovani ochish\n/paysupport — toʻlov boʻyicha yordam\n/terms — obuna shartlari\n/help — yordam",
-    adminHelp: "\n\nAdministrator:\n/gencode basic|advanced 1|3|6|12 soni [faollashtirish]\n/refund ID — yulduzlarni qaytarish",
+    help: "Buyruqlar:\n/start — ilovani ochish\n/paysupport — toʻlov boʻyicha yordam\n/terms — obuna shartlari\n/id — mening Telegram ID\n/help — yordam",
+    adminHelp: "\n\nAdministrator:\n/gencode basic|advanced 1|3|6|12 soni [faollashtirish]\n/refund ID — yulduzlarni qaytarish\n/grant ID|@username basic|advanced oy — obuna berish",
     tierName: (tier: string) => (tier === "basic" ? "Asosiy" : "Kengaytirilgan"),
     invoiceTitle: (tier: string, months: number) => `«${tier === "basic" ? "Asosiy" : "Kengaytirilgan"}» obuna · ${months} oy`,
     invoiceDesc: (tier: string, months: number) =>
@@ -79,8 +82,8 @@ const TEXT = {
     start: (name: string) =>
       `Assalomu alaykum, ${name}! 👋\n\nThis is an Uzbek self-study app: 8,700+ words with audio, examples, grammar, history and civics of Uzbekistan.\n\nTap the button below to start.`,
     open: "Open the app",
-    help: "Commands:\n/start — open the app\n/paysupport — payment help\n/terms — subscription terms\n/help — help",
-    adminHelp: "\n\nAdmin:\n/gencode basic|advanced 1|3|6|12 count [uses]\n/refund ID — refund stars",
+    help: "Commands:\n/start — open the app\n/paysupport — payment help\n/terms — subscription terms\n/id — my Telegram ID\n/help — help",
+    adminHelp: "\n\nAdmin:\n/gencode basic|advanced 1|3|6|12 count [uses]\n/refund ID — refund stars\n/grant ID|@username basic|advanced months — grant a subscription",
     tierName: (tier: string) => (tier === "basic" ? "Basic" : "Advanced"),
     invoiceTitle: (tier: string, months: number) => `${tier === "basic" ? "Basic" : "Advanced"} plan · ${months} mo.`,
     invoiceDesc: (tier: string, months: number) =>
@@ -260,7 +263,20 @@ async function adminCard(db: any, chargeId: string, title: string, withRefund: b
   return lines.join("\n");
 }
 
-export function parseGencode(text: string):
+export const GRANT_USAGE = "Формат: /grant ID|@username basic|advanced месяцев\nНапример: /grant 123456789 advanced 1\nСвой ID пользователь узнаёт командой /id.";
+
+export function parseGrant(text: string): { tgId: number | null; username: string | null; tier: string; months: number } | null {
+  const [, who, tier, m] = text.trim().split(/\s+/);
+  if (!who || !tier || !m) return null;
+  const months = Number(m);
+  if (!["basic", "advanced"].includes(tier.toLowerCase()) || ![1, 3, 6, 12].includes(months)) return null;
+  if (/^\d{3,15}$/.test(who)) return { tgId: Number(who), username: null, tier: tier.toLowerCase(), months };
+  const u = who.replace(/^@/, "");
+  if (!/^[A-Za-z0-9_]{4,32}$/.test(u)) return null;
+  return { tgId: null, username: u, tier: tier.toLowerCase(), months };
+}
+
+function parseGencode(text: string):
   | { tier: "basic" | "advanced"; months: number; count: number; uses: number }
   | null {
   const parts = text.trim().split(/\s+/);
@@ -382,6 +398,43 @@ async function handler(req: Request): Promise<Response> {
         chat_id: chatId, parse_mode: "HTML",
         text: await adminCard(db, chargeId, `↩️ <b>Возврат выполнен: ${pay.stars} ⭐</b> — подписка по этому платежу отменена`, false),
       });
+    } else if (command === "/id") {
+      await tgCall(token, "sendMessage", { chat_id: chatId, parse_mode: "HTML",
+        text: `${lang === "en" ? "Your Telegram ID" : lang === "uz" ? "Sizning Telegram ID" : "Ваш Telegram ID"}: <code>${from.id}</code>` });
+    } else if (command === "/grant") {
+      if (!(await isAdmin())) {
+        await tgCall(token, "sendMessage", { chat_id: chatId, text: t.notAdmin });
+        return ok();
+      }
+      const args = parseGrant(text);
+      if (!args) {
+        await tgCall(token, "sendMessage", { chat_id: chatId, text: GRANT_USAGE });
+        return ok();
+      }
+      let tgId = args.tgId;
+      if (!tgId && args.username) {
+        const { data: u } = await db.from("profiles").select("tg_id").ilike("username", args.username.replace(/_/g, "\\_")).limit(2);
+        if (!u || u.length !== 1) {
+          await tgCall(token, "sendMessage", { chat_id: chatId, text: `Пользователь @${args.username} не найден (он должен хотя бы раз открыть приложение). Можно указать Telegram ID — пользователь узнает его командой /id.` });
+          return ok();
+        }
+        tgId = Number(u[0].tg_id);
+      }
+      const { data: g, error: ge } = await db.rpc("admin_grant", { p_tg_id: tgId, p_tier: args.tier, p_months: args.months, p_admin: from.id });
+      if (ge) throw ge;
+      if (!g?.ok) {
+        const why: Record<string, string> = { no_user: "пользователь не найден — он должен хотя бы раз открыть приложение", bad_args: "неверные параметры", forbidden: "нет прав" };
+        await tgCall(token, "sendMessage", { chat_id: chatId, text: `Подписка не выдана: ${why[g?.error] ?? g?.error}.\n\n${GRANT_USAGE}` });
+        return ok();
+      }
+      const tierRu = args.tier === "basic" ? "Базовая" : "Продвинутая";
+      const d = (iso: string) => new Date(iso).toLocaleDateString("ru-RU");
+      const who = `${escapeHtml(g.name ?? "")}${g.username ? ` (@${escapeHtml(g.username)})` : ""}, ID <code>${tgId}</code>`;
+      await tgCall(token, "sendMessage", { chat_id: chatId, parse_mode: "HTML",
+        text: `✅ Выдана подписка «${tierRu}» на ${args.months} мес.\n${who}\nПериод: ${d(g.starts_at)} — ${d(g.ends_at)}` });
+      await tgApi(token, "sendMessage", { chat_id: tgId,
+        text: `🎁 Вам выдана подписка «${tierRu}» на ${args.months} мес. — до ${d(g.ends_at)}.\nОткройте приложение, чтобы продолжить.`,
+        reply_markup: { inline_keyboard: [[{ text: t.open, web_app: { url: appUrl } }]] } }).catch(() => {});
     } else if (command === "/gencode") {
       if (!(await isAdmin())) {
         await tgCall(token, "sendMessage", { chat_id: chatId, text: t.notAdmin });

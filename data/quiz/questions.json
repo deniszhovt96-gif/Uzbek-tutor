@@ -4587,7 +4587,7 @@
    "In the 8th century",
    "In the 4th century"
   ],
-  "quote_ru": "В середине VI в. (551–555 гг.) государство эфталитов было разгромлено"
+  "quote_ru": "В середине VI в. (551–555 гг.; в некоторых источниках — 557–560 гг.) государство эфталитов было разгромлено"
  },
  {
   "course": "history",
@@ -6051,28 +6051,28 @@
   "course": "history",
   "n": 14,
   "k": 1,
-  "q_ru": "Какой город стал столицей государства Шейбанидов?",
+  "q_ru": "Какой город был первой столицей государства Шейбанидов?",
   "options_ru": [
-   "Бухара",
+   "Самарканд",
    "Герат",
    "Хива",
    "Коканд"
   ],
-  "q_uz": "Shayboniylar davlatining poytaxti qaysi shahar boʻldi?",
+  "q_uz": "Shayboniylar davlatining dastlabki poytaxti qaysi shahar boʻlgan?",
   "options_uz": [
-   "Buxoro",
+   "Samarqand",
    "Hirot",
    "Xiva",
    "Qoʻqon"
   ],
-  "q_en": "Which city became the capital of the Shaybanid state?",
+  "q_en": "Which city was the first capital of the Shaybanid state?",
   "options_en": [
-   "Bukhara",
+   "Samarkand",
    "Herat",
    "Khiva",
    "Kokand"
   ],
-  "quote_ru": "основав государство Шейбанидов (1500–1598 гг.) со столицей в Бухаре"
+  "quote_ru": "со столицей сначала в Самарканде, а с середины XVI в. — в Бухаре"
  },
  {
   "course": "history",
@@ -6369,7 +6369,7 @@
    "In 1409–1449",
    "In 1500–1507"
   ],
-  "quote_ru": "медресе Тилля-Кари (1646–1660 гг., «золотое медресе»)"
+  "quote_ru": "медресе Тилля-Кари (1646–1660 гг., «золотое медресе»"
  },
  {
   "course": "history",
@@ -9026,14 +9026,14 @@
    "Комиссии по трудовым спорам или суд",
    "Органы ЗАГС по месту работы",
    "Налоговые органы по месту регистрации",
-   "Миграционная служба и ГСБДД"
+   "Миграционная служба и служба безопасности дорожного движения"
   ],
   "q_uz": "Mehnat nizolarini kim koʻrib chiqadi?",
   "options_uz": [
    "Mehnat nizolari boʻyicha komissiyalar yoki sud",
    "Ish joyidagi FHDYo organlari",
    "Roʻyxatdan oʻtgan joydagi soliq organlari",
-   "Migratsiya xizmati va YHXBB"
+   "Migratsiya xizmati va Yoʻl harakati xavfsizligi xizmati"
   ],
   "q_en": "Who hears labor disputes?",
   "options_en": [
@@ -9079,21 +9079,21 @@
   "options_ru": [
    "В кадастровых органах",
    "В органах ЗАГС",
-   "В Государственном налоговом комитете",
+   "В Налоговом комитете",
    "В миграционной службе"
   ],
   "q_uz": "Kvartira yoki uyga mulk huquqining oʻtishi qayerda roʻyxatdan oʻtkaziladi?",
   "options_uz": [
    "Kadastr organlarida",
    "FHDYo organlarida",
-   "Davlat soliq qoʻmitasida",
+   "Soliq qoʻmitasida",
    "Migratsiya xizmatida"
   ],
   "q_en": "Where is the transfer of ownership of an apartment or house registered?",
   "options_en": [
    "With the cadastral authorities",
    "At the civil registry office",
-   "At the State Tax Committee",
+   "At the Tax Committee",
    "At the migration service"
   ],
   "quote_ru": "последующая государственная регистрация перехода права собственности в кадастровых органах"
@@ -9366,7 +9366,7 @@
    "e-visa.gov.uz",
    "stat.uz"
   ],
-  "quote_ru": "через персональный кабинет на портале Государственного налогового комитета (soliq.uz)"
+  "quote_ru": "через персональный кабинет на портале Налогового комитета (soliq.uz)"
  },
  {
   "course": "civics",
@@ -9644,14 +9644,14 @@
   "k": 8,
   "q_ru": "Какие уполномоченные органы, наряду с судом, рассматривают дела об административных правонарушениях?",
   "options_ru": [
-   "МВД, ГСБДД, миграционная служба",
+   "МВД, служба безопасности дорожного движения, миграционная служба",
    "Органы ЗАГС и нотариат",
    "Сенат и Законодательная палата",
    "Конституционный суд и омбудсман"
   ],
   "q_uz": "Sud bilan bir qatorda maʼmuriy huquqbuzarliklar toʻgʻrisidagi ishlarni qaysi vakolatli organlar koʻrib chiqadi?",
   "options_uz": [
-   "IIV, YHXBB, migratsiya xizmati",
+   "IIV, Yoʻl harakati xavfsizligi xizmati, migratsiya xizmati",
    "FHDYo organlari va notariat",
    "Senat va Qonunchilik palatasi",
    "Konstitutsiyaviy sud va ombudsman"
@@ -9663,7 +9663,7 @@
    "The Senate and the Legislative Chamber",
    "The Constitutional Court and the ombudsman"
   ],
-  "quote_ru": "Дела об административных правонарушениях рассматриваются уполномоченными органами (МВД, ГСБДД, миграционная служба) или судом"
+  "quote_ru": "Дела об административных правонарушениях рассматриваются уполномоченными органами (МВД, служба безопасности дорожного движения, миграционная служба) или судом"
  },
  {
   "course": "civics",
@@ -10581,7 +10581,7 @@
    "The Ministry of Justice",
    "The Customs Committee"
   ],
-  "quote_ru": "документ выдаётся Агентством по внешней трудовой миграции при Министерстве занятости и трудовых отношений"
+  "quote_ru": "документ выдаётся Агентством по внешней трудовой миграции при Министерстве занятости и сокращения бедности"
  },
  {
   "course": "civics",
@@ -11669,26 +11669,26 @@
   "k": 3,
   "q_ru": "Где уточнять порядок обмена иностранного водительского удостоверения?",
   "options_ru": [
-   "В Государственной службе безопасности дорожного движения",
+   "В службе безопасности дорожного движения МВД",
    "В Министерстве иностранных дел",
    "В налоговом органе",
    "В Агентстве по внешней трудовой миграции"
   ],
   "q_uz": "Chet el haydovchilik guvohnomasini almashtirish tartibini qayerda aniqlashtirish kerak?",
   "options_uz": [
-   "Yoʻl harakati xavfsizligi davlat xizmatida",
+   "IIV Yoʻl harakati xavfsizligi xizmatida",
    "Tashqi ishlar vazirligida",
    "Soliq organida",
    "Tashqi mehnat migratsiyasi agentligida"
   ],
   "q_en": "Where should one check the procedure for exchanging a foreign driving license?",
   "options_en": [
-   "At the State Road Traffic Safety Service",
+   "At the Road Traffic Safety Service of the Ministry of Internal Affairs",
    "At the Ministry of Foreign Affairs",
    "At the tax authority",
    "At the Agency for External Labor Migration"
   ],
-  "quote_ru": "нужно уточнять в подразделении Государственной службы безопасности дорожного движения (ГСБДД/БДД)"
+  "quote_ru": "нужно уточнять в подразделении Службы безопасности дорожного движения Департамента общественной безопасности МВД"
  },
  {
   "course": "civics",

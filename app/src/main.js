@@ -15,6 +15,7 @@ import { renderGames } from './screens/games.js';
 import { renderTest } from './screens/test.js';
 import { renderSubscription } from './screens/subscription.js';
 import { renderCourse, renderUnit } from './screens/course.js';
+import { renderWordCheck } from './screens/wordcheck.js';
 import { renderUnitTest } from './screens/unittest.js';
 import { renderReview } from './screens/review.js';
 
@@ -55,6 +56,7 @@ export const app = {
   },
   home() { this.tab('home'); },
 };
+if (window.__TEST__) window.__app = app;   // для автотестов
 
 const SCREENS = {
   home: renderHome,
@@ -70,6 +72,7 @@ const SCREENS = {
   course: renderCourse,
   unit: renderUnit,
   unittest: renderUnitTest,
+  wordcheck: renderWordCheck,
   review: renderReview,
 };
 

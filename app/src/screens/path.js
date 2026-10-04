@@ -160,7 +160,14 @@ export async function renderPath(app) {
             close();
             if (!canChoose) return lockedSheet(app, data.features.topic_choice.min_tier);
             app.go('learn', { mode: 'normal', topicId: tp.id });
-          } }, icon('learn'), t('learnTopic')));
+          } }, icon('learn'), t('learnTopic')),
+      !tp.locked && tp.learned < tp.total
+        ? h('button', { class: 'btn btn-secondary', onClick: () => {
+            close();
+            app.go('wordcheck', { mode: 'topic', topicId: tp.id, topicName: topicName(tp) });
+          } }, icon('sparkle'), t('checkTopicBtn'))
+        : null,
+      !tp.locked && tp.learned < tp.total ? h('p', { class: 'tiny muted' }, t('checkTopicHint')) : null);
   }
 
   function gateTap(cefr, state) {
