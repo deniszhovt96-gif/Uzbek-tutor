@@ -546,3 +546,21 @@ tr:last-child td { border-bottom: 0; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .empty { text-align: center; padding: 26px 14px; }
 .empty .ic { width: 40px; height: 40px; color: var(--muted); margin-bottom: 6px; }
+
+/* ---- подписка */
+.sub-card { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; width: 100%; border: 0; text-align: left; }
+.feature-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+.feature-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.feature-list .ic { width: 18px; height: 18px; color: var(--ok); margin-top: 2px; }
+.plan-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+.plan-opt {
+  position: relative; border: 2px solid transparent; background: var(--surface); border-radius: 18px; padding: 14px 12px;
+  text-align: left; box-shadow: var(--shadow);
+}
+.plan-opt.active { border-color: var(--accent); }
+.plan-m { font-size: 13px; color: var(--muted); font-weight: 650; }
+.plan-price { font-size: 21px; font-weight: 780; letter-spacing: -0.02em; margin: 2px 0; }
+.plan-save { position: absolute; top: 10px; right: 10px; font-size: 11px; font-weight: 750; padding: 2px 7px; border-radius: 999px; background: var(--gold-soft); color: var(--gold); }
+.pay-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
+.pay-row:first-child { border-top: 0; }
+.tile-icon.gold { background: var(--gold-soft); color: var(--gold); }

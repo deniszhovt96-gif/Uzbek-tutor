@@ -1,6 +1,7 @@
-import { rpc, fetchPlans } from '../api.js';
+import { rpc } from '../api.js';
 import { t, setLang, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, haptic } from '../ui.js';
+import { icon } from '../icons.js';
 import { applyTheme, currentTheme } from '../theme.js';
 
 // Превью тем: фон, карточка, акцент, текст
@@ -21,7 +22,7 @@ const INTENSITY = {
 
 export async function renderSettings(app) {
   mount(spinner(t('loading')));
-  const [me, plans] = await Promise.all([app.refreshMe(), fetchPlans().catch(() => [])]);
+  const me = await app.refreshMe();
   const settings = me.settings || {};
   const intensity = settings.intensity || 'light';
   const audioOn = settings.audio_exercises !== false;
@@ -35,37 +36,6 @@ export async function renderSettings(app) {
 
   const seg = (items, current, onPick) => h('div', { class: 'segmented' }, items.map(([value, label]) =>
     h('button', { type: 'button', class: value === current ? 'active' : '', onClick: () => value !== current && onPick(value) }, label)));
-
-  const codeInput = h('input', { class: 'answer-input', placeholder: 'XXXX-XXXX-XXXX', autocomplete: 'off', autocapitalize: 'characters' });
-  const codeStatus = h('p', { class: 'small' });
-  const redeem = async () => {
-    const code = codeInput.value.trim();
-    if (!code) return;
-    codeStatus.textContent = t('loading');
-    codeStatus.className = 'small';
-    try {
-      const r = await rpc('redeem_code', { p_code: code });
-      if (r.ok) {
-        haptic('success');
-        codeStatus.textContent = t('codeOk', tierName(r.tier), formatDate(r.ends_at));
-        codeStatus.className = 'small ok';
-        codeInput.value = '';
-        setTimeout(() => renderSettings(app), 1200);
-      } else {
-        haptic('error');
-        codeStatus.textContent = (t('codeErrors') || {})[r.error] || r.error;
-        codeStatus.className = 'small err';
-      }
-    } catch (err) {
-      codeStatus.textContent = String(err.message || err);
-      codeStatus.className = 'small err';
-    }
-  };
-
-  const fmt = (n) => (n === null || n === undefined ? '—' : Number(n).toLocaleString('ru-RU'));
-  const planRows = plans.map((p) => h('tr', {},
-    h('td', {}, tierName(p.tier)), h('td', {}, t('months', p.months)),
-    h('td', {}, `${fmt(p.price_stars)} ⭐`), h('td', {}, `${fmt(p.price_uzs)}`), h('td', {}, `$${p.price_usd ?? '—'}`)));
 
   mount(h('div', { class: 'screen' },
     h('h1', {}, t('settingsTitle')),
@@ -98,15 +68,10 @@ export async function renderSettings(app) {
     seg([['on', t('on')], ['off', t('off')]], audioOn ? 'on' : 'off', (v) => save(null, { audio_exercises: v === 'on' })),
 
     h('h2', {}, t('subscription')),
-    h('div', { class: 'card' },
-      h('p', {}, h('b', {}, tierName(me.tier)), me.tier_ends_at ? ` ${t('tierUntil', formatDate(me.tier_ends_at))}` : ''),
-      h('label', { class: 'small muted' }, t('codeLabel')),
-      codeInput,
-      h('button', { class: 'btn', type: 'button', onClick: redeem }, t('activate')),
-      codeStatus),
-
-    h('h2', {}, t('plansTitle')),
-    h('div', { class: 'card' },
-      h('table', {}, h('tbody', {}, planRows)),
-      h('p', { class: 'small muted' }, t('plansNote')))));
+    h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('subscription') },
+      h('span', { class: `tile-icon ${me.tier === 'advanced' ? 'gold' : ''}` }, icon('star')),
+      h('div', {},
+        h('b', {}, tierName(me.tier)),
+        h('div', { class: 'small muted' }, me.tier === 'free' ? t('freeLimits') : t('tierUntil', formatDate(me.tier_ends_at)))),
+      h('span', { class: 'chip accent' }, t(me.tier === 'free' ? 'upgrade' : 'manageSub')))));
 }

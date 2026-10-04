@@ -14,7 +14,7 @@ export async function renderLearn(app, { mode = 'normal', topicId = null }) {
 
   if (data.error === 'daily_limit') {
     message(t('dailyLimit'),
-      h('button', { class: 'btn', onClick: () => app.tab('settings') }, t('toSubscription')),
+      h('button', { class: 'btn', onClick: () => app.go('subscription') }, t('toSubscription')),
       h('button', { class: 'btn btn-secondary', onClick: () => app.home() }, t('toHome')));
     return;
   }

@@ -13,6 +13,7 @@ import { renderSoon } from './screens/soon.js';
 import { renderPractice } from './screens/practice.js';
 import { renderGames } from './screens/games.js';
 import { renderTest } from './screens/test.js';
+import { renderSubscription } from './screens/subscription.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -62,6 +63,7 @@ const SCREENS = {
   practice: renderPractice,
   games: renderGames,
   test: renderTest,
+  subscription: renderSubscription,
 };
 
 // ---------------------------------------------------------------- нижняя навигация

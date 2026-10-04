@@ -654,6 +654,65 @@ Object.assign(en, {
   topicErr: { level_locked: 'This topic unlocks after the level test.', locked_tier: 'Not available in your plan.' },
 });
 
+// ---------------------------------------------------------------- шаг 8: подписка и оплата звёздами
+Object.assign(ru, {
+  currentPlan: 'Сейчас',
+  choosePlan: 'Выберите подписку',
+  extendPlan: 'Продлить или сменить',
+  upgrade: 'Оформить',
+  manageSub: 'Управлять',
+  freeLimits: '1 сеанс в день, 15 слов',
+  featBasic: ['Безлимитное изучение слов, до 60 слов за сеанс', 'Повторение в любое время', 'Тренировка и игры', 'Грамматика полностью', 'Тесты уровней'],
+  featAdvanced: ['Всё из «Базовой»', 'История Узбекистана', 'Обществознание и право', 'Культура', 'Филворд', 'Расширенная статистика'],
+  perMonth: (n) => `${n} ⭐ в месяц`,
+  payStars: (n) => `Оплатить ${n} ⭐`,
+  otherPay: (uzs, usd) => `Оплата в сумах (${uzs} сум) или долларах ($${usd}) — через администратора: напишите боту /paysupport, после оплаты вы получите код подписки.`,
+  myPayments: 'Мои платежи',
+  refunded: 'возвращено',
+  payNeedsTelegram: 'Оплата работает только внутри Telegram.',
+  payError: 'Не удалось открыть оплату. Попробуйте ещё раз.',
+  payProcessing: 'Оплата прошла! Подключаем подписку…',
+  codeHint: 'Если вы получили код подписки (например, после оплаты в сумах), введите его здесь.',
+});
+Object.assign(uz, {
+  currentPlan: 'Hozir',
+  choosePlan: 'Obunani tanlang',
+  extendPlan: 'Uzaytirish yoki almashtirish',
+  upgrade: 'Rasmiylashtirish',
+  manageSub: 'Boshqarish',
+  freeLimits: 'Kuniga 1 mashgʻulot, 15 soʻz',
+  featBasic: ['Cheksiz soʻz oʻrganish, mashgʻulotda 60 tagacha soʻz', 'Istalgan vaqtda takrorlash', 'Mashq va oʻyinlar', 'Grammatika toʻliq', 'Daraja testlari'],
+  featAdvanced: ['«Asosiy»dagi hammasi', 'Oʻzbekiston tarixi', 'Jamiyatshunoslik va huquq', 'Madaniyat', 'Filvord', 'Kengaytirilgan statistika'],
+  perMonth: (n) => `oyiga ${n} ⭐`,
+  payStars: (n) => `${n} ⭐ toʻlash`,
+  otherPay: (uzs, usd) => `Soʻmda (${uzs} soʻm) yoki dollarda ($${usd}) toʻlash — administrator orqali: botga /paysupport yozing, toʻlovdan soʻng obuna kodini olasiz.`,
+  myPayments: 'Toʻlovlarim',
+  refunded: 'qaytarilgan',
+  payNeedsTelegram: 'Toʻlov faqat Telegram ichida ishlaydi.',
+  payError: 'Toʻlovni ochib boʻlmadi. Yana urinib koʻring.',
+  payProcessing: 'Toʻlov oʻtdi! Obuna ulanmoqda…',
+  codeHint: 'Obuna kodini olgan boʻlsangiz (masalan, soʻmda toʻlagandan keyin), uni shu yerga kiriting.',
+});
+Object.assign(en, {
+  currentPlan: 'Current',
+  choosePlan: 'Choose a plan',
+  extendPlan: 'Extend or change',
+  upgrade: 'Upgrade',
+  manageSub: 'Manage',
+  freeLimits: '1 session a day, 15 words',
+  featBasic: ['Unlimited word learning, up to 60 words per session', 'Review any time', 'Practice and games', 'Full grammar', 'Level tests'],
+  featAdvanced: ['Everything in Basic', 'History of Uzbekistan', 'Civics and law', 'Culture', 'Word search', 'Extended statistics'],
+  perMonth: (n) => `${n} ⭐ per month`,
+  payStars: (n) => `Pay ${n} ⭐`,
+  otherPay: (uzs, usd) => `To pay in UZS (${uzs}) or USD ($${usd}), contact the administrator: send /paysupport to the bot and you will get a subscription code after payment.`,
+  myPayments: 'My payments',
+  refunded: 'refunded',
+  payNeedsTelegram: 'Payment works only inside Telegram.',
+  payError: 'Could not open the payment. Please try again.',
+  payProcessing: 'Payment successful! Activating your plan…',
+  codeHint: 'If you received a subscription code (e.g. after paying in UZS), enter it here.',
+});
+
 const dict = { ru, uz, en };
 let lang = 'ru';
 

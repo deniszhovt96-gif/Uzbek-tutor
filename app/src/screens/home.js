@@ -7,7 +7,7 @@ import { icon } from '../icons.js';
 export function lockedSheet(app, minTier) {
   const close = sheet(
     h('div', { class: 'row' }, h('span', { class: 'tile-icon' }, icon('lock')), h('h3', {}, t('lockedTier', tierName(minTier)))),
-    h('button', { class: 'btn btn-big', onClick: () => { close(); app.tab('settings'); } }, t('toSubscription')));
+    h('button', { class: 'btn btn-big', onClick: () => { close(); app.go('subscription'); } }, t('toSubscription')));
 }
 
 export function allowed(home, feature) {
@@ -46,7 +46,7 @@ export async function renderHome(app) {
     plan = h('div', { class: 'card hero' },
       h('div', { class: 'label' }, t('planTitle')),
       h('p', {}, t('dailyLimit')),
-      h('button', { class: 'btn', onClick: () => app.tab('settings') }, t('toSubscription')));
+      h('button', { class: 'btn', onClick: () => app.go('subscription') }, t('toSubscription')));
   } else {
     const hasPlan = home.plan_new + home.plan_review > 0;
     plan = h('div', { class: 'card hero' },

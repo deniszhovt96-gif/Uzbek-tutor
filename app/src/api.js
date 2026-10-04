@@ -71,3 +71,20 @@ export async function fetchPlans() {
   if (!res.ok) throw new ApiError(`http_${res.status}`);
   return res.json();
 }
+
+// Ссылка на счёт в звёздах Telegram (создаёт бот; см. supabase/functions/telegram-bot)
+export async function createInvoice(planId, retried = false) {
+  if (!session) await login();
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/telegram-bot/invoice`, {
+    method: 'POST',
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ plan_id: planId }),
+  }).catch((err) => { throw new ApiError('network', err && err.message); });
+  if (res.status === 401 && !retried) {
+    session = null;
+    return createInvoice(planId, true);
+  }
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.link) throw new ApiError(data.error || `http_${res.status}`);
+  return data.link;
+}
