@@ -1,6 +1,6 @@
 import { AUDIO_BASE } from './config.js';
 
-// Повторное нажатие проигрывает медленнее (2-е и 3-е — скорость 0,75), как в прошлой версии.
+// Цикл из трёх нажатий: 1-е — обычная скорость, 2-е и 3-е — медленно (0,75), затем всё сначала.
 const plays = new Map();
 let current = null;
 
@@ -13,7 +13,7 @@ export function play(url) {
   plays.set(url, count);
   if (current) { current.pause(); current = null; }
   const audio = new Audio(url);
-  audio.playbackRate = count === 2 || count === 3 ? 0.75 : 1;
+  audio.playbackRate = (count - 1) % 3 === 0 ? 1 : 0.75;   // 1, 0.75, 0.75, 1, 0.75, 0.75, …
   current = audio;
   return audio.play().catch((err) => console.warn('[audio]', url, err));
 }

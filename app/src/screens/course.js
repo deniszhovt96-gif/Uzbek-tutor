@@ -5,6 +5,7 @@ import { t, getLang, tierName } from '../i18n.js';
 import { h, mount, spinner, haptic, audioButton } from '../ui.js';
 import { icon } from '../icons.js';
 import { play, exampleAudio } from '../audio.js';
+import { topicImage } from '../images.js';
 
 // Поле на нужном языке с запасным русским: pick(obj, 'title') → title_uz | title_ru
 export function pick(obj, base, lang = getLang()) {
@@ -40,7 +41,8 @@ export async function renderCourse(app, { course, tab = 'units' }) {
           meta ? h('span', { class: 'unit-meta' }, meta) : null,
           h('span', { class: 'unit-title' }, pick(u, 'title')),
           h('span', { class: 'unit-express' }, pick(u, 'express')),
-          u.tasks_done ? h('span', { class: 'tiny muted' }, t('tasksDone', u.tasks_done, u.tasks_total)) : null),
+          u.tasks_done ? h('span', { class: 'tiny muted' }, t('tasksDone', u.tasks_done, u.tasks_total)) : null,
+          u.tested ? h('span', { class: 'chip gold', style: { alignSelf: 'flex-start' } }, icon('trophy'), t('unitTestBadge', u.best_score)) : null),
         icon('chevron', 'ic chev'));
     }));
   } else if (tab === 'timeline') {
@@ -87,7 +89,10 @@ export async function renderCourse(app, { course, tab = 'units' }) {
 // ---------------------------------------------------------------- тема
 export async function renderUnit(app, { id, lang }) {
   mount(spinner(t('loading')));
-  const u = await rpc('get_unit', { p_unit: id });
+  const [u, testInfo, img] = await Promise.all([
+    rpc('get_unit', { p_unit: id }),
+    rpc('unit_test_info', { p_unit: id }).catch(() => null),
+    topicImage(null, null)]);
   if (u.error === 'locked_tier') {
     mount(h('div', { class: 'screen' }, h('div', { class: 'card empty' }, icon('lock'),
       h('p', {}, t('lockedTier', tierName(u.need))),
@@ -161,11 +166,25 @@ export async function renderUnit(app, { id, lang }) {
     await rpc('mark_unit', { p_unit: id, p_read: isRead }).catch(() => null);
   } }, icon('check'), isRead ? t('markedRead') : t('markRead'));
 
+  const image = await topicImage(u.course_id, u.n);
+  const figure = image ? h('figure', { class: 'topic-img' },
+    h('img', { src: image.src, alt: pick(image, 'caption', L), loading: 'lazy', onError: (e) => e.target.closest('figure').remove() }),
+    h('figcaption', {}, pick(image, 'caption', L), ' · ',
+      h('a', { href: image.page, target: '_blank', rel: 'noopener' }, `${image.author ? `${image.author}, ` : ''}${image.license}`))) : null;
+
+  const testBlock = testInfo && testInfo.available ? h('div', { class: 'card test-card' },
+    h('div', { class: 'row' }, h('span', { class: 'tile-icon gold' }, icon('trophy')),
+      h('div', {}, h('b', {}, t('unitTest')), h('div', { class: 'small muted' },
+        testInfo.passed ? t('unitTestBest', testInfo.best_score, testInfo.total) : t('unitTestHint', testInfo.total)))),
+    h('button', { class: 'btn', type: 'button', onClick: () => app.go('unittest', { id, title: pick(u, 'title', L) }) },
+      testInfo.best_score != null ? t('unitTestAgain') : t('unitTestStart'))) : null;
+
   const meta = u.course_id === 'history' ? (pick(u, 'period', L) || u.period) : pick(u.section, 'title', L);
   mount(h('div', { class: 'screen' },
     h('div', { class: 'row', style: { justifyContent: 'space-between' } },
       meta ? h('span', { class: 'chip accent' }, meta) : h('span', {}), langSeg),
     h('h1', { style: { marginTop: '12px' } }, pick(u, 'title', L)),
+    figure,
     u.course_id === 'civics' ? h('div', { class: 'card note' }, icon('civics'), h('span', { class: 'small' }, t('civicsDisclaimer'))) : null,
     h('div', { class: 'card express' }, h('div', { class: 'label' }, t('unitExpress')), paragraphs(pick(u, 'express', L))),
     h('h2', {}, t('unitDetailed')),
@@ -174,6 +193,7 @@ export async function renderUnit(app, { id, lang }) {
     taskEls.length ? [h('h2', {}, t('unitTasks')), h('p', { class: 'small muted' }, t('tasksHint')), h('div', { class: 'task-list' }, taskEls)] : null,
     u.source ? h('p', { class: 'tiny muted', style: { marginTop: '18px' } }, `${t('unitSource')}: ${u.source}`) : null,
     readBtn,
+    testBlock,
     h('div', { class: 'unit-nav' },
       u.prev_id ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => app.replace('unit', { id: u.prev_id, lang }) }, t('prevUnit')) : h('span', {}),
       u.next_id ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => app.replace('unit', { id: u.next_id, lang }) }, t('nextUnit')) : h('span', {}))));

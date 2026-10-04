@@ -754,6 +754,48 @@ Object.assign(en, {
   payFailedHint: 'If you do not have enough stars, buy them in Telegram: Settings → My Stars, then pay again. Or pay in UZS via /paysupport.',
 });
 
+Object.assign(ru, { starsHint: 'Не получается оплатить? Если Telegram не даёт докупить звёзды прямо в окне оплаты, купите их заранее в самом Telegram: Настройки → «Мои звёзды» (или на fragment.com). Затем вернитесь сюда и оплатите подписку уже купленными звёздами.' });
+Object.assign(uz, { starsHint: 'Toʻlab boʻlmayaptimi? Agar Telegram toʻlov oynasida yulduz sotib olishga ruxsat bermasa, ularni oldindan Telegramning oʻzida sotib oling: Sozlamalar → «Mening yulduzlarim» (yoki fragment.com). Soʻng shu yerga qaytib, obunani sotib olingan yulduzlar bilan toʻlang.' });
+Object.assign(en, { starsHint: 'Payment not going through? If Telegram won’t let you top up stars in the payment window, buy them in advance in Telegram itself: Settings → My Stars (or on fragment.com). Then come back here and pay for the plan with the stars you already have.' });
+
+// ---------------------------------------------------------------- шаг 10: тесты по темам, проверка вопросов, сообщество
+Object.assign(ru, {
+  unitTest: 'Тест по теме', unitTestHint: (n) => `${n} вопросов по тексту темы — проверьте себя`,
+  unitTestBest: (s, n) => `Сдан · лучший результат ${s} из ${n}`, unitTestStart: 'Пройти тест', unitTestAgain: 'Пройти ещё раз',
+  unitTestPassed: 'Тест по теме сдан!', unitTestFailed: 'Почти! Перечитайте тему и попробуйте ещё раз',
+  unitTestReview: 'Разбор', backToTopic: 'К теме', unitTestBadge: (s) => `тест: ${s}/5`,
+  unitTestErrors: { no_questions: 'Вопросы к этой теме ещё готовятся.', locked_tier: 'Тема доступна по подписке.', not_found: 'Тема не найдена.' },
+  community: 'Сообщество', communityTitle: 'Группа приложения', communityText: 'Идеи, пожелания и новости — обсудим вместе',
+  adminSection: 'Администратор', reviewTitle: 'Проверка вопросов', reviewShort: 'Одобрите вопросы к тестам по темам',
+  reviewHint: 'Вопросы составлены по тексту тем; у каждого — цитата из темы. Пользователи видят только одобренные. Изменённый в файле вопрос снова попадает сюда.',
+  reviewCounts: (d, a, r) => `на проверке: ${d} · одобрено: ${a} · отклонено: ${r}`,
+  reviewDraft: 'на проверке', reviewApproved: 'одобрено', reviewRejected: 'отклонено',
+  status_draft: 'на проверке', status_approved: 'одобрен', status_rejected: 'отклонён',
+  approve: 'Одобрить', reject: 'Отклонить', approveAllDrafts: 'Одобрить все непроверенные в теме',
+});
+Object.assign(uz, {
+  unitTest: 'Mavzu boʻyicha test', unitTestHint: (n) => `Mavzu matni boʻyicha ${n} ta savol — oʻzingizni tekshiring`,
+  unitTestBest: (s, n) => `Topshirilgan · eng yaxshi natija ${n} tadan ${s}`, unitTestStart: 'Testni boshlash', unitTestAgain: 'Yana topshirish',
+  unitTestPassed: 'Mavzu testi topshirildi!', unitTestFailed: 'Oz qoldi! Mavzuni qayta oʻqing va yana urinib koʻring',
+  unitTestReview: 'Tahlil', backToTopic: 'Mavzuga', unitTestBadge: (s) => `test: ${s}/5`,
+  unitTestErrors: { no_questions: 'Bu mavzu uchun savollar hali tayyorlanmoqda.', locked_tier: 'Mavzu obuna bilan ochiladi.', not_found: 'Mavzu topilmadi.' },
+  community: 'Hamjamiyat', communityTitle: 'Ilova guruhi', communityText: 'Gʻoyalar, takliflar va yangiliklar — birga muhokama qilamiz',
+  adminSection: 'Administrator', reviewTitle: 'Savollarni tekshirish', reviewShort: 'Mavzu testlari uchun savollarni tasdiqlang',
+  status_draft: 'tekshiruvda', status_approved: 'tasdiqlangan', status_rejected: 'rad etilgan',
+  approve: 'Tasdiqlash', reject: 'Rad etish',
+});
+Object.assign(en, {
+  unitTest: 'Topic quiz', unitTestHint: (n) => `${n} questions on the topic text — check yourself`,
+  unitTestBest: (s, n) => `Passed · best score ${s} of ${n}`, unitTestStart: 'Take the quiz', unitTestAgain: 'Take it again',
+  unitTestPassed: 'Topic quiz passed!', unitTestFailed: 'Almost! Re-read the topic and try again',
+  unitTestReview: 'Review', backToTopic: 'Back to topic', unitTestBadge: (s) => `quiz: ${s}/5`,
+  unitTestErrors: { no_questions: 'Questions for this topic are being prepared.', locked_tier: 'This topic requires a subscription.', not_found: 'Topic not found.' },
+  community: 'Community', communityTitle: 'App group', communityText: 'Ideas, suggestions and news — let’s discuss together',
+  adminSection: 'Admin', reviewTitle: 'Question review', reviewShort: 'Approve questions for topic quizzes',
+  status_draft: 'in review', status_approved: 'approved', status_rejected: 'rejected',
+  approve: 'Approve', reject: 'Reject',
+});
+
 const dict = { ru, uz, en };
 let lang = 'ru';
 

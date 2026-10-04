@@ -261,6 +261,26 @@ def build(src: Path):
             f"title_en = excluded.title_en, value = excluded.value, extra = excluded.extra;")
     stats['grammar']['vocab'] = n_v
 
+    # ---- вопросы для тестов по темам (черновики; публикует администратор в приложении)
+    qpath = src.parent / 'quiz' / 'questions.json'
+    n_q = 0
+    if qpath.exists():
+        for qq in json.loads(qpath.read_text(encoding='utf-8')):
+            n_q += 1
+            unit_sql = f"(select id from public.course_units where course_id = {q(qq['course'])} and source_no = {int(qq['n'])})"
+            options = json.dumps({'ru': qq['options_ru'], 'uz': qq['options_uz'], 'en': qq['options_en']}, ensure_ascii=False)
+            sql.append(
+                f"insert into public.unit_tasks (unit_id, n, kind, prompt_ru, prompt_uz, prompt_en, options, answer, source_quote, origin, status) values "
+                f"({unit_sql}, {100 + int(qq['k'])}, 'choice', {q(qq['q_ru'])}, {q(qq['q_uz'])}, {q(qq['q_en'])}, {q(options)}::jsonb, '0'::jsonb, "
+                f"{q(qq['quote_ru'])}, 'generated', 'draft') "
+                # изменился текст вопроса — снова на проверку; не изменился — статус сохраняется
+                f"on conflict (unit_id, n) do update set "
+                f"status = case when public.unit_tasks.prompt_ru is distinct from excluded.prompt_ru "
+                f"or public.unit_tasks.options is distinct from excluded.options then 'draft' else public.unit_tasks.status end, "
+                f"prompt_ru = excluded.prompt_ru, prompt_uz = excluded.prompt_uz, prompt_en = excluded.prompt_en, "
+                f"options = excluded.options, answer = excluded.answer, source_quote = excluded.source_quote, kind = excluded.kind;")
+    stats['quiz'] = {'questions': n_q}
+
     sql.append('commit;')
     return '\n'.join(sql) + '\n', stats
 

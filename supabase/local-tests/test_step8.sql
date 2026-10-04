@@ -63,5 +63,10 @@ select pg_temp.check((select s.ends_at < b.ends_at - interval '27 days' from pub
   'после возврата следующая подписка сдвинута на неиспользованный срок');
 select pg_temp.check((select status = 'refunded' from public.payments where charge_id = 'charge-1'), 'платёж отмечен как возвращённый');
 select pg_temp.check(public.stars_refund_payment('charge-1')->>'duplicate' = 'true', 'повторный возврат ничего не меняет');
+-- возврат продления, которое ещё не началось (оплачено «вперёд»)
+select pg_temp.check((public.stars_grant_payment('p:' || (select id from pl) || ':eeeeeeee-0000-0000-0000-000000000001', 8001, (select price_stars from pl), 'charge-4')->>'starts_at')::timestamptz > now(),
+  'оплата продления вперёд');
+select pg_temp.check((public.stars_refund_payment('charge-4')->>'ok')::boolean, 'возврат будущего продления проходит');
+select pg_temp.check((select subscription_id is null and status = 'refunded' from public.payments where charge_id = 'charge-4'), 'будущая подписка удалена, платёж возвращён');
 reset role;
 select pg_temp.check(jsonb_array_length(public.get_plans()) = 8, 'get_plans: 8 тарифов с id');

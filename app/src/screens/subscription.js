@@ -15,6 +15,7 @@ export async function renderSubscription(app, params = {}) {
   const fmt = (n) => Number(n).toLocaleString('ru-RU');
   const status = h('p', { class: 'small' });
 
+  let drawn = false;
   const draw = () => {
     const list = plans.filter((p) => p.tier === tier).sort((a, b) => a.months - b.months);
     const monthly = list.find((p) => p.months === 1);
@@ -43,6 +44,8 @@ export async function renderSubscription(app, params = {}) {
 
     const other = chosen ? h('p', { class: 'small muted' }, t('otherPay', fmt(chosen.price_uzs), chosen.price_usd)) : null;
 
+    const keep = drawn;
+    drawn = true;
     mount(h('div', { class: 'screen' },
       h('h1', {}, t('subscription')),
       h('div', { class: 'card hero' },
@@ -54,6 +57,7 @@ export async function renderSubscription(app, params = {}) {
       h('div', { class: 'card' }, features),
       options,
       payBtn,
+      h('p', { class: 'tiny muted pay-hint' }, t('starsHint')),
       status,
       other,
       h('h2', {}, t('codeLabel')),
@@ -61,7 +65,7 @@ export async function renderSubscription(app, params = {}) {
       payments.length ? h('h2', {}, t('myPayments')) : null,
       payments.length ? h('div', { class: 'card' }, payments.map((p) => h('div', { class: 'pay-row' },
         h('div', {}, h('b', {}, `${tierName(p.tier)} · ${t('months', p.months)}`), h('div', { class: 'tiny muted' }, formatDate(p.created_at))),
-        h('div', { class: p.status === 'refunded' ? 'muted' : '' }, `${fmt(p.stars)} ⭐`, p.status === 'refunded' ? ` · ${t('refunded')}` : '')))) : null));
+        h('div', { class: p.status === 'refunded' ? 'muted' : '' }, `${fmt(p.stars)} ⭐`, p.status === 'refunded' ? ` · ${t('refunded')}` : '')))) : null), { keepScroll: keep });
   };
 
   async function pay(plan, btn) {

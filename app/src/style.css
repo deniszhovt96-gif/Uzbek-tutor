@@ -617,3 +617,22 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .contact-row { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
 .contact-row:first-child, .vocab-row:first-child { border-top: 0; }
 .contact-val { font-weight: 750; color: var(--accent); text-decoration: none; white-space: nowrap; }
+.pay-hint { margin: 8px 2px 0; line-height: 1.45; }
+.screen.no-anim { animation: none; }
+
+/* ---- шаг 10: тест по теме, проверка вопросов, сообщество, иллюстрации */
+.topic-img { margin: 12px 0 4px; }
+.topic-img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius); display: block; background: var(--surface-2); }
+.topic-img figcaption { font-size: 11.5px; color: var(--muted); margin-top: 6px; line-height: 1.35; }
+.topic-img figcaption a { color: var(--muted); }
+.test-card .row { align-items: center; margin-bottom: 4px; }
+.quote { display: flex; gap: 8px; align-items: flex-start; background: var(--surface-2); border-radius: 12px; padding: 10px 12px; margin-top: 8px; font-style: italic; }
+.quote .ic { width: 18px; height: 18px; color: var(--accent); flex: none; margin-top: 1px; }
+.review-q[data-status="approved"] { outline: 2px solid var(--ok); }
+.review-q[data-status="rejected"] { outline: 2px solid var(--err); opacity: .75; }
+.q-opts { margin: 6px 0; padding-left: 22px; }
+.q-opts li { margin: 3px 0; }
+.q-opts li.ok { font-weight: 700; }
+.review-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.review-btns .btn { width: 100%; justify-content: center; }
+.community { margin-top: 14px; }

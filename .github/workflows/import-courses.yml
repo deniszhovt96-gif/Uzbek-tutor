@@ -7,7 +7,7 @@ on:
   push:
     branches: [main]
     paths: ['data/source/grammar.xlsx', 'data/source/history.xlsx', 'data/source/civics.xlsx',
-            'scripts/build_courses.py', '.github/workflows/import-courses.yml']
+            'data/quiz/questions.json', 'scripts/build_courses.py', '.github/workflows/import-courses.yml']
   workflow_dispatch:
 
 concurrency:

@@ -1,0 +1,649 @@
+{
+ "history": {
+  "1": [
+   {
+    "q": "Zarautsay rock paintings",
+    "must": [
+     "zaraut"
+    ],
+    "caption_ru": "Наскальные рисунки в ущелье Зараутсай",
+    "caption_uz": "Zarautsoy darasidagi qoyatosh suratlari",
+    "caption_en": "Rock paintings in the Zarautsay gorge"
+   },
+   {
+    "q": "Teshik-Tash cave",
+    "must": [
+     "teshik"
+    ],
+    "caption_ru": "Пещера Тешик-Таш",
+    "caption_uz": "Teshiktosh gʻori",
+    "caption_en": "Teshik-Tash cave"
+   }
+  ],
+  "2": [
+   {
+    "q": "Djarkutan",
+    "must": [
+     "jarkutan",
+     "djarkutan",
+     "dzharkutan"
+    ],
+    "caption_ru": "Городище Джаркутан (бронзовый век)",
+    "caption_uz": "Jarqoʻton yodgorligi (bronza davri)",
+    "caption_en": "Djarkutan site (Bronze Age)"
+   },
+   {
+    "q": "Sapallitepa",
+    "must": [
+     "sapalli"
+    ],
+    "caption_ru": "Поселение Сапаллитепа (бронзовый век)",
+    "caption_uz": "Sopollitepa manzilgohi (bronza davri)",
+    "caption_en": "Sapallitepa settlement (Bronze Age)"
+   },
+   {
+    "q": "Bactria Margiana Archaeological Complex",
+    "must": [
+     "bactria",
+     "margiana",
+     "bmac"
+    ],
+    "caption_ru": "Находки Бактрийско-Маргианского комплекса",
+    "caption_uz": "Baqtriya-Margʻiyona majmuasi topilmalari",
+    "caption_en": "Finds of the Bactria–Margiana complex"
+   }
+  ],
+  "3": [
+   {
+    "q": "Ayaz Kala",
+    "must": [
+     "ayaz"
+    ],
+    "caption_ru": "Крепость Аяз-Кала, древний Хорезм",
+    "caption_uz": "Ayozqalʼa, qadimgi Xorazm",
+    "caption_en": "Ayaz-Kala fortress, ancient Khorezm"
+   },
+   {
+    "q": "Toprak Kala",
+    "must": [
+     "toprak",
+     "tuproq"
+    ],
+    "caption_ru": "Городище Топрак-Кала, древний Хорезм",
+    "caption_uz": "Tuproqqalʼa, qadimgi Xorazm",
+    "caption_en": "Toprak-Kala, ancient Khorezm"
+   }
+  ],
+  "4": [
+   {
+    "q": "Oxus Treasure chariot",
+    "must": [
+     "oxus"
+    ],
+    "caption_ru": "Золотая колесница из Амударьинского клада",
+    "caption_uz": "Amudaryo xazinasidan oltin arava",
+    "caption_en": "Gold chariot from the Oxus Treasure"
+   },
+   {
+    "q": "Afrasiyab Samarkand",
+    "must": [
+     "afrasiyab",
+     "afrosiyob"
+    ],
+    "caption_ru": "Городище Афрасиаб — древняя Мараканда",
+    "caption_uz": "Afrosiyob — qadimgi Marokanda",
+    "caption_en": "Afrasiyab, ancient Maracanda"
+   }
+  ],
+  "5": [
+   {
+    "q": "Euthydemus coin",
+    "must": [
+     "euthydem"
+    ],
+    "caption_ru": "Монета греко-бактрийского царя Евтидема",
+    "caption_uz": "Yunon-Baqtriya shohi Yevtidem tangasi",
+    "caption_en": "Coin of the Greco-Bactrian king Euthydemus"
+   },
+   {
+    "q": "Ai Khanoum",
+    "must": [
+     "khanoum",
+     "khanum"
+    ],
+    "caption_ru": "Ай-Ханум — греко-бактрийский город",
+    "caption_uz": "Ayxonim — yunon-baqtriya shahri",
+    "caption_en": "Ai-Khanoum, a Greco-Bactrian city"
+   }
+  ],
+  "6": [
+   {
+    "q": "Fayaz Tepe",
+    "must": [
+     "fayaz",
+     "fayoz"
+    ],
+    "caption_ru": "Буддийский монастырь Фаяз-Тепе, Термез",
+    "caption_uz": "Fayoztepa buddaviylik ibodatxonasi, Termiz",
+    "caption_en": "Fayaz-Tepe Buddhist monastery, Termez"
+   },
+   {
+    "q": "Kara Tepe Termez",
+    "must": [
+     "kara tepe",
+     "karatepe",
+     "kara-tepe"
+    ],
+    "caption_ru": "Буддийский комплекс Кара-Тепе, Термез",
+    "caption_uz": "Qoratepa buddaviylik majmuasi, Termiz",
+    "caption_en": "Kara-Tepe Buddhist complex, Termez"
+   }
+  ],
+  "7": [
+   {
+    "q": "Afrasiyab mural ambassadors",
+    "must": [
+     "afrasiyab",
+     "afrosiyob"
+    ],
+    "caption_ru": "Фрески Афрасиаба: «Зал послов» (VII в.)",
+    "caption_uz": "Afrosiyob devoriy suratlari: «Elchilar zali» (VII asr)",
+    "caption_en": "Afrasiyab murals: the Hall of Ambassadors (7th c.)"
+   }
+  ],
+  "8": [
+   {
+    "q": "Hazrati Imam complex Tashkent",
+    "must": [
+     "hazrat",
+     "hast",
+     "khast",
+     "imam"
+    ],
+    "caption_ru": "Комплекс Хазрати Имам в Ташкенте",
+    "caption_uz": "Toshkentdagi Hazrati Imom majmuasi",
+    "caption_en": "Hazrati Imam complex, Tashkent"
+   }
+  ],
+  "9": [
+   {
+    "q": "Samanid Mausoleum",
+    "must": [
+     "samanid",
+     "somoniy",
+     "ismail"
+    ],
+    "caption_ru": "Мавзолей Саманидов в Бухаре (X в.)",
+    "caption_uz": "Buxorodagi Somoniylar maqbarasi (X asr)",
+    "caption_en": "Samanid Mausoleum, Bukhara (10th c.)"
+   }
+  ],
+  "10": [
+   {
+    "q": "Kalyan Minaret Bukhara",
+    "must": [
+     "kalyan",
+     "kalon"
+    ],
+    "caption_ru": "Минарет Калян в Бухаре (1127 г.)",
+    "caption_uz": "Buxorodagi Minorai Kalon (1127-yil)",
+    "caption_en": "Kalyan Minaret, Bukhara (1127)"
+   }
+  ],
+  "11": [
+   {
+    "q": "Kunya-Urgench",
+    "must": [
+     "urgench",
+     "urganch"
+    ],
+    "caption_ru": "Руины Куня-Ургенча — столицы Хорезмшахов",
+    "caption_uz": "Koʻhna Urganch xarobalari — Xorazmshohlar poytaxti",
+    "caption_en": "Ruins of Kunya-Urgench, capital of the Khwarazmshahs"
+   }
+  ],
+  "12": [
+   {
+    "q": "Gur-e-Amir",
+    "must": [
+     "gur-e",
+     "gur emir",
+     "gur-emir",
+     "guri amir",
+     "gur e amir",
+     "amir"
+    ],
+    "caption_ru": "Мавзолей Гур-Эмир в Самарканде",
+    "caption_uz": "Samarqanddagi Goʻri Amir maqbarasi",
+    "caption_en": "Gur-e-Amir Mausoleum, Samarkand"
+   }
+  ],
+  "13": [
+   {
+    "q": "Ulugh Beg Observatory",
+    "must": [
+     "ulugh",
+     "ulug",
+     "observator"
+    ],
+    "caption_ru": "Обсерватория Улугбека в Самарканде",
+    "caption_uz": "Samarqanddagi Ulugʻbek rasadxonasi",
+    "caption_en": "Ulugh Beg Observatory, Samarkand"
+   }
+  ],
+  "14": [
+   {
+    "q": "Mir-i-Arab Madrasa",
+    "must": [
+     "mir-i-arab",
+     "mir-i arab",
+     "miri arab",
+     "mir arab"
+    ],
+    "caption_ru": "Медресе Мири Араб в Бухаре (XVI в.)",
+    "caption_uz": "Buxorodagi Mir Arab madrasasi (XVI asr)",
+    "caption_en": "Mir-i-Arab Madrasa, Bukhara (16th c.)"
+   }
+  ],
+  "15": [
+   {
+    "q": "Sher-Dor Madrasa Registan",
+    "must": [
+     "sher-dor",
+     "sherdor",
+     "shir-dor",
+     "shirdor",
+     "sher dor"
+    ],
+    "caption_ru": "Медресе Шердор на площади Регистан",
+    "caption_uz": "Registondagi Sherdor madrasasi",
+    "caption_en": "Sher-Dor Madrasa, Registan"
+   },
+   {
+    "q": "Tilya-Kori Madrasa",
+    "must": [
+     "tilya",
+     "tilla"
+    ],
+    "caption_ru": "Медресе Тилля-Кари на площади Регистан",
+    "caption_uz": "Registondagi Tillakori madrasasi",
+    "caption_en": "Tilya-Kori Madrasa, Registan"
+   }
+  ],
+  "16": [
+   {
+    "q": "Itchan Kala Khiva",
+    "must": [
+     "itchan",
+     "ichan"
+    ],
+    "caption_ru": "Ичан-Кала — внутренний город Хивы",
+    "caption_uz": "Ichan qalʼa — Xivaning ichki shahri",
+    "caption_en": "Itchan Kala, the inner town of Khiva"
+   }
+  ],
+  "17": [
+   {
+    "q": "Prokudin-Gorsky Samarkand",
+    "must": [
+     "prokudin"
+    ],
+    "caption_ru": "Самарканд на фото Прокудина-Горского (1910-е)",
+    "caption_uz": "Prokudin-Gorskiy suratidagi Samarqand (1910-yillar)",
+    "caption_en": "Samarkand photographed by Prokudin-Gorsky (1910s)"
+   },
+   {
+    "q": "Turkestan Album",
+    "must": [
+     "turkestan"
+    ],
+    "caption_ru": "Из «Туркестанского альбома» (1871–1872)",
+    "caption_uz": "«Turkiston albomi»dan (1871–1872)",
+    "caption_en": "From the Turkestan Album (1871–1872)"
+   }
+  ],
+  "18": [
+   {
+    "q": "Mahmudkhodja Behbudi",
+    "must": [
+     "behbud",
+     "bexbud"
+    ],
+    "caption_ru": "Махмудходжа Бехбуди — лидер джадидов",
+    "caption_uz": "Mahmudxoʻja Behbudiy — jadidlar yetakchisi",
+    "caption_en": "Mahmudkhodja Behbudi, Jadid leader"
+   },
+   {
+    "q": "Prokudin-Gorsky Bukhara",
+    "must": [
+     "prokudin"
+    ],
+    "caption_ru": "Бухара начала XX в. (фото Прокудина-Горского)",
+    "caption_uz": "XX asr boshidagi Buxoro (Prokudin-Gorskiy surati)",
+    "caption_en": "Early 20th-century Bukhara (Prokudin-Gorsky)"
+   }
+  ],
+  "19": [
+   {
+    "q": "Emblem of the Uzbek SSR",
+    "must": [
+     "uzbek ssr",
+     "uzbek soviet"
+    ],
+    "caption_ru": "Герб Узбекской ССР",
+    "caption_uz": "Oʻzbekiston SSR gerbi",
+    "caption_en": "Emblem of the Uzbek SSR"
+   }
+  ],
+  "20": [
+   {
+    "q": "Courage Monument Tashkent",
+    "must": [
+     "courage",
+     "jasorat"
+    ],
+    "caption_ru": "Монумент «Мужество» — память о землетрясении 1966 г.",
+    "caption_uz": "«Jasorat» monumenti — 1966-yilgi zilzila xotirasi",
+    "caption_en": "Courage Monument, 1966 earthquake memorial"
+   }
+  ],
+  "21": [
+   {
+    "q": "Mustaqillik Square Tashkent",
+    "must": [
+     "mustaqillik",
+     "independence square"
+    ],
+    "caption_ru": "Площадь Мустакиллик (Независимости) в Ташкенте",
+    "caption_uz": "Toshkentdagi Mustaqillik maydoni",
+    "caption_en": "Independence Square, Tashkent"
+   }
+  ],
+  "22": [
+   {
+    "q": "Tashkent City",
+    "must": [
+     "tashkent city"
+    ],
+    "caption_ru": "Ташкент-Сити — новый деловой центр столицы",
+    "caption_uz": "Tashkent City — poytaxtning yangi biznes markazi",
+    "caption_en": "Tashkent City, the capital’s new business district"
+   }
+  ]
+ },
+ "civics": {
+  "1": [
+   {
+    "q": "Oliy Majlis building",
+    "must": [
+     "oliy majlis",
+     "parliament of uzbekistan",
+     "senate of uzbekistan"
+    ],
+    "caption_ru": "Здание Олий Мажлиса в Ташкенте",
+    "caption_uz": "Toshkentdagi Oliy Majlis binosi",
+    "caption_en": "Oliy Majlis building, Tashkent"
+   }
+  ],
+  "2": [
+   {
+    "q": "Constitution of Uzbekistan",
+    "must": [
+     "constitution",
+     "konstitutsiya"
+    ],
+    "caption_ru": "Конституция Республики Узбекистан",
+    "caption_uz": "Oʻzbekiston Respublikasi Konstitutsiyasi",
+    "caption_en": "Constitution of the Republic of Uzbekistan"
+   }
+  ],
+  "3": [
+   {
+    "q": "Supreme Court of Uzbekistan",
+    "must": [
+     "supreme court",
+     "oliy sud"
+    ],
+    "caption_ru": "Верховный суд Республики Узбекистан",
+    "caption_uz": "Oʻzbekiston Respublikasi Oliy sudi",
+    "caption_en": "Supreme Court of the Republic of Uzbekistan"
+   },
+   {
+    "q": "Scales of justice statue",
+    "must": [
+     "justice",
+     "themis",
+     "justitia"
+    ],
+    "caption_ru": "Символ правосудия",
+    "caption_uz": "Odil sudlov ramzi",
+    "caption_en": "Symbol of justice"
+   }
+  ],
+  "4": [
+   {
+    "q": "Uzbek wedding",
+    "must": [
+     "wedding"
+    ],
+    "caption_ru": "Узбекская свадьба",
+    "caption_uz": "Oʻzbek toʻyi",
+    "caption_en": "Uzbek wedding"
+   }
+  ],
+  "5": [
+   {
+    "q": "Uzbekistan factory",
+    "must": [
+     "uzbekistan",
+     "tashkent",
+     "samarkand",
+     "navoi",
+     "andijan"
+    ],
+    "caption_ru": "Трудовая жизнь Узбекистана",
+    "caption_uz": "Oʻzbekistonda mehnat hayoti",
+    "caption_en": "Working life in Uzbekistan"
+   }
+  ],
+  "6": [
+   {
+    "q": "Chorsu Bazaar",
+    "must": [
+     "chorsu"
+    ],
+    "caption_ru": "Базар Чорсу в Ташкенте",
+    "caption_uz": "Toshkentdagi Chorsu bozori",
+    "caption_en": "Chorsu Bazaar, Tashkent"
+   }
+  ],
+  "7": [
+   {
+    "q": "Uzbekistani som banknote",
+    "must": [
+     "som",
+     "sum",
+     "soʻm"
+    ],
+    "caption_ru": "Банкноты узбекского сума",
+    "caption_uz": "Oʻzbek soʻmi banknotlari",
+    "caption_en": "Uzbek som banknotes"
+   },
+   {
+    "q": "Tashkent Amir Timur Square",
+    "must": [
+     "amir timur",
+     "temur"
+    ],
+    "caption_ru": "Площадь Амира Темура в Ташкенте",
+    "caption_uz": "Toshkentdagi Amir Temur xiyoboni",
+    "caption_en": "Amir Timur Square, Tashkent"
+   }
+  ],
+  "8": [
+   {
+    "q": "Tashkent street police",
+    "must": [
+     "tashkent"
+    ],
+    "caption_ru": "Улицы Ташкента",
+    "caption_uz": "Toshkent koʻchalari",
+    "caption_en": "Streets of Tashkent"
+   }
+  ],
+  "9": [
+   {
+    "q": "Lady Justice statue",
+    "must": [
+     "justice",
+     "justitia",
+     "themis"
+    ],
+    "caption_ru": "Весы правосудия",
+    "caption_uz": "Adolat tarozisi",
+    "caption_en": "Scales of justice"
+   }
+  ],
+  "10": [
+   {
+    "q": "Tashkent International Airport",
+    "must": [
+     "airport",
+     "aeroport"
+    ],
+    "caption_ru": "Международный аэропорт Ташкента",
+    "caption_uz": "Toshkent xalqaro aeroporti",
+    "caption_en": "Tashkent International Airport"
+   }
+  ],
+  "11": [
+   {
+    "q": "Tashkent residential buildings",
+    "must": [
+     "tashkent"
+    ],
+    "caption_ru": "Жилые кварталы Ташкента",
+    "caption_uz": "Toshkentning turar-joy mavzelari",
+    "caption_en": "Residential districts of Tashkent"
+   }
+  ],
+  "12": [
+   {
+    "q": "Flag of Uzbekistan",
+    "must": [
+     "flag of uzbekistan"
+    ],
+    "caption_ru": "Государственный флаг Республики Узбекистан",
+    "caption_uz": "Oʻzbekiston Respublikasi Davlat bayrogʻi",
+    "caption_en": "State flag of the Republic of Uzbekistan",
+    "file": "File:Flag of Uzbekistan.svg"
+   }
+  ],
+  "13": [
+   {
+    "q": "Tashkent business center",
+    "must": [
+     "tashkent"
+    ],
+    "caption_ru": "Деловой Ташкент",
+    "caption_uz": "Ishbilarmon Toshkent",
+    "caption_en": "Business Tashkent"
+   }
+  ],
+  "14": [
+   {
+    "q": "Tashkent new buildings",
+    "must": [
+     "tashkent"
+    ],
+    "caption_ru": "Новостройки Ташкента",
+    "caption_uz": "Toshkentdagi yangi binolar",
+    "caption_en": "New buildings in Tashkent"
+   }
+  ],
+  "15": [
+   {
+    "q": "National University of Uzbekistan",
+    "must": [
+     "university",
+     "universitet"
+    ],
+    "caption_ru": "Национальный университет Узбекистана",
+    "caption_uz": "Oʻzbekiston Milliy universiteti",
+    "caption_en": "National University of Uzbekistan"
+   },
+   {
+    "q": "Tashkent university building",
+    "must": [
+     "university",
+     "universitet",
+     "institute"
+    ],
+    "caption_ru": "Университет в Ташкенте",
+    "caption_uz": "Toshkentdagi universitet",
+    "caption_en": "A university in Tashkent"
+   }
+  ],
+  "16": [
+   {
+    "q": "Tashkent hospital",
+    "must": [
+     "hospital",
+     "clinic",
+     "medical"
+    ],
+    "caption_ru": "Медицина в Узбекистане",
+    "caption_uz": "Oʻzbekistonda tibbiyot",
+    "caption_en": "Healthcare in Uzbekistan"
+   }
+  ],
+  "17": [
+   {
+    "q": "Central Bank of Uzbekistan",
+    "must": [
+     "central bank",
+     "markaziy bank"
+    ],
+    "caption_ru": "Центральный банк Узбекистана",
+    "caption_uz": "Oʻzbekiston Markaziy banki",
+    "caption_en": "Central Bank of Uzbekistan"
+   }
+  ],
+  "18": [
+   {
+    "q": "Tashkent traffic road",
+    "must": [
+     "tashkent"
+    ],
+    "caption_ru": "Дорожное движение в Ташкенте",
+    "caption_uz": "Toshkentda yoʻl harakati",
+    "caption_en": "Traffic in Tashkent"
+   }
+  ],
+  "19": [
+   {
+    "q": "Navruz celebration Uzbekistan",
+    "must": [
+     "navruz",
+     "nowruz",
+     "navroz",
+     "navroʻz"
+    ],
+    "caption_ru": "Празднование Навруза",
+    "caption_uz": "Navroʻz bayrami",
+    "caption_en": "Navruz celebration"
+   }
+  ],
+  "20": [
+   {
+    "q": "Tashkent Metro station",
+    "must": [
+     "metro"
+    ],
+    "caption_ru": "Ташкентское метро",
+    "caption_uz": "Toshkent metrosi",
+    "caption_en": "Tashkent Metro"
+   }
+  ]
+ }
+}

@@ -24,10 +24,23 @@ function append(el, children) {
   }
 }
 
-export function mount(el) {
+// keepScroll: перерисовать экран, не прокручивая его наверх (например, при выборе тарифа)
+export function mount(el, opts = {}) {
   const root = document.getElementById('app');
+  const y = window.scrollY;
+  if (opts.keepScroll && el.classList) el.classList.add('no-anim');   // без мигания при перерисовке
   root.replaceChildren(el);
-  window.scrollTo(0, 0);
+  window.scrollTo(0, opts.keepScroll ? y : 0);
+}
+
+// Открыть ссылку: t.me — внутри Telegram, остальные — во внешнем браузере
+export function openLink(url) {
+  const wa = window.Telegram && window.Telegram.WebApp;
+  try {
+    if (wa && /^https:\/\/t\.me\//.test(url) && wa.openTelegramLink) return wa.openTelegramLink(url);
+    if (wa && wa.openLink) return wa.openLink(url);
+  } catch { /* старые клиенты */ }
+  window.open(url, '_blank', 'noopener');
 }
 
 export function haptic(kind) {

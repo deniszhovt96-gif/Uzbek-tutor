@@ -42,8 +42,6 @@ const TEXT = {
     refundUsage: "Формат: /refund ID_платежа",
     refundDone: (stars: number) => `Возврат выполнен: ${stars} ⭐. Подписка по этому платежу отменена.`,
     refundFail: (e: string) => `Возврат не выполнен: ${e}`,
-    adminPaid: (name: string, tier: string, months: number, stars: number, id: string) =>
-      `💫 Новая оплата: ${name}\n${tier === "basic" ? "Базовая" : "Продвинутая"}, ${months} мес., ${stars} ⭐\nID: ${id}`,
     notAdmin: "Команда доступна только администратору.",
     badArgs: "Формат: /gencode basic|advanced 1|3|6|12 количество [активаций]\nНапример: /gencode advanced 3 10",
     codes: (tier: string, months: number, n: number, uses: number) =>
@@ -217,13 +215,49 @@ async function onPaid(token: string, msg: any): Promise<void> {
   }
   if (data.duplicate) return;
   await tgCall(token, "sendMessage", { chat_id: msg.chat.id, text: t.paid(data.tier, formatDate(data.ends_at, lang)) });
-  const name = [msg.from?.first_name, msg.from?.username ? `@${msg.from.username}` : ""].filter(Boolean).join(" ");
-  await notifyAdmins(db, token, TEXT.ru.adminPaid(name, data.tier, data.months, sp.total_amount, sp.telegram_payment_charge_id));
+  await notifyAdmins(db, token, await adminCard(db, sp.telegram_payment_charge_id, "💫 <b>Новая оплата</b>", true), true);
 }
 
-async function notifyAdmins(db: any, token: string, text: string): Promise<void> {
+// Возврат прошёл не через /refund (например, через поддержку Telegram) — всё равно отменяем подписку
+async function onRefunded(token: string, msg: any): Promise<void> {
+  const db = dbClient();
+  const rp = msg.refunded_payment;
+  const { data, error } = await db.rpc("stars_refund_payment", { p_charge_id: rp.telegram_payment_charge_id });
+  if (error || !data?.ok) {
+    console.error("stars_refund_payment failed", error, JSON.stringify(data), rp.telegram_payment_charge_id);
+    await notifyAdmins(db, token, `⚠️ Возврат ${rp.total_amount} ⭐ не найден в базе.\nПользователь: ${msg.from?.id}\nID: ${rp.telegram_payment_charge_id}`);
+    return;
+  }
+  if (data.duplicate) return;   // возврат уже обработан командой /refund
+  await notifyAdmins(db, token, await adminCard(db, rp.telegram_payment_charge_id, `↩️ <b>Возврат ${rp.total_amount} ⭐</b> (не через /refund) — подписка по платежу отменена`, false), true);
+}
+
+async function notifyAdmins(db: any, token: string, text: string, html = false): Promise<void> {
   const { data } = await db.from("admins").select("tg_id");
-  for (const a of data ?? []) await tgCall(token, "sendMessage", { chat_id: a.tg_id, text });
+  for (const a of data ?? []) {
+    await tgCall(token, "sendMessage", html ? { chat_id: a.tg_id, text, parse_mode: "HTML" } : { chat_id: a.tg_id, text });
+  }
+}
+
+const TIER_RU: Record<string, string> = { free: "Бесплатная", basic: "Базовая", advanced: "Продвинутая" };
+
+// Карточка платежа для администратора (HTML): кто, что, до какой даты; ID и команда возврата копируются нажатием
+async function adminCard(db: any, chargeId: string, title: string, withRefund: boolean): Promise<string> {
+  const id = escapeHtml(chargeId);
+  const { data: info } = await db.rpc("admin_payment_info", { p_charge_id: chargeId });
+  const lines = [title];
+  if (info) {
+    const who = [info.name, info.username ? `@${info.username}` : ""].filter(Boolean).join(" ") || "—";
+    lines.push(`${escapeHtml(who)} · <a href="tg://user?id=${info.tg_id}">профиль</a>`);
+    lines.push(`${TIER_RU[info.tier] ?? info.tier}, ${info.months} мес., ${info.stars} ⭐`);
+    lines.push(info.tier_ends_at
+      ? `Подписка «${TIER_RU[info.tier]}» действует до ${formatDate(info.tier_ends_at, "ru")}`
+      : `Подписки «${TIER_RU[info.tier]}» сейчас нет`);
+    lines.push(`Текущий уровень: ${TIER_RU[info.current_tier] ?? info.current_tier}`);
+  }
+  lines.push(`ID: <code>${id}</code>`);
+  if (withRefund) lines.push(`Возврат: <code>/refund ${id}</code>`);
+  return lines.join("\n");
 }
 
 export function parseGencode(text: string):
@@ -277,6 +311,10 @@ async function handler(req: Request): Promise<Response> {
     }
     if (update?.message?.successful_payment) {
       await onPaid(token, update.message);
+      return ok();
+    }
+    if (update?.message?.refunded_payment) {
+      await onRefunded(token, update.message);
       return ok();
     }
   } catch (e) {
@@ -340,7 +378,10 @@ async function handler(req: Request): Promise<Response> {
       }
       const { data: rr, error: re } = await db.rpc("stars_refund_payment", { p_charge_id: chargeId });
       if (re || !rr?.ok) throw re ?? new Error(JSON.stringify(rr));
-      await tgCall(token, "sendMessage", { chat_id: chatId, text: t.refundDone(pay.stars) });
+      await tgCall(token, "sendMessage", {
+        chat_id: chatId, parse_mode: "HTML",
+        text: await adminCard(db, chargeId, `↩️ <b>Возврат выполнен: ${pay.stars} ⭐</b> — подписка по этому платежу отменена`, false),
+      });
     } else if (command === "/gencode") {
       if (!(await isAdmin())) {
         await tgCall(token, "sendMessage", { chat_id: chatId, text: t.notAdmin });

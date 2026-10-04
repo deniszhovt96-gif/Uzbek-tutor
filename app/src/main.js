@@ -15,6 +15,8 @@ import { renderGames } from './screens/games.js';
 import { renderTest } from './screens/test.js';
 import { renderSubscription } from './screens/subscription.js';
 import { renderCourse, renderUnit } from './screens/course.js';
+import { renderUnitTest } from './screens/unittest.js';
+import { renderReview } from './screens/review.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -67,6 +69,8 @@ const SCREENS = {
   subscription: renderSubscription,
   course: renderCourse,
   unit: renderUnit,
+  unittest: renderUnitTest,
+  review: renderReview,
 };
 
 // ---------------------------------------------------------------- нижняя навигация
@@ -131,6 +135,7 @@ async function start() {
   try {
     await login();
     await app.refreshMe();
+    app.info = await rpc('get_app_info').catch(() => ({}));
     app.home();
   } catch (err) {
     showError(err instanceof ApiError ? err : new ApiError(String(err)));

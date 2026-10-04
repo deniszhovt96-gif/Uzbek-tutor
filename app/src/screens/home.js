@@ -1,7 +1,7 @@
 // Вкладка «Дом»: профиль, план на сегодня, разделы, активность, прогресс по уровням.
 import { rpc, tg } from '../api.js';
 import { t, tierName, formatDate } from '../i18n.js';
-import { h, mount, spinner, sheet, haptic } from '../ui.js';
+import { h, mount, spinner, sheet, haptic, openLink } from '../ui.js';
 import { icon } from '../icons.js';
 
 export function lockedSheet(app, minTier) {
@@ -147,5 +147,11 @@ export async function renderHome(app) {
         h('span', {}, h('i', { class: 'dot', style: { background: 'var(--accent-soft)' } }), t('legendStarted')),
         h('span', {}, h('i', { class: 'dot', style: { background: 'var(--accent)' } }), t('legendLearned'))),
       h('button', { class: 'link-row', type: 'button', onClick: () => app.go('progress') },
-        icon('progress'), h('span', { class: 'spacer' }, t('moreStats')), icon('chevron')))));
+        icon('progress'), h('span', { class: 'spacer' }, t('moreStats')), icon('chevron'))),
+    app.info && app.info.community_url
+      ? h('button', { class: 'card sub-card community', type: 'button', onClick: () => openLink(app.info.community_url) },
+          h('span', { class: 'tile-icon' }, icon('users')),
+          h('div', {}, h('b', {}, t('communityTitle')), h('div', { class: 'small muted' }, t('communityText'))),
+          icon('chevron', 'ic chev'))
+      : null));
 }

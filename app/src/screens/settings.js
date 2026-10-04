@@ -1,6 +1,6 @@
 import { rpc } from '../api.js';
 import { t, setLang, tierName, formatDate } from '../i18n.js';
-import { h, mount, spinner, haptic } from '../ui.js';
+import { h, mount, spinner, haptic, openLink } from '../ui.js';
 import { icon } from '../icons.js';
 import { applyTheme, currentTheme } from '../theme.js';
 
@@ -66,6 +66,20 @@ export async function renderSettings(app) {
 
     h('h2', {}, t('audioEx')),
     seg([['on', t('on')], ['off', t('off')]], audioOn ? 'on' : 'off', (v) => save(null, { audio_exercises: v === 'on' })),
+
+    app.info && app.info.community_url ? [
+      h('h2', {}, t('community')),
+      h('button', { class: 'card sub-card', type: 'button', onClick: () => openLink(app.info.community_url) },
+        h('span', { class: 'tile-icon' }, icon('users')),
+        h('div', {}, h('b', {}, t('communityTitle')), h('div', { class: 'small muted' }, t('communityText'))),
+        icon('chevron', 'ic chev'))] : null,
+
+    me.is_admin ? [
+      h('h2', {}, t('adminSection')),
+      h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('review') },
+        h('span', { class: 'tile-icon gold' }, icon('test')),
+        h('div', {}, h('b', {}, t('reviewTitle')), h('div', { class: 'small muted' }, t('reviewShort'))),
+        icon('chevron', 'ic chev'))] : null,
 
     h('h2', {}, t('subscription')),
     h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('subscription') },
