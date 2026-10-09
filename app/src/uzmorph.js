@@ -79,7 +79,7 @@ export function conjugate(infinitive) {
     { group: 'imperative', id: 'imper', uz: 'Buyruq-istak mayli', ru: 'Повелительно-желательное', en: 'Imperative', aff: '-ay, —/-gin, -sin, -aylik, -ing, -sinlar',
       pos: [`${stem}${V ? 'y' : 'ay'} / ${stem}${V ? 'yin' : 'ayin'}`, `${stem} / ${stem}${gAffix(stem, 'gin')}`, stem + 'sin',
             stem + (V ? 'ylik' : 'aylik'), stem + (V ? 'ng' : 'ing'), stem + 'sinlar'].map(p),
-      neg: [stem + 'may', `${stem}ma / ${stem}magin`, stem + 'masin', stem + 'maylik', stem + 'mang', stem + 'masinlar'].map(p) },
+      neg: [`${stem}may / ${stem}mayin`,`${stem}ma / ${stem}magin`, stem + 'masin', stem + 'maylik', stem + 'mang', stem + 'masinlar'].map(p) },
 
     // ---------------------------------------------------------------- условное и сослагательное
     { group: 'conditional', id: 'cond', uz: 'Shart mayli', ru: 'Условное («если…»)', en: 'Conditional (if)', aff: '-sa',

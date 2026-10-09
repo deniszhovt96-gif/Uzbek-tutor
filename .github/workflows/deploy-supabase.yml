@@ -1,44 +1,47 @@
 name: Deploy Supabase (база данных)
 
-# Применяет новые миграции из supabase/migrations к проекту Supabase.
+# Применяет новые миграции из supabase/migrations к базе Supabase.
+# Нужен один секрет: SUPABASE_DB_PASSWORD — пароль базы (Project Settings → Database).
+# Строка подключения собирается здесь автоматически (пароль кодируется для URL).
 # Запускается при изменениях в папке supabase/ или вручную (Actions → Run workflow).
 on:
   push:
     branches: [main]
-    paths: ['supabase/**']
+    paths: ['supabase/**', 'scripts/migrate.sh', '.github/workflows/deploy-supabase.yml']
   workflow_dispatch:
 
 concurrency:
   group: supabase-deploy
   cancel-in-progress: false
 
+env:
+  # Не секреты: адрес пула подключений и имя пользователя проекта
+  DB_HOST: aws-0-ap-northeast-2.pooler.supabase.com
+  DB_PORT: '5432'
+  DB_USER: postgres.jjvtkvritnmwqfpvlxrs
+
 jobs:
   migrate:
     runs-on: ubuntu-latest
-    env:
-      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-      SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
-      SUPABASE_PROJECT_ID: ${{ secrets.SUPABASE_PROJECT_ID }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Проверка секретов
+      - name: Сборка строки подключения
+        env:
+          DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
         run: |
-          missing=""
-          [ -z "$SUPABASE_ACCESS_TOKEN" ] && missing="$missing SUPABASE_ACCESS_TOKEN"
-          [ -z "$SUPABASE_DB_PASSWORD" ] && missing="$missing SUPABASE_DB_PASSWORD"
-          [ -z "$SUPABASE_PROJECT_ID" ] && missing="$missing SUPABASE_PROJECT_ID"
-          if [ -n "$missing" ]; then
-            echo "::error::Не заданы секреты репозитория:$missing (Settings → Secrets and variables → Actions)"
+          if [ -z "$DB_PASSWORD" ]; then
+            echo "::error::Не задан секрет SUPABASE_DB_PASSWORD (Settings → Secrets and variables → Actions)"
             exit 1
           fi
+          ENC=$(python3 -c 'import os, urllib.parse; print(urllib.parse.quote(os.environ["DB_PASSWORD"].strip(), safe=""))')
+          echo "::add-mask::$ENC"
+          echo "Длина пароля после обрезки пробелов: $(python3 -c 'import os; print(len(os.environ["DB_PASSWORD"].strip()))') символов"
+          echo "SUPABASE_DB_URL=postgresql://${DB_USER}:${ENC}@${DB_HOST}:${DB_PORT}/postgres" >> "$GITHUB_ENV"
 
-      - uses: supabase/setup-cli@v1
-        with:
-          version: latest
-
-      - name: Подключение к проекту
-        run: supabase link --project-ref "$SUPABASE_PROJECT_ID"
+      - name: Проверка подключения
+        run: |
+          psql "$SUPABASE_DB_URL" -tAc "select 'Подключение к базе OK, ' || version()"
 
       - name: Применение миграций
-        run: supabase db push
+        run: bash scripts/migrate.sh
