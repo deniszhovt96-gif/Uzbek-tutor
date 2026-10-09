@@ -1334,6 +1334,65 @@ Object.assign(en, {
   groupCodesTitle: 'Codes for friends', groupCodesHint: 'Send a code to a friend: they enter it below in the “Subscription code” field.', codeUsed: 'used', copy: 'Copy',
 });
 
+// ---------------------------------------------------------------- шаг 17: рефералы и купоны
+Object.assign(ru, {
+  couponsUse: 'Применить купоны', couponsHave: (n) => `у вас ${n}`, couponsNone: 'Без купона',
+  couponsSaving: (n) => `Экономия: ${n} ⭐`, payStarsCoupon: (a, b) => `Оплатить ${a} ⭐ (вместо ${b})`,
+  refTitle: 'Пригласить друга', refLead: 'Друг получит купон −5% на первую оплату, а вы — купон −5%, когда он оформит подписку.',
+  refShare: 'Поделиться', refShareText: 'Учу узбекский в Telegram — присоединяйся! По моей ссылке скидка 5% на подписку.',
+  refInvited: 'пришли по ссылке', refPaid: 'оформили подписку', refCoupons: 'купонов доступно',
+  refWelcomeHave: 'У вас есть приветственный купон −5% — он применится к оплате выше.',
+  refRulesBtn: 'Условия скидок', refRulesTitle: 'Условия скидок',
+  refRules: [
+    'Друг, который пришёл по вашей ссылке и ещё не пользовался приложением, получает купон −5% на первую оплату.',
+    'Когда приглашённый друг впервые оформит подписку, вы получите купон −5%. За каждого друга — один купон: больше друзей — больше купонов.',
+    'Купоны личные: передать их другому человеку нельзя. Срок действия не ограничен.',
+    'Обычная подписка: на одну оплату — один купон. Он снижает цену выбранного тарифа ещё на 5% — от цены, в которую уже входит скидка за срок (3, 6, 12 месяцев). Пример: 3 месяца за 1 200 ⭐ с купоном — 1 140 ⭐.',
+    'Групповая подписка на 3 человек уже со скидкой 15%. Каждый купон снижает долю одного участника (уже со скидкой) ещё на 5%: чтобы −5% получили все трое, нужно 3 купона.',
+    'Купоны применяются при оплате звёздами Telegram в приложении.',
+    'Если оплату вернули, использованные в ней купоны возвращаются, а купон за этого друга отменяется, если ещё не использован.',
+  ],
+  anReferrals: 'Рефералы', anRefInvited: 'пришли по ссылкам', anRefPaid: 'оплатили', anCouponsOpen: 'купонов не использовано', anRefTop: 'Больше всего приглашений',
+});
+Object.assign(uz, {
+  couponsUse: 'Kuponlarni qoʻllash', couponsHave: (n) => `sizda ${n} ta`, couponsNone: 'Kuponsiz',
+  couponsSaving: (n) => `Tejov: ${n} ⭐`, payStarsCoupon: (a, b) => `${a} ⭐ toʻlash (${b} oʻrniga)`,
+  refTitle: 'Doʻstni taklif qilish', refLead: 'Doʻstingiz birinchi toʻlovga −5% kupon oladi, siz esa u obuna boʻlganda −5% kupon olasiz.',
+  refShare: 'Ulashish', refShareText: 'Telegramda oʻzbek tilini oʻrganyapman — qoʻshil! Mening havolam orqali obunaga 5% chegirma.',
+  refInvited: 'havola orqali keldi', refPaid: 'obuna boʻldi', refCoupons: 'mavjud kupon',
+  refWelcomeHave: 'Sizda −5% xush kelibsiz kuponi bor — u yuqoridagi toʻlovga qoʻllanadi.',
+  refRulesBtn: 'Chegirma shartlari', refRulesTitle: 'Chegirma shartlari',
+  refRules: [
+    'Havolangiz orqali kelgan va ilovadan hali foydalanmagan doʻstingiz birinchi toʻlovga −5% kupon oladi.',
+    'Taklif qilgan doʻstingiz birinchi marta obuna boʻlganda, siz −5% kupon olasiz. Har bir doʻst uchun bitta kupon: doʻstlar qancha koʻp boʻlsa, kuponlar ham shuncha koʻp.',
+    'Kuponlar shaxsiy: ularni boshqa odamga berib boʻlmaydi. Amal qilish muddati cheklanmagan.',
+    'Oddiy obuna: bitta toʻlovga bitta kupon. U tanlangan tarif narxini yana 5% kamaytiradi — muddat uchun chegirma (3, 6, 12 oy) kiritilgan narxdan. Misol: 3 oy 1 200 ⭐, kupon bilan — 1 140 ⭐.',
+    '3 kishilik guruh obunasi allaqachon 15% arzon. Har bir kupon bitta ishtirokchining (chegirmali) ulushini yana 5% kamaytiradi: uchalasiga −5% uchun 3 ta kupon kerak.',
+    'Kuponlar ilovada Telegram yulduzlari bilan toʻlaganda qoʻllanadi.',
+    'Toʻlov qaytarilsa, unda ishlatilgan kuponlar qaytariladi, shu doʻst uchun berilgan kupon esa hali ishlatilmagan boʻlsa bekor qilinadi.',
+  ],
+  anReferrals: 'Takliflar', anRefInvited: 'havola orqali kelgan', anRefPaid: 'toʻlagan', anCouponsOpen: 'ishlatilmagan kupon', anRefTop: 'Eng koʻp taklif qilganlar',
+});
+Object.assign(en, {
+  couponsUse: 'Apply coupons', couponsHave: (n) => `you have ${n}`, couponsNone: 'No coupon',
+  couponsSaving: (n) => `You save ${n} ⭐`, payStarsCoupon: (a, b) => `Pay ${a} ⭐ (instead of ${b})`,
+  refTitle: 'Invite a friend', refLead: 'Your friend gets a −5% coupon for their first payment, and you get a −5% coupon when they subscribe.',
+  refShare: 'Share', refShareText: 'I’m learning Uzbek in Telegram — join me! My link gives you 5% off a subscription.',
+  refInvited: 'joined via link', refPaid: 'subscribed', refCoupons: 'coupons available',
+  refWelcomeHave: 'You have a −5% welcome coupon — it applies to the payment above.',
+  refRulesBtn: 'Discount terms', refRulesTitle: 'Discount terms',
+  refRules: [
+    'A friend who joins through your link and hasn’t used the app before gets a −5% coupon for their first payment.',
+    'When an invited friend subscribes for the first time, you get a −5% coupon. One coupon per friend: more friends — more coupons.',
+    'Coupons are personal and can’t be given to someone else. They never expire.',
+    'Regular plan: one coupon per payment. It takes another 5% off the plan price that already includes the 3, 6 or 12-month discount. Example: 3 months for 1,200 ⭐ becomes 1,140 ⭐.',
+    'The group plan for 3 people is already 15% off. Each coupon cuts one member’s (already discounted) share by another 5%: for all three to get −5%, use 3 coupons.',
+    'Coupons apply when paying with Telegram Stars in the app.',
+    'If a payment is refunded, the coupons used in it come back, and the coupon for that friend is cancelled if still unused.',
+  ],
+  anReferrals: 'Referrals', anRefInvited: 'joined via links', anRefPaid: 'paid', anCouponsOpen: 'unused coupons', anRefTop: 'Top inviters',
+});
+
 const dict = { ru, uz, en };
 let lang = 'ru';
 

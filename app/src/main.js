@@ -156,6 +156,9 @@ async function start() {
     await login();
     await app.refreshMe();
     app.info = await rpc('get_app_info').catch(() => ({}));
+    // реферальная ссылка: код из ссылки на мини-приложение (startapp=ref_…) или запомненный ботом (/start ref_…)
+    const startParam = (webApp.initDataUnsafe && webApp.initDataUnsafe.start_param) || null;
+    rpc('apply_referral', { p_code: startParam && /^ref_/i.test(startParam) ? startParam : null }).catch(() => null);
     // первый вход — короткое знакомство с приложением
     if (!(app.me && app.me.settings && app.me.settings.onboarded)) app.tab('welcome');
     else app.home();

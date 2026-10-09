@@ -44,7 +44,7 @@ const TEXT = {
     paySupport: (admin: string) =>
       `Помощь с оплатой.\n\nЕсли звёзды списались, а подписка не появилась, или нужна отмена — напишите администратору: ${admin}.\nУкажите дату оплаты. Возврат звёзд возможен, если подпиской ещё не пользовались.`,
     terms:
-      "Условия подписки\n\n• Подписка оплачивается звёздами Telegram на 1, 3, 6 или 12 месяцев и не продлевается автоматически.\n• Новая оплата того же уровня продлевает подписку с даты её окончания. Если действуют обе подписки, сначала работает «Продвинутая», а «Базовая» продолжается после неё на оставшийся срок.\n• «Базовая»: лёгкая программа, до 2 сеансов с новыми словами в день (повторение без ограничений), тренировка, игры, грамматика. «Продвинутая»: любая интенсивность и сеансы без ограничений, дополнительно история, обществознание, культура, филворд, расширенная статистика.\n• Вопросы и возвраты — /paysupport.",
+      "Условия подписки\n\n• Подписка оплачивается звёздами Telegram на 1, 3, 6 или 12 месяцев и не продлевается автоматически.\n• Новая оплата того же уровня продлевает подписку с даты её окончания. Если действуют обе подписки, сначала работает «Продвинутая», а «Базовая» продолжается после неё на оставшийся срок.\n• «Базовая»: лёгкая программа, до 2 сеансов с новыми словами в день (повторение без ограничений), тренировка, игры, грамматика. «Продвинутая»: любая интенсивность и сеансы без ограничений, дополнительно история, обществознание, культура, филворд, расширенная статистика.\n• Пригласите друга по своей ссылке (Настройки → Подписка): он получит купон −5% на первую оплату, а вы — купон −5%, когда он оформит подписку. Купоны личные, не сгорают; купон снижает цену тарифа (уже со скидкой за срок) ещё на 5%; на обычную подписку — 1 купон, на групповую — до 3 (каждый −5% на долю одного участника).\n• Вопросы и возвраты — /paysupport.",
     refundUsage: "Формат: /refund ID_платежа",
     refundDone: (stars: number) => `Возврат выполнен: ${stars} ⭐. Подписка по этому платежу отменена.`,
     refundFail: (e: string) => `Возврат не выполнен: ${e}`,
@@ -71,7 +71,7 @@ const TEXT = {
     paySupport: (admin: string) =>
       `Toʻlov boʻyicha yordam.\n\nYulduzlar yechilgan, lekin obuna paydo boʻlmagan boʻlsa yoki bekor qilish kerak boʻlsa — administratorga yozing: ${admin}.\nToʻlov sanasini koʻrsating.`,
     terms:
-      "Obuna shartlari\n\n• Obuna Telegram yulduzlari bilan 1, 3, 6 yoki 12 oyga toʻlanadi va avtomatik uzaytirilmaydi.\n• Xuddi shu darajadagi yangi toʻlov obunani tugash sanasidan uzaytiradi.\n• Savollar va qaytarish — /paysupport.",
+      "Obuna shartlari\n\n• Obuna Telegram yulduzlari bilan 1, 3, 6 yoki 12 oyga toʻlanadi va avtomatik uzaytirilmaydi.\n• Xuddi shu darajadagi yangi toʻlov obunani tugash sanasidan uzaytiradi.\n• Doʻstingizni havolangiz orqali taklif qiling (Sozlamalar → Obuna): u birinchi toʻlovga −5% kupon oladi, siz esa u obuna boʻlganda −5% kupon olasiz. Kuponlar shaxsiy, muddatsiz; kupon tarif narxini (muddat chegirmasi bilan) yana 5% kamaytiradi; oddiy obunaga 1 ta, guruh obunasiga 3 tagacha (har biri bitta ishtirokchi ulushiga −5%).\n• Savollar va qaytarish — /paysupport.",
     refundUsage: "Format: /refund ID",
     refundDone: (stars: number) => `Qaytarildi: ${stars} ⭐.`,
     refundFail: (e: string) => `Qaytarib boʻlmadi: ${e}`,
@@ -98,7 +98,7 @@ const TEXT = {
     paySupport: (admin: string) =>
       `Payment help.\n\nIf stars were charged but the subscription did not appear, or you need a refund, contact the administrator: ${admin}.\nPlease include the payment date.`,
     terms:
-      "Subscription terms\n\n• Plans are paid with Telegram Stars for 1, 3, 6 or 12 months and do not renew automatically.\n• A new payment of the same plan extends it from its end date.\n• Questions and refunds — /paysupport.",
+      "Subscription terms\n\n• Plans are paid with Telegram Stars for 1, 3, 6 or 12 months and do not renew automatically.\n• A new payment of the same plan extends it from its end date.\n• Invite a friend with your link (Settings → Subscription): they get a −5% coupon for their first payment, and you get a −5% coupon when they subscribe. Coupons are personal and never expire; a coupon takes another 5% off the plan price (already including the term discount); 1 coupon per regular plan, up to 3 per group plan (each −5% off one member’s share).\n• Questions and refunds — /paysupport.",
     refundUsage: "Format: /refund ID",
     refundDone: (stars: number) => `Refunded: ${stars} ⭐.`,
     refundFail: (e: string) => `Refund failed: ${e}`,
@@ -116,6 +116,27 @@ const GROUP_NOTE: Record<Lang, string> = {
   uz: "Guruh: sizga obuna va doʻstlar uchun 2 ta kod.",
   en: "Group: your plan plus 2 codes for friends.",
 };
+// Реферальная программа: купоны −5%
+const COUPON_NOTE: Record<Lang, (n: number) => string> = {
+  ru: (n) => `Применено купонов: ${n}.`,
+  uz: (n) => `Qoʻllangan kuponlar: ${n}.`,
+  en: (n) => `Coupons applied: ${n}.`,
+};
+const REF_TEXT = {
+  ru: {
+    welcome: "🎁 Вы пришли по приглашению друга — вам купон −5% на первую оплату подписки. Он появится в приложении: Настройки → Подписка.",
+    earned: (n: number) => `🎉 Ваш друг оформил подписку по вашей ссылке — вам начислен купон −5%. Доступно купонов: ${n}.\nПрименить: приложение → Настройки → Подписка.`,
+  },
+  uz: {
+    welcome: "🎁 Siz doʻstingiz taklifi bilan keldingiz — birinchi obuna toʻloviga −5% kupon. U ilovada: Sozlamalar → Obuna.",
+    earned: (n: number) => `🎉 Doʻstingiz havolangiz orqali obuna boʻldi — sizga −5% kupon berildi. Mavjud kuponlar: ${n}.\nQoʻllash: ilova → Sozlamalar → Obuna.`,
+  },
+  en: {
+    welcome: "🎁 You joined through a friend’s invite — you get a −5% coupon for your first subscription payment. Find it in the app: Settings → Subscription.",
+    earned: (n: number) => `🎉 Your friend subscribed through your link — you’ve earned a −5% coupon. Coupons available: ${n}.\nUse it: app → Settings → Subscription.`,
+  },
+} as Record<Lang, { welcome: string; earned: (n: number) => string }>;
+
 const GROUP_CODES: Record<Lang, string> = {
   ru: "Коды для друзей (активировать в приложении: Подписка → Код подписки; также видны там же):",
   uz: "Doʻstlar uchun kodlar (ilovada faollashtiriladi: Obuna → Obuna kodi; ular u yerda ham koʻrinadi):",
@@ -184,17 +205,19 @@ async function createInvoice(req: Request, token: string): Promise<Response> {
   try { body = await req.json(); } catch { /* пусто */ }
   const planId = Number(body.plan_id);
   if (!Number.isInteger(planId)) return json({ error: "bad_plan" }, 400);
-  const { data: plan, error } = await db.rpc("stars_invoice_data", { p_user: auth.user.id, p_plan_id: planId });
+  const coupons = Math.max(0, Math.min(3, Number(body.coupons) || 0));
+  const { data: plan, error } = await db.rpc("stars_invoice_data", { p_user: auth.user.id, p_plan_id: planId, p_coupons: coupons });
   if (error) { console.error(error); return json({ error: "db_error" }, 500); }
   if (plan.error) return json({ error: plan.error }, 400);
   const lang: Lang = plan.ui_lang === "uz" || plan.ui_lang === "en" ? plan.ui_lang : "ru";
   const t = TEXT[lang];
   const group = Number(plan.seats) > 1;
   const title = (t.invoiceTitle(plan.tier, plan.months) + (group ? " ×3" : "")).slice(0, 32);
+  const couponNote = plan.coupons > 0 ? COUPON_NOTE[lang](plan.coupons) + " " : "";
   const res = await tgApi(token, "createInvoiceLink", {
     title,
-    description: ((group ? GROUP_NOTE[lang] + " " : "") + t.invoiceDesc(plan.tier, plan.months)).slice(0, 255),
-    payload: `p:${plan.plan_id}:${auth.user.id}`,
+    description: (couponNote + (group ? GROUP_NOTE[lang] + " " : "") + t.invoiceDesc(plan.tier, plan.months)).slice(0, 255),
+    payload: plan.coupons > 0 ? `p:${plan.plan_id}:${auth.user.id}:${plan.coupons}` : `p:${plan.plan_id}:${auth.user.id}`,
     currency: "XTR",
     prices: [{ label: title, amount: plan.stars }],
   });
@@ -237,6 +260,11 @@ async function onPaid(token: string, msg: any): Promise<void> {
   const codes: string[] = Array.isArray(data.codes) ? data.codes : [];
   await tgCall(token, "sendMessage", { chat_id: msg.chat.id, text: t.paid(data.tier, formatDate(data.ends_at, lang))
     + (codes.length ? `\n\n${GROUP_CODES[lang]}\n${codes.join("\n")}` : "") });
+  // автору реферальной ссылки — сообщение о купоне
+  if (data.referrer?.tg_id) {
+    const rl: Lang = data.referrer.lang === "uz" || data.referrer.lang === "en" ? data.referrer.lang : "ru";
+    await tgCall(token, "sendMessage", { chat_id: data.referrer.tg_id, text: REF_TEXT[rl].earned(Number(data.referrer.coupons) || 1) });
+  }
   await notifyAdmins(db, token, await adminCard(db, sp.telegram_payment_charge_id, "💫 <b>Новая оплата</b>", true), true);
 }
 
@@ -509,9 +537,16 @@ async function handler(req: Request): Promise<Response> {
   try {
     if (command === "/start") {
       await db.rpc("set_bot_blocked", { p_tg_id: from.id, p_blocked: false });
+      // реферальная ссылка: t.me/<бот>?start=ref_КОД
+      const arg = text.split(/\s+/)[1] || "";
+      let refNote = "";
+      if (/^ref_[A-Za-z0-9]{4,12}$/.test(arg)) {
+        const { data: rr } = await db.rpc("ref_remember", { p_tg_id: from.id, p_code: arg.slice(4) });
+        if (rr?.ok) refNote = "\n\n" + REF_TEXT[lang].welcome;
+      }
       await tgCall(token, "sendMessage", {
         chat_id: chatId,
-        text: t.start(from.first_name || ""),
+        text: t.start(from.first_name || "") + refNote,
         reply_markup: { inline_keyboard: [[{ text: t.open, web_app: { url: appUrl } }]] },
       });
     } else if (command === "/help") {

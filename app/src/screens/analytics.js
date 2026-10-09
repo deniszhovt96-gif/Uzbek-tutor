@@ -6,7 +6,7 @@ import { icon } from '../icons.js';
 
 export async function renderAnalytics(app) {
   mount(spinner(t('loading')));
-  const a = await rpc('admin_analytics');
+  const [a, rf] = await Promise.all([rpc('admin_analytics'), rpc('admin_referrals').catch(() => null)]);
   if (a.error) {
     mount(h('div', { class: 'screen' }, h('div', { class: 'card empty' }, icon('lock'), h('p', {}, t('adminOnly')))));
     return;
@@ -35,6 +35,10 @@ export async function renderAnalytics(app) {
     h('h2', {}, t('anMoney')),
     h('div', { class: 'stats' }, stat(m.active_basic, t('tierBasic')), stat(m.active_advanced, t('tierAdvanced')), stat(m.payers_total, t('anPayers'))),
     h('div', { class: 'stats' }, stat(m.payments30, t('anPayments30')), stat(m.stars30, t('anStars30')), stat(u.blocked, t('anBlocked'))),
+    rf && !rf.error ? [h('h2', {}, t('anReferrals')),
+      h('div', { class: 'stats' }, stat(rf.invited, t('anRefInvited')), stat(rf.paid, t('anRefPaid')), stat(rf.coupons_open, t('anCouponsOpen'))),
+      (rf.top || []).length ? h('div', { class: 'card' }, h('div', { class: 'label' }, t('anRefTop')),
+        rf.top.map((x) => h('div', { class: 'pay-row' }, h('span', {}, `${x.name || ''}${x.username ? ` @${x.username}` : ''}`), h('b', {}, `${x.invited} / ${x.paid}`)))) : null] : null,
     h('h2', {}, t('anActivity')),
     h('div', { class: 'stats' }, stat(act.sessions7, t('anSessions7')), stat(act.answers7, t('anAnswers7')), stat(act.accuracy7 == null ? null : `${act.accuracy7}%`, t('anAccuracy7'))),
     h('div', { class: 'stats' }, stat(act.topics_read7, t('anTopics7')), stat(act.dialogs_read7, t('anDialogs7')), stat(act.morph7, t('anMorph7'))),
