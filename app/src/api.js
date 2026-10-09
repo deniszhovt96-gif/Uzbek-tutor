@@ -101,3 +101,16 @@ export async function notifyFlags() {
     });
   } catch { /* не критично */ }
 }
+
+// «Поделиться»: бот готовит сообщение с картинкой и реферальной ссылкой → id для WebApp.shareMessage
+export async function prepareShare() {
+  if (!session) await login();
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/telegram-bot/share`, {
+    method: 'POST',
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
+    body: '{}',
+  }).catch((err) => { throw new ApiError('network', err && err.message); });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.id) throw new ApiError(data.error || `http_${res.status}`);
+  return data;
+}

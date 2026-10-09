@@ -1393,6 +1393,53 @@ Object.assign(en, {
   anReferrals: 'Referrals', anRefInvited: 'joined via links', anRefPaid: 'paid', anCouponsOpen: 'unused coupons', anRefTop: 'Top inviters',
 });
 
+// ---------------------------------------------------------------- шаг 19
+Object.assign(ru, {
+  notStudied: 'не изучено', literaryShort: 'лит.',
+  showNotStudied: (n) => `Показать ещё ${n} — пока не изучены`, hideNotStudied: 'Скрыть неизученные',
+  groupNotStudied: 'Эти формы откроются, когда вы пройдёте соответствующие темы грамматики или тест уровня.',
+  colloqTitle: 'Разговорная речь', colloqFirst: 'Сначала разговорные формы',
+  colloqFirstHint: 'Новые слова — сначала разговорные, в том числе со следующего уровня; в спряжении разговорный вариант главный, литературный ниже. Ответы засчитываются оба.',
+  gfTitle: 'Как образуется', gfHint: 'Корень + суффикс + окончание для каждого лица и числа. Слева — основа на согласный, справа — на гласный.',
+  gfRoot: 'корень', gfSuf: 'суффикс', gfEnd: 'окончание', gfPerson: 'Лицо', gfWord: 'слово', gfCaseEnd: 'падежное окончание',
+  gfCase: 'Падеж', gfEnding: 'Окончание', gfCasesTitle: 'Падежные окончания', gfPluralTitle: 'Множественное число + падеж',
+  gfPossTitle: 'Притяжательные окончания', gfPossEnd: 'притяжательное окончание', gfTense: 'Время', gfSuffix: 'Суффикс',
+  gfPossNote: 'После гласного — -m, -ng, -si…; после согласного — -im, -ing, -i… В части слов выпадает гласный (oʻgʻil → oʻgʻlim).',
+  gfOverview: 'Все времена: форма «я» и «он/она»',
+  refSendImage: 'Отправить картинку другу', refStory: 'В сторис', refCopyLink: 'Скопировать ссылку',
+  refStoryText: 'Учу узбекский в Telegram 🇺🇿 По моей ссылке −5%:',
+});
+Object.assign(uz, {
+  notStudied: 'oʻrganilmagan', literaryShort: 'adab.',
+  showNotStudied: (n) => `Yana ${n} tasini koʻrsatish — hali oʻrganilmagan`, hideNotStudied: 'Oʻrganilmaganlarni yashirish',
+  groupNotStudied: 'Bu shakllar tegishli grammatika mavzularini yoki daraja testini oʻtganingizda ochiladi.',
+  colloqTitle: 'Soʻzlashuv nutqi', colloqFirst: 'Avval soʻzlashuv shakllari',
+  colloqFirstHint: 'Yangi soʻzlar — avval soʻzlashuvdagilar, keyingi darajadan ham; tuslashda soʻzlashuv varianti asosiy, adabiysi pastda. Ikkala javob ham qabul qilinadi.',
+  gfTitle: 'Qanday yasaladi', gfHint: 'Har bir shaxs va son uchun oʻzak + qoʻshimcha + qoʻshimcha. Chapda — undosh bilan tugagan oʻzak, oʻngda — unli bilan.',
+  gfRoot: 'oʻzak', gfSuf: 'zamon qoʻshimchasi', gfEnd: 'shaxs qoʻshimchasi', gfPerson: 'Shaxs', gfWord: 'soʻz', gfCaseEnd: 'kelishik qoʻshimchasi',
+  gfCase: 'Kelishik', gfEnding: 'Qoʻshimcha', gfCasesTitle: 'Kelishik qoʻshimchalari', gfPluralTitle: 'Koʻplik + kelishik',
+  gfPossTitle: 'Egalik qoʻshimchalari', gfPossEnd: 'egalik qoʻshimchasi', gfTense: 'Zamon', gfSuffix: 'Qoʻshimcha',
+  gfPossNote: 'Unlidan keyin — -m, -ng, -si…; undoshdan keyin — -im, -ing, -i… Ayrim soʻzlarda unli tushadi (oʻgʻil → oʻgʻlim).',
+  gfOverview: 'Barcha zamonlar: «men» va «u» shakli',
+  refSendImage: 'Doʻstga rasm yuborish', refStory: 'Storisga', refCopyLink: 'Havolani nusxalash',
+  refStoryText: 'Telegramda oʻzbek tilini oʻrganyapman 🇺🇿 Havolam orqali −5%:',
+});
+Object.assign(en, {
+  notStudied: 'not studied', literaryShort: 'lit.',
+  showNotStudied: (n) => `Show ${n} more — not studied yet`, hideNotStudied: 'Hide not studied',
+  groupNotStudied: 'These forms open when you complete the matching grammar topics or a level test.',
+  colloqTitle: 'Colloquial speech', colloqFirst: 'Colloquial forms first',
+  colloqFirstHint: 'New words — colloquial ones first, including from the next level; in conjugation the colloquial variant is shown first, the literary one below. Both answers count.',
+  gfTitle: 'How it is formed', gfHint: 'Root + suffix + ending for every person and number. Left — a stem ending in a consonant, right — in a vowel.',
+  gfRoot: 'root', gfSuf: 'suffix', gfEnd: 'ending', gfPerson: 'Person', gfWord: 'word', gfCaseEnd: 'case ending',
+  gfCase: 'Case', gfEnding: 'Ending', gfCasesTitle: 'Case endings', gfPluralTitle: 'Plural + case',
+  gfPossTitle: 'Possessive endings', gfPossEnd: 'possessive ending', gfTense: 'Tense', gfSuffix: 'Suffix',
+  gfPossNote: 'After a vowel — -m, -ng, -si…; after a consonant — -im, -ing, -i… Some words drop a vowel (oʻgʻil → oʻgʻlim).',
+  gfOverview: 'All tenses: “I” and “he/she” forms',
+  refSendImage: 'Send the picture to a friend', refStory: 'To story', refCopyLink: 'Copy link',
+  refStoryText: 'Learning Uzbek in Telegram 🇺🇿 −5% with my link:',
+});
+
 const dict = { ru, uz, en };
 let lang = 'ru';
 

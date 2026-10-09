@@ -10,7 +10,7 @@ import { icon } from '../icons.js';
 import { conjugate, decline, acceptedForms, isVerb, PERSONS } from '../uzmorph.js';
 import { formTranslation } from '../verbtr.js';
 import { displayUz } from '../normalize.js';
-import { openTenses, commonRoot, cellOk, reportSheet, flagButton } from '../morph.js';
+import { openTenses, commonRoot, cellOk, reportSheet, flagButton, stableRedraw } from '../morph.js';
 import { declSheet as declSheetImpl } from './decl.js';
 
 let appRef = null;
@@ -28,14 +28,39 @@ async function loadMorph(ids) {
 }
 
 // ---------------------------------------------------------------- таблицы спряжения (экран и шторка)
-function conjTables(verb, morph, state, redraw) {
+// opts.open — открытые (изученные) времена; остальные спрятаны под стрелкой, пока не раскрыть.
+// opts.colloq — «сначала разговорная речь»: разговорный вариант крупно, литературный — ниже.
+function conjTables(verb, morph, state, redraw, opts = {}) {
   const c = conjugate(verb.uz);
   if (!c) return h('p', { class: 'muted' }, t('conjNotVerb'));
+  const open = opts.open || null;
   const seg = (items, current, onPick) => h('div', { class: 'segmented scroll' }, items.map(([value, label]) =>
-    h('button', { type: 'button', class: value === current ? 'active' : '', onClick: () => { haptic(); onPick(value); } }, label)));
+    h('button', { type: 'button', class: value === current ? 'active' : '', onClick: () => { if (value === current) return; haptic(); onPick(value); } }, label)));
   const groupBar = seg(GROUPS.map((g) => [g, t(`conjGroup_${g}`)]), state.group, (g) => { state.group = g; redraw(); });
   const polarity = state.group === 'nonfinite' ? null
     : seg([['pos', t('conjPos')], ['neg', t('conjNeg')]], state.neg ? 'neg' : 'pos', (v) => { state.neg = v === 'neg'; redraw(); });
+
+  const card = (tn, closed) => {
+    const forms = state.neg ? tn.neg : tn.pos;
+    const coll = tn.coll && (state.neg ? tn.coll.neg : tn.coll.pos);
+    const rows = forms.map((f, i) => ({ label: PERSONS[i], text: `${f} — ${formTranslation(morph, tn.id, state.neg, i, trLang())}` }));
+    return h('div', { class: `conj-card ${closed ? 'not-studied' : ''}` },
+      flagButton(() => reportSheet({ word: verb, kind: 'conj', item: `${tn.id}${state.neg ? ':neg' : ''}`, title: tenseName(tn), rows })),
+      h('div', { class: 'conj-title' }, tenseName(tn), closed ? h('span', { class: 'chip tiny-chip' }, t('notStudied')) : null),
+      h('div', { class: 'conj-sub muted' }, `${tn.uz} · ${tn.aff}`),
+      forms.map((f, i) => {
+        const tr = formTranslation(morph, tn.id, state.neg, i, trLang());
+        const cv = coll && coll[i];
+        const main = opts.colloq && cv ? cv : f;
+        const second = opts.colloq && cv ? `${t('literaryShort')} ${f}` : cv ? `${t('colloquialShort')} ${cv}` : null;
+        return h('div', { class: 'conj-row' },
+          h('span', { class: 'conj-p' }, PERSONS[i]),
+          h('div', { class: 'conj-cell' },
+            h('b', {}, main),
+            second ? h('div', { class: opts.colloq && cv ? 'conj-lit' : 'conj-coll' }, second) : null,
+            tr ? h('div', { class: 'conj-tr' }, tr) : null));
+      }));
+  };
 
   let cards;
   if (state.group === 'nonfinite') {
@@ -43,36 +68,41 @@ function conjTables(verb, morph, state, redraw) {
       h('div', { class: 'conj-title' }, getLang() === 'uz' ? n.uz : n.ru || n.uz, h('span', { class: 'muted' }, ` ${n.aff}`)),
       h('div', { class: 'conj-form one' }, n.forms.join(' · '))));
   } else {
-    cards = c.tenses.filter((tn) => tn.group === state.group).map((tn) => {
-      const forms = state.neg ? tn.neg : tn.pos;
-      const coll = tn.coll && (state.neg ? tn.coll.neg : tn.coll.pos);
-      const rows = forms.map((f, i) => ({ label: PERSONS[i], text: `${f} — ${formTranslation(morph, tn.id, state.neg, i, trLang())}` }));
-      return h('div', { class: 'conj-card' },
-        flagButton(() => reportSheet({ word: verb, kind: 'conj', item: `${tn.id}${state.neg ? ':neg' : ''}`, title: tenseName(tn), rows })),
-        h('div', { class: 'conj-title' }, tenseName(tn)),
-        h('div', { class: 'conj-sub muted' }, `${tn.uz} · ${tn.aff}`),
-        forms.map((f, i) => {
-          const tr = formTranslation(morph, tn.id, state.neg, i, trLang());
-          const cv = coll && coll[i];
-          return h('div', { class: 'conj-row' },
-            h('span', { class: 'conj-p' }, PERSONS[i]),
-            h('div', { class: 'conj-cell' },
-              h('b', {}, f),
-              cv ? h('div', { class: 'conj-coll' }, `${t('colloquialShort')} ${cv}`) : null,
-              tr ? h('div', { class: 'conj-tr' }, tr) : null));
-        }));
-    });
+    const inGroup = c.tenses.filter((tn) => tn.group === state.group);
+    const studied = open ? inGroup.filter((tn) => open.has(tn.id)) : inGroup;
+    const rest = open ? inGroup.filter((tn) => !open.has(tn.id)) : [];
+    cards = studied.map((tn) => card(tn, false));
+    if (rest.length) {
+      if (state.showAll) {
+        cards.push(h('button', { class: 'more-toggle', type: 'button', onClick: () => { state.showAll = false; redraw(); } },
+          t('hideNotStudied'), icon('chevron', 'ic up')));
+        cards.push(...rest.map((tn) => card(tn, true)));
+      } else {
+        if (!studied.length) cards.push(h('div', { class: 'card note small' }, icon('grammar'), h('span', {}, t('groupNotStudied'))));
+        cards.push(h('button', { class: 'more-toggle', type: 'button', onClick: () => { state.showAll = true; redraw(); } },
+          t('showNotStudied', rest.length), icon('chevron', 'ic down')));
+      }
+    }
   }
   return h('div', { class: 'conj' }, groupBar, polarity, h('div', { class: 'conj-grid' }, cards),
     h('p', { class: 'tiny muted' }, t('conjNote2')));
 }
 
+// открытые времена и настройка «сначала разговорная речь»
+async function tableOpts() {
+  const st = await rpc('get_morph_state').catch(() => null);
+  const o = openTenses(st || {});
+  const me = appRef && appRef.me;
+  return { open: new Set(o.tenses), colloq: Boolean(me && me.settings && me.settings.colloquial_first) };
+}
+
 // Шторка со спряжением — из карточки слова, задания, словаря
 export async function conjSheet(verb, app = appRef) {
-  const morph = (await loadMorph([verb.id]))[verb.id];
-  const state = { group: 'indicative', neg: false };
+  const [morphs, opts] = await Promise.all([loadMorph([verb.id]), tableOpts()]);
+  const morph = morphs[verb.id];
+  const state = { group: 'indicative', neg: false, showAll: false };
   const box = h('div', {});
-  const redraw = () => box.replaceChildren(conjTables(verb, morph, state, redraw));
+  const redraw = stableRedraw(box, () => conjTables(verb, morph, state, redraw, opts));
   redraw();
   const close = sheet(
     h('div', { class: 'label' }, t('conjTitle')),
@@ -146,9 +176,11 @@ async function renderVerb(app, verb, params) {
   const [morphs, data] = await Promise.all([loadMorph([verb.id]), rpc('get_verbs').catch(() => ({}))]);
   const morph = morphs[verb.id];
   const me = (data.verbs || []).find((v) => v.i === verb.id) || {};
-  const state = { group: params.group || 'indicative', neg: false };
+  const o = openTenses(data.state || {});
+  const opts = { open: new Set(o.tenses), colloq: Boolean(app.me && app.me.settings && app.me.settings.colloquial_first) };
+  const state = { group: params.group || 'indicative', neg: false, showAll: false };
   const box = h('div', {});
-  const redraw = () => box.replaceChildren(conjTables(verb, morph, state, redraw));
+  const redraw = stableRedraw(box, () => conjTables(verb, morph, state, redraw, opts));
   redraw();
   mount(h('div', { class: 'screen' },
     h('div', { class: 'label' }, t('conjTitle')),
@@ -214,9 +246,13 @@ function formTraining(app, verbs, morphs, open) {
     if (!tn) continue;
     const neg = open.neg && Math.random() < 0.35;
     const p = Math.floor(Math.random() * 6);
-    const cell = (neg ? tn.neg : tn.pos)[p];
+    const lit = (neg ? tn.neg : tn.pos)[p];
     const coll = tn.coll && (neg ? tn.coll.neg : tn.coll.pos);
-    tasks.push({ verb: v, tense: tn, neg, person: p, cell, extra: coll ? [coll[p]] : [] });
+    const cv = coll && coll[p];
+    // «сначала разговорная речь»: ждём разговорный вариант (литературный тоже засчитывается)
+    const colloqFirst = Boolean(appRef && appRef.me && appRef.me.settings && appRef.me.settings.colloquial_first);
+    const cell = colloqFirst && cv ? cv : lit;
+    tasks.push({ verb: v, tense: tn, neg, person: p, cell, extra: cv ? [cv, lit] : [] });
   }
   let i = 0;
   let score = 0;
@@ -313,7 +349,10 @@ function tableTraining(app, verbs, morphs, open) {
         inp.classList.add(good ? 'ok' : 'bad');
         inp.disabled = true;
         if (good) ok++;
-        else fixes[k].textContent = `→ ${forms[k]}`;
+        else {
+          const cf = Boolean(appRef && appRef.me && appRef.me.settings && appRef.me.settings.colloquial_first);
+          fixes[k].textContent = `→ ${cf && coll && coll[k] ? `${coll[k]} (${t('literaryShort')} ${forms[k]})` : forms[k]}`;
+        }
       });
       score += ok; total += forms.length;
       const r = results[task.verb.id] || (results[task.verb.id] = { ok: 0, total: 0, uz: task.verb.uz });

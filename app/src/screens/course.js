@@ -7,6 +7,7 @@ import { icon } from '../icons.js';
 import { play, exampleAudio } from '../audio.js';
 import { topicImage } from '../images.js';
 import { renderDialog } from './dialog.js';
+import { grammarFormsBlock } from '../grammar-forms.js';
 
 // Поле на нужном языке с запасным русским: pick(obj, 'title') → title_uz | title_ru
 export function pick(obj, base, lang = getLang()) {
@@ -193,6 +194,7 @@ export async function renderUnit(app, { id, lang }) {
     figure,
     u.course_id === 'civics' ? h('div', { class: 'card note' }, icon('civics'), h('span', { class: 'small' }, t('civicsDisclaimer'))) : null,
     h('div', { class: 'card express' }, h('div', { class: 'label' }, t('unitExpress')), paragraphs(pick(u, 'express', L))),
+    grammarFormsBlock(u),
     h('h2', {}, t('unitDetailed')),
     h('div', { class: 'card' }, detailed, expandBtn),
     u.has_examples && (u.examples || []).length ? [h('h2', {}, t('unitExamples')), exBox, (u.examples || []).length >= 8 ? moreBtn : null] : null,

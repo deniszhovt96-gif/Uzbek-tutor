@@ -8,7 +8,7 @@ import { icon } from '../icons.js';
 import { decline, CASES } from '../uzmorph.js';
 import { CASE_MEANING, POSS_MEANING } from '../verbtr.js';
 import { displayUz } from '../normalize.js';
-import { openColumns, commonRoot, cellOk, reportSheet, flagButton } from '../morph.js';
+import { openColumns, commonRoot, cellOk, reportSheet, flagButton, stableRedraw } from '../morph.js';
 
 const CEFRS = ['A1', 'A2', 'B1', 'B2'];
 const CASE_SHORT = ['Bosh', 'Qaratqich', 'Tushum', 'Joʻnalish', 'Oʻrin-payt', 'Chiqish'];
@@ -63,7 +63,7 @@ export async function declSheet(noun, app) {
   const morph = (await rpc('get_morph', { p_ids: [noun.id] }).catch(() => ({})))[noun.id];
   let col = 'sg';
   const box = h('div', {});
-  const draw = () => box.replaceChildren(colSeg(d.columns.map((x) => x.id), col, (c) => { col = c; draw(); }), declTable(noun, morph, col));
+  const draw = stableRedraw(box, () => h('div', {}, colSeg(d.columns.map((x) => x.id), col, (c) => { if (c === col) return; col = c; draw(); }), declTable(noun, morph, col)));
   draw();
   const close = sheet(h('div', { class: 'label' }, t('declTitle')), h('h3', {}, noun.uz, h('span', { class: 'muted' }, ` — ${noun.ru}`)),
     app ? h('button', { class: 'btn btn-big', type: 'button', onClick: () => { close(); app.go('decl', { noun }); } }, icon('practice'), t('declOpenNoun')) : null,
@@ -120,7 +120,7 @@ async function renderNoun(app, noun) {
   const d = decline(noun.uz);
   let col = 'sg';
   const box = h('div', {});
-  const draw = () => box.replaceChildren(colSeg(d.columns.map((x) => x.id), col, (c) => { col = c; draw(); }), declTable(noun, morph, col));
+  const draw = stableRedraw(box, () => h('div', {}, colSeg(d.columns.map((x) => x.id), col, (c) => { if (c === col) return; col = c; draw(); }), declTable(noun, morph, col)));
   draw();
   mount(h('div', { class: 'screen' },
     h('div', { class: 'label' }, t('declTitle')),

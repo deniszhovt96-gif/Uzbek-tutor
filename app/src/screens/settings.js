@@ -33,6 +33,7 @@ export async function renderSettings(app, params = {}) {
   const remindOn = settings.remind !== false;
   const remindHour = Number(settings.remind_hour || 19);
   const weeklyOn = settings.weekly !== false;
+  const colloqFirst = settings.colloquial_first === true;
   const weekGoal = Number(settings.week_goal || 5);
 
   const save = async (lang, patch) => {
@@ -89,6 +90,12 @@ export async function renderSettings(app, params = {}) {
       h('button', { type: 'button', class: `remind-toggle ${weeklyOn ? 'on' : ''}`, onClick: () => save(null, { weekly: !weeklyOn }) },
         h('div', {}, h('b', {}, t('weeklyMsg')), h('div', { class: 'small muted' }, t('weeklyMsgHint'))),
         h('span', { class: `switch ${weeklyOn ? 'on' : ''}` }, h('i')))),
+
+    h('h2', {}, t('colloqTitle')),
+    h('div', { class: 'card remind-card' },
+      h('button', { type: 'button', class: `remind-toggle ${colloqFirst ? 'on' : ''}`, onClick: () => save(null, { colloquial_first: !colloqFirst }) },
+        h('div', {}, h('b', {}, t('colloqFirst')), h('div', { class: 'small muted' }, t('colloqFirstHint'))),
+        h('span', { class: `switch ${colloqFirst ? 'on' : ''}` }, h('i')))),
 
     h('h2', {}, t('weekGoalTitle')),
     seg([3, 4, 5, 6, 7].map((n) => [n, String(n)]), weekGoal, (v) => save(null, { week_goal: v })),

@@ -115,8 +115,7 @@ export async function renderHome(app) {
     tile('conj', t('secConj'), () => app.go('conj')),
     tile('decl', t('secDecl'), () => app.go('decl')),
     tile('sentences', t('secSentences'), () => app.go('sentences')),
-    tile('progress', t('secProgress'), () => app.go('progress')),
-    tile('settings', t('secSettings'), () => app.tab('settings')));
+    tile('progress', t('secProgress'), () => app.go('progress')));
 
   // ---------------------------------------------------------------- активность
   const today = home.today_stats || {};

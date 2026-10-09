@@ -91,3 +91,18 @@ export function reportSheet({ word, kind, item, title, rows }) {
 export const flagButton = (onClick) =>
   h('button', { class: 'flag-mini', type: 'button', title: t('repTitle'), 'aria-label': t('repTitle'), onClick: (e) => { e.stopPropagation(); onClick(); } },
     icon('flag'));
+
+// Перерисовка без скачков: сохраняем прокрутку страницы, горизонтальную прокрутку вкладок и высоту блока
+export function stableRedraw(box, build) {
+  return () => {
+    const bars = [...box.querySelectorAll('.segmented.scroll')].map((b) => b.scrollLeft);
+    const y = window.scrollY;
+    if (box.offsetHeight) box.style.minHeight = `${Math.max(box.offsetHeight, parseInt(box.style.minHeight || '0', 10))}px`;
+    box.replaceChildren(build());
+    box.querySelectorAll('.segmented.scroll').forEach((b, i) => { if (bars[i] != null) b.scrollLeft = bars[i]; });
+    window.scrollTo(0, y);
+    // высоту не уменьшаем, пока открыт экран: короткая вкладка не «утягивает» страницу вверх
+    requestAnimationFrame(() => { window.scrollTo(0, y); });
+  };
+}
+

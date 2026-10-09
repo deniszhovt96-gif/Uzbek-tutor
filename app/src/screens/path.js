@@ -21,7 +21,7 @@ function topicName(tp) {
 
 export async function renderPath(app) {
   mount(spinner(t('loading')));
-  const data = await rpc('get_path');
+  const [data, courseUnits] = await Promise.all([rpc('get_path'), rpc('get_path_courses').catch(() => [])]);
   const levels = Object.fromEntries((data.levels || []).map((l) => [l.cefr, l]));
   const topics = data.topics || [];
   const current = topics.find((tp) => !tp.locked && tp.started < tp.total);
@@ -64,6 +64,16 @@ export async function renderPath(app) {
       if (lv.state !== 'locked') doneUntil = points.length;
       y += CITY_H + 70;
 
+      // темы курсов этого уровня — «станции» между темами слов, равномерно по уровню (в порядке рекомендаций)
+      const lvUnits = (courseUnits || []).filter((u) => u.cefr === cefr);
+      const gaps = Math.max(1, lvTopics.length - 1);
+      const stationAt = new Map();
+      lvUnits.forEach((u, j) => {
+        let g = Math.min(gaps - 1, Math.floor(((j + 1) * gaps) / (lvUnits.length + 1)));
+        while (stationAt.has(g) && g < gaps - 1) g++;
+        if (!stationAt.has(g)) stationAt.set(g, u);
+      });
+
       lvTopics.forEach((tp, i) => {
         const x = cx + amp * Math.sin(k * 0.9 + 0.6);
         const isCurrent = current && tp.key === current.key;
@@ -89,8 +99,21 @@ export async function renderPath(app) {
         points.push([x, y]);
         if (tp.started > 0 || isCurrent) doneUntil = points.length;
 
+        // станция курса между темами — с противоположной от маршрута стороны
+        const st = i < lvTopics.length - 1 ? stationAt.get(i) : null;
+        if (st) {
+          const midX = cx + amp * Math.sin((k + 0.5) * 0.9 + 0.6);
+          const onLeft = midX > cx;
+          const width = Math.max(110, Math.min(160, onLeft ? midX - 52 : W - midX - 52));
+          els.push(h('button', { class: `station ${st.read ? 'read' : ''} ${st.locked ? 'locked' : ''} c-${st.course}`, type: 'button',
+            style: { top: `${y + 64}px`, width: `${width}px`, left: onLeft ? '12px' : `${W - 12 - width}px` },
+            onClick: () => { haptic(); app.go('unit', { id: st.id }); } },
+            h('span', { class: 'station-ic' }, st.read ? icon('check') : st.locked ? icon('lock') : icon(st.course)),
+            h('span', { class: 'station-t' }, h('span', { class: 'station-k' }, t(`recCourse_${st.course}`)),
+              h('span', { class: 'station-n' }, getLang() === 'uz' && st.title_uz ? st.title_uz : getLang() === 'en' && st.title_en ? st.title_en : st.title_ru))));
+        }
         // украшение между темами — с противоположной от маршрута стороны
-        if (k % 3 === 1 && i < lvTopics.length - 1) {
+        if (!st && k % 3 === 1 && i < lvTopics.length - 1) {
           const midX = cx + amp * Math.sin((k + 0.5) * 0.9 + 0.6);
           const onLeft = midX > cx;
           const name = DECOR[decorN++ % DECOR.length];
@@ -99,7 +122,7 @@ export async function renderPath(app) {
           d.style.left = onLeft ? '14px' : `${W - 76}px`;
           els.push(d);
         }
-        y += STEP;
+        y += STEP + (st ? 60 : 0);     // у станции — своё место ниже подписи темы, без наложений
         k++;
       });
 

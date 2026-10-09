@@ -1,0 +1,80 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1080px; height: var(--H); overflow: hidden; font-family: "Inter", "Segoe UI", system-ui, sans-serif; }
+  .bg { position: relative; width: 1080px; height: var(--H); overflow: hidden;
+    background: radial-gradient(1200px 700px at 85% -5%, #1fa3ad 0%, rgba(31,163,173,0) 60%),
+                radial-gradient(900px 700px at -10% 105%, #c8962e55 0%, rgba(200,150,46,0) 60%),
+                linear-gradient(160deg, #0b4f56 0%, #0e7c86 55%, #0a5c64 100%); color: #fff; }
+  /* орнамент — ряд ромбов-икат по краю */
+  .ikat { position: absolute; left: 0; right: 0; height: 46px; background:
+    repeating-linear-gradient(90deg, transparent 0 18px, rgba(255,255,255,.0) 18px 20px),
+    conic-gradient(from 45deg at 50% 50%, #c8962e 0 25%, transparent 0 50%, #e9c46a 0 75%, transparent 0) 0 0 / 46px 46px; opacity: .55; }
+  .ikat.top { top: 0; } .ikat.bot { bottom: 0; transform: scaleY(-1); }
+  .rosette { position: absolute; opacity: .13; }
+  .head { position: absolute; left: 76px; right: 76px; top: 96px; }
+  .brand { display: inline-flex; align-items: center; gap: 14px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.25);
+    padding: 10px 22px 10px 12px; border-radius: 40px; font-weight: 700; font-size: 30px; letter-spacing: .2px; }
+  .brand i { width: 46px; height: 46px; border-radius: 50%; background: #fff; color: #0e7c86; display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: 26px; }
+  h1 { font-size: 80px; line-height: 1.02; font-weight: 800; margin-top: 34px; letter-spacing: -1.5px; }
+  h1 em { font-style: normal; color: #ffd27a; }
+  .sub { font-size: 32px; opacity: .92; margin-top: 22px; line-height: 1.25; }
+  .chips { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+  .chip { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 18px; padding: 10px 18px; font-size: 25px; font-weight: 600; }
+  .chip b { color: #ffd27a; }
+  .phones { position: absolute; left: 0; right: 0; }
+  .phone { position: absolute; width: 330px; border-radius: 46px; background: #0d1416; padding: 12px; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+  .phone img { display: block; width: 100%; border-radius: 36px; }
+  .phone.l { transform: rotate(-8deg); } .phone.r { transform: rotate(8deg); } .phone.c { z-index: 2; width: 360px; }
+  .cta { z-index: 5; position: absolute; left: 76px; right: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    background: #fff; color: #0b4f56; border-radius: 34px; padding: 26px 30px; box-shadow: 0 18px 40px rgba(0,0,0,.25); }
+  .cta b { font-size: 40px; display: block; } .cta span { font-size: 26px; color: #4b6b6e; }
+  .cta .btn { background: #c8962e; color: #fff; font-weight: 800; font-size: 30px; padding: 18px 28px; border-radius: 24px; white-space: nowrap; }
+</style></head>
+<body>
+<div class="bg">
+  <div class="ikat top"></div><div class="ikat bot"></div>
+  <svg class="rosette" style="right:-120px; top: 300px" width="520" height="520" viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="1.6">
+    <circle cx="32" cy="32" r="29"/><circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="9"/>
+    <path d="M32 3v58M3 32h58M11.5 11.5l41 41M52.5 11.5l-41 41"/>
+    <path d="M32 12c5 5 5 11 0 16-5-5-5-11 0-16zM32 36c5 5 5 11 0 16-5-5-5-11 0-16zM12 32c5-5 11-5 16 0-5 5-11 5-16 0zM36 32c5-5 11-5 16 0-5 5-11 5-16 0z"/>
+  </svg>
+  <svg class="rosette" style="left:-160px; bottom: 260px" width="420" height="420" viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="1.6">
+    <path d="M22 60V18h20v42M27 60V36a5 5 0 0 1 10 0v24M8 60V32h14M42 32h14v28M10 32a6 6 0 0 1 10 0M44 32a6 6 0 0 1 10 0M4 60V22h4v38M56 60V22h4v38M2 60h60"/>
+  </svg>
+  <div class="head">
+    <div class="brand"><i>U</i>Uzbek Tutor</div>
+    <h1 id="h1"></h1>
+    <div class="sub" id="sub"></div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="phones" id="phones">
+    <div class="phone l" style="left:70px"><img src="163-verb.png"></div>
+    <div class="phone c" style="left:360px"><img src="160-home.png"></div>
+    <div class="phone r" style="left:680px"><img src="173-dialog.png"></div>
+  </div>
+  <div class="cta" id="cta"><div><b id="cta1"></b><span id="cta2"></span></div><div class="btn" id="cta3"></div></div>
+</div>
+<script>
+  const T = {
+    ru: { h1: 'Узбекский — <em>по 10 минут</em> в день', sub: 'Самоучитель прямо в Telegram. Ничего не нужно устанавливать.',
+      chips: ['<b>9 000+</b> слов с озвучкой', '<b>30</b> диалогов из жизни', 'Спряжение <b>всех</b> глаголов', 'Грамматика · культура · история'],
+      cta1: '@uzbek_tutor_bot', cta2: 'Начать можно бесплатно', cta3: 'Открыть →' },
+    en: { h1: 'Learn Uzbek <em>10 minutes</em> a day', sub: 'A full course right inside Telegram. Nothing to install.',
+      chips: ['<b>9,000+</b> words with audio', '<b>30</b> real-life dialogues', 'Every verb <b>conjugated</b>', 'Grammar · culture · history'],
+      cta1: '@uzbek_tutor_bot', cta2: 'Start for free', cta3: 'Open →' },
+  };
+  const q = new URLSearchParams(location.search);
+  const L = T[q.get('lang') || 'ru']; const H = Number(q.get('h') || 1350);
+  document.documentElement.style.setProperty('--H', H + 'px');
+  h1.innerHTML = L.h1; sub.textContent = L.sub; chips.innerHTML = L.chips.map((c) => `<span class="chip">${c}</span>`).join('');
+  cta1.textContent = L.cta1; cta2.textContent = L.cta2; cta3.textContent = L.cta3;
+  // раскладка: телефоны и кнопка — по высоте кадра
+  const story = H > 1500;
+  phones.style.top = (story ? 860 : 700) + 'px';
+  document.querySelectorAll('.phone').forEach((p) => { if (!p.classList.contains('c')) p.style.top = '60px'; });
+  cta.style.bottom = (story ? 150 : 64) + 'px';
+  if (story) { document.querySelector('.head').style.top = '190px'; }
+</script>
+</body></html>

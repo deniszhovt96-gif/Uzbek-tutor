@@ -1,5 +1,5 @@
 // Экран «Подписка»: текущий уровень, выбор тарифа и срока, оплата звёздами Telegram, код, история платежей.
-import { rpc, tg, createInvoice } from '../api.js';
+import { rpc, tg, createInvoice, prepareShare } from '../api.js';
 import { t, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, haptic, sheet, openLink } from '../ui.js';
 import { icon } from '../icons.js';
@@ -10,6 +10,7 @@ export async function renderSubscription(app, params = {}) {
   mount(spinner(t('loading')));
   const [me, plans, payments, queue, groupCodes, ref] = await Promise.all([app.refreshMe(), rpc('get_plans'), rpc('get_my_payments'),
     rpc('get_my_subscriptions').catch(() => []), rpc('get_group_codes').catch(() => []), rpc('get_referral_info').catch(() => null)]);
+  if (ref && !ref.error) ref.image = await rpc('get_share_image').catch(() => 'promo');
   const couponsAvail = (ref && ref.coupons) || 0;
   let useCoupons = params.useCoupons != null ? params.useCoupons : null;   // null — по умолчанию: максимум допустимых
   // после текущей подписки: другой уровень продолжится на оставшийся срок
@@ -179,19 +180,50 @@ function copyCode(code) {
   try { navigator.clipboard.writeText(code); haptic('success'); } catch { /* нет доступа к буферу */ }
 }
 
-// Пригласить друга: личная ссылка, счётчики и условия
+// Пригласить друга: картинка + личная ссылка (отправить в чат, в сторис, скопировать), счётчики, условия
 const BOT = 'uzbek_tutor_bot';
 function referralBlock(ref) {
   const link = `https://t.me/${BOT}?start=ref_${ref.code}`;
-  const share = () => openLink(`https://t.me/share/url?url=${encodeURIComponent(link)}&text=${encodeURIComponent(t('refShareText'))}`);
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'ru';
+  const image = new URL(`share/${ref.image || 'promo'}-${lang}.jpg`, window.location.href).href;
+  const story = new URL(`share/story-${lang}.jpg`, window.location.href).href;
+  const status = h('p', { class: 'small muted' });
+  const textShare = () => openLink(`https://t.me/share/url?url=${encodeURIComponent(link)}&text=${encodeURIComponent(t('refShareText'))}`);
+  // отправить картинку с кнопкой-ссылкой в любой чат (Telegram 8.0+); в старых версиях — ссылкой с текстом
+  const sendImage = async () => {
+    haptic();
+    const wa = tg();
+    if (!wa || !wa.shareMessage) return textShare();
+    status.textContent = t('loading');
+    try {
+      const prep = await prepareShare();
+      status.textContent = '';
+      wa.shareMessage(prep.id, (ok) => { if (ok) haptic('success'); });
+    } catch {
+      status.textContent = '';
+      textShare();
+    }
+  };
+  const toStory = () => {
+    haptic();
+    const wa = tg();
+    if (wa && wa.shareToStory) wa.shareToStory(story, { text: `${t('refStoryText')} ${link}`.slice(0, 200) });
+    else sendImage();
+  };
+  const wa = tg();
   return [
     h('h2', {}, t('refTitle')),
     h('div', { class: 'card ref-card' },
       h('p', { class: 'small' }, t('refLead')),
+      h('img', { class: 'ref-img', src: image, alt: '', loading: 'lazy', onError: (e) => e.target.remove() }),
+      h('button', { class: 'btn btn-big', type: 'button', onClick: sendImage }, icon('users'), t('refSendImage')),
+      wa && wa.shareToStory
+        ? h('div', { class: 'two-btns' },
+            h('button', { class: 'btn btn-secondary', type: 'button', onClick: toStory }, icon('sparkle'), t('refStory')),
+            h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => copyCode(link) }, t('refCopyLink')))
+        : h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => copyCode(link) }, t('refCopyLink')),
+      status,
       h('div', { class: 'ref-link' }, h('span', { class: 'code-text' }, link)),
-      h('div', { class: 'two-btns' },
-        h('button', { class: 'btn', type: 'button', onClick: share }, icon('users'), t('refShare')),
-        h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => copyCode(link) }, t('copy'))),
       h('div', { class: 'stats' },
         h('div', { class: 'stat' }, h('b', {}, String(ref.invited || 0)), h('span', {}, t('refInvited'))),
         h('div', { class: 'stat' }, h('b', {}, String(ref.paid || 0)), h('span', {}, t('refPaid'))),

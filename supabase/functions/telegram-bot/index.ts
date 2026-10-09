@@ -225,6 +225,43 @@ async function createInvoice(req: Request, token: string): Promise<Response> {
   return json({ link: res.result });
 }
 
+// ---------------------------------------------------------------- «Поделиться»: картинка + реферальная ссылка
+// POST …/telegram-bot/share (токен пользователя). Готовит сообщение с картинкой и кнопкой-ссылкой
+// (savePreparedInlineMessage); приложение открывает выбор чата через WebApp.shareMessage(id).
+const SHARE_TEXT: Record<Lang, { caption: (link: string) => string; button: string }> = {
+  ru: { caption: (l) => `Учу узбекский в Telegram — присоединяйся! 🇺🇿\nПо моей ссылке — скидка 5% на подписку:\n${l}`, button: "Учить узбекский" },
+  uz: { caption: (l) => `Telegramda oʻzbek tilini oʻrganyapman — qoʻshil! 🇺🇿\nMening havolam orqali obunaga 5% chegirma:\n${l}`, button: "Oʻrganishni boshlash" },
+  en: { caption: (l) => `I’m learning Uzbek in Telegram — join me! 🇺🇿\nMy link gives you 5% off a subscription:\n${l}`, button: "Learn Uzbek" },
+};
+export function shareImageUrl(appUrl: string, image: string, lang: Lang): string {
+  const base = appUrl.endsWith("/") ? appUrl : appUrl + "/";
+  return `${base}share/${image}-${lang === "en" ? "en" : "ru"}.jpg`;
+}
+async function prepareShare(req: Request, token: string, appUrl: string): Promise<Response> {
+  const jwt = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+  if (!jwt) return json({ error: "not_authenticated" }, 401);
+  const db = dbClient();
+  const { data: auth, error: authErr } = await db.auth.getUser(jwt);
+  if (authErr || !auth?.user) return json({ error: "not_authenticated" }, 401);
+  const { data: sd, error } = await db.rpc("ref_share_data", { p_user: auth.user.id });
+  if (error || !sd?.code) return json({ error: "db_error" }, 500);
+  const lang: Lang = sd.lang === "uz" || sd.lang === "en" ? sd.lang : "ru";
+  const me = await tgApi(token, "getMe", {});
+  const link = `https://t.me/${me?.result?.username || "uzbek_tutor_bot"}?start=ref_${sd.code}`;
+  const photo = shareImageUrl(appUrl, String(sd.image || "promo"), lang);
+  const res = await tgApi(token, "savePreparedInlineMessage", {
+    user_id: sd.tg_id,
+    result: {
+      type: "photo", id: `share_${sd.code}`.slice(0, 64), photo_url: photo, thumbnail_url: photo,
+      caption: SHARE_TEXT[lang].caption(link),
+      reply_markup: { inline_keyboard: [[{ text: SHARE_TEXT[lang].button, url: link }]] },
+    },
+    allow_user_chats: true, allow_group_chats: true, allow_channel_chats: true,
+  });
+  if (!res?.ok) return json({ error: "telegram_error", link, photo }, 502);
+  return json({ id: res.result.id, link, photo });
+}
+
 // ---------------------------------------------------------------- оплата: обновления от Telegram
 async function onPreCheckout(token: string, q: any): Promise<void> {
   const db = dbClient();
@@ -482,6 +519,9 @@ async function handler(req: Request): Promise<Response> {
       console.error("flags error", e);
       return json({ error: "server_error" }, 500);
     }
+  }
+  if (new URL(req.url).pathname.endsWith("/share")) {
+    try { return await prepareShare(req, token, appUrl); } catch (e) { console.error("share error", e); return json({ error: "server_error" }, 500); }
   }
   if (new URL(req.url).pathname.endsWith("/invoice")) {
     try {
