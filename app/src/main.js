@@ -21,6 +21,8 @@ import { renderReview } from './screens/review.js';
 import { renderDictionary } from './screens/dictionary.js';
 import { renderWordFlags } from './screens/wordflags.js';
 import { renderWelcome } from './screens/welcome.js';
+import { renderConj, setConjApp } from './screens/conj.js';
+import { renderSentences } from './screens/sentences.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -59,6 +61,7 @@ export const app = {
   },
   home() { this.tab('home'); },
 };
+setConjApp(app);
 if (window.__TEST__) window.__app = app;   // для автотестов
 
 const SCREENS = {
@@ -80,6 +83,8 @@ const SCREENS = {
   dictionary: renderDictionary,
   wordflags: renderWordFlags,
   welcome: renderWelcome,
+  conj: renderConj,
+  sentences: renderSentences,
 };
 
 // ---------------------------------------------------------------- нижняя навигация

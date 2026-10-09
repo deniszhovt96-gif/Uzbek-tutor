@@ -35,6 +35,7 @@ WORD_FIXES = ROOT / "data" / "word_fixes.csv"
 LEVELS = ROOT / "data" / "levels.csv"
 COLLOQUIAL = ROOT / "data" / "source" / "colloquial.json"
 COLLOQ_PREFIX = "Разговорная речь. "
+SUPPLEMENT = ROOT / "data" / "source" / "supplement.json"   # недостающие слова (числа 10–19, 30–33…), ID с 21001
 TOPIC_NAMES = ROOT / "data" / "topic_names.csv"   # переводы названий тем: name_ru,name_uz,name_en
 AUDIO_VOICED = ROOT / "data" / "audio_voiced.txt"  # файлы, озвученные workflow «Озвучка» (scripts/tts.py)
 OUT = ROOT / "data" / "build"
@@ -246,6 +247,86 @@ def read_colloquial(existing_keys):
     return out, skipped
 
 
+def read_supplement(existing_keys):
+    """Дополнения к словарю: слово встаёт в тему после слова с ID «after» (например, 10–19 — после «девять»)."""
+    if not SUPPLEMENT.exists():
+        return []
+    out = []
+    for k, e in enumerate(json.loads(SUPPLEMENT.read_text(encoding="utf-8"))):
+        if key_uz(e["uz"]) in existing_keys:
+            continue
+        ex = [(e.get("ex_uz"), e.get("ex_ru")), (e.get("ex2_uz"), e.get("ex2_ru"))]
+        out.append({
+            "id": int(e["id"]), "topic": e["topic"].strip(), "topic_no": None,
+            "ru": e["ru"].strip(), "uz": e["uz"].strip(), "cefr": e["cefr"],
+            "ex": [x for x in ex if x[0] and x[1]], "register": "lit", "en": e.get("en") or "",
+            "level_fixed": True, "no_audio": True, "pos": float(e["after"]) + (k + 1) / 1000,
+        })
+    return out
+
+
+# --------------------------------------------------------------------------- числа: ответ цифрами
+NUM_UNITS = {"ноль": 0, "один": 1, "одна": 1, "два": 2, "две": 2, "три": 3, "четыре": 4, "пять": 5, "шесть": 6, "семь": 7,
+             "восемь": 8, "девять": 9, "десять": 10, "одиннадцать": 11, "двенадцать": 12, "тринадцать": 13,
+             "четырнадцать": 14, "пятнадцать": 15, "шестнадцать": 16, "семнадцать": 17, "восемнадцать": 18,
+             "девятнадцать": 19, "двадцать": 20, "тридцать": 30, "сорок": 40, "пятьдесят": 50, "шестьдесят": 60,
+             "семьдесят": 70, "восемьдесят": 80, "девяносто": 90, "сто": 100, "двести": 200, "триста": 300,
+             "четыреста": 400, "пятьсот": 500, "шестьсот": 600, "семьсот": 700, "восемьсот": 800, "девятьсот": 900}
+NUM_SCALE = {"тысяча": 10**3, "тысячи": 10**3, "тысяч": 10**3, "миллион": 10**6, "миллиона": 10**6,
+             "миллионов": 10**6, "миллиард": 10**9}
+
+
+def ru_number(text: str):
+    """«двадцать один» → 21, «две тысячи» → 2000; не число целиком → None."""
+    words = text.split()
+    if not words:
+        return None
+    total, cur = 0, 0
+    for w in words:
+        if w in NUM_UNITS:
+            cur += NUM_UNITS[w]
+        elif w in NUM_SCALE:
+            total += (cur or 1) * NUM_SCALE[w]
+            cur = 0
+        else:
+            return None
+    return total + cur
+
+
+# --------------------------------------------------------------------------- слова примеров
+def link_examples(examples, data):
+    """Для каждого примера — слова словаря, из которых он состоит (по основе: kitoblarni → kitob, bordim → bormoq).
+    Если опознано меньше 60% слов предложения, список пустой: такой длинный пример в задания не попадёт."""
+    keys = {}
+    for d in data:
+        if d.get("canonical"):
+            continue
+        k = d["uz_key"]
+        if not k or " " in k:
+            continue
+        stem = re.sub(r"(moq|mak)$", "", k) if d["class"] == "verb" else k
+        for x in {k, stem}:
+            if len(x) >= 2:
+                keys.setdefault(x, d["id"])
+    for e in examples:
+        tokens = [key_uz(t) for t in e["uz"].split()]
+        tokens = [t for t in tokens if t]
+        e["n_words"] = len(tokens)
+        found, matched = [], 0
+        for t in tokens:
+            wid = keys.get(t)
+            if wid is None and len(t) >= 4:
+                for L in range(len(t) - 1, 2, -1):          # самая длинная основа из словаря
+                    wid = keys.get(t[:L])
+                    if wid is not None:
+                        break
+            if wid is not None:
+                matched += 1
+                if wid not in found:
+                    found.append(wid)
+        e["word_ids"] = csv_array(found) if tokens and matched / len(tokens) >= 0.6 else "{}"
+
+
 def csv_array(items) -> str:
     """Массив Postgres в текстовом формате для COPY CSV: {"a","b"}."""
     esc = ['"' + str(x).replace("\\", "\\\\").replace('"', '\\"') + '"' for x in items]
@@ -259,6 +340,7 @@ def main():
     n_levels = apply_levels(data)
     colloq, colloq_skipped = read_colloquial({key_uz(d["uz"]) for d in data})
     data += colloq
+    data += read_supplement({key_uz(d["uz"]) for d in data})
     by_id = {d["id"]: d for d in data}
     problems = []
     if colloq_skipped:
@@ -305,6 +387,10 @@ def main():
         d["uz_key"] = key_uz(d["uz"])
         d["ru_key"] = key_ru(d["ru"])
         d["ru_vars"] = ru_variants(d["ru"])
+        nums = [ru_number(v) for v in d["ru_vars"]]
+        for n in nums:
+            if n is not None and str(n) not in d["ru_vars"]:
+                d["ru_vars"].append(str(n))          # можно ответить цифрами: «четыре» → 4
         d["ru_whole"] = d["ru_vars"][0] if d["ru_vars"] else ""
         d["class"] = word_class(d["uz_key"])
         if not d["uz_key"] or not d["ru_vars"]:
@@ -344,7 +430,7 @@ def main():
         d["accept_uz"] = uz_by_ruwhole[d["ru_whole"]]
 
     # порядок изучения: CEFR → тема → ID
-    order = sorted(data, key=lambda d: (CEFR_RANK[d["cefr"]], topics[d["topic"]]["id"], d["id"]))
+    order = sorted(data, key=lambda d: (CEFR_RANK[d["cefr"]], topics[d["topic"]]["id"], d.get("pos", d["id"])))
     for i, d in enumerate(order, start=1):
         d["sort_key"] = i
 
@@ -368,7 +454,7 @@ def main():
                 "blank_len": blank[1] if blank else "",
                 "blank_answer": uz_disp[blank[0]:blank[0] + blank[1]] if blank else "",
                 "audio_ok": "f" if ((d["id"], n) in audio_off_ex or (d["id"], n) in edited or is_hidden
-                                  or d.get("register") == "colloquial") else "t",
+                                  or d.get("register") == "colloquial" or d.get("no_audio")) else "t",
                 "is_hidden": "t" if is_hidden else "f",
             })
 
@@ -405,7 +491,7 @@ def main():
         w.writerow(["id", "topic_id", "cefr", "uz", "ru", "uz_key", "accept_ru", "accept_uz",
                     "word_class", "canonical_id", "audio_ok", "sort_key", "register", "literary", "note", "en"])
         for d in sorted(data, key=lambda x: x["id"]):
-            audio = "f" if (d["id"] in uz_changed or d.get("register") == "colloquial") else "t"
+            audio = "f" if (d["id"] in uz_changed or d.get("register") == "colloquial" or d.get("no_audio")) else "t"
             if f"word_{d['id']}.mp3" in voiced:
                 audio = "t"
             w.writerow([d["id"], topics[d["topic"]]["id"], d["cefr"], d["uz_disp"], d["ru"], d["uz_key"],
@@ -414,7 +500,8 @@ def main():
                         d.get("register", "lit"), display_uz(d["literary"]) if d.get("literary") else "",
                         d.get("note", ""), d.get("en", "")])
     with open(OUT / "examples.csv", "w", newline="", encoding="utf-8") as f:
-        cols = ["word_id", "n", "uz", "ru", "blank_start", "blank_len", "blank_answer", "audio_ok", "is_hidden"]
+        link_examples(examples, data)
+        cols = ["word_id", "n", "uz", "ru", "blank_start", "blank_len", "blank_answer", "audio_ok", "is_hidden", "word_ids", "n_words"]
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
         w.writerows(examples)

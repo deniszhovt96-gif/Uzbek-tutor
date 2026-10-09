@@ -62,6 +62,13 @@ GRAMMAR_TITLES = {
     18: ('bor va yoʻq', 'Existence: bor and yoʻq'),
     19: ('Asosiy tovushlar talaffuzi', 'Pronunciation of key sounds'),
     20: ('Bogʻlovchilar', 'Conjunctions'),
+    21: ('Kelasi zamon gumon feʼli (-r / -ar)', 'The presumptive future (-r / -ar)'),
+    22: ('Kelasi zamon maqsad feʼli (-moqchi)', 'The future of intention (-moqchi)'),
+    23: ('Shart mayli (-sa)', 'The conditional mood (-sa)'),
+    24: ('Istak va shart-natija (-sa edi, -ar edi, -gan boʻlardi)', 'Wishes and unreal conditions (-sa edi, -ar edi, -gan boʻlardi)'),
+    25: ('Oʻtgan zamonning tarkibli shakllari (-ayotgan edi, -ar edi, -gan edi)', 'Compound past tenses (-ayotgan edi, -ar edi, -gan edi)'),
+    26: ('Imkoniyat: -a/-y olmoq va -sh mumkin', 'Ability and possibility: -a/-y olmoq and -sh mumkin'),
+    27: ('Takrorlash: feʼl zamonlari va mayllari', 'Review: verb tenses and moods'),
 }
 
 # Шаблоны поиска примеров в словаре (регулярные выражения PostgreSQL, без учёта регистра).
@@ -87,6 +94,13 @@ GRAMMAR_PATTERNS = {
     18: r'\m(bor|yoʻq)\M',
     19: r'\m\w*(q|x|gʻ|oʻ)\w*\M',
     20: r'\m(va|lekin|yoki|chunki|ammo|biroq|agar|shuning uchun)\M',
+    21: r'\m[a-zʻʼ]{2,}(ar|r)(man|san|miz|siz)\M|\m[a-zʻʼ]{2,}mas(man|san|miz|siz)\M',
+    22: r'\m[a-zʻʼ]{2,}moqchi',
+    23: r'\m[a-zʻʼ]{2,}sa(m|ng|k|ngiz)?\M',
+    24: r'\m[a-zʻʼ]{2,}sa(m|ng|k|ngiz)? edi|\m[a-zʻʼ]{2,}(ar|ir|r) edi|boʻlardi',
+    25: r'\m[a-zʻʼ]{2,}yotgan edi|\m[a-zʻʼ]{2,}(gan|kan|qan) edi|\m[a-zʻʼ]{2,}(ar|r) edi',
+    26: r'\m[a-zʻʼ]{2,}(a|y) ol(a|ma|di|gan|ish)|\m[a-zʻʼ]{2,}sh mumkin',
+    27: r'\m[a-zʻʼ]{2,}(yap|moqda)(man|san|miz|siz|ti)?\M',
 }
 
 

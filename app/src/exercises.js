@@ -45,16 +45,18 @@ function placeCorrect(correct, wrong, rnd) {
 
 // ---------------------------------------------------------------- буквы
 // Плитки: каждая буква отдельно (sh, ch, ng тоже), но oʻ и gʻ — одна плитка; ʼ прилипает к предыдущей букве.
-// Примеры по силам: пока слово только учится — короткие предложения, потом длиннее.
-// уровень слова 0–2 → до 6 слов в предложении, 3–6 → до 9, дальше — любые. Если подходящих нет — самое короткое.
+// Примеры в заданиях: короткие (до 3 слов) — всегда; длинные — только когда пользователь уже знает
+// большую часть остальных слов предложения (сервер присылает ready). Старые данные без ready — по длине.
 export function examplesFor(item) {
   const all = item.examples || [];
-  const level = item.level || 0;
-  const max = level <= 2 ? 6 : level <= 6 ? 9 : Infinity;
+  const words = (e) => (e.nw != null ? e.nw : String(e.uz || '').split(/\s+/).filter(Boolean).length);
+  return all.filter((e) => words(e) <= 3 || (e.ready != null ? e.ready : (item.level || 0) >= 7));
+}
+
+// Примеры на карточке нового слова — для знакомства, самые короткие
+export function cardExamples(item, n = 3) {
   const words = (e) => String(e.uz || '').split(/\s+/).filter(Boolean).length;
-  const fit = all.filter((e) => words(e) <= max);
-  if (fit.length || !all.length) return fit;
-  return [all.reduce((a, b) => (words(b) < words(a) ? b : a))];
+  return (item.examples || []).slice().sort((a, b) => words(a) - words(b)).slice(0, n);
 }
 
 export function tilesOf(text) {

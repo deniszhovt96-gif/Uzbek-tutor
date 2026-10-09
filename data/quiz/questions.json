@@ -16576,5 +16576,1139 @@
    "To come late in the evening"
   ],
   "quote_ru": "Если в доме есть дети, для них берут что-нибудь отдельно."
+ },
+ {
+  "course": "grammar",
+  "n": 21,
+  "k": 1,
+  "q_ru": "Какой аффикс будущего предположительного времени присоединяется к основе, оканчивающейся на согласный?",
+  "options_ru": [
+   "-ar",
+   "-r",
+   "-moqchi",
+   "-sa"
+  ],
+  "q_uz": "Kelasi zamon gumon feʼlining qaysi qoʻshimchasi undosh bilan tugagan negizga qoʻshiladi?",
+  "options_uz": [
+   "-ar",
+   "-r",
+   "-moqchi",
+   "-sa"
+  ],
+  "q_en": "Which presumptive-future suffix is attached to a stem ending in a consonant?",
+  "options_en": [
+   "-ar",
+   "-r",
+   "-moqchi",
+   "-sa"
+  ],
+  "quote_ru": "основа + -ar, если основа оканчивается на согласный (bor- → borar, yoz- → yozar, kel- → kelar)"
+ },
+ {
+  "course": "grammar",
+  "n": 21,
+  "k": 2,
+  "q_ru": "Как сказать «я, наверное, прочитаю» (глагол oʻqimoq)?",
+  "options_ru": [
+   "oʻqirman",
+   "oʻqiarman",
+   "oʻqimoqchiman",
+   "oʻqimasman"
+  ],
+  "q_uz": "Oʻqimoq feʼlidan «я, наверное, прочитаю» qanday aytiladi?",
+  "options_uz": [
+   "oʻqirman",
+   "oʻqiarman",
+   "oʻqimoqchiman",
+   "oʻqimasman"
+  ],
+  "q_en": "How do you say «I will probably read» (verb oʻqimoq)?",
+  "options_en": [
+   "oʻqirman",
+   "oʻqiarman",
+   "oʻqimoqchiman",
+   "oʻqimasman"
+  ],
+  "quote_ru": "Основа на гласный (oʻqimoq): men oʻqirman, sen oʻqirsan, u oʻqir"
+ },
+ {
+  "course": "grammar",
+  "n": 21,
+  "k": 3,
+  "q_ru": "Каким аффиксом образуется отрицание будущего предположительного времени?",
+  "options_ru": [
+   "-mas",
+   "-may",
+   "-madi",
+   "-magan"
+  ],
+  "q_uz": "Kelasi zamon gumon feʼlining boʻlishsiz shakli qaysi qoʻshimcha bilan yasaladi?",
+  "options_uz": [
+   "-mas",
+   "-may",
+   "-madi",
+   "-magan"
+  ],
+  "q_en": "Which suffix forms the negative of the presumptive future?",
+  "options_en": [
+   "-mas",
+   "-may",
+   "-madi",
+   "-magan"
+  ],
+  "quote_ru": "Отрицательная форма образуется аффиксом -mas, который ставится прямо после основы вместо -r/-ar"
+ },
+ {
+  "course": "grammar",
+  "n": 21,
+  "k": 4,
+  "q_ru": "Чем форма borarman отличается от формы boraman?",
+  "options_ru": [
+   "Говорящий не утверждает действие твёрдо",
+   "Говорящий сообщает о решённом деле",
+   "Действие происходит в момент речи",
+   "Действие уже совершилось раньше"
+  ],
+  "q_uz": "Borarman shakli boraman shaklidan nima bilan farq qiladi?",
+  "options_uz": [
+   "Soʻzlovchi harakatni qatʼiy tasdiqlamaydi",
+   "Soʻzlovchi hal qilingan ish haqida xabar qiladi",
+   "Harakat nutq paytida roʻy bermoqda",
+   "Harakat avvalroq bajarilib boʻlgan"
+  ],
+  "q_en": "How does the form borarman differ from boraman?",
+  "options_en": [
+   "The speaker does not state the action firmly",
+   "The speaker reports a settled matter",
+   "The action is happening at the moment of speech",
+   "The action has already been completed"
+  ],
+  "quote_ru": "Говорящий допускает, что действие произойдёт, но не утверждает это твёрдо."
+ },
+ {
+  "course": "grammar",
+  "n": 21,
+  "k": 5,
+  "q_ru": "Как перевести предложение «U bugun kelmas.»?",
+  "options_ru": [
+   "Он сегодня, наверное, не придёт.",
+   "Он сегодня не пришёл.",
+   "Он сегодня не собирается приходить.",
+   "Пусть он сегодня не приходит."
+  ],
+  "q_uz": "«U bugun kelmas.» gapi rus tiliga qanday tarjima qilinadi?",
+  "options_uz": [
+   "Он сегодня, наверное, не придёт.",
+   "Он сегодня не пришёл.",
+   "Он сегодня не собирается приходить.",
+   "Пусть он сегодня не приходит."
+  ],
+  "q_en": "How is the sentence «U bugun kelmas.» translated?",
+  "options_en": [
+   "He probably won't come today.",
+   "He didn't come today.",
+   "He isn't going to come today.",
+   "Let him not come today."
+  ],
+  "quote_ru": "U bugun kelmas. — Он сегодня, наверное, не придёт."
+ },
+ {
+  "course": "grammar",
+  "n": 21,
+  "k": 6,
+  "q_ru": "Какая форма — отрицание будущего предположительного времени для sen (глагол bormoq)?",
+  "options_ru": [
+   "bormassan",
+   "bormaysan",
+   "bormasang",
+   "borarsan"
+  ],
+  "q_uz": "Bormoq feʼlining sen shaxsidagi kelasi zamon gumon feʼli boʻlishsiz shakli qaysi?",
+  "options_uz": [
+   "bormassan",
+   "bormaysan",
+   "bormasang",
+   "borarsan"
+  ],
+  "q_en": "Which form is the negative presumptive future for sen (verb bormoq)?",
+  "options_en": [
+   "bormassan",
+   "bormaysan",
+   "bormasang",
+   "borarsan"
+  ],
+  "quote_ru": "sen bormassan — ты, наверное, не пойдёшь"
+ },
+ {
+  "course": "grammar",
+  "n": 22,
+  "k": 1,
+  "q_ru": "Как образуется будущее время намерения?",
+  "options_ru": [
+   "Основа + -moqchi + личный аффикс",
+   "Основа + -ar + личный аффикс",
+   "Основа + -sa + личный аффикс",
+   "Основа + -gan + edi"
+  ],
+  "q_uz": "Kelasi zamon maqsad feʼli qanday yasaladi?",
+  "options_uz": [
+   "Negiz + -moqchi + shaxs-son qoʻshimchasi",
+   "Negiz + -ar + shaxs-son qoʻshimchasi",
+   "Negiz + -sa + shaxs-son qoʻshimchasi",
+   "Negiz + -gan + edi"
+  ],
+  "q_en": "How is the future of intention formed?",
+  "options_en": [
+   "Stem + -moqchi + personal ending",
+   "Stem + -ar + personal ending",
+   "Stem + -sa + personal ending",
+   "Stem + -gan + edi"
+  ],
+  "quote_ru": "Образование: основа глагола + -moqchi + личные аффиксы сказуемого -man, -san, —, -miz, -siz, -(lar)."
+ },
+ {
+  "course": "grammar",
+  "n": 22,
+  "k": 2,
+  "q_ru": "Что выражает форма на -moqchi?",
+  "options_ru": [
+   "Намерение совершить действие",
+   "Вероятное, неуверенное будущее",
+   "Условие другого действия",
+   "Привычное действие в прошлом"
+  ],
+  "q_uz": "-moqchi shakli nimani bildiradi?",
+  "options_uz": [
+   "Harakatni bajarish niyatini",
+   "Ehtimol qilingan, aniq boʻlmagan kelasi harakatni",
+   "Boshqa harakat uchun shartni",
+   "Oʻtmishdagi odatiy harakatni"
+  ],
+  "q_en": "What does the -moqchi form express?",
+  "options_en": [
+   "The intention to perform an action",
+   "A probable, uncertain future",
+   "A condition for another action",
+   "A habitual action in the past"
+  ],
+  "quote_ru": "говорит не о самом будущем действии, а о намерении его совершить"
+ },
+ {
+  "course": "grammar",
+  "n": 22,
+  "k": 3,
+  "q_ru": "Как сказать «я не собираюсь идти»?",
+  "options_ru": [
+   "bormoqchi emasman",
+   "bormamoqchiman",
+   "bormoqchimasman",
+   "bormasmoqchiman"
+  ],
+  "q_uz": "«Я не собираюсь идти» qanday aytiladi?",
+  "options_uz": [
+   "bormoqchi emasman",
+   "bormamoqchiman",
+   "bormoqchimasman",
+   "bormasmoqchiman"
+  ],
+  "q_en": "How do you say «I am not going to go»?",
+  "options_en": [
+   "bormoqchi emasman",
+   "bormamoqchiman",
+   "bormoqchimasman",
+   "bormasmoqchiman"
+  ],
+  "quote_ru": "men bormoqchi emasman — я не собираюсь идти"
+ },
+ {
+  "course": "grammar",
+  "n": 22,
+  "k": 4,
+  "q_ru": "Какая форма от oʻqimoq значит «мы собираемся читать»?",
+  "options_ru": [
+   "oʻqimoqchimiz",
+   "oʻqiymoqchimiz",
+   "oʻqirmoqchimiz",
+   "oʻqimoqchiman"
+  ],
+  "q_uz": "Oʻqimoq feʼlining qaysi shakli «мы собираемся читать» maʼnosini beradi?",
+  "options_uz": [
+   "oʻqimoqchimiz",
+   "oʻqiymoqchimiz",
+   "oʻqirmoqchimiz",
+   "oʻqimoqchiman"
+  ],
+  "q_en": "Which form of oʻqimoq means «we are going to read»?",
+  "options_en": [
+   "oʻqimoqchimiz",
+   "oʻqiymoqchimiz",
+   "oʻqirmoqchimiz",
+   "oʻqimoqchiman"
+  ],
+  "quote_ru": "Основа на гласный (oʻqimoq): men oʻqimoqchiman, sen oʻqimoqchisan, u oʻqimoqchi, biz oʻqimoqchimiz"
+ },
+ {
+  "course": "grammar",
+  "n": 22,
+  "k": 5,
+  "q_ru": "Как сказать «я собирался пойти»?",
+  "options_ru": [
+   "bormoqchi edim",
+   "bormoqchiman edi",
+   "borgan edim",
+   "borar edim"
+  ],
+  "q_uz": "«Я собирался пойти» qanday aytiladi?",
+  "options_uz": [
+   "bormoqchi edim",
+   "bormoqchiman edi",
+   "borgan edim",
+   "borar edim"
+  ],
+  "q_en": "How do you say «I was going to go»?",
+  "options_en": [
+   "bormoqchi edim",
+   "bormoqchiman edi",
+   "borgan edim",
+   "borar edim"
+  ],
+  "quote_ru": "Прошедшее намерение передаётся с edi: bormoqchi edim — «я собирался пойти»."
+ },
+ {
+  "course": "grammar",
+  "n": 22,
+  "k": 6,
+  "q_ru": "Как перевести вопрос «Nima qilmoqchisiz?»?",
+  "options_ru": [
+   "Что вы собираетесь делать?",
+   "Что вы сейчас делаете?",
+   "Что вы сделали?",
+   "Что бы вы сделали?"
+  ],
+  "q_uz": "«Nima qilmoqchisiz?» savoli rus tiliga qanday tarjima qilinadi?",
+  "options_uz": [
+   "Что вы собираетесь делать?",
+   "Что вы сейчас делаете?",
+   "Что вы сделали?",
+   "Что бы вы сделали?"
+  ],
+  "q_en": "How is the question «Nima qilmoqchisiz?» translated?",
+  "options_en": [
+   "What are you going to do?",
+   "What are you doing now?",
+   "What did you do?",
+   "What would you do?"
+  ],
+  "quote_ru": "Nima qilmoqchisiz? — Что вы собираетесь делать?"
+ },
+ {
+  "course": "grammar",
+  "n": 23,
+  "k": 1,
+  "q_ru": "Какой аффикс образует условное наклонение?",
+  "options_ru": [
+   "-sa",
+   "-gan",
+   "-moqchi",
+   "-mas"
+  ],
+  "q_uz": "Shart mayli qaysi qoʻshimcha bilan yasaladi?",
+  "options_uz": [
+   "-sa",
+   "-gan",
+   "-moqchi",
+   "-mas"
+  ],
+  "q_en": "Which suffix forms the conditional mood?",
+  "options_en": [
+   "-sa",
+   "-gan",
+   "-moqchi",
+   "-mas"
+  ],
+  "quote_ru": "основа глагола + -sa + личный аффикс: borsam, borsang, borsa, borsak, borsangiz, borsalar"
+ },
+ {
+  "course": "grammar",
+  "n": 23,
+  "k": 2,
+  "q_ru": "Как сказать «если мы пойдём»?",
+  "options_ru": [
+   "borsak",
+   "borsamiz",
+   "borsakmiz",
+   "borsaymiz"
+  ],
+  "q_uz": "«Если мы пойдём» qanday aytiladi?",
+  "options_uz": [
+   "borsak",
+   "borsamiz",
+   "borsakmiz",
+   "borsaymiz"
+  ],
+  "q_en": "How do you say «if we go»?",
+  "options_en": [
+   "borsak",
+   "borsamiz",
+   "borsakmiz",
+   "borsaymiz"
+  ],
+  "quote_ru": "biz borsak — если мы пойдём"
+ },
+ {
+  "course": "grammar",
+  "n": 23,
+  "k": 3,
+  "q_ru": "Как сказать «если я не пойду»?",
+  "options_ru": [
+   "bormasam",
+   "borsamas",
+   "borsam emas",
+   "bormassam"
+  ],
+  "q_uz": "«Если я не пойду» qanday aytiladi?",
+  "options_uz": [
+   "bormasam",
+   "borsamas",
+   "borsam emas",
+   "bormassam"
+  ],
+  "q_en": "How do you say «if I don't go»?",
+  "options_en": [
+   "bormasam",
+   "borsamas",
+   "borsam emas",
+   "bormassam"
+  ],
+  "quote_ru": "men bormasam — если я не пойду"
+ },
+ {
+  "course": "grammar",
+  "n": 23,
+  "k": 4,
+  "q_ru": "Обязательно ли слово agar в условном предложении?",
+  "options_ru": [
+   "Нет, agar необязателен, обязателен аффикс -sa",
+   "Да, без agar аффикс -sa не употребляется",
+   "Да, agar заменяет аффикс -sa",
+   "Нет, agar ставится только после главной части"
+  ],
+  "q_uz": "Shart gapda agar soʻzi majburiymi?",
+  "options_uz": [
+   "Yoʻq, agar majburiy emas, -sa qoʻshimchasi majburiy",
+   "Ha, agar boʻlmasa, -sa qoʻshimchasi qoʻllanmaydi",
+   "Ha, agar -sa qoʻshimchasining oʻrnini bosadi",
+   "Yoʻq, agar faqat bosh qismdan keyin keladi"
+  ],
+  "q_en": "Is the word agar obligatory in a conditional sentence?",
+  "options_en": [
+   "No, agar is optional; the suffix -sa is obligatory",
+   "Yes, without agar the suffix -sa is not used",
+   "Yes, agar replaces the suffix -sa",
+   "No, agar only comes after the main clause"
+  ],
+  "quote_ru": "Союз agar («если») ставится в начале условной части, но он необязателен, а аффикс -sa обязателен"
+ },
+ {
+  "course": "grammar",
+  "n": 23,
+  "k": 5,
+  "q_ru": "Какое значение имеет сочетание -sa ham (Charchasam ham, ishlayman)?",
+  "options_ru": [
+   "«даже если, хотя»",
+   "«если не»",
+   "«вот бы»",
+   "«можно ли»"
+  ],
+  "q_uz": "-sa ham birikmasi (Charchasam ham, ishlayman) qanday maʼnoni bildiradi?",
+  "options_uz": [
+   "«hatto … boʻlsa ham»",
+   "«agar … boʻlmasa»",
+   "«qaniydi»",
+   "«mumkinmi»"
+  ],
+  "q_en": "What does the combination -sa ham (Charchasam ham, ishlayman) mean?",
+  "options_en": [
+   "«even if, although»",
+   "«if not»",
+   "«if only»",
+   "«may I»"
+  ],
+  "quote_ru": "-sa ham — «даже если, хотя»: Charchasam ham, ishlayman"
+ },
+ {
+  "course": "grammar",
+  "n": 23,
+  "k": 6,
+  "q_ru": "Как перевести вопрос «Kirsam boʻladimi?»?",
+  "options_ru": [
+   "Можно войти?",
+   "Я вошёл?",
+   "Я собираюсь войти?",
+   "Я, наверное, войду?"
+  ],
+  "q_uz": "«Kirsam boʻladimi?» savoli rus tiliga qanday tarjima qilinadi?",
+  "options_uz": [
+   "Можно войти?",
+   "Я вошёл?",
+   "Я собираюсь войти?",
+   "Я, наверное, войду?"
+  ],
+  "q_en": "How is the question «Kirsam boʻladimi?» translated?",
+  "options_en": [
+   "May I come in?",
+   "Did I come in?",
+   "Am I going to come in?",
+   "Will I probably come in?"
+  ],
+  "quote_ru": "-sa boʻladimi? — вежливая просьба о разрешении: Kirsam boʻladimi? — «Можно войти?»"
+ },
+ {
+  "course": "grammar",
+  "n": 24,
+  "k": 1,
+  "q_ru": "Что выражает форма borsam edi?",
+  "options_ru": [
+   "Желание: «вот бы я пошёл»",
+   "Намерение: «я собираюсь пойти»",
+   "Привычку: «бывало, я ходил»",
+   "Вероятность: «наверное, пойду»"
+  ],
+  "q_uz": "Borsam edi shakli nimani bildiradi?",
+  "options_uz": [
+   "Istakni: «вот бы я пошёл»",
+   "Niyatni: «я собираюсь пойти»",
+   "Odatni: «бывало, я ходил»",
+   "Ehtimolni: «наверное, пойду»"
+  ],
+  "q_en": "What does the form borsam edi express?",
+  "options_en": [
+   "A wish: «if only I went»",
+   "An intention: «I am going to go»",
+   "A habit: «I used to go»",
+   "Probability: «I'll probably go»"
+  ],
+  "quote_ru": "Форма -sa edi выражает желание или нереальное условие: borsam edi — «вот бы я пошёл; если бы я пошёл»."
+ },
+ {
+  "course": "grammar",
+  "n": 24,
+  "k": 2,
+  "q_ru": "Какая форма -ar edi значит «я бы пошёл»?",
+  "options_ru": [
+   "borar edim",
+   "borardim edi",
+   "borayotgan edim",
+   "bormoqchi edim"
+  ],
+  "q_uz": "-ar edi shaklining qaysi biri «я бы пошёл» maʼnosini beradi?",
+  "options_uz": [
+   "borar edim",
+   "borardim edi",
+   "borayotgan edim",
+   "bormoqchi edim"
+  ],
+  "q_en": "Which -ar edi form means «I would go»?",
+  "options_en": [
+   "borar edim",
+   "borardim edi",
+   "borayotgan edim",
+   "bormoqchi edim"
+  ],
+  "quote_ru": "men borar edim — я бы пошёл"
+ },
+ {
+  "course": "grammar",
+  "n": 24,
+  "k": 3,
+  "q_ru": "Как образуется форма -gan boʻlardi?",
+  "options_ru": [
+   "Причастие на -gan + boʻlardi с личным аффиксом",
+   "Основа + -sa + личный аффикс + edi",
+   "Основа + -r/-ar + edi с личным аффиксом",
+   "Основа + -moqchi + edi с личным аффиксом"
+  ],
+  "q_uz": "-gan boʻlardi shakli qanday yasaladi?",
+  "options_uz": [
+   "-gan sifatdoshi + shaxs-son qoʻshimchasini olgan boʻlardi",
+   "Negiz + -sa + shaxs-son qoʻshimchasi + edi",
+   "Negiz + -r/-ar + shaxs-son qoʻshimchasini olgan edi",
+   "Negiz + -moqchi + shaxs-son qoʻshimchasini olgan edi"
+  ],
+  "q_en": "How is the -gan boʻlardi form built?",
+  "options_en": [
+   "The -gan participle + boʻlardi with a personal ending",
+   "Stem + -sa + personal ending + edi",
+   "Stem + -r/-ar + edi with a personal ending",
+   "Stem + -moqchi + edi with a personal ending"
+  ],
+  "quote_ru": "Причастие на -gan + boʻlardi с личным аффиксом (boʻlardim, boʻlarding, boʻlardi, boʻlardik, boʻlardingiz, boʻlardilar)."
+ },
+ {
+  "course": "grammar",
+  "n": 24,
+  "k": 4,
+  "q_ru": "Как перевести предложение «Pulim boʻlsa edi, uy olar edim.»?",
+  "options_ru": [
+   "Если бы у меня были деньги, я бы купил дом.",
+   "Если у меня будут деньги, я куплю дом.",
+   "Когда у меня были деньги, я покупал дома.",
+   "У меня были деньги, и я купил дом."
+  ],
+  "q_uz": "«Pulim boʻlsa edi, uy olar edim.» gapi rus tiliga qanday tarjima qilinadi?",
+  "options_uz": [
+   "Если бы у меня были деньги, я бы купил дом.",
+   "Если у меня будут деньги, я куплю дом.",
+   "Когда у меня были деньги, я покупал дома.",
+   "У меня были деньги, и я купил дом."
+  ],
+  "q_en": "How is the sentence «Pulim boʻlsa edi, uy olar edim.» translated?",
+  "options_en": [
+   "If I had money, I would buy a house.",
+   "If I get money, I will buy a house.",
+   "When I had money, I used to buy houses.",
+   "I had money, and I bought a house."
+  ],
+  "quote_ru": "Pulim boʻlsa edi, uy olar edim. — Если бы у меня были деньги, я бы купил дом."
+ },
+ {
+  "course": "grammar",
+  "n": 24,
+  "k": 5,
+  "q_ru": "Как выразить сожаление «лучше бы я не ходил»?",
+  "options_ru": [
+   "bormasam edi",
+   "borsam emas edi",
+   "bormagan edim",
+   "bormayotgan edim"
+  ],
+  "q_uz": "«Лучше бы я не ходил» degan afsus qanday ifodalanadi?",
+  "options_uz": [
+   "bormasam edi",
+   "borsam emas edi",
+   "bormagan edim",
+   "bormayotgan edim"
+  ],
+  "q_en": "How do you express the regret «I wish I hadn't gone»?",
+  "options_en": [
+   "bormasam edi",
+   "borsam emas edi",
+   "bormagan edim",
+   "bormayotgan edim"
+  ],
+  "quote_ru": "Отрицание: bormasam edi — «лучше бы я не ходил, вот бы я не пошёл»."
+ },
+ {
+  "course": "grammar",
+  "n": 24,
+  "k": 6,
+  "q_ru": "Какая форма значит «я бы сделал тогда, но не сделал»?",
+  "options_ru": [
+   "-gan boʻlardi",
+   "-sa edi",
+   "-ar edi",
+   "-moqchi edi"
+  ],
+  "q_uz": "Qaysi shakl «тогда сделал бы, но не сделал» maʼnosini beradi?",
+  "options_uz": [
+   "-gan boʻlardi",
+   "-sa edi",
+   "-ar edi",
+   "-moqchi edi"
+  ],
+  "q_en": "Which form means «I would have done it then, but didn't»?",
+  "options_en": [
+   "-gan boʻlardi",
+   "-sa edi",
+   "-ar edi",
+   "-moqchi edi"
+  ],
+  "quote_ru": "-gan boʻlardi — «я бы сделал тогда, но не сделал»"
+ },
+ {
+  "course": "grammar",
+  "n": 25,
+  "k": 1,
+  "q_ru": "Что выражает прошедшее длительное время -ayotgan edi?",
+  "options_ru": [
+   "Действие, которое шло в определённый момент",
+   "Привычное, повторявшееся действие",
+   "Действие, завершившееся раньше другого",
+   "Намерение, которое не осуществилось"
+  ],
+  "q_uz": "Oʻtgan zamon davom feʼli -ayotgan edi nimani bildiradi?",
+  "options_uz": [
+   "Muayyan paytda davom etayotgan harakatni",
+   "Odatiy, takrorlanib turgan harakatni",
+   "Boshqa harakatdan oldin tugagan harakatni",
+   "Amalga oshmagan niyatni"
+  ],
+  "q_en": "What does the past continuous -ayotgan edi express?",
+  "options_en": [
+   "An action in progress at a certain moment",
+   "A habitual, repeated action",
+   "An action completed before another one",
+   "An intention that did not happen"
+  ],
+  "quote_ru": "Прошедшее длительное -ayotgan edi описывает действие, которое шло в определённый момент"
+ },
+ {
+  "course": "grammar",
+  "n": 25,
+  "k": 2,
+  "q_ru": "Какая форма значит «бывало, я ходил»?",
+  "options_ru": [
+   "borar edim",
+   "borgan edim",
+   "borayotgan edim",
+   "bormoqchi edim"
+  ],
+  "q_uz": "Qaysi shakl «бывало, я ходил» maʼnosini beradi?",
+  "options_uz": [
+   "borar edim",
+   "borgan edim",
+   "borayotgan edim",
+   "bormoqchi edim"
+  ],
+  "q_en": "Which form means «I used to go»?",
+  "options_en": [
+   "borar edim",
+   "borgan edim",
+   "borayotgan edim",
+   "bormoqchi edim"
+  ],
+  "quote_ru": "men borar edim — бывало, я ходил"
+ },
+ {
+  "course": "grammar",
+  "n": 25,
+  "k": 3,
+  "q_ru": "Как образовать давнопрошедшее время от oʻqimoq для men?",
+  "options_ru": [
+   "oʻqigan edim",
+   "oʻqir edim",
+   "oʻqiyotgan edim",
+   "oʻqimoqchi edim"
+  ],
+  "q_uz": "Oʻqimoq feʼlidan men shaxsi uchun uzoq oʻtgan zamon qanday yasaladi?",
+  "options_uz": [
+   "oʻqigan edim",
+   "oʻqir edim",
+   "oʻqiyotgan edim",
+   "oʻqimoqchi edim"
+  ],
+  "q_en": "How do you form the pluperfect of oʻqimoq for men?",
+  "options_en": [
+   "oʻqigan edim",
+   "oʻqir edim",
+   "oʻqiyotgan edim",
+   "oʻqimoqchi edim"
+  ],
+  "quote_ru": "Основа на гласный: oʻqigan edim. Отрицание: bormagan edim, oʻqimagan edim."
+ },
+ {
+  "course": "grammar",
+  "n": 25,
+  "k": 4,
+  "q_ru": "Какой аффикс прошедшего длительного времени ставится после основы на гласный?",
+  "options_ru": [
+   "-yotgan",
+   "-ayotgan",
+   "-gan",
+   "-r"
+  ],
+  "q_uz": "Unli bilan tugagan negizdan keyin oʻtgan zamon davom feʼlining qaysi qoʻshimchasi qoʻshiladi?",
+  "options_uz": [
+   "-yotgan",
+   "-ayotgan",
+   "-gan",
+   "-r"
+  ],
+  "q_en": "Which past-continuous suffix follows a vowel stem?",
+  "options_en": [
+   "-yotgan",
+   "-ayotgan",
+   "-gan",
+   "-r"
+  ],
+  "quote_ru": "основа + -ayotgan (после согласного) или -yotgan (после гласного) + edi"
+ },
+ {
+  "course": "grammar",
+  "n": 25,
+  "k": 5,
+  "q_ru": "Как перевести предложение «Men kelganimda, ular ketgan edi.»?",
+  "options_ru": [
+   "Когда я пришёл, они уже ушли.",
+   "Когда я пришёл, они уходили.",
+   "Когда я приходил, они, бывало, уходили.",
+   "Если бы я пришёл, они бы ушли."
+  ],
+  "q_uz": "«Men kelganimda, ular ketgan edi.» gapi rus tiliga qanday tarjima qilinadi?",
+  "options_uz": [
+   "Когда я пришёл, они уже ушли.",
+   "Когда я пришёл, они уходили.",
+   "Когда я приходил, они, бывало, уходили.",
+   "Если бы я пришёл, они бы ушли."
+  ],
+  "q_en": "How is the sentence «Men kelganimda, ular ketgan edi.» translated?",
+  "options_en": [
+   "When I came, they had already left.",
+   "When I came, they were leaving.",
+   "Whenever I came, they used to leave.",
+   "If I had come, they would have left."
+  ],
+  "quote_ru": "Men kelganimda, ular ketgan edi — «Когда я пришёл, они уже ушли»."
+ },
+ {
+  "course": "grammar",
+  "n": 25,
+  "k": 6,
+  "q_ru": "К чему присоединяется личный аффикс в формах с edi?",
+  "options_ru": [
+   "К вспомогательному глаголу edi",
+   "К основе смыслового глагола",
+   "К причастию на -gan",
+   "К аффиксу -r/-ar"
+  ],
+  "q_uz": "Edi ishtirok etgan shakllarda shaxs-son qoʻshimchasi nimaga qoʻshiladi?",
+  "options_uz": [
+   "Edi yordamchi feʼliga",
+   "Asosiy feʼl negiziga",
+   "-gan sifatdoshiga",
+   "-r/-ar qoʻshimchasiga"
+  ],
+  "q_en": "In the forms with edi, what does the personal ending attach to?",
+  "options_en": [
+   "The auxiliary edi",
+   "The stem of the main verb",
+   "The -gan participle",
+   "The suffix -r/-ar"
+  ],
+  "quote_ru": "Личный аффикс присоединяется к edi: edim, eding, edi, edik, edingiz, edilar."
+ },
+ {
+  "course": "grammar",
+  "n": 26,
+  "k": 1,
+  "q_ru": "Как сказать «я могу пойти»?",
+  "options_ru": [
+   "bora olaman",
+   "borish olaman",
+   "borar olaman",
+   "borsa olaman"
+  ],
+  "q_uz": "«Я могу пойти» qanday aytiladi?",
+  "options_uz": [
+   "bora olaman",
+   "borish olaman",
+   "borar olaman",
+   "borsa olaman"
+  ],
+  "q_en": "How do you say «I can go»?",
+  "options_en": [
+   "bora olaman",
+   "borish olaman",
+   "borar olaman",
+   "borsa olaman"
+  ],
+  "quote_ru": "men bora olaman — я могу пойти"
+ },
+ {
+  "course": "grammar",
+  "n": 26,
+  "k": 2,
+  "q_ru": "Куда ставится отрицание в конструкции -a/-y olmoq?",
+  "options_ru": [
+   "На глагол olmoq: bora olmayman",
+   "На смысловой глагол: borma olaman",
+   "Слово emas после olaman",
+   "Аффикс -mas: bormas olaman"
+  ],
+  "q_uz": "-a/-y olmoq qurilmasida boʻlishsizlik qayerga qoʻshiladi?",
+  "options_uz": [
+   "Olmoq feʼliga: bora olmayman",
+   "Asosiy feʼlga: borma olaman",
+   "Olaman dan keyin emas soʻzi",
+   "-mas qoʻshimchasi: bormas olaman"
+  ],
+  "q_en": "Where does the negative go in the -a/-y olmoq construction?",
+  "options_en": [
+   "On the verb olmoq: bora olmayman",
+   "On the main verb: borma olaman",
+   "The word emas after olaman",
+   "The suffix -mas: bormas olaman"
+  ],
+  "quote_ru": "Отрицание ставится на olmoq, а не на смысловой глагол"
+ },
+ {
+  "course": "grammar",
+  "n": 26,
+  "k": 3,
+  "q_ru": "Как сказать «я могу прочитать» (глагол oʻqimoq)?",
+  "options_ru": [
+   "oʻqiy olaman",
+   "oʻqia olaman",
+   "oʻqi olaman",
+   "oʻqiya olaman"
+  ],
+  "q_uz": "Oʻqimoq feʼlidan «я могу прочитать» qanday aytiladi?",
+  "options_uz": [
+   "oʻqiy olaman",
+   "oʻqia olaman",
+   "oʻqi olaman",
+   "oʻqiya olaman"
+  ],
+  "q_en": "How do you say «I can read» (verb oʻqimoq)?",
+  "options_en": [
+   "oʻqiy olaman",
+   "oʻqia olaman",
+   "oʻqi olaman",
+   "oʻqiya olaman"
+  ],
+  "quote_ru": "Основа на гласный (oʻqimoq): oʻqiy olaman, oʻqiy olmayman."
+ },
+ {
+  "course": "grammar",
+  "n": 26,
+  "k": 4,
+  "q_ru": "Что значит borish mumkin emas?",
+  "options_ru": [
+   "«нельзя пойти»",
+   "«можно пойти»",
+   "«я не собираюсь идти»",
+   "«наверное, не пойду»"
+  ],
+  "q_uz": "Borish mumkin emas nimani bildiradi?",
+  "options_uz": [
+   "«нельзя пойти»",
+   "«можно пойти»",
+   "«я не собираюсь идти»",
+   "«наверное, не пойду»"
+  ],
+  "q_en": "What does borish mumkin emas mean?",
+  "options_en": [
+   "«one may not go»",
+   "«one may go»",
+   "«I am not going to go»",
+   "«I probably won't go»"
+  ],
+  "quote_ru": "borish mumkin emas — «нельзя пойти»"
+ },
+ {
+  "course": "grammar",
+  "n": 26,
+  "k": 5,
+  "q_ru": "Как перевести предложение «U kechikishi mumkin.»?",
+  "options_ru": [
+   "Он может опоздать.",
+   "Он опоздал.",
+   "Ему нельзя опаздывать.",
+   "Он не опоздает."
+  ],
+  "q_uz": "«U kechikishi mumkin.» gapi rus tiliga qanday tarjima qilinadi?",
+  "options_uz": [
+   "Он может опоздать.",
+   "Он опоздал.",
+   "Ему нельзя опаздывать.",
+   "Он не опоздает."
+  ],
+  "q_en": "How is the sentence «U kechikishi mumkin.» translated?",
+  "options_en": [
+   "He may be late.",
+   "He was late.",
+   "He must not be late.",
+   "He won't be late."
+  ],
+  "quote_ru": "U kechikishi mumkin — «Он может опоздать»"
+ },
+ {
+  "course": "grammar",
+  "n": 26,
+  "k": 6,
+  "q_ru": "Как сказать «я не смог пойти»?",
+  "options_ru": [
+   "bora olmadim",
+   "bora olmayman",
+   "bormay oldim",
+   "borish mumkin emas"
+  ],
+  "q_uz": "«Я не смог пойти» qanday aytiladi?",
+  "options_uz": [
+   "bora olmadim",
+   "bora olmayman",
+   "bormay oldim",
+   "borish mumkin emas"
+  ],
+  "q_en": "How do you say «I couldn't go»?",
+  "options_en": [
+   "bora olmadim",
+   "bora olmayman",
+   "bormay oldim",
+   "borish mumkin emas"
+  ],
+  "quote_ru": "bora olmadim — «я не смог пойти»"
+ },
+ {
+  "course": "grammar",
+  "n": 27,
+  "k": 1,
+  "q_ru": "Какова общая схема узбекской глагольной формы?",
+  "options_ru": [
+   "основа + (-ma) + аффикс формы + личный аффикс",
+   "личный аффикс + основа + аффикс формы",
+   "основа + личный аффикс + (-ma) + аффикс формы",
+   "(-ma) + основа + личный аффикс + аффикс формы"
+  ],
+  "q_uz": "Oʻzbek feʼl shaklining umumiy chizmasi qanday?",
+  "options_uz": [
+   "negiz + (-ma) + shakl qoʻshimchasi + shaxs-son qoʻshimchasi",
+   "shaxs-son qoʻshimchasi + negiz + shakl qoʻshimchasi",
+   "negiz + shaxs-son qoʻshimchasi + (-ma) + shakl qoʻshimchasi",
+   "(-ma) + negiz + shaxs-son qoʻshimchasi + shakl qoʻshimchasi"
+  ],
+  "q_en": "What is the general pattern of an Uzbek verb form?",
+  "options_en": [
+   "stem + (-ma) + form suffix + personal ending",
+   "personal ending + stem + form suffix",
+   "stem + personal ending + (-ma) + form suffix",
+   "(-ma) + stem + personal ending + form suffix"
+  ],
+  "quote_ru": "Общая схема: основа + (-ma) + аффикс формы + личный аффикс."
+ },
+ {
+  "course": "grammar",
+  "n": 27,
+  "k": 2,
+  "q_ru": "После каких аффиксов стоят личные аффиксы притяжательного типа (-m, -ng, -k, -ngiz)?",
+  "options_ru": [
+   "После -di и -sa",
+   "После -gan и -moqchi",
+   "После -a/-y и -r/-ar",
+   "После -yap и -moqda"
+  ],
+  "q_uz": "Egalik tipidagi shaxs-son qoʻshimchalari (-m, -ng, -k, -ngiz) qaysi qoʻshimchalardan keyin keladi?",
+  "options_uz": [
+   "-di va -sa dan keyin",
+   "-gan va -moqchi dan keyin",
+   "-a/-y va -r/-ar dan keyin",
+   "-yap va -moqda dan keyin"
+  ],
+  "q_en": "Which suffixes are followed by the possessive-type personal endings (-m, -ng, -k, -ngiz)?",
+  "options_en": [
+   "-di and -sa",
+   "-gan and -moqchi",
+   "-a/-y and -r/-ar",
+   "-yap and -moqda"
+  ],
+  "quote_ru": "притяжательные (-m, -ng, —, -k, -ngiz, -lar) — после -di и -sa"
+ },
+ {
+  "course": "grammar",
+  "n": 27,
+  "k": 3,
+  "q_ru": "Какой аффикс отрицания берут будущее предположительное и привычное прошедшее время?",
+  "options_ru": [
+   "-mas",
+   "-ma",
+   "emas",
+   "-may"
+  ],
+  "q_uz": "Kelasi zamon gumon feʼli va oʻtgan zamon odat feʼli qaysi boʻlishsizlik qoʻshimchasini oladi?",
+  "options_uz": [
+   "-mas",
+   "-ma",
+   "emas",
+   "-may"
+  ],
+  "q_en": "Which negative suffix do the presumptive future and the past habitual take?",
+  "options_en": [
+   "-mas",
+   "-ma",
+   "emas",
+   "-may"
+  ],
+  "quote_ru": "будущее предположительное и привычное прошедшее берут -mas (bormasman, bormas edim)"
+ },
+ {
+  "course": "grammar",
+  "n": 27,
+  "k": 4,
+  "q_ru": "Как отрицаются форма -moqchi и конструкция с mumkin?",
+  "options_ru": [
+   "Словом emas",
+   "Аффиксом -ma после основы",
+   "Аффиксом -mas",
+   "Отрицанием глагола olmoq"
+  ],
+  "q_uz": "-moqchi shakli va mumkin qurilmasi qanday inkor qilinadi?",
+  "options_uz": [
+   "Emas soʻzi bilan",
+   "Negizdan keyin -ma qoʻshimchasi bilan",
+   "-mas qoʻshimchasi bilan",
+   "Olmoq feʼlini inkor qilish bilan"
+  ],
+  "q_en": "How are the -moqchi form and the mumkin construction negated?",
+  "options_en": [
+   "With the word emas",
+   "With -ma after the stem",
+   "With the suffix -mas",
+   "By negating the verb olmoq"
+  ],
+  "quote_ru": "у -moqchi и mumkin отрицание — emas"
+ },
+ {
+  "course": "grammar",
+  "n": 27,
+  "k": 5,
+  "q_ru": "Как подписаны строки в тренажёре спряжения?",
+  "options_ru": [
+   "Узбекским названием и аффиксом",
+   "Только номером темы",
+   "Только русским переводом",
+   "Только примером предложения"
+  ],
+  "q_uz": "Tuslash mashqidagi qatorlar qanday belgilangan?",
+  "options_uz": [
+   "Oʻzbekcha nom va qoʻshimcha bilan",
+   "Faqat mavzu raqami bilan",
+   "Faqat ruscha tarjima bilan",
+   "Faqat gap misoli bilan"
+  ],
+  "q_en": "How are the rows labelled in the conjugation trainer?",
+  "options_en": [
+   "With an Uzbek name and a suffix",
+   "Only with the topic number",
+   "Only with a Russian translation",
+   "Only with an example sentence"
+  ],
+  "quote_ru": "Каждая строка подписана узбекским названием и аффиксом"
+ },
+ {
+  "course": "grammar",
+  "n": 27,
+  "k": 6,
+  "q_ru": "Какая форма в обзорной таблице переведена как «наверное, пойду»?",
+  "options_ru": [
+   "borarman",
+   "boraman",
+   "bormoqchiman",
+   "borsam"
+  ],
+  "q_uz": "Takrorlash jadvalida qaysi shakl «наверное, пойду» deb tarjima qilingan?",
+  "options_uz": [
+   "borarman",
+   "boraman",
+   "bormoqchiman",
+   "borsam"
+  ],
+  "q_en": "Which form in the review table is translated as «I will probably go»?",
+  "options_en": [
+   "borarman",
+   "boraman",
+   "bormoqchiman",
+   "borsam"
+  ],
+  "quote_ru": "-r/-ar: borarman / bormasman; oʻqirman / oʻqimasman — наверное, пойду"
  }
 ]

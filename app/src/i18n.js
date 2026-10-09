@@ -1090,6 +1090,53 @@ Object.assign(en, {
   fbGo: 'Write in the group', fbLater: 'Later',
 });
 
+// ---------------------------------------------------------------- шаг 15: спряжение, склонение, предложения
+Object.assign(ru, {
+  secConj: 'Спряжение', secSentences: 'Предложения',
+  conjTitle: 'Спряжение глагола', conjSub: (n) => `${n} глаголов словаря: все времена, наклонения и отрицание. Выберите глагол или потренируйтесь на своих.`,
+  conjTrainMine: 'Тренировка на моих глаголах', conjTrainThis: 'Тренироваться с этим глаголом', conjBtn: 'Спряжение', declBtn: 'Склонение',
+  conjGroup_indicative: 'Изъявительное', conjGroup_imperative: 'Повелительное', conjGroup_conditional: 'Условное и сослагательное',
+  conjGroup_ability: 'Возможность', conjGroup_nonfinite: 'Неличные формы',
+  conjPos: 'Утвердительная', conjNeg: 'Отрицательная',
+  conjNote: 'Формы построены по правилам литературного языка; в разговорной речи бывают сокращения (borvomman, kevotti).',
+  conjNotVerb: 'Это не глагол.', conjNoVerbs: 'Сначала выучите несколько глаголов — тренировка возьмёт их.',
+  conjTask: 'Напишите форму глагола', conjDone: 'Тренировка завершена',
+  declTitle: 'Склонение', declSg: 'Ед. ч.', declPl: 'Мн. ч.',
+  declNote: 'Падежи по правилам; у части слов возможны исключения (например, заимствования).',
+  sentTitle: 'Предложения', sentEmpty: 'Пока нет готовых предложений. Они появляются, когда вы выучите большую часть слов предложения (уровень 4+). Продолжайте учить слова!',
+  sentDone: 'Предложения на сегодня', sentDoneText: 'Каждое предложение вернётся на повторение по своему расписанию.',
+});
+Object.assign(uz, {
+  secConj: 'Tuslash', secSentences: 'Gaplar',
+  conjTitle: 'Feʼlni tuslash', conjSub: (n) => `Lugʻatdagi ${n} ta feʼl: barcha zamonlar, mayllar va boʻlishsiz shakl. Feʼlni tanlang yoki oʻz feʼllaringizda mashq qiling.`,
+  conjTrainMine: 'Mening feʼllarim bilan mashq', conjTrainThis: 'Shu feʼl bilan mashq qilish', conjBtn: 'Tuslash', declBtn: 'Turlash',
+  conjGroup_indicative: 'Xabar mayli', conjGroup_imperative: 'Buyruq mayli', conjGroup_conditional: 'Shart va istak',
+  conjGroup_ability: 'Imkoniyat', conjGroup_nonfinite: 'Funksional shakllar',
+  conjPos: 'Boʻlishli', conjNeg: 'Boʻlishsiz',
+  conjNote: 'Shakllar adabiy til qoidalari asosida tuzilgan; soʻzlashuvda qisqargan shakllar uchraydi (borvomman, kevotti).',
+  conjNotVerb: 'Bu feʼl emas.', conjNoVerbs: 'Avval bir nechta feʼl oʻrganing — mashq ularni oladi.',
+  conjTask: 'Feʼl shaklini yozing', conjDone: 'Mashq tugadi',
+  declTitle: 'Turlash', declSg: 'Birlik', declPl: 'Koʻplik',
+  declNote: 'Kelishiklar qoida asosida; ayrim soʻzlarda istisnolar boʻlishi mumkin.',
+  sentTitle: 'Gaplar', sentEmpty: 'Hozircha tayyor gaplar yoʻq. Ular gapdagi soʻzlarning koʻpini oʻrganganingizda paydo boʻladi (4+ daraja).',
+  sentDone: 'Bugungi gaplar', sentDoneText: 'Har bir gap oʻz jadvali boʻyicha takrorlashga qaytadi.',
+});
+Object.assign(en, {
+  secConj: 'Conjugation', secSentences: 'Sentences',
+  conjTitle: 'Verb conjugation', conjSub: (n) => `${n} dictionary verbs: all tenses, moods and negatives. Pick a verb or practise your own.`,
+  conjTrainMine: 'Practise my verbs', conjTrainThis: 'Practise this verb', conjBtn: 'Conjugation', declBtn: 'Declension',
+  conjGroup_indicative: 'Indicative', conjGroup_imperative: 'Imperative', conjGroup_conditional: 'Conditional & subjunctive',
+  conjGroup_ability: 'Ability', conjGroup_nonfinite: 'Non-finite forms',
+  conjPos: 'Affirmative', conjNeg: 'Negative',
+  conjNote: 'Forms follow the rules of the literary language; speech has contracted forms (borvomman, kevotti).',
+  conjNotVerb: 'This is not a verb.', conjNoVerbs: 'Learn a few verbs first — the practice will use them.',
+  conjTask: 'Type the verb form', conjDone: 'Practice complete',
+  declTitle: 'Declension', declSg: 'Singular', declPl: 'Plural',
+  declNote: 'Cases follow the rules; some words (e.g. loanwords) may be exceptions.',
+  sentTitle: 'Sentences', sentEmpty: 'No sentences are ready yet. They appear once you know most words of a sentence (level 4+).',
+  sentDone: 'Today’s sentences', sentDoneText: 'Each sentence will come back for review on its own schedule.',
+});
+
 const dict = { ru, uz, en };
 let lang = 'ru';
 

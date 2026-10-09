@@ -7,6 +7,7 @@ import { h, mount, spinner, sheet, haptic, audioButton } from '../ui.js';
 import { icon } from '../icons.js';
 import { play, wordAudio, exampleAudio } from '../audio.js';
 import { tilesOf } from '../exercises.js';
+import { conjSheet, declSheet, canConjugate, canDecline } from './conj.js';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2'];
 // Порядок узбекского алфавита (латиница)
@@ -180,6 +181,8 @@ export async function wordSheet(app, id, onChanged) {
     st ? h('p', { class: 'small', style: { textAlign: 'center' } },
       t('dictLevel', st), w.due_on ? ` · ${t('dictNext', formatDate(w.due_on))}` : '')
       : h('p', { class: 'small muted', style: { textAlign: 'center' } }, t('dictNotStarted')),
+    canConjugate(w) ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => conjSheet(w, app) }, icon('practice'), t('conjBtn'))
+      : canDecline(w) ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => declSheet(w, app) }, icon('grammar'), t('declBtn')) : null,
     examples.length ? h('div', { class: 'examples' }, h('div', { class: 'label' }, t('examples')), examples) : null,
     flagBox);
 }

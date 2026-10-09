@@ -3,8 +3,9 @@ import { t } from './i18n.js';
 import { h, haptic, audioButton } from './ui.js';
 import { icon } from './icons.js';
 import { play, wordAudio, exampleAudio } from './audio.js';
-import { correctAnswerText, examplesFor } from './exercises.js';
+import { correctAnswerText, cardExamples } from './exercises.js';
 import { diffChars, displayUz } from './normalize.js';
+import { conjSheet, canConjugate } from './screens/conj.js';
 
 export const PROMPT_KEY = {
   uz_ru_choice: 'exUzRu', ru_uz_choice: 'exRuUz', audio_choice: 'exAudio', letters: 'exLetters',
@@ -17,7 +18,7 @@ export const PROMPT_KEY = {
 // ---------------------------------------------------------------- карточка нового слова
 export function renderCard(item, { audioEnabled, onNext }) {
   if (item.audio_ok && audioEnabled) play(wordAudio(item.id));
-  const examples = examplesFor(item).slice(0, 3).map((ex) =>
+  const examples = cardExamples(item, 3).map((ex) =>
     h('div', { class: 'example' },
       h('div', { class: 'ex-uz' }, h('span', {}, ex.uz), ex.audio_ok && audioEnabled ? audioButton(() => play(exampleAudio(ex.word_id, ex.n))) : null),
       h('div', { class: 'ex-ru muted' }, ex.ru)));
@@ -32,6 +33,7 @@ export function renderCard(item, { audioEnabled, onNext }) {
             item.note ? h('div', { class: 'tiny muted' }, item.note) : null)
         : null,
       examples.length ? h('div', { class: 'examples' }, h('div', { class: 'label' }, t('examples')), examples) : null),
+    canConjugate(item) ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => conjSheet(item) }, icon('practice'), t('conjBtn')) : null,
     h('button', { class: 'btn btn-big', onClick: onNext }, t('gotIt')));
 }
 
@@ -70,7 +72,8 @@ export function renderExercise(ex, { audioEnabled, onAnswer, onNext }) {
     if ((ex.type === 'audio_sentence' || ex.type === 'sentence_build') && ex.ru) parts.push(h('div', { class: 'small' }, ex.ru));
     parts.push(h('div', { class: 'pair' }, `${word.uz} — ${word.ru}`,
       word.audio_ok && audioEnabled ? audioButton(() => play(wordAudio(word.id))) : null,
-      ex.example && ex.exampleAudio && audioEnabled ? audioButton(exAudio) : null));
+      ex.example && ex.exampleAudio && audioEnabled ? audioButton(exAudio) : null,
+      canConjugate(word) ? h('button', { class: 'chip-btn conj-chip', type: 'button', onClick: () => conjSheet(word) }, t('conjBtn')) : null));
     const nextBtn = h('button', { class: 'btn btn-big', onClick: onNext }, t('next'));
     feedback.className = `feedback show ${correct ? 'good' : 'bad'}`;
     feedback.replaceChildren(...parts, nextBtn);

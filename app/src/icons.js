@@ -31,6 +31,8 @@ const ICONS = {
   culture: '<path d="M6 10.5h10V14a5 5 0 0 1-10 0z"/><path d="M16 11.5h1.4a2 2 0 0 1 0 4H15.6"/><path d="M6 12.5 3 10.2"/><path d="M8.5 10.5c0-1.6 1.2-2.5 2.5-2.5s2.5.9 2.5 2.5M11 8V6.5"/>',
   dictionary: '<path d="M5 4.5h11a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="M9 8h6M9 11h4"/>',
   chat: '<path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h10a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 17 16h-6l-4.5 3.5V16H7a2.5 2.5 0 0 1-2.5-2.5z"/>',
+  conj: '<path d="M4 6h7M4 12h7M4 18h7"/><path d="M15 6h5M15 12h5M15 18h5"/><path d="M12.5 4v16" opacity=".5"/>',
+  sentences: '<path d="M4 7h16M4 12h11M4 17h8"/><path d="M17 15l3 2.5L17 20"/>',
   progress: '<path d="M4 20V12M9.5 20V6M15 20v-9M20.5 20V4"/>',
   lock: '<rect x="5" y="11" width="14" height="9.5" rx="2.2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
   check: '<path d="M5 12.5 10 17.5 19 7"/>',

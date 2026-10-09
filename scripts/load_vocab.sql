@@ -20,7 +20,7 @@ create temp table s_words (
 
 create temp table s_examples (
   word_id int, n smallint, uz text, ru text, blank_start smallint, blank_len smallint,
-  blank_answer text, audio_ok boolean, is_hidden boolean
+  blank_answer text, audio_ok boolean, is_hidden boolean, word_ids int[], n_words smallint
 ) on commit drop;
 \copy s_examples from 'data/build/examples.csv' with (format csv, header true)
 
@@ -55,11 +55,13 @@ update public.words set is_active = false
 where is_active and id not in (select id from s_words);
 
 -- примеры
-insert into public.examples (word_id, n, uz, ru, blank_start, blank_len, blank_answer, audio_ok, is_hidden)
-select word_id, n, uz, ru, blank_start, blank_len, nullif(blank_answer, ''), audio_ok, is_hidden from s_examples
+insert into public.examples (word_id, n, uz, ru, blank_start, blank_len, blank_answer, audio_ok, is_hidden, word_ids, n_words)
+select word_id, n, uz, ru, blank_start, blank_len, nullif(blank_answer, ''), audio_ok, is_hidden,
+       coalesce(word_ids, '{}'), coalesce(n_words, 0) from s_examples
 on conflict (word_id, n) do update set
   uz = excluded.uz, ru = excluded.ru, blank_start = excluded.blank_start, blank_len = excluded.blank_len,
-  blank_answer = excluded.blank_answer, audio_ok = excluded.audio_ok, is_hidden = excluded.is_hidden;
+  blank_answer = excluded.blank_answer, audio_ok = excluded.audio_ok, is_hidden = excluded.is_hidden,
+  word_ids = excluded.word_ids, n_words = excluded.n_words;
 
 delete from public.examples e
 where not exists (select 1 from s_examples s where s.word_id = e.word_id and s.n = e.n);

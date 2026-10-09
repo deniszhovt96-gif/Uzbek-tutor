@@ -709,3 +709,23 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .remind-hour { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .remind-hour select { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line, rgba(127,127,127,.3)); background: var(--surface); color: inherit; }
 .feedback-card { display: grid; gap: 10px; }
+
+/* ---------------------------------------------------------------- шаг 15: спряжение, склонение, предложения */
+.segmented.scroll { display: flex; overflow-x: auto; scrollbar-width: none; }
+.segmented.scroll::-webkit-scrollbar { display: none; }
+.segmented.scroll button { flex: 0 0 auto; padding-left: 14px; padding-right: 14px; white-space: nowrap; }
+.conj { display: grid; gap: 10px; }
+.conj-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.conj-card { background: var(--surface); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow); }
+.sheet .conj-card { box-shadow: none; border: 1px solid var(--line, rgba(127,127,127,.18)); }
+.conj-title { font-weight: 700; color: var(--accent); margin-bottom: 2px; }
+.conj-sub { font-size: 12px; margin-bottom: 8px; }
+.conj-row { display: flex; gap: 10px; padding: 4px 0; border-bottom: 1px solid var(--line, rgba(127,127,127,.1)); align-items: baseline; }
+.conj-row:last-child { border-bottom: none; }
+.conj-p { min-width: 46px; color: var(--muted); font-size: 14px; flex: 0 1 auto; }
+.conj-row b { font-weight: 600; flex: 0 0 auto; white-space: nowrap; margin-left: auto; text-align: right; }
+.decl-card .conj-p { flex: 1 1 auto; }
+.conj-grid .conj-row b { margin-left: 0; text-align: left; }
+.conj-form.one { font-weight: 600; padding-top: 4px; }
+.conj-ask { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 12px; }
+.conj-chip { margin-left: auto; }
