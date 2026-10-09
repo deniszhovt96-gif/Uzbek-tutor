@@ -19,7 +19,7 @@ create temp table ids as select course_id, source_no, id from public.course_unit
 grant select on ids to authenticated;
 
 -- контент
-select pg_temp.check((select count(*) = 89 from public.course_units), '89 тем: грамматика 27, история 22, обществознание 20, культура 20');
+select pg_temp.check((select count(*) = 89 from public.course_units where course_id <> 'dialogs'), '89 тем: грамматика 27, история 22, обществознание 20, культура 20');
 select pg_temp.check((select count(*) = 445 from public.unit_tasks where status = 'approved' and kind = 'open'), '445 заданий (по 5 на тему)');
 select pg_temp.check((select bool_and(express_ru is not null and express_uz is not null and express_en is not null
                                      and detailed_ru is not null and detailed_uz is not null and detailed_en is not null) from public.course_units),
@@ -35,7 +35,7 @@ select pg_temp.check((select bool_and((select count(*) from public.examples e wh
 set role authenticated;
 -- бесплатный: превью 2 темы
 set request.jwt.claim.sub = 'ffffffff-0000-0000-0000-000000000001';
-select pg_temp.check((select bool_and(not (c->>'allowed')::boolean) from jsonb_array_elements(public.get_courses()) c), 'бесплатно: курсы закрыты');
+select pg_temp.check((select bool_and(not (c->>'allowed')::boolean) from jsonb_array_elements(public.get_courses()) c where c->>'id' <> 'dialogs'), 'бесплатно: курсы закрыты (диалоги открыты)');
 select pg_temp.check((select count(*) filter (where not (u->>'locked')::boolean) = 2 from jsonb_array_elements(public.get_course('grammar')->'units') u),
   'бесплатно: открыты 2 первые темы грамматики');
 select pg_temp.check(public.get_unit((select id from ids where course_id = 'grammar' and source_no = 1))->>'title_ru' is not null, 'бесплатно: первая тема читается');

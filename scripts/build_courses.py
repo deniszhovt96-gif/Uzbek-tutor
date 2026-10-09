@@ -17,6 +17,9 @@ from pathlib import Path
 
 import openpyxl
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_vocab import key_uz  # noqa: E402  ключ узбекского слова — как в словаре
+
 SOURCES = {'grammar': 'grammar.xlsx', 'history': 'history.xlsx', 'civics': 'civics.xlsx', 'culture': 'culture.xlsx'}
 
 SECTION_TR = {
@@ -34,11 +37,53 @@ SECTION_TR = {
     'Праздники': ('Bayramlar', 'Holidays'),
     'Ремёсла, одежда и искусство': ('Hunarmandchilik, kiyim va sanʼat', 'Crafts, clothing and art'),
 }
+SECTION_TR.update({
+    'Знакомство и общение': ('Tanishuv va muloqot', 'Meeting people'),
+    'Город и транспорт': ('Shahar va transport', 'City and transport'),
+    'Покупки и еда': ('Xaridlar va taom', 'Shopping and food'),
+    'Быт и услуги': ('Maishiy hayot va xizmatlar', 'Everyday life and services'),
+    'Работа и учёба': ('Ish va oʻqish', 'Work and study'),
+    'Здоровье': ('Salomatlik', 'Health'),
+    'Праздники и гости': ('Bayramlar va mehmonlar', 'Holidays and guests'),
+})
 SECTION_ORDER = {
+    'dialogs': ['Знакомство и общение', 'Город и транспорт', 'Покупки и еда', 'Быт и услуги', 'Работа и учёба',
+                'Здоровье', 'Праздники и гости'],
     'grammar': ['Фонетика', 'Морфология: имя', 'Морфология: местоимения', 'Морфология: глагол', 'Синтаксис'],
     'civics': ['Государство и право', 'Право в повседневной жизни', 'Для иностранцев в Узбекистане', 'Обществознание'],
     'culture': ['Гостеприимство и повседневная жизнь', 'Семейные обряды', 'Праздники', 'Ремёсла, одежда и искусство'],
 }
+
+# Уровень тем (A1–B2): по сложности языка и по тому, когда тема нужна учащемуся. Не указано — DEFAULT_CEFR.
+UNIT_CEFR = {
+    'grammar': {6: 'A2', 12: 'A2', 14: 'A2', 16: 'A2', 20: 'A2', 22: 'A2',
+                21: 'B1', 23: 'B1', 25: 'B1', 26: 'B1', 24: 'B2', 27: 'B2'},
+    'culture': {5: 'A2', 6: 'A2', 7: 'A2', 8: 'A2', 9: 'A2', 10: 'A2', 12: 'A2', 13: 'A2', 15: 'A2', 16: 'A2',
+                11: 'B1', 17: 'B1', 18: 'B1', 19: 'B1'},
+    'history': {12: 'A2', 13: 'A2', 21: 'A2', 22: 'A2', 2: 'B2', 5: 'B2', 7: 'B2', 10: 'B2', 15: 'B2', 18: 'B2'},
+    'civics': {10: 'A2', 15: 'A2', 16: 'A2', 18: 'A2', 20: 'A2', 3: 'B2', 6: 'B2', 7: 'B2', 8: 'B2', 9: 'B2', 14: 'B2'},
+}
+DEFAULT_CEFR = {'grammar': 'A1', 'culture': 'A1', 'history': 'B1', 'civics': 'B1'}
+
+# Узбекские термины темы: слова в скобках в русском тексте — «лепёшками (non)», «(tovoq, idish)».
+# Те, что есть в словаре, после прочтения темы попадают в ближайшую очередь заучивания.
+TERM_RE = re.compile(r'\(([^()]{2,80})\)')
+CYR = re.compile(r'[А-Яа-яЁё]')
+
+
+def unit_terms(*texts):
+    out = set()
+    for text in texts:
+        for m in TERM_RE.finditer(text or ''):
+            for part in re.split(r'[,;/]| или | и ', m.group(1)):
+                part = part.strip(' «»"\'.')
+                if not part or CYR.search(part) or re.search(r'\d', part) or len(part) > 40:
+                    continue
+                k = key_uz(part)
+                if k and len(k) >= 2:
+                    out.add(k)
+    return sorted(out)
+
 
 # Названия тем грамматики на узбекском и английском (в файле одно поле «Тема (RU / UZ / EN)»)
 GRAMMAR_TITLES = {
@@ -212,6 +257,7 @@ def build(src: Path):
                 'source': clean(r.get('Источник / материал')),
                 'period': period[0],
                 'example_pattern': GRAMMAR_PATTERNS.get(n) if course == 'grammar' else None,
+                'cefr': UNIT_CEFR.get(course, {}).get(n, DEFAULT_CEFR[course]),
             }
             cols = ', '.join(vals)
             sql.append(
@@ -220,6 +266,9 @@ def build(src: Path):
                 f"on conflict (course_id, source_no) do update set section_id = excluded.section_id, sort_order = excluded.sort_order, "
                 + ', '.join(f'{k} = excluded.{k}' for k in vals) + ';')
             unit_sql = f"(select id from public.course_units where course_id = {q(course)} and source_no = {n})"
+            sql.append(f"delete from public.unit_terms where unit_id = {unit_sql};")
+            for k in unit_terms(vals['express_ru'], vals['detailed_ru']):
+                sql.append(f"insert into public.unit_terms (unit_id, term_key) values ({unit_sql}, {q(k)}) on conflict do nothing;")
             for k, (ru, uz, en) in enumerate(tasks, 1):
                 pr, pu, pe = clean(r.get(ru)), clean(r.get(uz)), clean(r.get(en))
                 if not pr:
@@ -300,6 +349,44 @@ def build(src: Path):
                 f"options = excluded.options, answer = excluded.answer, source_quote = excluded.source_quote, kind = excluded.kind;")
     stats['quiz'] = {'questions': n_q}
 
+    # ---- диалоги (data/source/dialogs.json)
+    dpath = src / 'dialogs.json'
+    if dpath.exists():
+        dialogs = json.loads(dpath.read_text(encoding='utf-8'))
+        stats['dialogs'] = {'units': len(dialogs), 'lines': 0}
+        for i, title in enumerate(SECTION_ORDER['dialogs'], 1):
+            uz, en = SECTION_TR[title]
+            sql.append(
+                f"insert into public.course_sections (course_id, title_ru, title_uz, title_en, sort_order) "
+                f"values ('dialogs', {q(title)}, {q(uz)}, {q(en)}, {i}) "
+                f"on conflict (course_id, title_ru) do update set title_uz = excluded.title_uz, title_en = excluded.title_en, sort_order = excluded.sort_order;")
+        for d in dialogs:
+            n = int(d['n'])
+            if d['section'] not in SECTION_ORDER['dialogs']:
+                raise SystemExit(f"dialogs.json: неизвестный раздел «{d['section']}»")
+            stats['dialogs']['lines'] += len(d['lines'])
+            extra = {'speakers': d['speakers'], 'lines': [{k: uz_apostrophes(v, True) if k == 'uz' else v for k, v in ln.items()} for ln in d['lines']],
+                     'vocab': [uz_apostrophes(v, True) for v in d.get('vocab', [])]}
+            vals = {
+                'title_ru': d['title_ru'], 'title_uz': uz_apostrophes(d['title_uz'], True), 'title_en': d['title_en'],
+                'express_ru': d['intro_ru'], 'express_uz': uz_apostrophes(d['intro_uz'], True), 'express_en': d['intro_en'],
+                'detailed_ru': d.get('note_ru'), 'detailed_uz': uz_apostrophes(d.get('note_uz'), True), 'detailed_en': d.get('note_en'),
+                'cefr': d['cefr'], 'extra': json.dumps(extra, ensure_ascii=False),
+            }
+            section_sql = f"(select id from public.course_sections where course_id = 'dialogs' and title_ru = {q(d['section'])})"
+            sql.append(
+                f"insert into public.course_units (course_id, source_no, section_id, sort_order, {', '.join(vals)}) values "
+                f"('dialogs', {n}, {section_sql}, {n}, {', '.join(q(v) for v in vals.values())}) "
+                f"on conflict (course_id, source_no) do update set section_id = excluded.section_id, sort_order = excluded.sort_order, "
+                + ', '.join(f'{k} = excluded.{k}' for k in vals) + ';')
+            unit_sql = f"(select id from public.course_units where course_id = 'dialogs' and source_no = {n})"
+            sql.append(f"delete from public.unit_terms where unit_id = {unit_sql};")
+            for v in d.get('vocab', []):
+                k = key_uz(v)
+                if k:
+                    sql.append(f"insert into public.unit_terms (unit_id, term_key) values ({unit_sql}, {q(k)}) on conflict do nothing;")
+
+    sql.append('select public.refresh_unit_words();')
     sql.append('commit;')
     return '\n'.join(sql) + '\n', stats
 

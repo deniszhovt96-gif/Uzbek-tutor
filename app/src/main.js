@@ -23,6 +23,9 @@ import { renderWordFlags } from './screens/wordflags.js';
 import { renderWelcome } from './screens/welcome.js';
 import { renderConj, setConjApp } from './screens/conj.js';
 import { renderSentences } from './screens/sentences.js';
+import { renderDecl } from './screens/decl.js';
+import { renderAnalytics } from './screens/analytics.js';
+import { renderFormReports } from './screens/formreports.js';
 
 const TABS = ['home', 'path', 'settings'];
 
@@ -85,6 +88,9 @@ const SCREENS = {
   welcome: renderWelcome,
   conj: renderConj,
   sentences: renderSentences,
+  decl: renderDecl,
+  analytics: renderAnalytics,
+  formreports: renderFormReports,
 };
 
 // ---------------------------------------------------------------- нижняя навигация

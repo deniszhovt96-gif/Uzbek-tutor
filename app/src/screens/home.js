@@ -3,6 +3,7 @@ import { rpc, tg } from '../api.js';
 import { t, tierName, formatDate } from '../i18n.js';
 import { h, mount, spinner, sheet, haptic, openLink } from '../ui.js';
 import { icon } from '../icons.js';
+import { recommendCard } from '../recommend.js';
 
 export function lockedSheet(app, minTier) {
   const close = sheet(
@@ -17,7 +18,8 @@ export function allowed(home, feature) {
 
 export async function renderHome(app) {
   mount(spinner(t('loading')));
-  const [me, home, stats] = await Promise.all([app.refreshMe(), rpc('get_home'), rpc('get_stats', { p_days: 14 })]);
+  const [me, home, stats, rec, week] = await Promise.all([app.refreshMe(), rpc('get_home'), rpc('get_stats', { p_days: 14 }),
+    rpc('get_next_step').catch(() => null), rpc('get_week').catch(() => null)]);
   app.homeData = home;
 
   // ---------------------------------------------------------------- профиль
@@ -37,6 +39,8 @@ export async function renderHome(app) {
       h('div', { class: 'profile-chips' },
         h('span', { class: 'chip accent' }, icon('map'), t('levelChip', home.unlocked)),
         home.streak > 0 ? h('span', { class: 'chip gold' }, icon('flame'), t('streakChip', home.streak)) : null,
+        week && !week.error ? h('button', { class: `chip week-chip ${(week.days || []).length >= week.goal ? 'gold' : ''}`, type: 'button',
+          onClick: () => weekSheet(week) }, icon('target'), t('weekChip', (week.days || []).length, week.goal)) : null,
         tierChip)));
 
   // ---------------------------------------------------------------- план на сегодня
@@ -99,7 +103,6 @@ export async function renderHome(app) {
     tile('review', t('secReview'), () => app.go('learn', { mode: me.tier === 'free' ? 'normal' : 'review' })),
     tile('practice', t('secPractice'), gated('practice', () => app.go('practice')), { badge: lockBadge('practice') }),
     tile('games', t('secGames'), gated('games', () => app.go('games')), { badge: lockBadge('games') }),
-    tile('filword', t('secWordsearch'), gated('filword', () => app.go('games', { game: 'filword' })), { badge: lockBadge('filword'), cls: 'gold' }),
     tile('sparkle', t('secQuiz'), () => app.go('wordcheck', { mode: 'review' }), { cls: 'gold' }),
     tile('test', t('secTest'), () => (testLevel ? app.go('test', { cefr: testLevel.cefr }) : app.tab('path')),
       { badge: testLevel ? testLevel.cefr : null, cls: 'gold' }),
@@ -107,8 +110,10 @@ export async function renderHome(app) {
     tile('history', t('secHistory'), () => app.go('course', { course: 'history' })),
     tile('civics', t('secCivics'), () => app.go('course', { course: 'civics' })),
     tile('culture', t('secCulture'), () => app.go('course', { course: 'culture' }), { badge: lockBadge('culture') }),
+    tile('dialog', t('secDialogs'), () => app.go('course', { course: 'dialogs' })),
     tile('dictionary', t('secDictionary'), () => app.go('dictionary')),
     tile('conj', t('secConj'), () => app.go('conj')),
+    tile('decl', t('secDecl'), () => app.go('decl')),
     tile('sentences', t('secSentences'), () => app.go('sentences')),
     tile('progress', t('secProgress'), () => app.go('progress')),
     tile('settings', t('secSettings'), () => app.tab('settings')));
@@ -159,6 +164,7 @@ export async function renderHome(app) {
     profile,
     feedbackCard,
     plan,
+    recommendCard(app, rec),
     h('h2', {}, t('sections')),
     tiles,
     h('h2', {}, t('activityTitle')),
@@ -184,4 +190,15 @@ export async function renderHome(app) {
           h('div', {}, h('b', {}, t('communityTitle')), h('div', { class: 'small muted' }, t('communityText'))),
           icon('chevron', 'ic chev'))
       : null));
+}
+
+// Цель недели: дни с занятиями (пн–вс) и выбор цели
+function weekSheet(week) {
+  const days = new Set(week.days || []);
+  const names = t('weekDays');
+  sheet(
+    h('div', { class: 'label' }, t('weekTitle')),
+    h('h3', {}, t('weekChip', days.size, week.goal)),
+    h('div', { class: 'week-row' }, names.map((n, i) => h('span', { class: `week-day ${days.has(i + 1) ? 'on' : ''}` }, n))),
+    h('p', { class: 'small muted' }, t('weekHint')));
 }

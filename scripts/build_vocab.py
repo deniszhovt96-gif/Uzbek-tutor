@@ -260,7 +260,7 @@ def read_supplement(existing_keys):
             "id": int(e["id"]), "topic": e["topic"].strip(), "topic_no": None,
             "ru": e["ru"].strip(), "uz": e["uz"].strip(), "cefr": e["cefr"],
             "ex": [x for x in ex if x[0] and x[1]], "register": "lit", "en": e.get("en") or "",
-            "level_fixed": True, "no_audio": True, "pos": float(e["after"]) + (k + 1) / 1000,
+            "level_fixed": True, "no_audio": True, "order": float(e["after"]) + (k + 1) / 1000,
         })
     return out
 
@@ -327,6 +327,53 @@ def link_examples(examples, data):
         e["word_ids"] = csv_array(found) if tokens and matched / len(tokens) >= 0.6 else "{}"
 
 
+def read_pos():
+    """data/pos.csv: часть речи (id,pos). Существительные на -moq (tomoq, barmoq) — не глаголы."""
+    path = ROOT / "data" / "pos.csv"
+    if not path.exists():
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {int(r["id"]): r["pos"].strip() for r in csv.DictReader(f) if r.get("id")}
+
+
+def read_verb_forms():
+    """data/verb_forms.csv: переводы форм глаголов (ru: инфинитив, хвост, наст., прош., повел.; en: 5 форм, хвост)."""
+    path = ROOT / "data" / "verb_forms.csv"
+    out = {}
+    if not path.exists():
+        return out
+    for line in open(path, encoding="utf-8"):
+        if not line.strip() or line.startswith("#"):
+            continue
+        f = line.rstrip("\n").split("|")
+        if len(f) != 8:
+            sys.exit(f"verb_forms.csv: неверная строка: {line[:80]}")
+        sp = lambda x: [v.strip() for v in x.split(",")]
+        pres, past, imp, en = sp(f[3]), sp(f[4]), sp(f[5]), sp(f[6])
+        if len(pres) != 6 or len(past) != 3 or len(imp) != 2 or len(en) != 5:
+            sys.exit(f"verb_forms.csv: неверное число форм: {line[:80]}")
+        out[int(f[0])] = {"ru": {"inf": f[1].strip(), "tail": f[2].strip(), "pres": pres, "past": past, "imp": imp},
+                          "en": {"f": en, "tail": f[7].strip()}}
+    return out
+
+
+def read_noun_forms():
+    """data/noun_forms.csv: русские падежные формы существительных для подсказок в таблицах склонения."""
+    path = ROOT / "data" / "noun_forms.csv"
+    out = {}
+    if not path.exists():
+        return out
+    for line in open(path, encoding="utf-8"):
+        if not line.strip() or line.startswith("#"):
+            continue
+        f = line.rstrip("\n").split("|")
+        sg, pl = [v.strip() for v in f[3].split(",")], [v.strip() for v in f[4].split(",")]
+        if len(f) != 5 or len(sg) != 5 or len(pl) != 5:
+            sys.exit(f"noun_forms.csv: неверная строка: {line[:80]}")
+        out[int(f[0])] = {"ru": {"g": f[1], "a": f[2], "sg": sg, "pl": pl}}
+    return out
+
+
 def csv_array(items) -> str:
     """Массив Postgres в текстовом формате для COPY CSV: {"a","b"}."""
     esc = ['"' + str(x).replace("\\", "\\\\").replace('"', '\\"') + '"' for x in items]
@@ -336,6 +383,9 @@ def csv_array(items) -> str:
 # --------------------------------------------------------------------------- сборка
 def main():
     data = read_source()
+    pos_map = read_pos()
+    verb_forms = read_verb_forms()
+    noun_forms = read_noun_forms()
     data, uz_changed = apply_word_fixes(data)
     n_levels = apply_levels(data)
     colloq, colloq_skipped = read_colloquial({key_uz(d["uz"]) for d in data})
@@ -393,6 +443,9 @@ def main():
                 d["ru_vars"].append(str(n))          # можно ответить цифрами: «четыре» → 4
         d["ru_whole"] = d["ru_vars"][0] if d["ru_vars"] else ""
         d["class"] = word_class(d["uz_key"])
+        d["pos"] = pos_map.get(d["id"], "v" if d["class"] == "verb" else "")
+        if d["class"] == "verb" and d["pos"] not in ("", "v"):
+            d["class"] = "other"                      # tomoq, barmoq, qaymoq… — существительные
         if not d["uz_key"] or not d["ru_vars"]:
             problems.append(f"Слово {d['id']}: пустой ключ ({d['uz']!r} / {d['ru']!r})")
         if CYRILLIC.search(d["uz"]):
@@ -430,7 +483,7 @@ def main():
         d["accept_uz"] = uz_by_ruwhole[d["ru_whole"]]
 
     # порядок изучения: CEFR → тема → ID
-    order = sorted(data, key=lambda d: (CEFR_RANK[d["cefr"]], topics[d["topic"]]["id"], d.get("pos", d["id"])))
+    order = sorted(data, key=lambda d: (CEFR_RANK[d["cefr"]], topics[d["topic"]]["id"], d.get("order", d["id"])))
     for i, d in enumerate(order, start=1):
         d["sort_key"] = i
 
@@ -489,7 +542,8 @@ def main():
     with open(OUT / "words.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["id", "topic_id", "cefr", "uz", "ru", "uz_key", "accept_ru", "accept_uz",
-                    "word_class", "canonical_id", "audio_ok", "sort_key", "register", "literary", "note", "en"])
+                    "word_class", "canonical_id", "audio_ok", "sort_key", "register", "literary", "note", "en",
+                    "pos", "morph"])
         for d in sorted(data, key=lambda x: x["id"]):
             audio = "f" if (d["id"] in uz_changed or d.get("register") == "colloquial" or d.get("no_audio")) else "t"
             if f"word_{d['id']}.mp3" in voiced:
@@ -498,7 +552,11 @@ def main():
                         csv_array(d["accept_ru"]), csv_array(d["accept_uz"]), d["class"],
                         d["canonical"] if d["canonical"] else "", audio, d["sort_key"],
                         d.get("register", "lit"), display_uz(d["literary"]) if d.get("literary") else "",
-                        d.get("note", ""), d.get("en", "")])
+                        d.get("note", ""), d.get("en", ""), d.get("pos", ""),
+                        json.dumps(verb_forms[d["id"]], ensure_ascii=False, separators=(",", ":"))
+                        if d["class"] == "verb" and d["id"] in verb_forms
+                        else json.dumps(noun_forms[d["id"]], ensure_ascii=False, separators=(",", ":"))
+                        if d.get("pos") == "n" and d["id"] in noun_forms else ""])
     with open(OUT / "examples.csv", "w", newline="", encoding="utf-8") as f:
         link_examples(examples, data)
         cols = ["word_id", "n", "uz", "ru", "blank_start", "blank_len", "blank_answer", "audio_ok", "is_hidden", "word_ids", "n_words"]

@@ -1,6 +1,6 @@
 // Узбекская морфология по правилам литературного языка: спряжение глаголов и склонение имён.
 // Формы строятся из инфинитива (-moq) и основы слова; составные глаголы («yordam bermoq», «olib kelmoq»)
-// спрягаются по последнему слову. Разговорные варианты и редкие исключения здесь не учитываются.
+// спрягаются по последнему слову. У части времён есть разговорные (слитные) варианты — поле coll.
 
 const PERSONS = ['men', 'sen', 'u', 'biz', 'siz', 'ular'];
 export { PERSONS };
@@ -25,7 +25,7 @@ const P_POSS = ['m', 'ng', '', 'k', 'ngiz', ''];                  // притя�
 const P_PROG = ['man', 'san', 'ti', 'miz', 'siz', 'ti'];          // -yap: boryapman … boryapti
 const EDI = ['edim', 'eding', 'edi', 'edik', 'edingiz', 'edi'];   // вспомогательный edi
 const BOLARDI = ['boʻlardim', 'boʻlarding', 'boʻlardi', 'boʻlardik', 'boʻlardingiz', 'boʻlardi'];
-const pl = (forms) => forms.map((f, i) => (i === 5 ? `${f}(lar)` : f));   // 3 л. мн. ч.: «boradi(lar)»
+const pl = (forms) => forms.map((f, i) => (i === 5 && f != null ? f.split(' / ').map((x) => `${x}(lar)`).join(' / ') : f));   // 3 л. мн. ч.: «boradi(lar)»
 
 // Разбор инфинитива: «yordam bermoq» → { prefix: 'yordam ', stem: 'ber', inf }
 export function verbStem(infinitive) {
@@ -42,7 +42,7 @@ export function conjugate(infinitive) {
   if (!v) return null;
   const { prefix, stem } = v;
   const V = endsVowel(stem);
-  const p = (f) => f.split(' / ').map((x) => prefix + x).join(' / ');   // приставка — к каждому варианту
+  const p = (f) => f == null ? null : f.split(' / ').map((x) => prefix + x).join(' / ');   // приставка — к каждому варианту
   const six = (fn) => PERSONS.map((_, i) => p(fn(i)));
 
   const aY = V ? 'y' : 'a';                       // соединительный гласный: bor-a-man / oʻqi-y-man
@@ -94,6 +94,24 @@ export function conjugate(infinitive) {
     { group: 'ability', id: 'can', uz: 'Imkoniyat', ru: 'Возможность («могу»)', en: 'Ability (can)', aff: '-a / -y olmoq',
       pos: pl(six((i) => `${stem}${aY} ol${'a' + P_PRES[i]}`)), neg: pl(six((i) => `${stem}${aY} olmay${P_PRES[i]}`)) },
   ];
+
+  // ---------------------------------------------------------------- разговорные (слитные) варианты
+  // Только устойчивые и общеупотребительные: borgan edim → borgandim, bora olaman → borolaman,
+  // boryapti → borvotti, boribdi → boripti, borsa edi → borsaydi. Где варианта нет — null.
+  const D = ['dim', 'ding', 'di', 'dik', 'dingiz', 'di'];
+  const ayotgan = V ? 'yotgan' : 'ayotgan';
+  const ol = V ? 'yol' : 'ol';
+  const COLL = {
+    pres_cont: { pos: pl(six((i) => stem + 'vot' + P_PROG[i])), neg: null },
+    past_narr: { pos: pl(six((i) => (i === 2 || i === 5 ? stem + (V ? 'pti' : 'ipti') : null))),
+                 neg: pl(six((i) => (i === 2 || i === 5 ? stem + 'mapti' : null)))},
+    past_cont: { pos: pl(six((i) => stem + ayotgan + D[i])), neg: pl(six((i) => stem + 'mayotgan' + D[i])) },
+    past_perf: { pos: pl(six((i) => `${stem}${gan}${D[i]} / ${stem}${V ? 'vd' : 'uvd'}${D[i].slice(1)}`)), neg: pl(six((i) => stem + 'magan' + D[i])) },
+    past_habit: { pos: pl(six((i) => stem + ar + D[i])), neg: pl(six((i) => stem + 'mas' + D[i])) },
+    wish: { pos: pl(six((i) => stem + 'say' + D[i])), neg: pl(six((i) => stem + 'masay' + D[i])) },
+    can: { pos: pl(six((i) => stem + ol + 'a' + P_PRES[i])), neg: pl(six((i) => stem + ol + 'may' + P_PRES[i])) },
+  };
+  for (const tn of tenses) if (COLL[tn.id]) tn.coll = COLL[tn.id];
 
   // неличные формы
   const nonfinite = [

@@ -3,6 +3,7 @@ import { rpc, tg } from '../api.js';
 import { t } from '../i18n.js';
 import { h, mount, spinner } from '../ui.js';
 import { icon } from '../icons.js';
+import { nextButton } from '../recommend.js';
 import { Session } from '../session.js';
 import { renderCard, renderExercise } from '../exercise-view.js';
 
@@ -67,6 +68,7 @@ export async function renderLearn(app, { mode = 'normal', topicId = null }) {
     app.cleanup && app.cleanup();
     app.cleanup = null;
     const pct = r.answers ? Math.round((r.correct / r.answers) * 100) : 0;
+    const nb = await nextButton(app);
     mount(h('div', { class: 'screen' },
       h('div', { class: 'card result-hero' },
         h('div', { class: 'result-icon ok' }, icon('trophy')),
@@ -76,8 +78,9 @@ export async function renderLearn(app, { mode = 'normal', topicId = null }) {
         h('div', { class: 'stats two' },
           h('div', { class: 'stat' }, h('b', {}, String(r.newWords)), h('span', {}, t('planNew'))),
           h('div', { class: 'stat' }, h('b', {}, String(r.reviewed)), h('span', {}, t('planReview'))))),
+      nb,
       app.me.tier !== 'free'
-        ? h('button', { class: 'btn btn-big', onClick: () => app.replace('learn', { mode: 'normal' }) }, t('anotherSession'))
+        ? h('button', { class: `btn ${nb ? 'btn-secondary' : 'btn-big'}`, onClick: () => app.replace('learn', { mode: 'normal' }) }, t('anotherSession'))
         : null,
       h('button', { class: 'btn btn-secondary', onClick: () => app.home() }, t('toHome'))));
   }

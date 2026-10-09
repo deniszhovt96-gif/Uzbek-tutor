@@ -32,6 +32,8 @@ export async function renderSettings(app, params = {}) {
   const audioOn = settings.audio_exercises !== false;
   const remindOn = settings.remind !== false;
   const remindHour = Number(settings.remind_hour || 19);
+  const weeklyOn = settings.weekly !== false;
+  const weekGoal = Number(settings.week_goal || 5);
 
   const save = async (lang, patch) => {
     app.me = await rpc('update_settings', { p_ui_lang: lang, p_settings: patch });
@@ -83,7 +85,14 @@ export async function renderSettings(app, params = {}) {
         h('span', { class: `switch ${remindOn ? 'on' : ''}` }, h('i'))),
       remindOn ? h('label', { class: 'remind-hour' }, h('span', {}, t('remindAt')),
         h('select', { onChange: (e) => save(null, { remind_hour: Number(e.target.value) }) },
-          Array.from({ length: 18 }, (_, k) => k + 6).map((hh) => h('option', { value: String(hh), selected: hh === remindHour }, `${String(hh).padStart(2, '0')}:00`)))) : null),
+          Array.from({ length: 18 }, (_, k) => k + 6).map((hh) => h('option', { value: String(hh), selected: hh === remindHour }, `${String(hh).padStart(2, '0')}:00`)))) : null,
+      h('button', { type: 'button', class: `remind-toggle ${weeklyOn ? 'on' : ''}`, onClick: () => save(null, { weekly: !weeklyOn }) },
+        h('div', {}, h('b', {}, t('weeklyMsg')), h('div', { class: 'small muted' }, t('weeklyMsgHint'))),
+        h('span', { class: `switch ${weeklyOn ? 'on' : ''}` }, h('i')))),
+
+    h('h2', {}, t('weekGoalTitle')),
+    seg([3, 4, 5, 6, 7].map((n) => [n, String(n)]), weekGoal, (v) => save(null, { week_goal: v })),
+    h('p', { class: 'small muted' }, t('weekGoalHint')),
 
     h('h2', {}, t('audioEx')),
     seg([['on', t('on')], ['off', t('off')]], audioOn ? 'on' : 'off', (v) => save(null, { audio_exercises: v === 'on' })),
@@ -110,6 +119,14 @@ export async function renderSettings(app, params = {}) {
       h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('wordflags') },
         h('span', { class: 'tile-icon gold' }, icon('learn')),
         h('div', {}, h('b', {}, t('flagsTitle')), h('div', { class: 'small muted' }, t('flagsShort'))),
+        icon('chevron', 'ic chev')),
+      h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('formreports') },
+        h('span', { class: 'tile-icon gold' }, icon('flag')),
+        h('div', {}, h('b', {}, t('frTitle')), h('div', { class: 'small muted' }, t('frShort'))),
+        icon('chevron', 'ic chev')),
+      h('button', { class: 'card sub-card', type: 'button', onClick: () => app.go('analytics') },
+        h('span', { class: 'tile-icon gold' }, icon('chart')),
+        h('div', {}, h('b', {}, t('anTitle')), h('div', { class: 'small muted' }, t('anShort'))),
         icon('chevron', 'ic chev'))] : null,
 
     h('h2', {}, t('subscription')),

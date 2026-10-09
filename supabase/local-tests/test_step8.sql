@@ -12,8 +12,8 @@ begin
   return 'ok  ' || label;
 end $$;
 
-create temp table pl as select id, price_stars from public.plans where tier = 'basic' and months = 1;
-create temp table pa as select id, price_stars from public.plans where tier = 'advanced' and months = 3;
+create temp table pl as select id, price_stars from public.plans where tier = 'basic' and months = 1 and seats = 1;
+create temp table pa as select id, price_stars from public.plans where tier = 'advanced' and months = 3 and seats = 1;
 grant select on pl, pa to service_role, authenticated;
 set role service_role;
 
@@ -69,4 +69,4 @@ select pg_temp.check((public.stars_grant_payment('p:' || (select id from pl) || 
 select pg_temp.check((public.stars_refund_payment('charge-4')->>'ok')::boolean, 'возврат будущего продления проходит');
 select pg_temp.check((select subscription_id is null and status = 'refunded' from public.payments where charge_id = 'charge-4'), 'будущая подписка удалена, платёж возвращён');
 reset role;
-select pg_temp.check(jsonb_array_length(public.get_plans()) = 8, 'get_plans: 8 тарифов с id');
+select pg_temp.check(jsonb_array_length(public.get_plans()) = 16, 'get_plans: 8 тарифов + 8 групповых');

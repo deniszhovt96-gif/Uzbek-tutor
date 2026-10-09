@@ -8,37 +8,42 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export async function renderSubscription(app, params = {}) {
   mount(spinner(t('loading')));
-  const [me, plans, payments, queue] = await Promise.all([app.refreshMe(), rpc('get_plans'), rpc('get_my_payments'),
-    rpc('get_my_subscriptions').catch(() => [])]);
+  const [me, plans, payments, queue, groupCodes] = await Promise.all([app.refreshMe(), rpc('get_plans'), rpc('get_my_payments'),
+    rpc('get_my_subscriptions').catch(() => []), rpc('get_group_codes').catch(() => [])]);
   // после текущей подписки: другой уровень продолжится на оставшийся срок
   const next = (queue || []).filter((q) => q.tier !== me.tier);
   let tier = params.tier || (me.tier === 'advanced' ? 'advanced' : me.tier === 'basic' ? 'basic' : 'basic');
   let months = params.months || 3;
+  let seats = params.seats || 1;            // 1 — для себя, 3 — группа из трёх человек (−15%)
 
   const fmt = (n) => Number(n).toLocaleString('ru-RU');
   const status = h('p', { class: 'small' });
 
   let drawn = false;
   const draw = () => {
-    const list = plans.filter((p) => p.tier === tier).sort((a, b) => a.months - b.months);
-    const monthly = list.find((p) => p.months === 1);
+    const list = plans.filter((p) => p.tier === tier && (p.seats || 1) === seats).sort((a, b) => a.months - b.months);
+    const monthly = plans.find((p) => p.tier === tier && (p.seats || 1) === 1 && p.months === 1);
     let chosen = list.find((p) => p.months === months) || list[0];
     if (chosen) months = chosen.months;
 
     const tierSeg = h('div', { class: 'segmented' }, ['basic', 'advanced'].map((tr) =>
       h('button', { type: 'button', class: tr === tier ? 'active' : '', onClick: () => { tier = tr; haptic(); draw(); } }, tierName(tr))));
 
+    const seatSeg = h('div', { class: 'segmented' }, [[1, t('forMe')], [3, t('forGroup')]].map(([v, l]) =>
+      h('button', { type: 'button', class: v === seats ? 'active' : '', onClick: () => { seats = v; haptic(); draw(); } }, l)));
+
     const features = h('ul', { class: 'feature-list' }, (t(tier === 'basic' ? 'featBasic' : 'featAdvanced') || []).map((f) =>
       h('li', {}, icon('check'), h('span', {}, f))));
 
     const options = h('div', { class: 'plan-options' }, list.map((p) => {
-      const perMonth = Math.round(p.price_stars / p.months);
-      const save = monthly && p.months > 1 ? Math.round((1 - p.price_stars / (monthly.price_stars * p.months)) * 100) : 0;
+      const perMonth = Math.round(p.price_stars / p.months / (p.seats || 1));
+      const save = monthly && (p.months > 1 || (p.seats || 1) > 1)
+        ? Math.round((1 - p.price_stars / (monthly.price_stars * p.months * (p.seats || 1))) * 100) : 0;
       return h('button', { type: 'button', class: `plan-opt ${p.months === months ? 'active' : ''}`,
         onClick: () => { months = p.months; haptic(); draw(); } },
         h('div', { class: 'plan-m' }, t('months', p.months)),
         h('div', { class: 'plan-price' }, `${fmt(p.price_stars)} ⭐`),
-        h('div', { class: 'tiny muted' }, t('perMonth', fmt(perMonth))),
+        h('div', { class: 'tiny muted' }, seats > 1 ? t('perPersonMonth', fmt(perMonth)) : t('perMonth', fmt(perMonth))),
         save > 0 ? h('span', { class: 'plan-save' }, `−${save}%`) : null);
     }));
 
@@ -58,12 +63,20 @@ export async function renderSubscription(app, params = {}) {
         next.map((q) => h('p', { class: 'small queue-note' }, icon('clock'), t('nextPlan', tierName(q.tier), formatDate(q.ends_at))))),
       h('h2', {}, t(me.tier === 'free' ? 'choosePlan' : 'extendPlan')),
       tierSeg,
+      seatSeg,
+      seats > 1 ? h('p', { class: 'small muted' }, t('groupHint')) : null,
       h('div', { class: 'card' }, features),
       options,
       payBtn,
       h('p', { class: 'tiny muted pay-hint' }, t('starsHint')),
       status,
       other,
+      (groupCodes || []).length ? [h('h2', {}, t('groupCodesTitle')), h('div', { class: 'card' },
+        h('p', { class: 'small muted' }, t('groupCodesHint')),
+        groupCodes.map((c) => h('div', { class: 'pay-row' },
+          h('div', {}, h('b', { class: 'code-text' }, c.code), h('div', { class: 'tiny muted' }, `${tierName(c.tier)} · ${t('months', c.months)}`)),
+          c.used ? h('span', { class: 'chip' }, t('codeUsed'))
+            : h('button', { class: 'btn btn-small btn-secondary', type: 'button', onClick: () => copyCode(c.code) }, t('copy')))))] : null,
       h('h2', {}, t('codeLabel')),
       codeBlock(app),
       payments.length ? h('h2', {}, t('myPayments')) : null,
@@ -101,7 +114,7 @@ export async function renderSubscription(app, params = {}) {
           const fresh = await rpc('get_me').catch(() => null);
           if (fresh && (fresh.tier !== me.tier || fresh.tier_ends_at !== before)) break;
         }
-        renderSubscription(app, { tier, months });
+        renderSubscription(app, { tier, months, seats });
       } else if (result === 'failed') {
         haptic('error');
         status.textContent = `${t('payError')} ${t('payFailedHint')}`;
@@ -144,4 +157,8 @@ function codeBlock(app) {
     input,
     h('button', { class: 'btn btn-secondary', type: 'button', onClick: redeem }, t('activate')),
     status);
+}
+
+function copyCode(code) {
+  try { navigator.clipboard.writeText(code); haptic('success'); } catch { /* нет доступа к буферу */ }
 }

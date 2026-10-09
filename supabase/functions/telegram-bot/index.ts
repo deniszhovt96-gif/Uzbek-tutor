@@ -110,6 +110,18 @@ const TEXT = {
   },
 } as const;
 
+// Групповая подписка (3 человека, −15%): пояснение в счёте и коды для друзей после оплаты
+const GROUP_NOTE: Record<Lang, string> = {
+  ru: "Групповая: вам подписка и 2 кода для друзей.",
+  uz: "Guruh: sizga obuna va doʻstlar uchun 2 ta kod.",
+  en: "Group: your plan plus 2 codes for friends.",
+};
+const GROUP_CODES: Record<Lang, string> = {
+  ru: "Коды для друзей (активировать в приложении: Подписка → Код подписки; также видны там же):",
+  uz: "Doʻstlar uchun kodlar (ilovada faollashtiriladi: Obuna → Obuna kodi; ular u yerda ham koʻrinadi):",
+  en: "Codes for friends (activate in the app: Subscription → Subscription code; also listed there):",
+};
+
 function langOf(code?: string): Lang {
   if (!code) return "ru";
   if (code.startsWith("uz")) return "uz";
@@ -177,12 +189,14 @@ async function createInvoice(req: Request, token: string): Promise<Response> {
   if (plan.error) return json({ error: plan.error }, 400);
   const lang: Lang = plan.ui_lang === "uz" || plan.ui_lang === "en" ? plan.ui_lang : "ru";
   const t = TEXT[lang];
+  const group = Number(plan.seats) > 1;
+  const title = (t.invoiceTitle(plan.tier, plan.months) + (group ? " ×3" : "")).slice(0, 32);
   const res = await tgApi(token, "createInvoiceLink", {
-    title: t.invoiceTitle(plan.tier, plan.months).slice(0, 32),
-    description: t.invoiceDesc(plan.tier, plan.months).slice(0, 255),
+    title,
+    description: ((group ? GROUP_NOTE[lang] + " " : "") + t.invoiceDesc(plan.tier, plan.months)).slice(0, 255),
     payload: `p:${plan.plan_id}:${auth.user.id}`,
     currency: "XTR",
-    prices: [{ label: t.invoiceTitle(plan.tier, plan.months).slice(0, 32), amount: plan.stars }],
+    prices: [{ label: title, amount: plan.stars }],
   });
   if (!res.ok) return json({ error: "telegram_error" }, 502);
   return json({ link: res.result });
@@ -220,7 +234,9 @@ async function onPaid(token: string, msg: any): Promise<void> {
     return;
   }
   if (data.duplicate) return;
-  await tgCall(token, "sendMessage", { chat_id: msg.chat.id, text: t.paid(data.tier, formatDate(data.ends_at, lang)) });
+  const codes: string[] = Array.isArray(data.codes) ? data.codes : [];
+  await tgCall(token, "sendMessage", { chat_id: msg.chat.id, text: t.paid(data.tier, formatDate(data.ends_at, lang))
+    + (codes.length ? `\n\n${GROUP_CODES[lang]}\n${codes.join("\n")}` : "") });
   await notifyAdmins(db, token, await adminCard(db, sp.telegram_payment_charge_id, "💫 <b>Новая оплата</b>", true), true);
 }
 
@@ -257,7 +273,19 @@ async function notifyFlags(req: Request, token: string): Promise<Response> {
   const { data, error } = await db.rpc("take_flag_notifications", {});
   if (error) throw error;
   const items = (data ?? []) as any[];
-  if (!items.length) return json({ ok: true, sent: 0 });
+  // пометки форм спряжения/склонения («Нужно исправить»)
+  const { data: fdata } = await db.rpc("take_form_notifications", {});
+  const forms = (fdata ?? []) as any[];
+  if (forms.length) {
+    const flines = forms.slice(0, 20).map((f) => {
+      const who = `${escapeHtml(f.name ?? "")}${f.username ? ` @${escapeHtml(f.username)}` : ""}`;
+      const where = `${f.kind === "conj" ? "спряжение" : "склонение"}${f.item ? `, ${escapeHtml(f.item)}` : ""}${f.person != null ? `, строка ${f.person + 1}` : ""}`;
+      return `• <b>${escapeHtml(f.uz)}</b> (${where}): ${escapeHtml(f.comment ?? "")}${f.form ? `\n  <i>${escapeHtml(String(f.form).slice(0, 160))}</i>` : ""} — ${who}`;
+    });
+    if (forms.length > 20) flines.push(`…и ещё ${forms.length - 20}`);
+    await notifyAdmins(db, token, `⚑ <b>Нужно исправить форму</b>\n${flines.join("\n")}\n\nПриложение → Настройки → «Пометки форм».`, true);
+  }
+  if (!items.length) return json({ ok: true, sent: forms.length });
   const kind = (k: string) => (k === "rare" ? "малоиспользуемое" : "не используется");
   const lines = items.slice(0, 30).map((f) => {
     const who = `${escapeHtml(f.name ?? "")}${f.username ? ` @${escapeHtml(f.username)}` : ""}`;
@@ -325,7 +353,9 @@ async function runReminders(req: Request, token: string, appUrl: string): Promis
   for (const r of (data.items ?? []) as any[]) {
     const L = REMIND[(r.lang === "uz" || r.lang === "en") ? r.lang : "ru" as "ru" | "uz" | "en"];
     let text: string;
-    if (r.kind === "sub_end") {
+    if (typeof r.text === "string" && r.text) {
+      text = r.text;                                  // готовый текст из базы (недельное сообщение)
+    } else if (r.kind === "sub_end") {
       const date = new Date(r.ends_at).toLocaleDateString(r.lang === "en" ? "en-GB" : "ru-RU");
       text = L.subEnd(L.tiers[r.tier] ?? r.tier, date);
     } else {

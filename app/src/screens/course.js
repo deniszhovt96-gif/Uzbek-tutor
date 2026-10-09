@@ -6,6 +6,7 @@ import { h, mount, spinner, haptic, audioButton } from '../ui.js';
 import { icon } from '../icons.js';
 import { play, exampleAudio } from '../audio.js';
 import { topicImage } from '../images.js';
+import { renderDialog } from './dialog.js';
 
 // Поле на нужном языке с запасным русским: pick(obj, 'title') → title_uz | title_ru
 export function pick(obj, base, lang = getLang()) {
@@ -13,7 +14,7 @@ export function pick(obj, base, lang = getLang()) {
   return obj[`${base}_${lang}`] || obj[`${base}_ru`] || obj[base] || '';
 }
 
-const COURSE_ICON = { grammar: 'grammar', history: 'history', civics: 'civics', culture: 'culture' };
+const COURSE_ICON = { grammar: 'grammar', history: 'history', civics: 'civics', culture: 'culture', dialogs: 'dialog' };
 const EXTRA_TAB = { grammar: ['vocab', 'courseVocab'], history: ['timeline', 'courseTimeline'], civics: ['contacts', 'courseContacts'] };
 
 // ---------------------------------------------------------------- курс
@@ -32,9 +33,13 @@ export async function renderCourse(app, { course, tab = 'units' }) {
 
   let body;
   if (tab === 'units') {
+    let lastCefr = null;
     body = h('div', { class: 'unit-list' }, units.map((u) => {
+      const head = u.cefr !== lastCefr ? h('div', { class: 'lv-head' }, h('b', {}, u.cefr || ''),
+        h('span', { class: 'muted small' }, t('nTopics', units.filter((x) => x.cefr === u.cefr).length))) : null;
+      lastCefr = u.cefr;
       const meta = course === 'history' ? (pick(u, 'period') || u.period) : pick(sections[u.section_id], 'title');
-      return h('button', { class: `unit-card ${u.locked ? 'locked' : ''} ${u.read ? 'read' : ''}`, type: 'button',
+      return [head, h('button', { class: `unit-card ${u.locked ? 'locked' : ''} ${u.read ? 'read' : ''}`, type: 'button',
         onClick: () => { haptic(); app.go('unit', { id: u.id }); } },
         h('span', { class: 'unit-n' }, u.read ? icon('check') : u.locked ? icon('lock') : String(u.n)),
         h('span', { class: 'unit-body' },
@@ -43,7 +48,7 @@ export async function renderCourse(app, { course, tab = 'units' }) {
           h('span', { class: 'unit-express' }, pick(u, 'express')),
           u.tasks_done ? h('span', { class: 'tiny muted' }, t('tasksDone', u.tasks_done, u.tasks_total)) : null,
           u.tested ? h('span', { class: 'chip gold', style: { alignSelf: 'flex-start' } }, icon('trophy'), t('unitTestBadge', u.best_score)) : null),
-        icon('chevron', 'ic chev'));
+        icon('chevron', 'ic chev'))];
     }));
   } else if (tab === 'timeline') {
     body = h('div', { class: 'timeline' }, (data.timeline || []).map((e) =>
@@ -101,6 +106,7 @@ export async function renderUnit(app, { id, lang }) {
     return;
   }
   if (u.error) throw new Error(u.error);
+  if (u.course_id === 'dialogs') return renderDialog(app, u, testInfo);
   const L = lang || getLang();
   const audioEnabled = !(app.me.settings && app.me.settings.audio_exercises === false);
   let done = new Set(u.tasks_done || []);
@@ -182,7 +188,7 @@ export async function renderUnit(app, { id, lang }) {
   const meta = u.course_id === 'history' ? (pick(u, 'period', L) || u.period) : pick(u.section, 'title', L);
   mount(h('div', { class: 'screen' },
     h('div', { class: 'row', style: { justifyContent: 'space-between' } },
-      meta ? h('span', { class: 'chip accent' }, meta) : h('span', {}), langSeg),
+      h('span', { class: 'row', style: { gap: '6px' } }, u.cefr ? h('span', { class: 'chip' }, u.cefr) : null, meta ? h('span', { class: 'chip accent' }, meta) : null), langSeg),
     h('h1', { style: { marginTop: '12px' } }, pick(u, 'title', L)),
     figure,
     u.course_id === 'civics' ? h('div', { class: 'card note' }, icon('civics'), h('span', { class: 'small' }, t('civicsDisclaimer'))) : null,
@@ -192,9 +198,20 @@ export async function renderUnit(app, { id, lang }) {
     u.has_examples && (u.examples || []).length ? [h('h2', {}, t('unitExamples')), exBox, (u.examples || []).length >= 8 ? moreBtn : null] : null,
     taskEls.length ? [h('h2', {}, t('unitTasks')), h('p', { class: 'small muted' }, t('tasksHint')), h('div', { class: 'task-list' }, taskEls)] : null,
     u.source ? h('p', { class: 'tiny muted', style: { marginTop: '18px' } }, `${t('unitSource')}: ${u.source}`) : null,
+    unitWords(u),
     readBtn,
     testBlock,
     h('div', { class: 'unit-nav' },
       u.prev_id ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => app.replace('unit', { id: u.prev_id, lang }) }, t('prevUnit')) : h('span', {}),
       u.next_id ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => app.replace('unit', { id: u.next_id, lang }) }, t('nextUnit')) : h('span', {}))));
+}
+
+// Слова темы из словаря: после прочтения темы встают в ближайшую очередь заучивания
+export function unitWords(u) {
+  const words = u.words || [];
+  if (!words.length) return null;
+  return h('div', { class: 'card unit-words' },
+    h('div', { class: 'label' }, t('unitWordsTitle')),
+    h('div', { class: 'chips-wrap' }, words.slice(0, 30).map((w) => h('span', { class: 'chip' }, w.uz, h('span', { class: 'muted' }, ` — ${getLang() === 'en' && w.en ? w.en : w.ru}`)))),
+    h('p', { class: 'tiny muted' }, t('unitWordsHint')));
 }

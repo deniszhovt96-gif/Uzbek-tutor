@@ -6,7 +6,7 @@ name: Import Vocabulary (импорт словаря)
 on:
   push:
     branches: [main]
-    paths: ['data/source/vocabulary.xlsx', 'data/source/colloquial.json', 'data/source/supplement.json', 'data/fixes.csv', 'data/word_fixes.csv', 'data/levels.csv', 'data/topic_names.csv', 'data/audio_voiced.txt', 'scripts/build_vocab.py', 'scripts/load_vocab.sql', '.github/workflows/import-vocab.yml']
+    paths: ['data/source/vocabulary.xlsx', 'data/source/colloquial.json', 'data/source/supplement.json', 'data/fixes.csv', 'data/word_fixes.csv', 'data/levels.csv', 'data/topic_names.csv', 'data/audio_voiced.txt', 'data/pos.csv', 'data/verb_forms.csv', 'data/noun_forms.csv', 'scripts/build_vocab.py', 'scripts/load_vocab.sql', '.github/workflows/import-vocab.yml']
   workflow_dispatch:
 
 # одна очередь с Deploy Supabase: миграции и импорт не выполняются одновременно

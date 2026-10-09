@@ -1,0 +1,2807 @@
+[
+  {
+    "n": 1,
+    "cefr": "A1",
+    "section": "Знакомство и общение",
+    "title_ru": "Знакомство",
+    "title_uz": "Tanishuv",
+    "title_en": "Getting Acquainted",
+    "intro_ru": "Анна учит узбекский язык. На курсах в Ташкенте она знакомится с Азизом.",
+    "intro_uz": "Anna oʻzbek tilini oʻrganadi. U Toshkentdagi kursda Aziz bilan tanishadi.",
+    "intro_en": "Anna is learning Uzbek. At a language course in Tashkent she meets Aziz.",
+    "speakers": {
+      "A": "Aziz",
+      "B": "Anna"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Assalomu alaykum!",
+        "ru": "Здравствуйте!",
+        "en": "Hello!"
+      },
+      {
+        "who": "B",
+        "uz": "Vaalaykum assalom!",
+        "ru": "Здравствуйте!",
+        "en": "Hello!"
+      },
+      {
+        "who": "A",
+        "uz": "Ismim Aziz. Ismingiz nima?",
+        "ru": "Меня зовут Азиз. А вас как зовут?",
+        "en": "My name is Aziz. What's your name?"
+      },
+      {
+        "who": "B",
+        "uz": "Mening ismim Anna. Tanishganimdan xursandman.",
+        "ru": "Меня зовут Анна. Очень приятно.",
+        "en": "My name is Anna. Nice to meet you."
+      },
+      {
+        "who": "A",
+        "uz": "Men ham xursandman. Siz qayerdansiz?",
+        "ru": "Мне тоже. Откуда вы?",
+        "en": "Nice to meet you too. Where are you from?"
+      },
+      {
+        "who": "B",
+        "uz": "Men Rossiyadanman, Moskvadan. Siz-chi?",
+        "ru": "Я из России, из Москвы. А вы?",
+        "en": "I'm from Russia, from Moscow. And you?"
+      },
+      {
+        "who": "A",
+        "uz": "Men Toshkentdanman. Siz oʻzbek tilini bilasizmi?",
+        "ru": "Я из Ташкента. Вы знаете узбекский?",
+        "en": "I'm from Tashkent. Do you speak Uzbek?"
+      },
+      {
+        "who": "B",
+        "uz": "Ozgina bilaman. Har kuni oʻrganaman.",
+        "ru": "Немного. Занимаюсь каждый день.",
+        "en": "A little. I study every day."
+      }
+    ],
+    "vocab": [
+      "assalomu alaykum",
+      "ism",
+      "tanishmoq",
+      "xursand",
+      "qayerdan",
+      "bilmoq",
+      "ozgina",
+      "oʻrganmoq"
+    ],
+    "note_ru": "На «Assalomu alaykum» отвечают «Vaalaykum assalom». Аффикс -man означает «я»: Toshkentdanman — «я из Ташкента».",
+    "note_uz": "«Assalomu alaykum» salomiga «Vaalaykum assalom» deb javob beriladi. -man qoʻshimchasi «men» olmoshiga mos keladi: (Men) Toshkentdanman.",
+    "note_en": "The reply to “Assalomu alaykum” is “Vaalaykum assalom”. The suffix -man means “I am”: Toshkentdanman — “I am from Tashkent”."
+  },
+  {
+    "n": 2,
+    "cefr": "A1",
+    "section": "Знакомство и общение",
+    "title_ru": "Моя семья",
+    "title_uz": "Mening oilam",
+    "title_en": "My Family",
+    "intro_ru": "Дильноза и Малика смотрят семейную фотографию. Малика рассказывает о своей семье.",
+    "intro_uz": "Dilnoza va Malika oilaviy suratni koʻrishyapti. Malika oilasi haqida gapirib beradi.",
+    "intro_en": "Dilnoza and Malika are looking at a family photo. Malika talks about her family.",
+    "speakers": {
+      "A": "Dilnoza",
+      "B": "Malika"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Bu sizning oilangizmi?",
+        "ru": "Это ваша семья?",
+        "en": "Is this your family?"
+      },
+      {
+        "who": "B",
+        "uz": "Ha, bu mening oilam. Bu — dadam, bu — oyim.",
+        "ru": "Да, это моя семья. Это мой папа, а это мама.",
+        "en": "Yes, this is my family. This is my dad, and this is my mum."
+      },
+      {
+        "who": "A",
+        "uz": "Aka-uka, opa-singillaringiz bormi?",
+        "ru": "У вас есть братья или сёстры?",
+        "en": "Do you have any brothers or sisters?"
+      },
+      {
+        "who": "B",
+        "uz": "Bitta akam va bitta singlim bor.",
+        "ru": "У меня есть старший брат и младшая сестра.",
+        "en": "I have one older brother and one younger sister."
+      },
+      {
+        "who": "A",
+        "uz": "Akangiz nima ish qiladi?",
+        "ru": "Кем работает ваш брат?",
+        "en": "What does your brother do?"
+      },
+      {
+        "who": "B",
+        "uz": "U shifokor. Toshkentda ishlaydi.",
+        "ru": "Он врач. Работает в Ташкенте.",
+        "en": "He's a doctor. He works in Tashkent."
+      },
+      {
+        "who": "A",
+        "uz": "Sizning bolalaringiz bormi?",
+        "ru": "А у вас есть дети?",
+        "en": "Do you have children?"
+      },
+      {
+        "who": "B",
+        "uz": "Yoʻq, hali yoʻq. Men talabaman.",
+        "ru": "Нет, пока нет. Я студентка.",
+        "en": "No, not yet. I'm a student."
+      }
+    ],
+    "vocab": [
+      "oila",
+      "dada",
+      "oyi",
+      "aka",
+      "singil",
+      "bor",
+      "yoʻq",
+      "ishlamoq"
+    ],
+    "note_ru": "В узбекском различают старших и младших: aka — старший брат, uka — младший; opa — старшая сестра, singil — младшая.",
+    "note_uz": "Oʻzbek tilida aka-uka va opa-singillar yoshiga qarab farqlanadi: aka — katta, uka — kichik; opa — katta, singil — kichik.",
+    "note_en": "Uzbek distinguishes older and younger siblings: aka is an older brother, uka a younger one; opa is an older sister, singil a younger one."
+  },
+  {
+    "n": 3,
+    "cefr": "A1",
+    "section": "Покупки и еда",
+    "title_ru": "В чайхане",
+    "title_uz": "Choyxonada",
+    "title_en": "At the Teahouse",
+    "intro_ru": "Рустам пришёл в чайхану пообедать и делает заказ у официанта.",
+    "intro_uz": "Rustam tushlik qilgani choyxonaga keldi va ofitsiantga buyurtma beryapti.",
+    "intro_en": "Rustam has come to a teahouse for lunch and is ordering from the waiter.",
+    "speakers": {
+      "A": "Ofitsiant",
+      "B": "Rustam"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Xush kelibsiz! Nima olasiz?",
+        "ru": "Добро пожаловать! Что будете заказывать?",
+        "en": "Welcome! What would you like?"
+      },
+      {
+        "who": "B",
+        "uz": "Bir choynak koʻk choy, iltimos.",
+        "ru": "Чайник зелёного чая, пожалуйста.",
+        "en": "A pot of green tea, please."
+      },
+      {
+        "who": "A",
+        "uz": "Yana nima? Bizda palov, shashlik va lagʻmon bor.",
+        "ru": "Что-нибудь ещё? У нас есть плов, шашлык и лагман.",
+        "en": "Anything else? We have plov, shashlik and lagman."
+      },
+      {
+        "who": "B",
+        "uz": "Bir porsiya palov va bitta non bering.",
+        "ru": "Дайте одну порцию плова и одну лепёшку.",
+        "en": "One portion of plov and one bread, please."
+      },
+      {
+        "who": "A",
+        "uz": "Salat ham olasizmi? Achchiq-chuchuk bor.",
+        "ru": "Салат тоже возьмёте? Есть «аччик-чучук».",
+        "en": "Would you like a salad too? We have achchiq-chuchuk."
+      },
+      {
+        "who": "B",
+        "uz": "Ha, olaman.",
+        "ru": "Да, возьму.",
+        "en": "Yes, I'll have it."
+      },
+      {
+        "who": "A",
+        "uz": "Xoʻp. Choy hozir keladi.",
+        "ru": "Хорошо. Чай сейчас принесу.",
+        "en": "All right. Your tea is coming right up."
+      },
+      {
+        "who": "B",
+        "uz": "Rahmat!",
+        "ru": "Спасибо!",
+        "en": "Thank you!"
+      }
+    ],
+    "vocab": [
+      "choynak",
+      "koʻk choy",
+      "non",
+      "palov",
+      "olmoq",
+      "bermoq",
+      "iltimos"
+    ],
+    "note_ru": "Чай в чайхане заказывают чайниками. Achchiq-chuchuk — салат из помидоров и лука, его обычно едят с пловом.",
+    "note_uz": "Choyxonada choy choynaklab buyurtma qilinadi. Achchiq-chuchuk — pomidor va piyozdan tayyorlanadigan salat, odatda palov bilan yeyiladi.",
+    "note_en": "In a teahouse tea is ordered by the pot. Achchiq-chuchuk is a tomato and onion salad usually eaten with plov."
+  },
+  {
+    "n": 4,
+    "cefr": "A1",
+    "section": "Покупки и еда",
+    "title_ru": "Торг на базаре",
+    "title_uz": "Bozorda savdolashish",
+    "title_en": "Bargaining at the Bazaar",
+    "intro_ru": "Лола покупает овощи на базаре и торгуется с продавцом.",
+    "intro_uz": "Lola bozordan sabzavot oladi va sotuvchi bilan savdolashadi.",
+    "intro_en": "Lola is buying vegetables at the bazaar and bargaining with the seller.",
+    "speakers": {
+      "A": "Lola",
+      "B": "Sotuvchi"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Assalomu alaykum! Pomidor necha pul?",
+        "ru": "Здравствуйте! Почём помидоры?",
+        "en": "Hello! How much are the tomatoes?"
+      },
+      {
+        "who": "B",
+        "uz": "Kilosi oʻn besh ming soʻm.",
+        "ru": "Пятнадцать тысяч сумов за кило.",
+        "en": "Fifteen thousand soums a kilo."
+      },
+      {
+        "who": "A",
+        "uz": "Qimmat-ku! Oʻn mingdan boʻladimi?",
+        "ru": "Дорого! А по десять тысяч можно?",
+        "en": "That's expensive! Can you do ten thousand?"
+      },
+      {
+        "who": "B",
+        "uz": "Yoʻq, opa, boʻlmaydi. Oʻn uch mingdan.",
+        "ru": "Нет, опа, не получится. По тринадцать.",
+        "en": "No, ma'am, I can't. Thirteen thousand."
+      },
+      {
+        "who": "A",
+        "uz": "Oʻn ikki mingdan bering, ikki kilo olaman.",
+        "ru": "Давайте по двенадцать, я возьму два кило.",
+        "en": "Make it twelve and I'll take two kilos."
+      },
+      {
+        "who": "B",
+        "uz": "Mayli, opa. Yana nima kerak?",
+        "ru": "Ладно. Что-нибудь ещё?",
+        "en": "All right. Anything else?"
+      },
+      {
+        "who": "A",
+        "uz": "Bir kilo bodring ham bering.",
+        "ru": "Ещё килограмм огурцов, пожалуйста.",
+        "en": "A kilo of cucumbers too, please."
+      },
+      {
+        "who": "B",
+        "uz": "Mana. Bodring olti ming. Hammasi oʻttiz ming soʻm.",
+        "ru": "Вот. Огурцы — шесть тысяч. Всего тридцать тысяч сумов.",
+        "en": "Here you go. The cucumbers are six thousand. Thirty thousand soums altogether."
+      }
+    ],
+    "vocab": [
+      "necha pul",
+      "kilo",
+      "qimmat",
+      "pomidor",
+      "bodring",
+      "kerak",
+      "olmoq",
+      "bermoq"
+    ],
+    "note_ru": "На базаре торговаться — нормально. Аффикс -dan передаёт цену за единицу: oʻn mingdan — «по десять тысяч».",
+    "note_uz": "Bozorda savdolashish odatiy hol. -dan qoʻshimchasi bir dona yoki bir kilo narxini bildiradi: oʻn mingdan — har kilosi oʻn ming.",
+    "note_en": "Bargaining at the bazaar is normal. The suffix -dan gives a price per unit: oʻn mingdan means “at ten thousand each/per kilo”."
+  },
+  {
+    "n": 5,
+    "cefr": "A1",
+    "section": "Город и транспорт",
+    "title_ru": "В такси",
+    "title_uz": "Taksida",
+    "title_en": "Taking a Taxi",
+    "intro_ru": "Тимур останавливает такси, чтобы доехать до базара Чорсу.",
+    "intro_uz": "Timur Chorsu bozoriga borish uchun taksi toʻxtatadi.",
+    "intro_en": "Timur stops a taxi to get to Chorsu Bazaar.",
+    "speakers": {
+      "A": "Haydovchi",
+      "B": "Timur"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum! Chorsu bozoriga borasizmi?",
+        "ru": "Здравствуйте! До базара Чорсу довезёте?",
+        "en": "Hello! Will you go to Chorsu Bazaar?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, boraman. Oʻtiring.",
+        "ru": "Да, довезу. Садитесь.",
+        "en": "Yes, I will. Get in."
+      },
+      {
+        "who": "B",
+        "uz": "Qancha boʻladi?",
+        "ru": "Сколько это будет стоить?",
+        "en": "How much will it be?"
+      },
+      {
+        "who": "A",
+        "uz": "Yigirma besh ming soʻm.",
+        "ru": "Двадцать пять тысяч сумов.",
+        "en": "Twenty-five thousand soums."
+      },
+      {
+        "who": "B",
+        "uz": "Yaxshi. Iltimos, tezroq boring. Vaqtim kam.",
+        "ru": "Хорошо. Только побыстрее, пожалуйста, — я спешу.",
+        "en": "Fine. Please go a bit faster — I'm short on time."
+      },
+      {
+        "who": "A",
+        "uz": "Xoʻp. Mana, Chorsu. Qayerda toʻxtatay?",
+        "ru": "Хорошо. Вот и Чорсу. Где остановить?",
+        "en": "OK. Here's Chorsu. Where should I stop?"
+      },
+      {
+        "who": "B",
+        "uz": "Shu yerda toʻxtating. Mana, pul.",
+        "ru": "Остановите здесь. Вот деньги.",
+        "en": "Stop here, please. Here's the money."
+      },
+      {
+        "who": "A",
+        "uz": "Rahmat! Xayr!",
+        "ru": "Спасибо! До свидания!",
+        "en": "Thank you! Goodbye!"
+      }
+    ],
+    "vocab": [
+      "bormoq",
+      "oʻtirmoq",
+      "qancha",
+      "tez",
+      "toʻxtatmoq",
+      "shu yer"
+    ],
+    "note_ru": "Цену лучше обговорить до поездки (или заказать машину через приложение). Аффикс -ga указывает направление: bozorga — «на базар».",
+    "note_uz": "Narxni yoʻlga chiqishdan oldin kelishib olgan maʼqul (yoki taksini ilova orqali chaqiring). -ga qoʻshimchasi yoʻnalishni bildiradi: bozorga.",
+    "note_en": "Agree on the fare before the ride (or book through an app). The suffix -ga marks direction: bozorga — “to the bazaar”."
+  },
+  {
+    "n": 6,
+    "cefr": "A1",
+    "section": "Город и транспорт",
+    "title_ru": "Как пройти к метро?",
+    "title_uz": "Metro qayerda?",
+    "title_en": "Where Is the Metro?",
+    "intro_ru": "Турист спрашивает у прохожего, как дойти до станции метро.",
+    "intro_uz": "Sayyoh oʻtkinchidan metro bekatiga qanday borishni soʻraydi.",
+    "intro_en": "A tourist asks a passer-by how to get to the metro station.",
+    "speakers": {
+      "A": "Sayyoh",
+      "B": "Oʻtkinchi"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Kechirasiz, metro qayerda?",
+        "ru": "Извините, где здесь метро?",
+        "en": "Excuse me, where is the metro?"
+      },
+      {
+        "who": "B",
+        "uz": "Qaysi bekat? «Amir Temur xiyoboni»mi?",
+        "ru": "Какая станция? «Амир Темур хиёбони»?",
+        "en": "Which station? “Amir Temur Xiyoboni”?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, «Amir Temur xiyoboni».",
+        "ru": "Да, «Амир Темур хиёбони».",
+        "en": "Yes, “Amir Temur Xiyoboni”."
+      },
+      {
+        "who": "B",
+        "uz": "Toʻgʻriga yuring, keyin chapga buriling.",
+        "ru": "Идите прямо, потом поверните налево.",
+        "en": "Go straight, then turn left."
+      },
+      {
+        "who": "A",
+        "uz": "Uzoqmi?",
+        "ru": "Это далеко?",
+        "en": "Is it far?"
+      },
+      {
+        "who": "B",
+        "uz": "Yoʻq, yaqin. Piyoda besh daqiqa.",
+        "ru": "Нет, близко. Пять минут пешком.",
+        "en": "No, it's close. Five minutes on foot."
+      },
+      {
+        "who": "A",
+        "uz": "Katta rahmat!",
+        "ru": "Большое спасибо!",
+        "en": "Thank you very much!"
+      },
+      {
+        "who": "B",
+        "uz": "Arzimaydi.",
+        "ru": "Не за что.",
+        "en": "You're welcome."
+      }
+    ],
+    "vocab": [
+      "qayerda",
+      "bekat",
+      "toʻgʻriga",
+      "chapga",
+      "burilmoq",
+      "uzoq",
+      "yaqin",
+      "piyoda"
+    ],
+    "note_ru": "«Kechirasiz» помогает вежливо обратиться к незнакомцу. На «rahmat» обычно отвечают «arzimaydi» — «не за что».",
+    "note_uz": "Notanish odamga murojaat qilganda «Kechirasiz» deyiladi. «Rahmat»ga odatda «Arzimaydi» deb javob beriladi.",
+    "note_en": "“Kechirasiz” is a polite way to get a stranger's attention. The usual reply to “rahmat” is “arzimaydi” — “you're welcome”."
+  },
+  {
+    "n": 7,
+    "cefr": "A1",
+    "section": "Покупки и еда",
+    "title_ru": "Покупаем одежду",
+    "title_uz": "Kiyim doʻkonida",
+    "title_en": "Buying Clothes",
+    "intro_ru": "Нилуфар выбирает платье в магазине одежды.",
+    "intro_uz": "Nilufar kiyim doʻkonida koʻylak tanlayapti.",
+    "intro_en": "Nilufar is choosing a dress in a clothes shop.",
+    "speakers": {
+      "A": "Nilufar",
+      "B": "Sotuvchi"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Xush kelibsiz! Sizga nima kerak?",
+        "ru": "Добро пожаловать! Что вам подсказать?",
+        "en": "Welcome! What are you looking for?"
+      },
+      {
+        "who": "A",
+        "uz": "Menga koʻylak kerak. Bu koʻylak necha pul?",
+        "ru": "Мне нужно платье. Сколько стоит это?",
+        "en": "I need a dress. How much is this one?"
+      },
+      {
+        "who": "B",
+        "uz": "Ikki yuz ming soʻm. Sizga qaysi oʻlcham kerak?",
+        "ru": "Двести тысяч сумов. Какой у вас размер?",
+        "en": "Two hundred thousand soums. What size do you need?"
+      },
+      {
+        "who": "A",
+        "uz": "Qirq toʻrt.",
+        "ru": "Сорок четвёртый.",
+        "en": "Forty-four."
+      },
+      {
+        "who": "B",
+        "uz": "Mana. Kiyib koʻring.",
+        "ru": "Вот, примерьте.",
+        "en": "Here you are. Try it on."
+      },
+      {
+        "who": "A",
+        "uz": "Bu biroz kichik. Kattarogʻi bormi?",
+        "ru": "Маловато. Есть побольше?",
+        "en": "It's a bit small. Do you have a bigger one?"
+      },
+      {
+        "who": "B",
+        "uz": "Ha, bor. Mana, qirq olti.",
+        "ru": "Да, есть. Вот, сорок шестой.",
+        "en": "Yes, we do. Here's a forty-six."
+      },
+      {
+        "who": "A",
+        "uz": "Bunisi yaxshi. Olaman!",
+        "ru": "Это подходит. Беру!",
+        "en": "This one's good. I'll take it!"
+      }
+    ],
+    "vocab": [
+      "koʻylak",
+      "oʻlcham",
+      "kiymoq",
+      "kichik",
+      "katta",
+      "olmoq"
+    ],
+    "note_ru": "Аффикс -roq образует сравнительную степень: katta — kattaroq («больше»). «Kiyib koʻring» — «примерьте».",
+    "note_uz": "-roq qoʻshimchasi qiyosiy darajani yasaydi: katta — kattaroq. «Kiyib koʻring» — kiyimni sinab koʻrish taklifi.",
+    "note_en": "The suffix -roq forms comparatives: katta — kattaroq (“bigger”). “Kiyib koʻring” means “try it on”."
+  },
+  {
+    "n": 8,
+    "cefr": "A1",
+    "section": "Знакомство и общение",
+    "title_ru": "Договориться о встрече",
+    "title_uz": "Telefonda kelishuv",
+    "title_en": "Arranging to Meet",
+    "intro_ru": "Жасур звонит знакомому Дильшоду, чтобы договориться о встрече на завтра.",
+    "intro_uz": "Jasur ertaga uchrashish uchun tanishi Dilshodga qoʻngʻiroq qiladi.",
+    "intro_en": "Jasur calls his acquaintance Dilshod to arrange a meeting for tomorrow.",
+    "speakers": {
+      "A": "Jasur",
+      "B": "Dilshod"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Allo, assalomu alaykum, Dilshod aka! Men Jasurman.",
+        "ru": "Алло, здравствуйте, Дильшод-ака! Это Жасур.",
+        "en": "Hello, Dilshod aka! It's Jasur."
+      },
+      {
+        "who": "B",
+        "uz": "Vaalaykum assalom, Jasur! Yaxshimisiz?",
+        "ru": "Здравствуй, Жасур! Как дела?",
+        "en": "Hello, Jasur! How are you?"
+      },
+      {
+        "who": "A",
+        "uz": "Rahmat, yaxshi. Dilshod aka, ertaga boʻshmisiz?",
+        "ru": "Спасибо, хорошо. Дильшод-ака, вы завтра свободны?",
+        "en": "Fine, thanks. Dilshod aka, are you free tomorrow?"
+      },
+      {
+        "who": "B",
+        "uz": "Ha, ertaga boʻshman.",
+        "ru": "Да, завтра я свободен.",
+        "en": "Yes, I'm free tomorrow."
+      },
+      {
+        "who": "A",
+        "uz": "Unda ertaga uchrashamizmi? Kafeda choy ichamiz.",
+        "ru": "Тогда, может, встретимся завтра? Попьём чаю в кафе.",
+        "en": "Then shall we meet tomorrow? We can have tea at a café."
+      },
+      {
+        "who": "B",
+        "uz": "Yaxshi. Soat nechada?",
+        "ru": "Давай. Во сколько?",
+        "en": "Sure. What time?"
+      },
+      {
+        "who": "A",
+        "uz": "Soat oltida, metro yonidagi kafeda.",
+        "ru": "В шесть, в кафе возле метро.",
+        "en": "At six, at the café next to the metro."
+      },
+      {
+        "who": "B",
+        "uz": "Mayli, ertaga koʻrishamiz! Xayr!",
+        "ru": "Договорились, до завтра! Пока!",
+        "en": "Fine, see you tomorrow! Bye!"
+      }
+    ],
+    "vocab": [
+      "boʻsh",
+      "ertaga",
+      "uchrashmoq",
+      "soat",
+      "koʻrishmoq",
+      "yon"
+    ],
+    "note_ru": "К имени старшего мужчины добавляют «aka», к имени старшей женщины — «opa». Время: soat oltida — «в шесть часов».",
+    "note_uz": "Yoshi katta erkakning ismiga «aka», ayolning ismiga «opa» qoʻshiladi. Vaqt: soat oltida.",
+    "note_en": "Add “aka” to the name of an older man and “opa” to that of an older woman. Time: soat oltida — “at six o'clock”."
+  },
+  {
+    "n": 9,
+    "cefr": "A2",
+    "section": "Быт и услуги",
+    "title_ru": "Заселение в гостиницу",
+    "title_uz": "Mehmonxonada",
+    "title_en": "Checking into a Hotel",
+    "intro_ru": "Гость приезжает в гостиницу, где заранее забронировал номер, и разговаривает с администратором.",
+    "intro_uz": "Mehmon oldindan xona band qilgan mehmonxonaga keladi va administrator bilan gaplashadi.",
+    "intro_en": "A guest arrives at a hotel where he has booked a room and talks to the receptionist.",
+    "speakers": {
+      "A": "Administrator",
+      "B": "Mehmon"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Xush kelibsiz! Sizga qanday yordam bera olaman?",
+        "ru": "Добро пожаловать! Чем могу помочь?",
+        "en": "Welcome! How can I help you?"
+      },
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum. Men xona band qilganman. Familiyam — Ivanov.",
+        "ru": "Здравствуйте. У меня забронирован номер. Фамилия — Иванов.",
+        "en": "Hello. I have a reservation. My surname is Ivanov."
+      },
+      {
+        "who": "A",
+        "uz": "Bir daqiqa... Ha, bor. Bir kishilik xona, uch kecha. Pasportingizni bering, iltimos.",
+        "ru": "Минутку... Да, есть. Одноместный номер на три ночи. Ваш паспорт, пожалуйста.",
+        "en": "One moment... Yes, here it is. A single room for three nights. Your passport, please."
+      },
+      {
+        "who": "B",
+        "uz": "Mana, marhamat. Nonushta narxga kiradimi?",
+        "ru": "Вот, пожалуйста. Завтрак включён в стоимость?",
+        "en": "Here you are. Is breakfast included?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, kiradi. Restoran birinchi qavatda, soat yettidan oʻngacha ishlaydi.",
+        "ru": "Да, включён. Ресторан на первом этаже, работает с семи до десяти.",
+        "en": "Yes, it is. The restaurant is on the ground floor and is open from seven to ten."
+      },
+      {
+        "who": "B",
+        "uz": "Xonada internet bormi?",
+        "ru": "В номере есть интернет?",
+        "en": "Is there internet in the room?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, bor. Parol kalit kartaning orqasida yozilgan. Xonangiz toʻrtinchi qavatda, 412-xona.",
+        "ru": "Да. Пароль написан на обратной стороне ключ-карты. Ваш номер на четвёртом этаже, 412-й.",
+        "en": "Yes. The password is on the back of the key card. Your room is on the fourth floor, number 412."
+      },
+      {
+        "who": "B",
+        "uz": "Rahmat. Agar kechqurun taksi kerak boʻlsa, chaqirib bera olasizmi?",
+        "ru": "Спасибо. Если вечером понадобится такси, вы сможете вызвать?",
+        "en": "Thanks. If I need a taxi in the evening, can you call one for me?"
+      },
+      {
+        "who": "A",
+        "uz": "Albatta. Xonadagi telefondan nolni bosing, bizga ulanasiz.",
+        "ru": "Конечно. Наберите ноль на телефоне в номере — и вы свяжетесь с нами.",
+        "en": "Of course. Just dial zero on the room phone to reach us."
+      },
+      {
+        "who": "B",
+        "uz": "Juda yaxshi. Katta rahmat!",
+        "ru": "Отлично. Большое спасибо!",
+        "en": "Great. Thank you very much!"
+      }
+    ],
+    "vocab": [
+      "xona",
+      "band qilmoq",
+      "nonushta",
+      "qavat",
+      "kalit",
+      "chaqirmoq"
+    ],
+    "note_ru": "Иностранцы обязаны регистрироваться по месту пребывания; гостиница делает это сама, поэтому просит паспорт. Форма на -gan показывает уже совершённое действие: band qilganman — «я забронировал».",
+    "note_uz": "Chet el fuqarolari vaqtincha turgan joyi boʻyicha roʻyxatdan oʻtishi shart; mehmonxona buni oʻzi qiladi, shuning uchun pasport soʻraydi. -gan shakli bajarilgan ishni bildiradi: band qilganman.",
+    "note_en": "Foreigners must be registered where they stay; hotels do this for you, which is why they ask for your passport. The -gan form shows a completed action: band qilganman — “I have booked”."
+  },
+  {
+    "n": 10,
+    "cefr": "A2",
+    "section": "Здоровье",
+    "title_ru": "В аптеке",
+    "title_uz": "Dorixonada",
+    "title_en": "At the Pharmacy",
+    "intro_ru": "У Камилы болит голова, и она идёт в аптеку за лекарством.",
+    "intro_uz": "Kamilaning boshi ogʻriyapti, u dori olish uchun dorixonaga boradi.",
+    "intro_en": "Kamila has a headache and goes to the pharmacy for some medicine.",
+    "speakers": {
+      "A": "Farmatsevt",
+      "B": "Kamila"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum. Boshim ogʻriyapti. Bosh ogʻrigʻiga qarshi biror dori bormi?",
+        "ru": "Здравствуйте. У меня болит голова. Есть что-нибудь от головной боли?",
+        "en": "Hello. I have a headache. Do you have anything for it?"
+      },
+      {
+        "who": "A",
+        "uz": "Vaalaykum assalom. Isitmangiz ham bormi?",
+        "ru": "Здравствуйте. Температура тоже есть?",
+        "en": "Hello. Do you have a temperature as well?"
+      },
+      {
+        "who": "B",
+        "uz": "Yoʻq, isitmam yoʻq. Kechadan beri ogʻriyapti.",
+        "ru": "Нет, температуры нет. Болит со вчерашнего дня.",
+        "en": "No, I don't. It's been hurting since yesterday."
+      },
+      {
+        "who": "A",
+        "uz": "Unda mana bu tabletkani iching. Kuniga ikki mahal, ovqatdan keyin.",
+        "ru": "Тогда принимайте вот эти таблетки. Два раза в день, после еды.",
+        "en": "Then take these tablets. Twice a day, after meals."
+      },
+      {
+        "who": "B",
+        "uz": "Retsept kerakmi?",
+        "ru": "Нужен рецепт?",
+        "en": "Do I need a prescription?"
+      },
+      {
+        "who": "A",
+        "uz": "Yoʻq, bu dori retseptsiz sotiladi.",
+        "ru": "Нет, это лекарство продаётся без рецепта.",
+        "en": "No, this one is sold without a prescription."
+      },
+      {
+        "who": "B",
+        "uz": "Yaxshi. Yana C vitamini bormi?",
+        "ru": "Хорошо. А витамин C у вас есть?",
+        "en": "Good. Do you also have vitamin C?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, bor. Agar ogʻriq oʻtmasa, shifokorga boring.",
+        "ru": "Да, есть. Если боль не пройдёт, обратитесь к врачу.",
+        "en": "Yes, we do. If the pain doesn't go away, see a doctor."
+      },
+      {
+        "who": "B",
+        "uz": "Xoʻp, rahmat. Hammasi qancha boʻldi?",
+        "ru": "Хорошо, спасибо. Сколько с меня?",
+        "en": "OK, thanks. How much is it altogether?"
+      },
+      {
+        "who": "A",
+        "uz": "Oʻttiz sakkiz ming soʻm. Tezroq tuzalib keting!",
+        "ru": "Тридцать восемь тысяч сумов. Скорее поправляйтесь!",
+        "en": "Thirty-eight thousand soums. Get well soon!"
+      }
+    ],
+    "vocab": [
+      "dorixona",
+      "dori",
+      "ogʻrimoq",
+      "isitma",
+      "retsept",
+      "ichmoq",
+      "tuzalmoq"
+    ],
+    "note_ru": "Форма на -yapti описывает происходящее сейчас: boshim ogʻriyapti — «у меня болит голова». Больному принято желать «Tezroq tuzalib keting!»",
+    "note_uz": "-yapti shakli hozir davom etayotgan harakatni bildiradi: boshim ogʻriyapti. Kasal odamga «Tezroq tuzalib keting!» deb tilak bildiriladi.",
+    "note_en": "The -yapti form describes what is happening now: boshim ogʻriyapti — “my head hurts”. To a sick person people say “Tezroq tuzalib keting!” — “Get well soon!”"
+  },
+  {
+    "n": 11,
+    "cefr": "A2",
+    "section": "Быт и услуги",
+    "title_ru": "Обмен валюты и карта",
+    "title_uz": "Bankda",
+    "title_en": "At the Bank",
+    "intro_ru": "Клиент приходит в банк обменять доллары и узнать, можно ли открыть карту.",
+    "intro_uz": "Mijoz bankka dollar almashtirgani va karta ochish mumkinligini bilgani keladi.",
+    "intro_en": "A customer comes to the bank to exchange dollars and ask about opening a card.",
+    "speakers": {
+      "A": "Kassir",
+      "B": "Mijoz"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum. Dollar almashtirmoqchiman. Bugun kurs qanday?",
+        "ru": "Здравствуйте. Я хочу обменять доллары. Какой сегодня курс?",
+        "en": "Hello. I'd like to exchange some dollars. What's today's rate?"
+      },
+      {
+        "who": "A",
+        "uz": "Vaalaykum assalom. Bugun bir dollar oʻn ikki ming sakkiz yuz soʻm. Qancha almashtirasiz?",
+        "ru": "Здравствуйте. Сегодня доллар — двенадцать тысяч восемьсот сумов. Сколько будете менять?",
+        "en": "Hello. Today one dollar is twelve thousand eight hundred soums. How much would you like to change?"
+      },
+      {
+        "who": "B",
+        "uz": "Ikki yuz dollar. Pasport kerakmi?",
+        "ru": "Двести долларов. Паспорт нужен?",
+        "en": "Two hundred dollars. Do you need my passport?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, pasportingizni bering, iltimos.",
+        "ru": "Да, дайте, пожалуйста, паспорт.",
+        "en": "Yes, your passport, please."
+      },
+      {
+        "who": "B",
+        "uz": "Mana. Yana bir savol: chet el fuqarosi ham bank kartasi ochsa boʻladimi?",
+        "ru": "Вот. И ещё вопрос: иностранец может открыть банковскую карту?",
+        "en": "Here you are. One more question: can a foreigner open a bank card too?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, boʻladi. Ikkinchi qavatga chiqing, u yerda karta ochib berishadi.",
+        "ru": "Да, может. Поднимитесь на второй этаж — там оформляют карты.",
+        "en": "Yes. Go up to the first floor — they issue cards there."
+      },
+      {
+        "who": "B",
+        "uz": "Karta qancha vaqtda tayyor boʻladi?",
+        "ru": "Сколько времени делается карта?",
+        "en": "How long does it take to get the card?"
+      },
+      {
+        "who": "A",
+        "uz": "Odatda oʻn besh daqiqada. Mana, pulingiz: ikki million besh yuz oltmish ming soʻm.",
+        "ru": "Обычно минут пятнадцать. Вот ваши деньги: два миллиона пятьсот шестьдесят тысяч сумов.",
+        "en": "Usually about fifteen minutes. Here's your money: two million five hundred and sixty thousand soums."
+      },
+      {
+        "who": "B",
+        "uz": "Rahmat, hozir sanab koʻraman.",
+        "ru": "Спасибо, сейчас пересчитаю.",
+        "en": "Thank you, I'll just count it."
+      },
+      {
+        "who": "A",
+        "uz": "Marhamat. Yana savollaringiz boʻlsa, soʻrang.",
+        "ru": "Пожалуйста. Если будут вопросы, спрашивайте.",
+        "en": "Sure. If you have any more questions, just ask."
+      }
+    ],
+    "vocab": [
+      "bank",
+      "almashtirmoq",
+      "kurs",
+      "pasport",
+      "karta",
+      "ochmoq",
+      "tayyor"
+    ],
+    "note_ru": "Форма -moqchiman выражает намерение: almashtirmoqchiman — «я хочу обменять». Конструкция «-sa boʻladimi?» означает «можно ли…?».",
+    "note_uz": "-moqchiman shakli niyatni bildiradi: almashtirmoqchiman. «-sa boʻladimi?» shakli imkon yoki ruxsat soʻrash uchun ishlatiladi.",
+    "note_en": "The -moqchiman form expresses intention: almashtirmoqchiman — “I want to exchange”. “-sa boʻladimi?” means “Is it possible to…?”"
+  },
+  {
+    "n": 12,
+    "cefr": "A2",
+    "section": "Быт и услуги",
+    "title_ru": "Покупка SIM-карты",
+    "title_uz": "SIM-karta sotib olish",
+    "title_en": "Buying a SIM Card",
+    "intro_ru": "Клиент покупает SIM-карту в салоне мобильной связи и выбирает тариф.",
+    "intro_uz": "Mijoz aloqa salonida SIM-karta sotib oladi va tarif tanlaydi.",
+    "intro_en": "A customer buys a SIM card at a mobile shop and chooses a plan.",
+    "speakers": {
+      "A": "Sotuvchi",
+      "B": "Mijoz"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum. SIM-karta sotib olmoqchiman.",
+        "ru": "Здравствуйте. Я хочу купить SIM-карту.",
+        "en": "Hello. I'd like to buy a SIM card."
+      },
+      {
+        "who": "A",
+        "uz": "Xoʻp. Sizga qanday tarif kerak?",
+        "ru": "Хорошо. Какой тариф вам нужен?",
+        "en": "Sure. What kind of plan do you need?"
+      },
+      {
+        "who": "B",
+        "uz": "Menga internet koʻproq kerak. Kam qoʻngʻiroq qilaman.",
+        "ru": "Мне нужно больше интернета. Звоню я мало.",
+        "en": "I need more internet. I don't make many calls."
+      },
+      {
+        "who": "A",
+        "uz": "Unda mana bu tarifni tavsiya qilaman: oyiga yigirma gigabayt internet va besh yuz daqiqa. Narxi oyiga oltmish ming soʻm.",
+        "ru": "Тогда советую вот этот тариф: двадцать гигабайт интернета и пятьсот минут в месяц. Стоит шестьдесят тысяч сумов в месяц.",
+        "en": "Then I recommend this plan: twenty gigabytes of internet and five hundred minutes a month. It costs sixty thousand soums a month."
+      },
+      {
+        "who": "B",
+        "uz": "Yaxshi, shuni olaman. Hujjat kerakmi?",
+        "ru": "Хорошо, беру его. Нужны документы?",
+        "en": "Good, I'll take it. Do you need any documents?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, pasportingiz kerak. SIM-karta sizning nomingizga rasmiylashtiriladi.",
+        "ru": "Да, нужен паспорт. SIM-карта оформляется на ваше имя.",
+        "en": "Yes, your passport. The SIM card is registered in your name."
+      },
+      {
+        "who": "B",
+        "uz": "Mana, pasport. Balansni qanday toʻldiraman?",
+        "ru": "Вот паспорт. А как пополнять баланс?",
+        "en": "Here's my passport. How do I top up my balance?"
+      },
+      {
+        "who": "A",
+        "uz": "Ilova orqali yoki toʻlov terminalida toʻldirishingiz mumkin.",
+        "ru": "Через приложение или в платёжном терминале.",
+        "en": "You can top up through the app or at a payment terminal."
+      },
+      {
+        "who": "B",
+        "uz": "Tushunarli. Karta darrov ishlaydimi?",
+        "ru": "Понятно. Карта сразу заработает?",
+        "en": "I see. Will the card work right away?"
+      },
+      {
+        "who": "A",
+        "uz": "Yarim soatdan keyin ishlaydi. Agar ishlamasa, telefonni oʻchirib yoqing.",
+        "ru": "Через полчаса. Если не заработает, перезагрузите телефон.",
+        "en": "In half an hour. If it doesn't, turn your phone off and on again."
+      }
+    ],
+    "vocab": [
+      "SIM-karta",
+      "tarif",
+      "internet",
+      "tavsiya qilmoq",
+      "hujjat",
+      "balans",
+      "toʻldirmoq"
+    ],
+    "note_ru": "SIM-карту в Узбекистане оформляют только по документу, удостоверяющему личность; иностранцы предъявляют паспорт. «-ishingiz mumkin» — вежливое «вы можете…».",
+    "note_uz": "Oʻzbekistonda SIM-karta faqat shaxsni tasdiqlovchi hujjat bilan rasmiylashtiriladi; chet elliklar pasport koʻrsatadi. «-ishingiz mumkin» — imkoniyatni muloyim ifodalash usuli.",
+    "note_en": "In Uzbekistan a SIM card is registered only against an ID document; foreigners show their passport. “-ishingiz mumkin” is a polite way to say “you can…”."
+  },
+  {
+    "n": 13,
+    "cefr": "A2",
+    "section": "Знакомство и общение",
+    "title_ru": "Планы на выходные",
+    "title_uz": "Dam olish rejalari",
+    "title_en": "Weekend Plans",
+    "intro_ru": "Коллеги Шахзод и Мадина обсуждают, что будут делать на выходных.",
+    "intro_uz": "Hamkasblar Shahzod va Madina dam olish kunlari nima qilishlarini muhokama qilishadi.",
+    "intro_en": "Colleagues Shahzod and Madina discuss what they're doing at the weekend.",
+    "speakers": {
+      "A": "Shahzod",
+      "B": "Madina"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Madina, dam olish kunlari nima qilmoqchisiz?",
+        "ru": "Мадина, что вы собираетесь делать на выходных?",
+        "en": "Madina, what are you going to do at the weekend?"
+      },
+      {
+        "who": "B",
+        "uz": "Hali bilmayman. Balki toqqa borarman. Siz-chi?",
+        "ru": "Ещё не знаю. Может, поеду в горы. А вы?",
+        "en": "I don't know yet. Maybe I'll go to the mountains. And you?"
+      },
+      {
+        "who": "A",
+        "uz": "Doʻstlarim bilan Chorvoqqa bormoqchimiz. Siz ham biz bilan yuring!",
+        "ru": "Мы с друзьями хотим поехать на Чарвак. Поехали с нами!",
+        "en": "My friends and I want to go to Charvak. Come with us!"
+      },
+      {
+        "who": "B",
+        "uz": "Zoʻr! Qachon yoʻlga chiqasizlar?",
+        "ru": "Отлично! Когда выезжаете?",
+        "en": "Great! When are you leaving?"
+      },
+      {
+        "who": "A",
+        "uz": "Shanba kuni ertalab soat sakkizda. Mashinada boramiz.",
+        "ru": "В субботу в восемь утра. Поедем на машине.",
+        "en": "On Saturday at eight in the morning. We're going by car."
+      },
+      {
+        "who": "B",
+        "uz": "Agar ob-havo yaxshi boʻlsa, albatta boraman. Men nima olib kelay?",
+        "ru": "Если погода будет хорошая, обязательно поеду. Что мне взять с собой?",
+        "en": "If the weather is good, I'll definitely come. What should I bring?"
+      },
+      {
+        "who": "A",
+        "uz": "Meva va suv olib keling. U yerda shashlik qilamiz.",
+        "ru": "Возьмите фрукты и воду. Там пожарим шашлык.",
+        "en": "Bring some fruit and water. We'll make shashlik there."
+      },
+      {
+        "who": "B",
+        "uz": "Yaxshi. Kechqurun qaytamizmi?",
+        "ru": "Хорошо. Вечером вернёмся?",
+        "en": "OK. Will we come back in the evening?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, kechqurun qaytamiz. Yakshanba kuni uyda dam olasiz.",
+        "ru": "Да, вечером вернёмся. В воскресенье отдохнёте дома.",
+        "en": "Yes, we'll be back in the evening. You can rest at home on Sunday."
+      },
+      {
+        "who": "B",
+        "uz": "Ajoyib! Unda shanbagacha!",
+        "ru": "Чудесно! Тогда до субботы!",
+        "en": "Wonderful! See you on Saturday, then!"
+      }
+    ],
+    "vocab": [
+      "dam olish kunlari",
+      "togʻ",
+      "ob-havo",
+      "olib kelmoq",
+      "qaytmoq",
+      "yoʻlga chiqmoq",
+      "shashlik"
+    ],
+    "note_ru": "После q аффикс -ga становится -qa, после k — -ka: Chorvoq + ga = Chorvoqqa. У слов на gʻ и сама gʻ переходит в q: togʻ + ga = toqqa. Форма -sa — условие: ob-havo yaxshi boʻlsa — «если погода будет хорошей».",
+    "note_uz": "-ga qoʻshimchasi q dan keyin -qa, k dan keyin -ka boʻladi: Chorvoq + ga = Chorvoqqa. gʻ bilan tugagan soʻzda gʻ ham q ga aylanadi: togʻ + ga = toqqa. -sa shakli shartni bildiradi: ob-havo yaxshi boʻlsa.",
+    "note_en": "After q the suffix -ga becomes -qa, after k it becomes -ka: Chorvoq + ga = Chorvoqqa. In words ending in gʻ, the gʻ itself turns into q: togʻ + ga = toqqa. The -sa form marks a condition: ob-havo yaxshi boʻlsa — “if the weather is good”."
+  },
+  {
+    "n": 14,
+    "cefr": "A2",
+    "section": "Быт и услуги",
+    "title_ru": "В парикмахерской",
+    "title_uz": "Sartaroshxonada",
+    "title_en": "At the Barber's",
+    "intro_ru": "Бекзод пришёл в парикмахерскую подстричься и подровнять бороду.",
+    "intro_uz": "Bekzod sartaroshxonaga soch oldirish va soqolini toʻgʻrilatish uchun keldi.",
+    "intro_en": "Bekzod has come to the barber's for a haircut and a beard trim.",
+    "speakers": {
+      "A": "Sartarosh",
+      "B": "Bekzod"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Xush kelibsiz! Oʻtiring. Sochingizni qanday olay?",
+        "ru": "Добро пожаловать! Садитесь. Как вас подстричь?",
+        "en": "Welcome! Have a seat. How would you like your hair cut?"
+      },
+      {
+        "who": "B",
+        "uz": "Yonlarini kaltaroq qiling, tepasini ozgina oling.",
+        "ru": "По бокам покороче, а сверху чуть-чуть уберите.",
+        "en": "Shorter on the sides and just a little off the top."
+      },
+      {
+        "who": "A",
+        "uz": "Xoʻp. Mashinka bilan olaymi yoki qaychi bilan?",
+        "ru": "Хорошо. Машинкой или ножницами?",
+        "en": "OK. With clippers or scissors?"
+      },
+      {
+        "who": "B",
+        "uz": "Yonlarini mashinka bilan, tepasini qaychi bilan.",
+        "ru": "Бока машинкой, верх ножницами.",
+        "en": "Clippers on the sides, scissors on top."
+      },
+      {
+        "who": "A",
+        "uz": "Tushunarli. Soqolingizni ham olaymi?",
+        "ru": "Понятно. Бороду тоже сбрить?",
+        "en": "Got it. Shall I shave your beard too?"
+      },
+      {
+        "who": "B",
+        "uz": "Yoʻq, soqolimni ozgina toʻgʻrilab qoʻying.",
+        "ru": "Нет, бороду только подровняйте.",
+        "en": "No, just trim the beard a little."
+      },
+      {
+        "who": "A",
+        "uz": "Mana, tayyor. Oynaga qarang. Yoqdimi?",
+        "ru": "Готово. Посмотрите в зеркало. Нравится?",
+        "en": "There you go. Look in the mirror. Do you like it?"
+      },
+      {
+        "who": "B",
+        "uz": "Ha, juda yaxshi boʻldi. Qancha toʻlayman?",
+        "ru": "Да, отлично получилось. Сколько с меня?",
+        "en": "Yes, it looks great. How much do I owe you?"
+      },
+      {
+        "who": "A",
+        "uz": "Soqol bilan birga ellik ming soʻm.",
+        "ru": "Вместе с бородой — пятьдесят тысяч сумов.",
+        "en": "Fifty thousand soums, including the beard."
+      },
+      {
+        "who": "B",
+        "uz": "Mana, marhamat. Rahmat, usta!",
+        "ru": "Вот, пожалуйста. Спасибо, мастер!",
+        "en": "Here you are. Thanks, master!"
+      }
+    ],
+    "vocab": [
+      "usta",
+      "soch",
+      "kalta",
+      "qaychi",
+      "soqol",
+      "qaramoq",
+      "toʻlamoq"
+    ],
+    "note_ru": "К ремесленникам и мастерам уважительно обращаются «usta». Soch oldirmoq — «подстричься» (букв. «дать снять волосы»): понудительный аффикс -dir.",
+    "note_uz": "Hunarmand va ustalarga hurmat bilan «usta» deb murojaat qilinadi. Soch oldirmoq — orttirma nisbat (-dir): ishni boshqa odam bajaradi.",
+    "note_en": "Craftsmen are respectfully addressed as “usta” (master). Soch oldirmoq — “to get a haircut”, with the causative suffix -dir (someone else does it)."
+  },
+  {
+    "n": 15,
+    "cefr": "A2",
+    "section": "Город и транспорт",
+    "title_ru": "Билет на «Афросиёб»",
+    "title_uz": "«Afrosiyob»ga chipta",
+    "title_en": "Tickets for the Afrosiyob",
+    "intro_ru": "Анвар покупает в кассе вокзала билеты на скоростной поезд «Афросиёб» до Самарканда и обратно.",
+    "intro_uz": "Anvar vokzal kassasida Samarqandga borish-qaytish uchun «Afrosiyob» tezyurar poyezdiga chipta oladi.",
+    "intro_en": "Anvar buys return tickets to Samarkand for the Afrosiyob high-speed train at the station ticket office.",
+    "speakers": {
+      "A": "Kassir",
+      "B": "Anvar"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum. Ertangi «Afrosiyob»ga Samarqandgacha chipta bormi?",
+        "ru": "Здравствуйте. Есть билеты на завтрашний «Афросиёб» до Самарканда?",
+        "en": "Hello. Are there tickets to Samarkand for tomorrow's Afrosiyob?"
+      },
+      {
+        "who": "A",
+        "uz": "Ertalab soat sakkizdagi poyezdda joy qolmagan. Soat oʻn birdagisida bor.",
+        "ru": "На поезд в восемь утра мест нет. Есть на одиннадцать.",
+        "en": "There are no seats left on the eight o'clock train. There are on the eleven o'clock one."
+      },
+      {
+        "who": "B",
+        "uz": "Mayli, oʻsha boʻlsin. Yoʻlda qancha vaqt ketadi?",
+        "ru": "Хорошо, давайте на него. Сколько ехать?",
+        "en": "OK, that one then. How long is the journey?"
+      },
+      {
+        "who": "A",
+        "uz": "Taxminan ikki soat.",
+        "ru": "Около двух часов.",
+        "en": "About two hours."
+      },
+      {
+        "who": "B",
+        "uz": "Ekonom klass qancha, biznes klass qancha?",
+        "ru": "Сколько стоит эконом, а сколько бизнес?",
+        "en": "How much is economy, and how much is business class?"
+      },
+      {
+        "who": "A",
+        "uz": "Ekonom — ikki yuz oltmish ming, biznes — toʻrt yuz ming soʻm. Qaysi birini olasiz?",
+        "ru": "Эконом — двести шестьдесят тысяч, бизнес — четыреста тысяч сумов. Какой берёте?",
+        "en": "Economy is two hundred and sixty thousand, business is four hundred thousand soums. Which would you like?"
+      },
+      {
+        "who": "B",
+        "uz": "Ekonom bering. Yakshanbaga qaytish chiptasini ham olmoqchiman.",
+        "ru": "Эконом. И ещё хочу обратный билет на воскресенье.",
+        "en": "Economy, please. I'd also like a return ticket for Sunday."
+      },
+      {
+        "who": "A",
+        "uz": "Yakshanba kuni kechqurun soat oltida poyezd bor. Pasportingizni bering.",
+        "ru": "В воскресенье есть поезд в шесть вечера. Ваш паспорт, пожалуйста.",
+        "en": "There's a train at six on Sunday evening. Your passport, please."
+      },
+      {
+        "who": "B",
+        "uz": "Mana. Karta bilan toʻlasam boʻladimi?",
+        "ru": "Вот. Можно оплатить картой?",
+        "en": "Here you are. Can I pay by card?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, albatta. Mana chiptalaringiz: toʻrtinchi vagon, yigirma ikkinchi joy. Vokzalga yarim soat oldin keling.",
+        "ru": "Да, конечно. Вот ваши билеты: четвёртый вагон, двадцать второе место. Приходите на вокзал за полчаса.",
+        "en": "Yes, of course. Here are your tickets: carriage four, seat twenty-two. Come to the station half an hour early."
+      }
+    ],
+    "vocab": [
+      "chipta",
+      "poyezd",
+      "joy",
+      "qaytish",
+      "vagon",
+      "vokzal",
+      "toʻlamoq"
+    ],
+    "note_ru": "Билеты на «Афросиёб» быстро раскупают, их лучше брать заранее; на вокзале проходят досмотр. Аффикс -gacha значит «до»: Samarqandgacha — «до Самарканда».",
+    "note_uz": "«Afrosiyob»ga chiptalar tez tugaydi, ularni oldindan olgan maʼqul; vokzalda tekshiruvdan oʻtiladi. -gacha qoʻshimchasi chegarani bildiradi: Samarqandgacha.",
+    "note_en": "Afrosiyob tickets sell out fast, so buy them in advance; there is a security check at the station. The suffix -gacha means “as far as”: Samarqandgacha — “to Samarkand”."
+  },
+  {
+    "n": 16,
+    "cefr": "A2",
+    "section": "Здоровье",
+    "title_ru": "На приёме у врача",
+    "title_uz": "Shifokor qabulida",
+    "title_en": "At the Doctor's",
+    "intro_ru": "Сардор простудился и пришёл на приём к врачу в поликлинику.",
+    "intro_uz": "Sardor shamollab qoldi va poliklinikaga shifokor qabuliga keldi.",
+    "intro_en": "Sardor has caught a cold and has come to see a doctor at the clinic.",
+    "speakers": {
+      "A": "Shifokor",
+      "B": "Sardor"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Keling, oʻtiring. Nimadan shikoyatingiz bor?",
+        "ru": "Проходите, садитесь. На что жалуетесь?",
+        "en": "Come in, sit down. What seems to be the problem?"
+      },
+      {
+        "who": "B",
+        "uz": "Uch kundan beri tomogʻim ogʻriyapti, yoʻtalyapman.",
+        "ru": "Уже три дня болит горло, кашляю.",
+        "en": "My throat has been hurting for three days, and I'm coughing."
+      },
+      {
+        "who": "A",
+        "uz": "Isitmangiz bormi?",
+        "ru": "Температура есть?",
+        "en": "Do you have a temperature?"
+      },
+      {
+        "who": "B",
+        "uz": "Kecha kechqurun oʻttiz sakkiz edi, bugun oʻttiz yetti yarim.",
+        "ru": "Вчера вечером была тридцать восемь, сегодня тридцать семь с половиной.",
+        "en": "Last night it was thirty-eight, today it's thirty-seven and a half."
+      },
+      {
+        "who": "A",
+        "uz": "Ogʻzingizni oching... Ha, tomogʻingiz qizargan. Endi chuqur nafas oling.",
+        "ru": "Откройте рот... Да, горло красное. Теперь глубоко вдохните.",
+        "en": "Open your mouth... Yes, your throat is red. Now take a deep breath."
+      },
+      {
+        "who": "B",
+        "uz": "Jiddiy emasmi, doktor?",
+        "ru": "Ничего серьёзного, доктор?",
+        "en": "It's nothing serious, is it, doctor?"
+      },
+      {
+        "who": "A",
+        "uz": "Yoʻq, xavotir olmang. Bu oddiy shamollash. Sizga dori yozib beraman.",
+        "ru": "Нет, не волнуйтесь. Это обычная простуда. Я выпишу вам лекарство.",
+        "en": "No, don't worry. It's just a cold. I'll prescribe you some medicine."
+      },
+      {
+        "who": "B",
+        "uz": "Ishga borsam boʻladimi?",
+        "ru": "Мне можно ходить на работу?",
+        "en": "Can I go to work?"
+      },
+      {
+        "who": "A",
+        "uz": "Yaxshisi, uch kun uyda dam oling. Koʻproq iliq choy iching, choyga limon qoʻshing.",
+        "ru": "Лучше три дня отдохните дома. Пейте побольше тёплого чая с лимоном.",
+        "en": "Better rest at home for three days. Drink plenty of warm tea with lemon."
+      },
+      {
+        "who": "B",
+        "uz": "Xoʻp, doktor. Rahmat!",
+        "ru": "Хорошо, доктор. Спасибо!",
+        "en": "All right, doctor. Thank you!"
+      }
+    ],
+    "vocab": [
+      "shikoyat",
+      "tomoq",
+      "yoʻtalmoq",
+      "isitma",
+      "shamollamoq",
+      "nafas olmoq",
+      "dam olmoq"
+    ],
+    "note_ru": "«Nimadan shikoyatingiz bor?» — стандартный вопрос врача. «-dan beri» означает «уже… (с какого-то времени)»: uch kundan beri — «уже три дня».",
+    "note_uz": "«Nimadan shikoyatingiz bor?» — shifokorning odatiy savoli. «-dan beri» harakat qachondan boshlanganini bildiradi: uch kundan beri.",
+    "note_en": "“Nimadan shikoyatingiz bor?” is the standard doctor's question. “-dan beri” means “since/for”: uch kundan beri — “for three days”."
+  },
+  {
+    "n": 17,
+    "cefr": "B1",
+    "section": "Быт и услуги",
+    "title_ru": "Снимаем квартиру",
+    "title_uz": "Kvartira ijarasi",
+    "title_en": "Renting an Apartment",
+    "intro_ru": "Анна нашла объявление о сдаче квартиры и пришла посмотреть её. Её встречает хозяйка, Хамида-опа.",
+    "intro_uz": "Anna ijaraga beriladigan kvartira haqidagi eʼlonni topib, uni koʻrgani keldi. Uni uy egasi Hamida opa kutib oladi.",
+    "intro_en": "Anna found an ad for an apartment and has come to view it. The landlady, Hamida opa, shows her around.",
+    "speakers": {
+      "A": "Hamida opa",
+      "B": "Anna"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum. Men eʼlon boʻyicha qoʻngʻiroq qilgan edim. Kvartirani koʻrsam boʻladimi?",
+        "ru": "Здравствуйте. Я звонила по объявлению. Можно посмотреть квартиру?",
+        "en": "Hello. I called about the ad. May I see the apartment?"
+      },
+      {
+        "who": "A",
+        "uz": "Vaalaykum assalom, keling, kiring. Mana, koʻring: ikki xona, oshxona, hammom. Uy yaqinda taʼmirlangan, mebellari ham yangi.",
+        "ru": "Здравствуйте, проходите. Вот, смотрите: две комнаты, кухня, ванная. Недавно сделан ремонт, мебель тоже новая.",
+        "en": "Hello, come in. Have a look: two rooms, a kitchen and a bathroom. It's been renovated recently and the furniture is new too."
+      },
+      {
+        "who": "B",
+        "uz": "Juda yorugʻ ekan. Ijara haqi oyiga qancha?",
+        "ru": "Как здесь светло! Сколько стоит аренда в месяц?",
+        "en": "It's very bright. How much is the rent per month?"
+      },
+      {
+        "who": "A",
+        "uz": "Oyiga besh yuz dollar. Kommunal toʻlovlar alohida: gaz, elektr va suv uchun oʻzingiz toʻlaysiz.",
+        "ru": "Пятьсот долларов в месяц. Коммунальные услуги отдельно: газ, электричество и воду оплачиваете сами.",
+        "en": "Five hundred dollars a month. Utilities are separate: you pay for gas, electricity and water yourself."
+      },
+      {
+        "who": "B",
+        "uz": "Tushunarli. Oldindan necha oylik toʻlash kerak?",
+        "ru": "Понятно. За сколько месяцев нужно заплатить вперёд?",
+        "en": "I see. How many months do I need to pay in advance?"
+      },
+      {
+        "who": "A",
+        "uz": "Bir oylik ijara haqi va bir oylik garov puli.",
+        "ru": "За один месяц плюс залог в размере месячной платы.",
+        "en": "One month's rent plus a deposit of one month."
+      },
+      {
+        "who": "B",
+        "uz": "Shartnoma tuzamizmi? Menga vaqtincha roʻyxatdan oʻtish uchun kerak boʻladi.",
+        "ru": "Мы заключим договор? Он мне понадобится для временной регистрации.",
+        "en": "Will we sign a contract? I'll need it for my temporary registration."
+      },
+      {
+        "who": "A",
+        "uz": "Albatta, shartnoma tuzamiz. Roʻyxatdan oʻtishda ham yordam beraman.",
+        "ru": "Конечно, заключим. И с регистрацией помогу.",
+        "en": "Of course we will. I'll help you with the registration too."
+      },
+      {
+        "who": "B",
+        "uz": "Rahmat. Yana bir savol: eʼlonda uy hayvonlari haqida hech narsa yozilmagan edi. Mening mushugim bor, mumkinmi?",
+        "ru": "Спасибо. И ещё вопрос: в объявлении ничего не сказано о домашних животных. У меня кошка — можно?",
+        "en": "Thank you. One more question: the ad didn't say anything about pets. I have a cat — is that OK?"
+      },
+      {
+        "who": "A",
+        "uz": "Mushuk boʻlsa, mayli. Faqat mebelni ehtiyot qiling.",
+        "ru": "Кошка — ничего страшного. Только берегите мебель.",
+        "en": "A cat is fine. Just take care of the furniture."
+      },
+      {
+        "who": "B",
+        "uz": "Albatta. Ertaga bankdan pul olgach, kelaman. Shartnomani oʻshanda imzolaymiz.",
+        "ru": "Конечно. Завтра сниму деньги в банке и приеду. Тогда и подпишем договор.",
+        "en": "Of course. Tomorrow, once I've got the money from the bank, I'll come over. We'll sign the contract then."
+      },
+      {
+        "who": "A",
+        "uz": "Boʻldi, kelishdik. Ertaga soat oʻnda kutaman. Pasportingizni olib kelishni unutmang.",
+        "ru": "Договорились. Жду вас завтра в десять. Не забудьте паспорт.",
+        "en": "Agreed. I'll expect you tomorrow at ten. Don't forget to bring your passport."
+      }
+    ],
+    "vocab": [
+      "ijara",
+      "ijara haqi",
+      "eʼlon",
+      "shartnoma",
+      "garov puli",
+      "imzolamoq",
+      "ehtiyot qilmoq"
+    ],
+    "note_ru": "Форма «-gan edim» вежливо отсылает к прошлому: qoʻngʻiroq qilgan edim — «я звонила». Аффикс -gach означает «после того как»: pul olgach — «как только сниму деньги».",
+    "note_uz": "«-gan edim» shakli oʻtgan harakatni muloyim eslatadi: qoʻngʻiroq qilgan edim. -gach qoʻshimchasi «...dan keyin» maʼnosini beradi: pul olgach.",
+    "note_en": "“-gan edim” politely refers back to a past action: qoʻngʻiroq qilgan edim — “I called earlier”. The suffix -gach means “after/once”: pul olgach — “once I've got the money”."
+  },
+  {
+    "n": 18,
+    "cefr": "B1",
+    "section": "Работа и учёба",
+    "title_ru": "Первый день на работе",
+    "title_uz": "Ishdagi birinchi kun",
+    "title_en": "First Day at Work",
+    "intro_ru": "У Камилы первый день в новой компании. К ней подходит коллега Бобур из отдела маркетинга.",
+    "intro_uz": "Kamilaning yangi kompaniyadagi birinchi ish kuni. Uning oldiga marketing boʻlimidan hamkasbi Bobur keladi.",
+    "intro_en": "It's Kamila's first day at a new company. Her colleague Bobur from marketing comes over to meet her.",
+    "speakers": {
+      "A": "Bobur",
+      "B": "Kamila"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Assalomu alaykum! Siz yangi xodimsiz, shekilli? Men Boburman, marketing boʻlimidan.",
+        "ru": "Здравствуйте! Вы, кажется, новенькая? Я Бобур, из отдела маркетинга.",
+        "en": "Hello! You must be the new employee? I'm Bobur, from marketing."
+      },
+      {
+        "who": "B",
+        "uz": "Vaalaykum assalom! Ha, bugun birinchi kunim. Ismim Kamila, dizayner boʻlib ishlayman.",
+        "ru": "Здравствуйте! Да, сегодня мой первый день. Меня зовут Камила, я дизайнер.",
+        "en": "Hello! Yes, it's my first day. I'm Kamila, I work as a designer."
+      },
+      {
+        "who": "A",
+        "uz": "Tanishganimdan xursandman. Ofisni koʻrsatib beraymi?",
+        "ru": "Очень приятно. Показать вам офис?",
+        "en": "Nice to meet you. Shall I show you around the office?"
+      },
+      {
+        "who": "B",
+        "uz": "Ha, iltimos. Hali hech narsani bilmayman.",
+        "ru": "Да, пожалуйста. Я пока ничего здесь не знаю.",
+        "en": "Yes, please. I don't know anything yet."
+      },
+      {
+        "who": "A",
+        "uz": "Mana bu — oshxona. Choy va qahva bepul. Tushlik vaqti — birdan ikkigacha.",
+        "ru": "Вот кухня. Чай и кофе бесплатно. Обед с часу до двух.",
+        "en": "This is the kitchen. Tea and coffee are free. Lunch is from one to two."
+      },
+      {
+        "who": "B",
+        "uz": "Juda yaxshi. Ish soat nechada boshlanadi?",
+        "ru": "Отлично. Во сколько начинается рабочий день?",
+        "en": "Great. What time does work start?"
+      },
+      {
+        "who": "A",
+        "uz": "Toʻqqizda boshlanadi, oltida tugaydi. Agar kechikadigan boʻlsangiz, rahbarga oldindan yozib qoʻying.",
+        "ru": "В девять, а заканчивается в шесть. Если опаздываете, заранее напишите руководителю.",
+        "en": "It starts at nine and finishes at six. If you're going to be late, message the manager in advance."
+      },
+      {
+        "who": "B",
+        "uz": "Tushundim. Rahbarimiz qattiqqoʻlmi?",
+        "ru": "Поняла. А руководитель строгий?",
+        "en": "Got it. Is our manager strict?"
+      },
+      {
+        "who": "A",
+        "uz": "Yoʻq, Dilshod aka juda samimiy odam. Faqat muddatlar buzilishini yoqtirmaydi.",
+        "ru": "Нет, Дильшод-ака очень доброжелательный человек. Только не любит, когда срывают сроки.",
+        "en": "No, Dilshod aka is a very friendly person. He just doesn't like missed deadlines."
+      },
+      {
+        "who": "B",
+        "uz": "Bilib qoʻyaman. Savollarim boʻlsa, sizdan soʻrasam boʻladimi?",
+        "ru": "Учту. Если будут вопросы, можно обращаться к вам?",
+        "en": "I'll keep that in mind. If I have questions, may I ask you?"
+      },
+      {
+        "who": "A",
+        "uz": "Albatta! Men qoʻshni xonada oʻtiraman. Majlis tugagach, sizni butun jamoa bilan tanishtiraman.",
+        "ru": "Конечно! Я сижу в соседнем кабинете. Как закончится совещание, познакомлю вас со всей командой.",
+        "en": "Of course! I sit in the next room. Once the meeting is over, I'll introduce you to the whole team."
+      },
+      {
+        "who": "B",
+        "uz": "Katta rahmat, Bobur! Katta yordam berdingiz.",
+        "ru": "Большое спасибо, Бобур! Вы мне очень помогли.",
+        "en": "Thanks a lot, Bobur! You've been a great help."
+      }
+    ],
+    "vocab": [
+      "xodim",
+      "boʻlim",
+      "tushlik",
+      "rahbar",
+      "muddat",
+      "majlis",
+      "tanishtirmoq"
+    ],
+    "note_ru": "«Shekilli» выражает предположение — «кажется, видимо». Форма «-ib qoʻymoq» показывает действие, сделанное заранее или «на всякий случай»: yozib qoʻying, bilib qoʻyaman.",
+    "note_uz": "«Shekilli» taxminni bildiradi. «-ib qoʻymoq» harakat oldindan yoki ehtiyot uchun bajarilishini koʻrsatadi: yozib qoʻying, bilib qoʻyaman.",
+    "note_en": "“Shekilli” expresses a guess — “apparently, it seems”. “-ib qoʻymoq” marks something done in advance or just in case: yozib qoʻying, bilib qoʻyaman."
+  },
+  {
+    "n": 19,
+    "cefr": "B1",
+    "section": "Работа и учёба",
+    "title_ru": "Запись на курсы",
+    "title_uz": "Kursga yozilish",
+    "title_en": "Signing Up for a Course",
+    "intro_ru": "Диана хочет подтянуть узбекский и пришла записаться на курсы в учебный центр.",
+    "intro_uz": "Diana oʻzbek tilini yaxshilamoqchi va oʻquv markaziga kursga yozilish uchun keldi.",
+    "intro_en": "Diana wants to improve her Uzbek and has come to a training centre to sign up for a course.",
+    "speakers": {
+      "A": "Administrator",
+      "B": "Diana"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum. Oʻzbek tili kurslari haqida maʼlumot olmoqchi edim.",
+        "ru": "Здравствуйте. Я хотела бы узнать о курсах узбекского языка.",
+        "en": "Hello. I'd like some information about your Uzbek courses."
+      },
+      {
+        "who": "A",
+        "uz": "Vaalaykum assalom, marhamat. Bizda boshlangʻich, oʻrta va yuqori darajadagi guruhlar bor. Oʻzbek tilini qay darajada bilasiz?",
+        "ru": "Здравствуйте, пожалуйста. У нас есть группы начального, среднего и продвинутого уровня. Как хорошо вы знаете узбекский?",
+        "en": "Hello, of course. We have beginner, intermediate and advanced groups. How well do you speak Uzbek?"
+      },
+      {
+        "who": "B",
+        "uz": "Biroz gaplasha olaman, lekin grammatikada koʻp xato qilaman.",
+        "ru": "Немного могу говорить, но делаю много грамматических ошибок.",
+        "en": "I can speak a bit, but I make a lot of grammar mistakes."
+      },
+      {
+        "who": "A",
+        "uz": "Unda avval kichik test topshirasiz. Natijasiga qarab sizni guruhga yozamiz.",
+        "ru": "Тогда сначала пройдёте небольшой тест. По его результатам запишем вас в группу.",
+        "en": "Then you'll take a short test first. We'll put you in a group based on the result."
+      },
+      {
+        "who": "B",
+        "uz": "Test qancha davom etadi?",
+        "ru": "Сколько длится тест?",
+        "en": "How long does the test take?"
+      },
+      {
+        "who": "A",
+        "uz": "Taxminan qirq daqiqa. U yozma qism va ogʻzaki suhbatdan iborat.",
+        "ru": "Около сорока минут. Он состоит из письменной части и устного собеседования.",
+        "en": "About forty minutes. It consists of a written part and an oral interview."
+      },
+      {
+        "who": "B",
+        "uz": "Darslar haftasiga necha marta boʻladi?",
+        "ru": "Сколько раз в неделю проходят занятия?",
+        "en": "How many times a week are the classes?"
+      },
+      {
+        "who": "A",
+        "uz": "Haftasiga uch marta, har bir dars bir yarim soat. Ertalabki va kechki guruhlar bor.",
+        "ru": "Три раза в неделю, по полтора часа. Есть утренние и вечерние группы.",
+        "en": "Three times a week, an hour and a half each. There are morning and evening groups."
+      },
+      {
+        "who": "B",
+        "uz": "Men kunduzi ishlayman, shuning uchun kechki guruh menga qulay. Narxi qancha?",
+        "ru": "Днём я работаю, так что мне удобнее вечерняя группа. Сколько стоит обучение?",
+        "en": "I work during the day, so an evening group suits me. How much does it cost?"
+      },
+      {
+        "who": "A",
+        "uz": "Oyiga sakkiz yuz ming soʻm. Darsliklar narxga kiradi.",
+        "ru": "Восемьсот тысяч сумов в месяц. Учебники включены в стоимость.",
+        "en": "Eight hundred thousand soums a month. Textbooks are included."
+      },
+      {
+        "who": "B",
+        "uz": "Yaxshi. Testni bugun topshirsam boʻladimi?",
+        "ru": "Хорошо. А тест можно пройти сегодня?",
+        "en": "Good. Can I take the test today?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, mumkin. Mana bu anketani toʻldirib boʻlgach, oʻqituvchi sizni chaqiradi.",
+        "ru": "Да, можно. Заполните эту анкету — после этого вас пригласит преподаватель.",
+        "en": "Yes, you can. Once you've filled in this form, the teacher will call you in."
+      }
+    ],
+    "vocab": [
+      "kurs",
+      "daraja",
+      "guruh",
+      "test topshirmoq",
+      "dars",
+      "qulay",
+      "anketa",
+      "toʻldirmoq"
+    ],
+    "note_ru": "«-moqchi edim» — вежливый способ сказать «я хотел(а) бы». «-ga qarab» означает «в зависимости от»: natijasiga qarab — «по результатам».",
+    "note_uz": "«-moqchi edim» — istakni muloyim ifodalash usuli. «-ga qarab» birikmasi «...ga bogʻliq holda» maʼnosini beradi: natijasiga qarab.",
+    "note_en": "“-moqchi edim” is a polite “I would like to”. “-ga qarab” means “depending on”: natijasiga qarab — “based on the result”."
+  },
+  {
+    "n": 20,
+    "cefr": "B1",
+    "section": "Праздники и гости",
+    "title_ru": "В гостях в узбекском доме",
+    "title_uz": "Oʻzbek xonadonida mehmonda",
+    "title_en": "A Guest in an Uzbek Home",
+    "intro_ru": "Гульнора-опа пригласила к себе в гости соседку Лену. Хозяйка встречает гостью и знакомит её с обычаями.",
+    "intro_uz": "Gulnora opa qoʻshnisi Lenani uyiga mehmonga chaqirdi. Mezbon mehmonni kutib olib, uni urf-odatlar bilan tanishtiradi.",
+    "intro_en": "Gulnora opa has invited her neighbour Lena over. The hostess welcomes her guest and explains some customs.",
+    "speakers": {
+      "A": "Gulnora opa",
+      "B": "Lena"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Keling, xush kelibsiz! Kiring, tortinmang.",
+        "ru": "Проходите, добро пожаловать! Заходите, не стесняйтесь.",
+        "en": "Come in, welcome! Please, don't be shy."
+      },
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum! Mana, sizlarga kichkina sovgʻa olib keldim.",
+        "ru": "Здравствуйте! Вот, принесла вам небольшой подарок.",
+        "en": "Hello! I've brought you a little present."
+      },
+      {
+        "who": "A",
+        "uz": "Voy, ovora boʻlibsiz-da! Rahmat. Marhamat, toʻrga oʻting.",
+        "ru": "Ой, ну зачем вы утруждались! Спасибо. Проходите на почётное место.",
+        "en": "Oh, you shouldn't have gone to the trouble! Thank you. Please take the seat of honour."
+      },
+      {
+        "who": "B",
+        "uz": "Rahmat. Oyoq kiyimimni yechaymi?",
+        "ru": "Спасибо. Мне разуться?",
+        "en": "Thank you. Should I take off my shoes?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, mana shippak. Oʻtiring, dasturxonga qarang.",
+        "ru": "Да, вот тапочки. Садитесь, угощайтесь.",
+        "en": "Yes, here are some slippers. Sit down and help yourself."
+      },
+      {
+        "who": "B",
+        "uz": "Dasturxoningiz juda toʻkin ekan! Hammasini oʻzingiz tayyorladingizmi?",
+        "ru": "Какой богатый стол! Вы всё это сами приготовили?",
+        "en": "What a generous spread! Did you make all this yourself?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, hozir palov ham keladi. Mana bu nondan oling, hali issiq.",
+        "ru": "Да, сейчас ещё плов будет. Возьмите лепёшку, она ещё горячая.",
+        "en": "Yes, and the plov is coming soon. Have some of this bread, it's still warm."
+      },
+      {
+        "who": "B",
+        "uz": "Non juda mazali ekan. Tandirda yopilganmi?",
+        "ru": "Очень вкусная лепёшка. Её пекли в тандыре?",
+        "en": "The bread is delicious. Was it baked in a tandoor?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, qoʻshnimiz har kuni tandirda non yopadi. Choy quyib beray.",
+        "ru": "Да, наша соседка каждый день печёт лепёшки в тандыре. Давайте налью вам чаю.",
+        "en": "Yes, our neighbour bakes bread in her tandoor every day. Let me pour you some tea."
+      },
+      {
+        "who": "B",
+        "uz": "Rahmat. Nega piyolaga choyni oz quyasiz?",
+        "ru": "Спасибо. А почему вы наливаете в пиалу так мало чая?",
+        "en": "Thank you. Why do you pour so little tea into the cup?"
+      },
+      {
+        "who": "A",
+        "uz": "Bizda odat shunaqa: mehmonga choy oz-ozdan quyiladi, shunda mezbon tez-tez quyib, hurmat koʻrsatadi. Piyolani toʻldirib quyish «tezroq keting» degan maʼnoni beradi, deyishadi.",
+        "ru": "У нас такой обычай: гостю наливают понемногу, чтобы хозяин почаще подливал и этим выказывал уважение. Говорят, полная пиала означает «уходите поскорее».",
+        "en": "That's our custom: tea is poured for a guest a little at a time, so the host keeps topping it up as a sign of respect. They say a full cup means “please leave soon”."
+      },
+      {
+        "who": "B",
+        "uz": "Qiziq odat ekan! Endi bilib oldim.",
+        "ru": "Какой интересный обычай! Теперь буду знать.",
+        "en": "What an interesting custom! Now I know."
+      }
+    ],
+    "vocab": [
+      "mehmon",
+      "mezbon",
+      "sovgʻa",
+      "dasturxon",
+      "piyola",
+      "quymoq",
+      "odat"
+    ],
+    "note_ru": "«Toʻr» — почётное место за столом, дальше всего от двери; туда сажают гостей и старших. Лепёшку (non) никогда не кладут вверх дном и не бросают.",
+    "note_uz": "«Toʻr» — xonaning eshikdan eng uzoq, eng hurmatli joyi; u yerga mehmon va kattalar oʻtqaziladi. Non hech qachon teskari qoʻyilmaydi va tashlanmaydi.",
+    "note_en": "“Toʻr” is the seat of honour, farthest from the door, kept for guests and elders. Bread (non) is never placed upside down or thrown away."
+  },
+  {
+    "n": 21,
+    "cefr": "B1",
+    "section": "Праздники и гости",
+    "title_ru": "Поздравление с Наврузом",
+    "title_uz": "Navroʻz tabrigi",
+    "title_en": "Navruz Greetings",
+    "intro_ru": "21 марта Сабина поздравляет с Наврузом соседку Зухру-опа, которая во дворе варит сумаляк.",
+    "intro_uz": "21-mart kuni Sabina hovlida sumalak pishirayotgan qoʻshnisi Zuhra opani Navroʻz bilan tabriklaydi.",
+    "intro_en": "On 21 March Sabina wishes a happy Navruz to her neighbour Zuhra opa, who is cooking sumalak in the courtyard.",
+    "speakers": {
+      "A": "Zuhra opa",
+      "B": "Sabina"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Zuhra opa, assalomu alaykum! Navroʻz bayramingiz muborak boʻlsin!",
+        "ru": "Зухра-опа, здравствуйте! С праздником Навруз!",
+        "en": "Hello, Zuhra opa! Happy Navruz!"
+      },
+      {
+        "who": "A",
+        "uz": "Vaalaykum assalom, Sabina! Sizni ham bayram bilan tabriklayman!",
+        "ru": "Здравствуй, Сабина! И тебя с праздником!",
+        "en": "Hello, Sabina! Happy holiday to you too!"
+      },
+      {
+        "who": "B",
+        "uz": "Rahmat! Hovlida qaynayotgan katta qozonda nima pishiryapsiz?",
+        "ru": "Спасибо! А что это вы готовите в большом казане во дворе?",
+        "en": "Thank you! What are you cooking in that big pot in the courtyard?"
+      },
+      {
+        "who": "A",
+        "uz": "Sumalak! Kechadan beri pishiryapmiz. Tun boʻyi qoʻshni ayollar navbatma-navbat kavlab chiqishdi.",
+        "ru": "Сумаляк! Варим со вчерашнего дня. Всю ночь соседки по очереди его помешивали.",
+        "en": "Sumalak! We've been cooking it since yesterday. The neighbour women took turns stirring it all night."
+      },
+      {
+        "who": "B",
+        "uz": "Men sumalakni hech tatib koʻrmaganman. U nimadan tayyorlanadi?",
+        "ru": "Я никогда не пробовала сумаляк. Из чего его готовят?",
+        "en": "I've never tried sumalak. What is it made from?"
+      },
+      {
+        "who": "A",
+        "uz": "Undirilgan bugʻdoydan. Pishgach, hammaga tarqatamiz. Sizga ham bir kosa olib chiqaman.",
+        "ru": "Из пророщенной пшеницы. Когда будет готов, раздадим всем. И тебе вынесу мисочку.",
+        "en": "From sprouted wheat. When it's ready, we share it with everyone. I'll bring you a bowl too."
+      },
+      {
+        "who": "B",
+        "uz": "Voy, rahmat! Eshitishimcha, qozonga tosh solishar ekan, rostmi?",
+        "ru": "Ой, спасибо! Я слышала, что в казан кладут камешки — это правда?",
+        "en": "Oh, thank you! I've heard people put stones in the pot — is that true?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, rost. Sumalak kuymasin deb, qozon tagiga mayda toshchalar solamiz. Kosangizdan toshcha chiqsa, niyatingiz amalga oshadi, deyishadi.",
+        "ru": "Да, правда. Чтобы сумаляк не пригорел, на дно казана кладут мелкие камешки. Говорят, если камешек попадётся тебе в пиале, желание сбудется.",
+        "en": "Yes, it's true. We put small pebbles on the bottom so the sumalak doesn't burn. They say if you find a pebble in your bowl, your wish will come true."
+      },
+      {
+        "who": "B",
+        "uz": "Unda men ham niyat qilaman! Navroʻzda yana qanday odatlar bor?",
+        "ru": "Тогда я тоже загадаю желание! А какие ещё есть обычаи на Навруз?",
+        "en": "Then I'll make a wish too! What other Navruz customs are there?"
+      },
+      {
+        "who": "A",
+        "uz": "Qarindoshlarnikiga borib, kattalarni yoʻqlaymiz. Arazlashganlar ham shu kuni yarashib olishadi.",
+        "ru": "Ходим к родственникам, навещаем старших. А те, кто в ссоре, в этот день мирятся.",
+        "en": "We visit relatives and call on the elders. People who have fallen out make up on this day."
+      },
+      {
+        "who": "B",
+        "uz": "Juda chiroyli bayram ekan. Yana bir bor bayramingiz muborak, opa!",
+        "ru": "Какой красивый праздник! Ещё раз с праздником, опа!",
+        "en": "What a lovely holiday. Happy Navruz once again, opa!"
+      },
+      {
+        "who": "A",
+        "uz": "Sizga ham, qizim! Bahor sizga omad olib kelsin.",
+        "ru": "И тебя, дочка! Пусть весна принесёт тебе удачу.",
+        "en": "You too, dear! May spring bring you good luck."
+      }
+    ],
+    "vocab": [
+      "bayram",
+      "tabriklamoq",
+      "muborak",
+      "sumalak",
+      "qozon",
+      "niyat",
+      "qarindosh",
+      "yarashmoq"
+    ],
+    "note_ru": "Формула поздравления: «… bayramingiz muborak boʻlsin!». Конструкция с «deb» передаёт цель: kuymasin deb — «чтобы не пригорел». Помешивать сумаляк по-узбекски — «sumalak kavlamoq».",
+    "note_uz": "Tabrik qolipi: «... bayramingiz muborak boʻlsin!». «deb» soʻzi maqsadni ham bildiradi: kuymasin deb — kuymasligi uchun. Sumalakni aralashtirish «sumalak kavlash» deyiladi.",
+    "note_en": "The standard greeting is “... bayramingiz muborak boʻlsin!” The word “deb” can also express purpose: kuymasin deb — “so that it doesn't burn”. Stirring sumalak is called “sumalak kavlamoq”."
+  },
+  {
+    "n": 22,
+    "cefr": "B1",
+    "section": "Праздники и гости",
+    "title_ru": "Приглашение на свадьбу",
+    "title_uz": "Toʻyga taklif",
+    "title_en": "A Wedding Invitation",
+    "intro_ru": "Отабек приглашает коллегу Тимура на свадьбу своего младшего брата и объясняет, как она проходит.",
+    "intro_uz": "Otabek hamkasbi Timurni ukasining toʻyiga taklif qiladi va toʻy qanday oʻtishini tushuntiradi.",
+    "intro_en": "Otabek invites his colleague Timur to his younger brother's wedding and explains how it works.",
+    "speakers": {
+      "A": "Otabek",
+      "B": "Timur"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Timur, bir daqiqaga boʻshmisiz? Sizga taklifnoma olib keldim.",
+        "ru": "Тимур, есть минутка? Я принёс вам приглашение.",
+        "en": "Timur, have you got a minute? I've brought you an invitation."
+      },
+      {
+        "who": "B",
+        "uz": "Albatta. Bu toʻy taklifnomasimi?",
+        "ru": "Конечно. Это приглашение на свадьбу?",
+        "en": "Of course. Is it a wedding invitation?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, kelasi shanba ukamning toʻyi. Sizni oilangiz bilan taklif qilamiz.",
+        "ru": "Да, в следующую субботу свадьба моего младшего брата. Приглашаем вас с семьёй.",
+        "en": "Yes, my younger brother's wedding is next Saturday. We'd like to invite you and your family."
+      },
+      {
+        "who": "B",
+        "uz": "Tabriklayman! Albatta boraman. Toʻy qayerda boʻladi?",
+        "ru": "Поздравляю! Обязательно приду. Где будет свадьба?",
+        "en": "Congratulations! I'll definitely come. Where is the wedding?"
+      },
+      {
+        "who": "A",
+        "uz": "«Navbahor» toʻyxonasida, kechqurun soat oltida boshlanadi. Ertalab nahor oshi ham boʻladi, unga ham kelsangiz, xursand boʻlamiz.",
+        "ru": "В ресторане «Навбахор», начало в шесть вечера. А утром будет ещё нахор оши — будем рады, если и на него придёте.",
+        "en": "At the Navbahor wedding hall, starting at six in the evening. There's also a morning plov, nahor oshi — we'd be glad if you came to that too."
+      },
+      {
+        "who": "B",
+        "uz": "Nahor oshi nima? Birinchi marta eshityapman.",
+        "ru": "Что такое нахор оши? Впервые слышу.",
+        "en": "What's nahor oshi? I've never heard of it."
+      },
+      {
+        "who": "A",
+        "uz": "Toʻy kuni erta tongda erkaklarga beriladigan osh. Odatda ertalab soat oltilarda boshlanadi, bir soatcha davom etadi.",
+        "ru": "Это плов, которым рано утром в день свадьбы угощают мужчин. Обычно начинается часов в шесть утра и длится около часа.",
+        "en": "It's plov served to men early in the morning on the wedding day. It usually starts around six a.m. and lasts about an hour."
+      },
+      {
+        "who": "B",
+        "uz": "Qiziq ekan! Toʻyga nima sovgʻa qilsam boʻladi?",
+        "ru": "Интересно! А что можно подарить на свадьбу?",
+        "en": "Interesting! What would be a good wedding present?"
+      },
+      {
+        "who": "A",
+        "uz": "Ovora boʻlmang. Koʻpincha konvertda pul berishadi. Asosiysi — kelganingiz.",
+        "ru": "Не беспокойтесь. Обычно дарят деньги в конверте. Главное — что вы придёте.",
+        "en": "Don't worry about it. People usually give money in an envelope. The main thing is that you come."
+      },
+      {
+        "who": "B",
+        "uz": "Kiyim-chi? Kostyum kiyish shartmi?",
+        "ru": "А одежда? Обязательно надевать костюм?",
+        "en": "What about clothes? Do I have to wear a suit?"
+      },
+      {
+        "who": "A",
+        "uz": "Shart emas, lekin chiroyliroq kiyinsangiz yaxshi. Toʻyda raqsga tushishga tayyor turing!",
+        "ru": "Не обязательно, но лучше одеться понаряднее. И готовьтесь танцевать!",
+        "en": "It's not required, but it's nice to dress up a bit. And be ready to dance!"
+      },
+      {
+        "who": "B",
+        "uz": "Harakat qilaman! Taklifingiz uchun katta rahmat.",
+        "ru": "Постараюсь! Большое спасибо за приглашение.",
+        "en": "I'll do my best! Thank you very much for the invitation."
+      }
+    ],
+    "vocab": [
+      "toʻy",
+      "taklif qilmoq",
+      "taklifnoma",
+      "toʻyxona",
+      "nahor oshi",
+      "sovgʻa",
+      "shart",
+      "raqsga tushmoq"
+    ],
+    "note_ru": "Узбекские свадьбы многолюдны — сотни гостей. Нахор оши — утренний плов для мужчин в день свадьбы. Причастие на -digan: beriladigan osh — «плов, который подают».",
+    "note_uz": "Oʻzbek toʻylari koʻp mehmonli boʻladi. Nahor oshi — toʻy kuni ertalab erkaklarga beriladigan osh. -digan sifatdoshi: beriladigan osh.",
+    "note_en": "Uzbek weddings are large, often with hundreds of guests. Nahor oshi is a morning plov for men on the wedding day. The -digan participle: beriladigan osh — “plov that is served”."
+  },
+  {
+    "n": 23,
+    "cefr": "B1",
+    "section": "Быт и услуги",
+    "title_ru": "Вежливая жалоба соседу",
+    "title_uz": "Qoʻshniga iltimos",
+    "title_en": "A Polite Word with a Neighbour",
+    "intro_ru": "Севара не может спать из-за шума у соседей и решает вежливо поговорить с соседом Акмалем.",
+    "intro_uz": "Sevara qoʻshnilarning shovqini tufayli uxlay olmayapti va qoʻshnisi Akmal bilan muloyimlik bilan gaplashishga qaror qiladi.",
+    "intro_en": "Sevara can't sleep because of the noise next door and decides to have a polite word with her neighbour Akmal.",
+    "speakers": {
+      "A": "Sevara",
+      "B": "Akmal aka"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Assalomu alaykum, Akmal aka. Bezovta qilganim uchun kechirasiz. Bir daqiqaga gaplashsak boʻladimi?",
+        "ru": "Здравствуйте, Акмаль-ака. Извините за беспокойство. Можно вас на минутку?",
+        "en": "Hello, Akmal aka. Sorry to bother you. Could I have a word for a minute?"
+      },
+      {
+        "who": "B",
+        "uz": "Vaalaykum assalom, Sevara. Albatta. Tinchlikmi?",
+        "ru": "Здравствуйте, Севара. Конечно. Что-то случилось?",
+        "en": "Hello, Sevara. Of course. Is everything all right?"
+      },
+      {
+        "who": "A",
+        "uz": "Tinchlik. Gap shundaki, kecha kvartirangizdan soat ikkigacha baland ovozda musiqa eshitildi.",
+        "ru": "Всё в порядке. Дело в том, что вчера из вашей квартиры до двух часов доносилась очень громкая музыка.",
+        "en": "Everything's fine. The thing is, last night there was very loud music from your flat until two o'clock."
+      },
+      {
+        "who": "B",
+        "uz": "Voy, kechirasiz! Kecha oʻgʻlimning tugʻilgan kuni edi, doʻstlari kelgan edi. Shunchalik eshitilishini bilmabman.",
+        "ru": "Ой, простите! Вчера у сына был день рождения, пришли его друзья. Я и не думал, что так слышно.",
+        "en": "Oh, I'm sorry! It was my son's birthday yesterday and his friends came over. I didn't realise it could be heard so much."
+      },
+      {
+        "who": "A",
+        "uz": "Tushunaman, bayram ekan. Faqat men ishga borish uchun ertalab yettida turaman, kecha esa umuman uxlay olmadim.",
+        "ru": "Понимаю, праздник. Просто я встаю на работу в семь утра, а вчера совсем не смогла уснуть.",
+        "en": "I understand, it was a celebration. It's just that I get up for work at seven, and last night I couldn't sleep at all."
+      },
+      {
+        "who": "B",
+        "uz": "Haqsiz. Bundan keyin bunday boʻlmaydi.",
+        "ru": "Вы правы. Больше такого не повторится.",
+        "en": "You're right. It won't happen again."
+      },
+      {
+        "who": "A",
+        "uz": "Rahmat. Yana bir narsa: taʼmirlash ishlari qachon tugaydi? Har kuni ertalab drel ovozi eshitiladi.",
+        "ru": "Спасибо. И ещё: когда закончится ремонт? Каждое утро слышна дрель.",
+        "en": "Thank you. One more thing: when will the renovation be finished? I hear a drill every morning."
+      },
+      {
+        "who": "B",
+        "uz": "Ha, oshxonani taʼmirlayapmiz. Ustalarning aytishicha, yana bir hafta ishlashar ekan.",
+        "ru": "Да, ремонтируем кухню. Мастера говорят, что работы ещё на неделю.",
+        "en": "Yes, we're redoing the kitchen. The workmen say they'll need another week."
+      },
+      {
+        "who": "A",
+        "uz": "Iltimos, ustalarga ayting, shovqinli ishlarni soat oʻndan keyin boshlashsin. Yakshanba kuni esa umuman qilishmasa, yaxshi boʻlardi.",
+        "ru": "Пожалуйста, попросите мастеров начинать шумные работы после десяти. А в воскресенье было бы хорошо вообще не шуметь.",
+        "en": "Could you ask the workmen to start the noisy work after ten? And it would be great if they didn't do any on Sunday."
+      },
+      {
+        "who": "B",
+        "uz": "Albatta, aytaman. Yana bir bor uzr soʻrayman.",
+        "ru": "Конечно, скажу. Ещё раз прошу прощения.",
+        "en": "Of course, I'll tell them. Again, I apologise."
+      },
+      {
+        "who": "A",
+        "uz": "Hechqisi yoʻq. Tushunganingiz uchun rahmat. Qoʻshnichilikda bunaqa narsalar boʻlib turadi.",
+        "ru": "Ничего страшного. Спасибо за понимание. Между соседями такое бывает.",
+        "en": "No problem. Thanks for understanding. These things happen between neighbours."
+      },
+      {
+        "who": "B",
+        "uz": "Toʻgʻri aytasiz. Biror narsa kerak boʻlsa, tortinmay ayting. Eshigimiz sizga doim ochiq.",
+        "ru": "Верно. Если что-то понадобится, обращайтесь, не стесняйтесь. Наши двери для вас всегда открыты.",
+        "en": "That's true. If you ever need anything, don't hesitate to ask. Our door is always open to you."
+      }
+    ],
+    "vocab": [
+      "qoʻshni",
+      "bezovta qilmoq",
+      "shovqin",
+      "taʼmirlamoq",
+      "uzr soʻramoq",
+      "uxlamoq",
+      "haq"
+    ],
+    "note_ru": "«Tinchlikmi?» спрашивают при неожиданном визите — «всё ли в порядке?». Жалобу смягчают оборотом «Gap shundaki…» и условной формой «…qilishmasa, yaxshi boʻlardi».",
+    "note_uz": "Kutilmagan tashrifda «Tinchlikmi?» deb soʻraladi. Shikoyat «Gap shundaki...» iborasi va «...qilishmasa, yaxshi boʻlardi» shakli bilan yumshatiladi.",
+    "note_en": "“Tinchlikmi?” (“Is everything OK?”) is asked when someone visits unexpectedly. A complaint is softened with “Gap shundaki…” (“The thing is…”) and the conditional “…qilishmasa, yaxshi boʻlardi” (“it would be nice if they didn't…”)."
+  },
+  {
+    "n": 24,
+    "cefr": "B1",
+    "section": "Город и транспорт",
+    "title_ru": "Забытая сумка в метро",
+    "title_uz": "Metroda qolgan sumka",
+    "title_en": "A Bag Left on the Metro",
+    "intro_ru": "Нигора забыла сумку в вагоне метро и обращается к дежурной по станции.",
+    "intro_uz": "Nigora sumkasini metro vagonida qoldirib ketgan va bekat navbatchisiga murojaat qilyapti.",
+    "intro_en": "Nigora has left her bag on a metro train and goes to the station attendant for help.",
+    "speakers": {
+      "A": "Nigora",
+      "B": "Navbatchi"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Assalomu alaykum. Kechirasiz, men vagonda sumkamni qoldirib ketdim. Kimga murojaat qilsam boʻladi?",
+        "ru": "Здравствуйте. Извините, я забыла сумку в вагоне. К кому мне обратиться?",
+        "en": "Hello. Excuse me, I left my bag on the train. Who should I talk to?"
+      },
+      {
+        "who": "B",
+        "uz": "Vaalaykum assalom. Xavotir olmang, menga ayting. Qachon va qaysi bekatda tushdingiz?",
+        "ru": "Здравствуйте. Не волнуйтесь, расскажите мне. Когда и на какой станции вы вышли?",
+        "en": "Hello. Don't worry, tell me. When and at which station did you get off?"
+      },
+      {
+        "who": "A",
+        "uz": "Taxminan yigirma daqiqa oldin, shu bekatda tushdim. Poyezd markaz tomondan kelayotgan edi.",
+        "ru": "Минут двадцать назад, на этой станции. Поезд шёл со стороны центра.",
+        "en": "About twenty minutes ago, at this station. The train was coming from the centre."
+      },
+      {
+        "who": "B",
+        "uz": "Sumkangiz qanaqa edi? Ichida nimalar bor edi?",
+        "ru": "Как выглядела сумка? Что в ней было?",
+        "en": "What did your bag look like? What was in it?"
+      },
+      {
+        "who": "A",
+        "uz": "Qora charm sumka, oʻrtacha kattalikda. Ichida hamyonim, kalitlarim va bitta kitob bor edi.",
+        "ru": "Чёрная кожаная сумка среднего размера. Внутри кошелёк, ключи и книга.",
+        "en": "A black leather bag, medium-sized. My wallet, my keys and a book were inside."
+      },
+      {
+        "who": "B",
+        "uz": "Hozir oxirgi bekatdagi hamkasblarimga qoʻngʻiroq qilib, vagonlarni tekshirib koʻrishlarini soʻrayman.",
+        "ru": "Сейчас позвоню коллегам на конечной станции и попрошу проверить вагоны.",
+        "en": "I'll call my colleagues at the last station now and ask them to check the carriages."
+      },
+      {
+        "who": "A",
+        "uz": "Juda minnatdorman! Qancha kutishim kerak?",
+        "ru": "Я вам очень благодарна! Сколько придётся ждать?",
+        "en": "I'm very grateful! How long will I have to wait?"
+      },
+      {
+        "who": "B",
+        "uz": "Oʻn-oʻn besh daqiqa. Shu orada mana bu arizani toʻldiring: ismingiz, telefon raqamingiz va sumkaning tavsifi.",
+        "ru": "Минут десять-пятнадцать. А пока заполните заявление: имя, номер телефона и описание сумки.",
+        "en": "Ten or fifteen minutes. Meanwhile, fill in this form: your name, phone number and a description of the bag."
+      },
+      {
+        "who": "A",
+        "uz": "Toʻldirdim. Biror xabar bormi?",
+        "ru": "Заполнила. Есть новости?",
+        "en": "Done. Is there any news?"
+      },
+      {
+        "who": "B",
+        "uz": "Ha, xushxabar! Qora sumka topildi, deyishyapti. Uni keyingi poyezd bilan shu yerga yuborishadi.",
+        "ru": "Да, хорошие новости! Говорят, чёрную сумку нашли. Её пришлют сюда со следующим поездом.",
+        "en": "Yes, good news! They say a black bag has been found. They'll send it here on the next train."
+      },
+      {
+        "who": "A",
+        "uz": "Voy, juda xursandman! Sizga qanday rahmat aytishni bilmayman.",
+        "ru": "Ой, как я рада! Не знаю, как вас и благодарить.",
+        "en": "Oh, I'm so happy! I don't know how to thank you."
+      },
+      {
+        "who": "B",
+        "uz": "Arzimaydi. Sumkani olayotganda ichidagi narsalarni birga tekshiramiz. Keyingi safar ehtiyot boʻling!",
+        "ru": "Не за что. Когда будете забирать сумку, вместе проверим содержимое. В следующий раз будьте внимательнее!",
+        "en": "You're welcome. When you collect it, we'll check the contents together. Be more careful next time!"
+      }
+    ],
+    "vocab": [
+      "qoldirib ketmoq",
+      "murojaat qilmoq",
+      "bekat",
+      "hamyon",
+      "ariza",
+      "tekshirmoq",
+      "topilmoq"
+    ],
+    "note_ru": "Причастие на -ayotgan описывает действие в процессе: kelayotgan edi — «шёл (в тот момент)». «deyishyapti» передаёт чужие слова — «говорят».",
+    "note_uz": "-ayotgan sifatdoshi jarayondagi harakatni bildiradi: kelayotgan edi. «deyishyapti» boshqalarning gapini yetkazadi.",
+    "note_en": "The -ayotgan form describes an action in progress: kelayotgan edi — “was coming”. “deyishyapti” reports what others say — “they say”."
+  },
+  {
+    "n": 25,
+    "cefr": "B2",
+    "section": "Работа и учёба",
+    "title_ru": "Собеседование",
+    "title_uz": "Ish suhbati",
+    "title_en": "A Job Interview",
+    "intro_ru": "Санжар проходит собеседование на должность менеджера проектов. Его расспрашивает начальник отдела кадров Нодира Каримовна.",
+    "intro_uz": "Sanjar loyiha menejeri lavozimiga ish suhbatidan oʻtmoqda. Unga kadrlar boʻlimi boshligʻi Nodira Karimovna savollar beradi.",
+    "intro_en": "Sanjar is interviewing for a project manager position. The head of HR, Nodira Karimovna, asks him questions.",
+    "speakers": {
+      "A": "Nodira Karimovna",
+      "B": "Sanjar"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Xush kelibsiz, oʻtiring. Avvalo, oʻzingiz haqingizda qisqacha gapirib bersangiz.",
+        "ru": "Добро пожаловать, присаживайтесь. Для начала расскажите, пожалуйста, коротко о себе.",
+        "en": "Welcome, have a seat. First of all, could you tell me briefly about yourself?"
+      },
+      {
+        "who": "B",
+        "uz": "Rahmat. Ismim Sanjar Rahimov. Toshkent davlat iqtisodiyot universitetini tamomlaganman. Soʻnggi uch yildan beri xalqaro logistika kompaniyasida loyiha menejeri boʻlib ishlayapman.",
+        "ru": "Спасибо. Меня зовут Санжар Рахимов. Я окончил Ташкентский государственный экономический университет. Последние три года работаю менеджером проектов в международной логистической компании.",
+        "en": "Thank you. My name is Sanjar Rahimov. I graduated from Tashkent State University of Economics. For the last three years I've worked as a project manager at an international logistics company."
+      },
+      {
+        "who": "A",
+        "uz": "Nima uchun hozirgi ish joyingizni tark etmoqchisiz?",
+        "ru": "Почему вы хотите уйти с нынешнего места работы?",
+        "en": "Why do you want to leave your current job?"
+      },
+      {
+        "who": "B",
+        "uz": "U yerda koʻp narsa oʻrgandim, ammo kasbiy oʻsish imkoniyatlari cheklangan. Sizning kompaniyangiz jadal rivojlanayotganini bilaman va tajribamni shu yerda qoʻllamoqchiman.",
+        "ru": "Я многому там научился, но возможности для профессионального роста ограничены. Я знаю, что ваша компания быстро развивается, и хотел бы применить свой опыт у вас.",
+        "en": "I've learned a lot there, but the opportunities for professional growth are limited. I know your company is growing fast, and I'd like to apply my experience here."
+      },
+      {
+        "who": "A",
+        "uz": "Tushunarli. Sizningcha, eng katta kamchiligingiz nima?",
+        "ru": "Понятно. Как вы считаете, в чём ваш главный недостаток?",
+        "en": "I see. What would you say is your biggest weakness?"
+      },
+      {
+        "who": "B",
+        "uz": "Baʼzan ishni boshqalarga topshirish oʻrniga, hammasini oʻzim qilishga harakat qilaman. Hozir buning ustida ishlayapman: vazifalarni jamoa aʼzolari oʻrtasida toʻgʻri taqsimlashni oʻrganyapman.",
+        "ru": "Иногда я стараюсь всё сделать сам вместо того, чтобы делегировать. Сейчас работаю над этим: учусь правильно распределять задачи в команде.",
+        "en": "Sometimes I try to do everything myself instead of delegating. I'm working on it now: I'm learning to distribute tasks properly within the team."
+      },
+      {
+        "who": "A",
+        "uz": "Yaxshi javob. Bosim ostida ishlashga qanday qaraysiz? Bizda muddatlar ancha qisqa boʻladi.",
+        "ru": "Хороший ответ. Как вы относитесь к работе в условиях давления? У нас довольно сжатые сроки.",
+        "en": "Good answer. How do you feel about working under pressure? Our deadlines are quite tight."
+      },
+      {
+        "who": "B",
+        "uz": "Qisqa muddatlar menga tanish. Oʻtgan yili bir loyihani belgilangan muddatdan ikki hafta oldin yakunlaganmiz. Asosiysi — aniq reja va jamoa bilan ochiq muloqot.",
+        "ru": "Сжатые сроки мне знакомы. В прошлом году мы завершили проект на две недели раньше срока. Главное — чёткий план и открытое общение с командой.",
+        "en": "Tight deadlines are familiar to me. Last year we finished a project two weeks ahead of schedule. The key is a clear plan and open communication with the team."
+      },
+      {
+        "who": "A",
+        "uz": "Qancha maosh olishni koʻzlayapsiz?",
+        "ru": "На какую зарплату вы рассчитываете?",
+        "en": "What salary are you expecting?"
+      },
+      {
+        "who": "B",
+        "uz": "Bozordagi oʻrtacha koʻrsatkichlarni hisobga olib, oyiga oʻn besh million soʻm atrofida maosh koʻzlayapman. Biroq bu borada kelishishimiz mumkin.",
+        "ru": "С учётом средних показателей на рынке — около пятнадцати миллионов сумов в месяц. Впрочем, это обсуждаемо.",
+        "en": "Taking the market average into account, around fifteen million soums a month. That said, it's open to discussion."
+      },
+      {
+        "who": "A",
+        "uz": "Sizda bizga savollar bormi?",
+        "ru": "У вас есть к нам вопросы?",
+        "en": "Do you have any questions for us?"
+      },
+      {
+        "who": "B",
+        "uz": "Ha. Sinov muddati qancha davom etadi va bu lavozimda kimga boʻysunaman?",
+        "ru": "Да. Сколько длится испытательный срок и кому я буду подчиняться на этой должности?",
+        "en": "Yes. How long is the probation period, and who would I report to in this role?"
+      },
+      {
+        "who": "A",
+        "uz": "Sinov muddati — uch oy. Siz bevosita operatsion direktorga boʻysunasiz. Qarorimizni bir hafta ichida maʼlum qilamiz.",
+        "ru": "Испытательный срок — три месяца. Вы будете подчиняться непосредственно операционному директору. О нашем решении сообщим в течение недели.",
+        "en": "The probation period is three months. You'd report directly to the operations director. We'll let you know our decision within a week."
+      },
+      {
+        "who": "B",
+        "uz": "Vaqt ajratganingiz uchun rahmat. Javobingizni kutaman.",
+        "ru": "Спасибо, что уделили мне время. Буду ждать вашего ответа.",
+        "en": "Thank you for your time. I look forward to hearing from you."
+      }
+    ],
+    "vocab": [
+      "lavozim",
+      "tajriba",
+      "tark etmoq",
+      "kamchilik",
+      "muddat",
+      "maosh",
+      "sinov muddati",
+      "boʻysunmoq"
+    ],
+    "note_ru": "В официальной обстановке к старшим коллегам обращаются по имени и отчеству: Nodira Karimovna. Просьба на -sangiz без сказуемого («gapirib bersangiz») звучит очень вежливо.",
+    "note_uz": "Rasmiy muhitda kattalarga ism-sharifi bilan murojaat qilinadi: Nodira Karimovna. «gapirib bersangiz» kabi -sangiz bilan tugagan iltimos juda muloyim eshitiladi.",
+    "note_en": "In formal settings senior colleagues are addressed by first name and patronymic: Nodira Karimovna. A request ending in -sangiz with no main verb (“gapirib bersangiz”) sounds very polite."
+  },
+  {
+    "n": 26,
+    "cefr": "B2",
+    "section": "Быт и услуги",
+    "title_ru": "В Центре госуслуг",
+    "title_uz": "Davlat xizmatlari markazida",
+    "title_en": "At the Public Service Centre",
+    "intro_ru": "Для работы за рубежом Диёре нужна справка о несудимости. Она пришла в Центр государственных услуг.",
+    "intro_uz": "Chet elda ishlash uchun Diyoraga sudlanmaganlik toʻgʻrisida maʼlumotnoma kerak. U Davlat xizmatlari markaziga keldi.",
+    "intro_en": "Diyora needs a certificate of no criminal record to work abroad, so she has come to the Public Service Centre.",
+    "speakers": {
+      "A": "Xodim",
+      "B": "Diyora"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Assalomu alaykum. Marhamat, qanday xizmat kerak?",
+        "ru": "Здравствуйте. Слушаю вас, какая услуга вам нужна?",
+        "en": "Hello. How can I help you?"
+      },
+      {
+        "who": "B",
+        "uz": "Vaalaykum assalom. Menga sudlanmaganlik toʻgʻrisida maʼlumotnoma kerak edi. Chet eldagi ish beruvchi soʻrayapti.",
+        "ru": "Здравствуйте. Мне нужна справка о несудимости. Её требует работодатель за границей.",
+        "en": "Hello. I need a certificate of no criminal record. My employer abroad is asking for it."
+      },
+      {
+        "who": "A",
+        "uz": "Tushunarli. Pasportingiz yoki ID-kartangizni bering, iltimos.",
+        "ru": "Понятно. Дайте, пожалуйста, паспорт или ID-карту.",
+        "en": "I see. Your passport or ID card, please."
+      },
+      {
+        "who": "B",
+        "uz": "Mana, ID-kartam. Ish beruvchi maʼlumotnoma yangi boʻlishi kerakligini alohida taʼkidladi.",
+        "ru": "Вот моя ID-карта. Работодатель особо подчеркнул, что справка должна быть свежей.",
+        "en": "Here's my ID card. The employer stressed that the certificate must be recent."
+      },
+      {
+        "who": "A",
+        "uz": "Albatta, yangi beriladi. Arizangizni hozir tizim orqali rasmiylashtiraman. Telefon raqamingizni ayting, natija haqida SMS keladi.",
+        "ru": "Конечно, выдадим новую. Сейчас оформлю ваше заявление через систему. Назовите номер телефона — о результате придёт СМС.",
+        "en": "Of course, it will be a new one. I'll process your application through the system now. Give me your phone number — you'll get a text about the result."
+      },
+      {
+        "who": "B",
+        "uz": "Raqamim: 90 123 45 67. Bu xizmat pullikmi?",
+        "ru": "Мой номер: 90 123 45 67. Эта услуга платная?",
+        "en": "My number is 90 123 45 67. Is there a fee for this service?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, xizmat uchun belgilangan miqdorda toʻlov olinadi. Toʻlovni shu yerdagi terminal yoki mobil ilova orqali amalga oshirishingiz mumkin.",
+        "ru": "Да, взимается установленный сбор. Оплатить можно через терминал здесь или в мобильном приложении.",
+        "en": "Yes, there's a set fee. You can pay at the terminal here or through the mobile app."
+      },
+      {
+        "who": "B",
+        "uz": "Tayyor boʻlishi uchun qancha vaqt ketadi? Vaqtim ancha ziq.",
+        "ru": "Сколько времени займёт оформление? У меня сроки поджимают.",
+        "en": "How long will it take? I'm rather short on time."
+      },
+      {
+        "who": "A",
+        "uz": "Odatda bir necha ish kuni ichida tayyor boʻladi. Maʼlumotnomani elektron shaklda ham olishingiz mumkin.",
+        "ru": "Обычно справка готова в течение нескольких рабочих дней. Её можно получить и в электронном виде.",
+        "en": "It's usually ready within a few working days. You can also get it in electronic form."
+      },
+      {
+        "who": "B",
+        "uz": "Elektron nusxasi ish beruvchi uchun yaroqli boʻladimi?",
+        "ru": "А электронная версия будет действительна для работодателя?",
+        "en": "Will the electronic copy be valid for the employer?"
+      },
+      {
+        "who": "A",
+        "uz": "Unda QR-kod boʻladi, uning haqiqiyligini istalgan kishi tekshira oladi. Lekin baʼzi tashkilotlar qogʻoz nusxasini talab qiladi, shuning uchun buni oldindan aniqlashtirib olganingiz maʼqul.",
+        "ru": "На ней будет QR-код, по которому любой может проверить подлинность. Но некоторые организации требуют бумажный вариант, так что лучше уточнить это заранее.",
+        "en": "It will have a QR code that anyone can use to verify it. But some organisations require a paper copy, so it's best to check in advance."
+      },
+      {
+        "who": "B",
+        "uz": "Foydali maslahat, rahmat. Unda qogʻoz nusxasini ham olib qoʻyay.",
+        "ru": "Полезный совет, спасибо. Тогда возьму на всякий случай и бумажную.",
+        "en": "Useful advice, thank you. Then I'll get a paper copy as well, just in case."
+      },
+      {
+        "who": "A",
+        "uz": "Albatta. Maʼlumotnoma tayyor boʻlgach, SMS keladi; shundan soʻng kelib, uni olib ketishingiz mumkin. Yana savollaringiz bormi?",
+        "ru": "Конечно. Когда справка будет готова, придёт СМС, — после этого можете прийти и забрать её. Есть ещё вопросы?",
+        "en": "Of course. When the certificate is ready, you'll get a text, and then you can come and collect it. Any other questions?"
+      },
+      {
+        "who": "B",
+        "uz": "Yoʻq, hammasi tushunarli. Yordamingiz uchun katta rahmat.",
+        "ru": "Нет, всё понятно. Большое спасибо за помощь.",
+        "en": "No, everything's clear. Thank you very much for your help."
+      }
+    ],
+    "vocab": [
+      "maʼlumotnoma",
+      "ariza",
+      "rasmiylashtirmoq",
+      "toʻlov",
+      "ish beruvchi",
+      "nusxa",
+      "talab qilmoq",
+      "maʼqul"
+    ],
+    "note_ru": "Центры госуслуг работают по принципу «одного окна»; многие услуги доступны и на портале my.gov.uz. Оборот «-ganingiz maʼqul» значит «вам лучше бы…».",
+    "note_uz": "Davlat xizmatlari markazlari «yagona darcha» tamoyili asosida ishlaydi; koʻp xizmatlarni my.gov.uz portali orqali ham olish mumkin. «-ganingiz maʼqul» — maslahat berish shakli.",
+    "note_en": "Public Service Centres work on a “one-stop shop” basis, and many services are also available on the my.gov.uz portal. “-ganingiz maʼqul” means “you'd better…”."
+  },
+  {
+    "n": 27,
+    "cefr": "B2",
+    "section": "Город и транспорт",
+    "title_ru": "В автосервисе",
+    "title_uz": "Avtoservisda",
+    "title_en": "At the Car Repair Shop",
+    "intro_ru": "У Фархода при торможении машина издаёт странный звук. Он приехал в автосервис к мастеру.",
+    "intro_uz": "Farhodning mashinasi tormoz bosilganda gʻalati ovoz chiqaryapti. U avtoservisga ustaning oldiga keldi.",
+    "intro_en": "Farhod's car makes a strange noise when he brakes. He has brought it to a mechanic.",
+    "speakers": {
+      "A": "Usta",
+      "B": "Farhod"
+    },
+    "lines": [
+      {
+        "who": "B",
+        "uz": "Assalomu alaykum, usta. Mashinamda muammo bor: tormoz bosganimda gʻalati ovoz chiqyapti.",
+        "ru": "Здравствуйте, мастер. У меня проблема с машиной: при торможении появляется странный звук.",
+        "en": "Hello. There's a problem with my car: it makes a strange noise when I brake."
+      },
+      {
+        "who": "A",
+        "uz": "Vaalaykum assalom. Qachondan beri shunaqa?",
+        "ru": "Здравствуйте. И давно так?",
+        "en": "Hello. How long has it been like this?"
+      },
+      {
+        "who": "B",
+        "uz": "Bir haftadan beri. Avval unchalik sezilmas edi, endi tezlik oshganda rul ham titray boshladi.",
+        "ru": "Уже неделю. Сначала было почти незаметно, а теперь на скорости ещё и руль начал дрожать.",
+        "en": "For a week. At first it was barely noticeable, but now the steering wheel has started shaking at speed too."
+      },
+      {
+        "who": "A",
+        "uz": "Mashinani koʻtarib koʻraylik... Ha, tormoz kolodkalari ancha yeyilib ketibdi, disklar ham notekis boʻlib qolgan.",
+        "ru": "Давайте поднимем и посмотрим... Да, тормозные колодки сильно стёрлись, и диски неровные.",
+        "en": "Let's put it up and have a look... Yes, the brake pads are badly worn, and the discs are uneven too."
+      },
+      {
+        "who": "B",
+        "uz": "Bu jiddiymi? Mashinani shu holatda haydasa boʻladimi?",
+        "ru": "Это серьёзно? На ней можно ездить в таком состоянии?",
+        "en": "Is it serious? Can the car be driven like this?"
+      },
+      {
+        "who": "A",
+        "uz": "Ochigʻini aytsam, xavfli. Kolodkalarni darhol almashtirish kerak, disklarni esa yangisiga almashtirgan maʼqul.",
+        "ru": "Честно говоря, опасно. Колодки нужно срочно менять, а диски лучше поставить новые.",
+        "en": "To be honest, it's dangerous. The pads need replacing right away, and it would be best to fit new discs."
+      },
+      {
+        "who": "B",
+        "uz": "Taxminan qanchaga tushadi? Ehtiyot qismlar sizda bormi?",
+        "ru": "Сколько примерно это будет стоить? Запчасти у вас есть?",
+        "en": "Roughly how much will it cost? Do you have the parts?"
+      },
+      {
+        "who": "A",
+        "uz": "Kolodkalar bor, original. Disklarni esa buyurtma qilishimiz kerak, ertaga kechqurungacha yetkazib berishadi. Ishi bilan birga taxminan bir yarim million chiqadi.",
+        "ru": "Колодки есть, оригинальные. А диски нужно заказать — привезут к завтрашнему вечеру. Вместе с работой выйдет примерно полтора миллиона.",
+        "en": "We have the pads, original ones. The discs need to be ordered — they'll be delivered by tomorrow evening. With labour it comes to about one and a half million."
+      },
+      {
+        "who": "B",
+        "uz": "Biroz qimmat ekan. Arzonroq variant yoʻqmi?",
+        "ru": "Дороговато. А подешевле вариантов нет?",
+        "en": "That's a bit pricey. Isn't there a cheaper option?"
+      },
+      {
+        "who": "A",
+        "uz": "Bor, albatta, lekin tormoz tizimida tejashni maslahat bermayman — bu xavfsizlik masalasi. «Arzon goʻshtning shoʻrvasi tatimas», deganlaridek.",
+        "ru": "Есть, конечно, но на тормозах экономить не советую — это вопрос безопасности. Как говорится, «из дешёвого мяса наваристого супа не сваришь».",
+        "en": "There are, of course, but I wouldn't advise saving on brakes — it's a matter of safety. As the saying goes, “cheap meat makes a tasteless soup”."
+      },
+      {
+        "who": "B",
+        "uz": "Haq gapni aytdingiz. Mayli, original qismlarni qoʻying. Mashina qachon tayyor boʻladi?",
+        "ru": "Ваша правда. Ладно, ставьте оригинал. Когда машина будет готова?",
+        "en": "You're right. All right, fit the original parts. When will the car be ready?"
+      },
+      {
+        "who": "A",
+        "uz": "Disklar kelgach, ikki-uch soatda tugatamiz. Indinga tushlikdan keyin olib ketishingiz mumkin. Oʻzim qoʻngʻiroq qilib xabar beraman.",
+        "ru": "Как привезут диски, за два-три часа сделаем. Послезавтра после обеда можете забирать. Я сам позвоню.",
+        "en": "Once the discs arrive, we'll finish in two or three hours. You can pick it up the day after tomorrow, after lunch. I'll call you myself."
+      },
+      {
+        "who": "B",
+        "uz": "Kelishdik. Moyni almashtirish vaqti ham kelgandir, tekshirib qoʻysangiz.",
+        "ru": "Договорились. И, наверное, уже пора менять масло — проверьте, пожалуйста.",
+        "en": "Deal. It's probably time for an oil change too — could you check?"
+      },
+      {
+        "who": "A",
+        "uz": "Xoʻp, koʻrib qoʻyaman. Kerak boʻlsa, avval sizga qoʻngʻiroq qilib, keyin almashtiraman.",
+        "ru": "Хорошо, посмотрю. Если нужно будет, сначала позвоню вам, а потом заменю.",
+        "en": "OK, I'll take a look. If it needs doing, I'll call you first and then change it."
+      }
+    ],
+    "vocab": [
+      "usta",
+      "tormoz",
+      "yeyilmoq",
+      "ehtiyot qism",
+      "almashtirmoq",
+      "buyurtma qilmoq",
+      "xavfsizlik",
+      "moy"
+    ],
+    "note_ru": "Пословица «Arzon goʻshtning shoʻrvasi tatimas» означает, что скупой платит дважды. Форма -ibdi (yeyilib ketibdi) сообщает о том, что говорящий только что обнаружил.",
+    "note_uz": "«Arzon goʻshtning shoʻrvasi tatimas» maqoli arzon narsa sifatsiz boʻlishini anglatadi. -ibdi shakli (yeyilib ketibdi) soʻzlovchi endigina bilib olgan holatni bildiradi.",
+    "note_en": "The proverb “Arzon goʻshtning shoʻrvasi tatimas” (“cheap meat makes a tasteless soup”) means you get what you pay for. The -ibdi form (yeyilib ketibdi) reports something the speaker has just discovered."
+  },
+  {
+    "n": 28,
+    "cefr": "B2",
+    "section": "Покупки и еда",
+    "title_ru": "Возврат бракованного товара",
+    "title_uz": "Nosoz tovarni qaytarish",
+    "title_en": "Returning a Faulty Item",
+    "intro_ru": "Малика купила электрический чайник, но через пару дней он сломался. Она пришла в магазин и разговаривает с менеджером.",
+    "intro_uz": "Malika elektr choynak sotib olgan edi, ammo ikki kundan keyin u buzilib qoldi. U doʻkonga kelib, menejer bilan gaplashyapti.",
+    "intro_en": "Malika bought an electric kettle, but it broke after a couple of days. She has gone back to the shop to speak to the manager.",
+    "speakers": {
+      "A": "Malika",
+      "B": "Menejer"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Assalomu alaykum. Uch kun oldin sizlardan elektr choynak sotib olgan edim. Afsuski, u ishlamay qoldi.",
+        "ru": "Здравствуйте. Три дня назад я купила у вас электрический чайник. К сожалению, он перестал работать.",
+        "en": "Hello. I bought an electric kettle from you three days ago. Unfortunately, it has stopped working."
+      },
+      {
+        "who": "B",
+        "uz": "Vaalaykum assalom. Noqulaylik uchun uzr. Chekingiz va kafolat taloningiz bormi?",
+        "ru": "Здравствуйте. Приносим извинения за неудобство. У вас есть чек и гарантийный талон?",
+        "en": "Hello. We apologise for the inconvenience. Do you have the receipt and the warranty card?"
+      },
+      {
+        "who": "A",
+        "uz": "Ha, mana. Ikkinchi kuni suv qaynatayotganimda birdan oʻchib qoldi, keyin umuman yonmay qoʻydi.",
+        "ru": "Да, вот. На второй день, когда я кипятила воду, он вдруг выключился и больше не включается.",
+        "en": "Yes, here. On the second day it suddenly switched off while I was boiling water, and now it won't turn on at all."
+      },
+      {
+        "who": "B",
+        "uz": "Koʻrib chiqamiz... Haqiqatan ham, yoqilmayapti. Yangisiga almashtirib beraylikmi yoki pulingizni qaytaraylikmi?",
+        "ru": "Сейчас посмотрим... Действительно, не включается. Вам заменить на новый или вернуть деньги?",
+        "en": "Let's have a look... It really won't switch on. Would you like a replacement or a refund?"
+      },
+      {
+        "who": "A",
+        "uz": "Ochigʻi, bu modelga ishonchim qolmadi. Pulni qaytarib bersangiz, boshqa brenddagisini tanlayman.",
+        "ru": "Честно говоря, я больше не доверяю этой модели. Если вернёте деньги, я выберу чайник другой марки.",
+        "en": "To be honest, I've lost faith in this model. If you give me a refund, I'll choose a different brand."
+      },
+      {
+        "who": "B",
+        "uz": "Tushunaman. Lekin doʻkonimiz qoidasiga koʻra, pulni qaytarishdan oldin mahsulot servis markazida tekshiruvdan oʻtishi kerak. Bu bir haftagacha choʻzilishi mumkin.",
+        "ru": "Понимаю. Но по правилам нашего магазина перед возвратом денег товар должен пройти проверку в сервисном центре. Это может занять до недели.",
+        "en": "I understand. But under our store policy, the item must be checked at a service centre before a refund. That can take up to a week."
+      },
+      {
+        "who": "A",
+        "uz": "Bir hafta? Axir nosozlik koʻrinib turibdi-ku. Isteʼmolchilarning huquqlarini himoya qilish toʻgʻrisidagi qonunga koʻra, sifatsiz tovar uchun pul qaytarilishi kerak, deb bilaman.",
+        "ru": "Неделю? Неисправность же очевидна. Насколько я знаю, по закону о защите прав потребителей за некачественный товар деньги должны вернуть.",
+        "en": "A week? The fault is obvious. As far as I know, under the consumer protection law a faulty product should be refunded."
+      },
+      {
+        "who": "B",
+        "uz": "Toʻgʻri aytasiz, qonun buni nazarda tutadi. Keling, bunday qilaylik: hozir boshqa choynak tanlab oling, narxdagi farqni esa hisob-kitob qilamiz.",
+        "ru": "Вы правы, закон это предусматривает. Давайте сделаем так: выберите сейчас другой чайник, а разницу в цене мы пересчитаем.",
+        "en": "You're right, the law does provide for that. Let's do this: choose another kettle now, and we'll settle the price difference."
+      },
+      {
+        "who": "A",
+        "uz": "Bu taklif menga maʼqul. Agar yangisi qimmatroq boʻlsa, farqini toʻlayman. Arzonroq boʻlsa-chi?",
+        "ru": "Это предложение меня устраивает. Если новый дороже, доплачу разницу. А если дешевле?",
+        "en": "That works for me. If the new one is more expensive, I'll pay the difference. And if it's cheaper?"
+      },
+      {
+        "who": "B",
+        "uz": "Unda farqini naqd yoki kartangizga qaytaramiz.",
+        "ru": "Тогда вернём разницу наличными или на карту.",
+        "en": "Then we'll refund the difference in cash or to your card."
+      },
+      {
+        "who": "A",
+        "uz": "Juda yaxshi. Unda anavi zanglamaydigan poʻlatdan yasalganini koʻrsata olasizmi?",
+        "ru": "Отлично. Тогда покажите, пожалуйста, вон тот, из нержавеющей стали.",
+        "en": "Great. Then could you show me that stainless steel one over there?"
+      },
+      {
+        "who": "B",
+        "uz": "Marhamat. Bu model ancha mustahkam, kafolati ikki yil. Yana bir bor noqulaylik uchun uzr soʻraymiz.",
+        "ru": "Пожалуйста. Эта модель гораздо надёжнее, гарантия два года. Ещё раз приносим извинения за неудобство.",
+        "en": "Here you are. This model is much more durable, with a two-year warranty. Once again, we apologise for the inconvenience."
+      },
+      {
+        "who": "A",
+        "uz": "Hechqisi yoʻq. Muammoni tez hal qilganingiz uchun rahmat.",
+        "ru": "Ничего страшного. Спасибо, что быстро решили вопрос.",
+        "en": "That's all right. Thank you for sorting it out so quickly."
+      }
+    ],
+    "vocab": [
+      "nosoz",
+      "qaytarmoq",
+      "chek",
+      "kafolat",
+      "sifatsiz",
+      "almashtirmoq",
+      "huquq",
+      "farq"
+    ],
+    "note_ru": "Сохраняйте чек и гарантийный талон — без них вернуть товар сложнее. Частица -ku усиливает возражение: koʻrinib turibdi-ku — «это же видно».",
+    "note_uz": "Chek va kafolat talonini saqlang — ularsiz tovarni qaytarish qiyinroq. -ku yuklamasi eʼtirozni kuchaytiradi: koʻrinib turibdi-ku.",
+    "note_en": "Keep the receipt and warranty card — returning goods without them is harder. The particle -ku adds emphasis to an objection: koʻrinib turibdi-ku — “it's plain to see”."
+  },
+  {
+    "n": 29,
+    "cefr": "B2",
+    "section": "Знакомство и общение",
+    "title_ru": "Новости и погода",
+    "title_uz": "Yangiliklar va ob-havo",
+    "title_en": "News and Weather",
+    "intro_ru": "Коллеги Жамшид и Лобар за обедом обсуждают прогноз погоды, городские новости и свои планы на выходные.",
+    "intro_uz": "Hamkasblar Jamshid va Lobar tushlik paytida ob-havo maʼlumoti, shahar yangiliklari va dam olish rejalarini muhokama qilishyapti.",
+    "intro_en": "Over lunch, colleagues Jamshid and Lobar discuss the weather forecast, city news and their weekend plans.",
+    "speakers": {
+      "A": "Jamshid",
+      "B": "Lobar"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Ertalab yangiliklarni koʻrdingizmi? Hafta oxirida havo keskin sovib, togʻli hududlarda qor yogʻishi kutilayotgan ekan.",
+        "ru": "Утром новости видели? Говорят, к концу недели резко похолодает, а в горах ожидается снег.",
+        "en": "Did you see the news this morning? Apparently it'll turn much colder at the weekend, and snow is expected in the mountains."
+      },
+      {
+        "who": "B",
+        "uz": "Ha, men ham eshitdim. Hali oktabrning boshi-ku! Yaqinda yigirma besh daraja issiq edi.",
+        "ru": "Да, я тоже слышала. Ещё ведь только начало октября! Недавно было двадцать пять градусов тепла.",
+        "en": "Yes, I heard too. It's only the beginning of October! Just recently it was twenty-five degrees."
+      },
+      {
+        "who": "A",
+        "uz": "Sinoptiklarning aytishicha, shimoldan sovuq havo massasi kirib kelyapti. Harorat oʻn darajagacha tushib ketishi mumkin.",
+        "ru": "По словам синоптиков, с севера идёт холодный воздух. Температура может упасть до десяти градусов.",
+        "en": "According to the forecasters, a cold air mass is moving in from the north. The temperature could drop to ten degrees."
+      },
+      {
+        "who": "B",
+        "uz": "Unda shanba kungi sayohatimiz nima boʻladi? Chimyonga borishni rejalashtirgan edik-ku.",
+        "ru": "А как же наша субботняя поездка? Мы ведь собирались в Чимган.",
+        "en": "Then what about our Saturday trip? We were planning to go to Chimgan."
+      },
+      {
+        "who": "A",
+        "uz": "Men ham shuni oʻylab turibman. Togʻ yoʻllari sirpanchiq boʻlishi mumkin, tavakkal qilishning hojati yoʻq.",
+        "ru": "Я как раз об этом думаю. Горные дороги могут быть скользкими — рисковать незачем.",
+        "en": "I've been thinking about that too. The mountain roads may be slippery — there's no need to take risks."
+      },
+      {
+        "who": "B",
+        "uz": "Toʻgʻri. Balki safarni bir haftaga keyinga qoldirarmiz? Aytgancha, yana bir yangilik bor edi: yangi metro liniyasining qurilishi tugash arafasida ekan.",
+        "ru": "Верно. Может, перенесём поездку на неделю? Кстати, была ещё новость: строительство новой линии метро почти завершено.",
+        "en": "True. Maybe we should put the trip off for a week? By the way, there was another bit of news: the new metro line is nearly finished."
+      },
+      {
+        "who": "A",
+        "uz": "Ha, oʻqidim. Agar shunday boʻlsa, ishga yarim soat tezroq yetib kelaman. Hozircha har kuni tirbandlikda qolib ketyapman.",
+        "ru": "Да, читал. Если так, я буду добираться до работы на полчаса быстрее. Пока что каждый день стою в пробках.",
+        "en": "Yes, I read about it. If so, I'll get to work half an hour faster. At the moment I'm stuck in traffic every day."
+      },
+      {
+        "who": "B",
+        "uz": "Tirbandlik haqida gapirmang! Kecha uyga bir yarim soatda yetib bordim. Shahar kun sayin kattalashib boryapti.",
+        "ru": "И не говорите о пробках! Вчера ехала домой полтора часа. Город растёт с каждым днём.",
+        "en": "Don't get me started on traffic! Yesterday it took me an hour and a half to get home. The city is growing by the day."
+      },
+      {
+        "who": "A",
+        "uz": "Rivojlanish yaxshi, albatta, lekin infratuzilma ortda qolyapti. Ammo soʻnggi yillarda ancha oʻzgarishlar boʻlganini tan olish kerak.",
+        "ru": "Развитие — это, конечно, хорошо, но инфраструктура не поспевает. Хотя надо признать, что за последние годы многое изменилось.",
+        "en": "Growth is good, of course, but the infrastructure can't keep up. Still, you have to admit a lot has changed in recent years."
+      },
+      {
+        "who": "B",
+        "uz": "Fikringizga qoʻshilaman. Xoʻsh, sayohat masalasiga qaytsak: juma kuni ob-havo maʼlumotini yana bir koʻrib, keyin qaror qilamiz.",
+        "ru": "Согласна. Так, вернёмся к поездке: в пятницу ещё раз посмотрим прогноз и тогда решим.",
+        "en": "I agree. So, back to the trip: let's check the forecast again on Friday and decide then."
+      },
+      {
+        "who": "A",
+        "uz": "Kelishdik. Agar havo buzilsa, uyda palov qilib, doʻstlarni chaqiramiz.",
+        "ru": "Договорились. Если погода испортится, приготовим дома плов и позовём друзей.",
+        "en": "Deal. If the weather turns bad, we'll make plov at home and invite our friends."
+      },
+      {
+        "who": "B",
+        "uz": "Ana endi boshqa gap!",
+        "ru": "Вот это другое дело!",
+        "en": "Now you're talking!"
+      }
+    ],
+    "vocab": [
+      "yangilik",
+      "ob-havo",
+      "sinoptik",
+      "harorat",
+      "tirbandlik",
+      "keyinga qoldirmoq",
+      "qaror qilmoq",
+      "tan olmoq"
+    ],
+    "note_ru": "Частица ekan передаёт информацию, полученную из чужих слов или только что узнанную: kutilayotgan ekan — «говорят, ожидается». «Ana endi boshqa gap!» — «Вот это другое дело!».",
+    "note_uz": "«ekan» boshqalardan eshitilgan yoki endigina bilingan maʼlumotni bildiradi: kutilayotgan ekan. «Ana endi boshqa gap!» — rozilik va mamnunlikni bildiruvchi ibora.",
+    "note_en": "The particle ekan marks information heard from others or just learned: kutilayotgan ekan — “apparently it's expected”. “Ana endi boshqa gap!” means “Now you're talking!”"
+  },
+  {
+    "n": 30,
+    "cefr": "B2",
+    "section": "Здоровье",
+    "title_ru": "Совет врача",
+    "title_uz": "Shifokor maslahati",
+    "title_en": "A Doctor's Advice",
+    "intro_ru": "Врач Дилором Рашидовна обсуждает с пациентом Рустамом-ака результаты анализов и даёт советы по образу жизни.",
+    "intro_uz": "Shifokor Dilorom Rashidovna bemor Rustam aka bilan tahlil natijalarini muhokama qiladi va turmush tarzi boʻyicha maslahat beradi.",
+    "intro_en": "Dr Dilorom Rashidovna discusses test results with her patient Rustam aka and gives him lifestyle advice.",
+    "speakers": {
+      "A": "Dilorom Rashidovna",
+      "B": "Rustam aka"
+    },
+    "lines": [
+      {
+        "who": "A",
+        "uz": "Rustam aka, tahlil natijalaringiz tayyor. Ochigʻini aytsam, baʼzi koʻrsatkichlar meni biroz tashvishga solyapti.",
+        "ru": "Рустам-ака, результаты ваших анализов готовы. Честно говоря, некоторые показатели меня немного беспокоят.",
+        "en": "Rustam aka, your test results are ready. To be honest, some of the figures worry me a little."
+      },
+      {
+        "who": "B",
+        "uz": "Xavotirga solib qoʻydingiz-ku, doktor. Nima ekan?",
+        "ru": "Вы меня встревожили, доктор. Что там?",
+        "en": "You've got me worried, doctor. What is it?"
+      },
+      {
+        "who": "A",
+        "uz": "Xolesterin darajangiz meʼyordan ancha yuqori, qon bosimingiz ham soʻnggi uch oʻlchovda yuz qirqdan tushmayapti. Bu hali xavfli darajada emas, lekin jiddiy ogohlantirish.",
+        "ru": "Холестерин значительно выше нормы, и давление в последних трёх замерах не опускается ниже ста сорока. Это ещё не критично, но серьёзный сигнал.",
+        "en": "Your cholesterol is well above normal, and your blood pressure hasn't dropped below 140 in the last three readings. It's not critical yet, but it's a serious warning."
+      },
+      {
+        "who": "B",
+        "uz": "Ha, baʼzan ensamda ogʻriq sezaman, ayniqsa charchagan paytlarimda. Shunchaki charchoqdan boʻlsa kerak, deb oʻylagan edim.",
+        "ru": "Да, иногда чувствую боль в затылке, особенно когда устаю. Думал, это просто от усталости.",
+        "en": "Yes, sometimes I feel a pain in the back of my head, especially when I'm tired. I thought it was just tiredness."
+      },
+      {
+        "who": "A",
+        "uz": "Bunday belgilarni eʼtiborsiz qoldirmaslik kerak. Sizga dori yozib beraman, ammo birgina dori bilan ish bitmaydi. Asosiysi — turmush tarzini oʻzgartirish.",
+        "ru": "Такие симптомы нельзя оставлять без внимания. Я выпишу вам лекарство, но одними лекарствами дело не решить. Главное — изменить образ жизни.",
+        "en": "You mustn't ignore symptoms like that. I'll prescribe medication, but medication alone won't solve it. The main thing is to change your lifestyle."
+      },
+      {
+        "who": "B",
+        "uz": "Yaʼni nimani oʻzgartirishim kerak? Bilasiz-ku, bizda yogʻli taomsiz dasturxon boʻlmaydi.",
+        "ru": "То есть что мне нужно изменить? Вы же знаете, у нас без жирной еды стол не стол.",
+        "en": "Meaning what exactly? You know that our tables are never without fatty food."
+      },
+      {
+        "who": "A",
+        "uz": "Bilaman, palovdan butunlay voz kechish shart emas. Lekin uni haftada bir martaga qisqartiring, yogʻni kamroq ishlating. Tuzni ham cheklang — qon bosimi uchun bu juda muhim.",
+        "ru": "Знаю, полностью отказываться от плова не обязательно. Но ешьте его не чаще раза в неделю и используйте меньше масла. И ограничьте соль — для давления это очень важно.",
+        "en": "I know, and you don't have to give up plov entirely. But cut it down to once a week and use less oil. Limit salt too — that's very important for blood pressure."
+      },
+      {
+        "who": "B",
+        "uz": "Jismoniy mashqlar-chi? Ochigʻi, sport bilan umuman shugʻullanmayman. Kun boʻyi stol ortida oʻtiraman.",
+        "ru": "А физические упражнения? Честно говоря, спортом я совсем не занимаюсь. Целый день сижу за столом.",
+        "en": "What about exercise? To be honest, I don't do any sport at all. I sit at a desk all day."
+      },
+      {
+        "who": "A",
+        "uz": "Har kuni kamida yarim soat tez yuring. Sport zaliga borish shart emas: ishdan uyga bir-ikki bekat piyoda yursangiz ham, foydasi katta.",
+        "ru": "Каждый день хотя бы полчаса ходите быстрым шагом. В спортзал ходить не обязательно: даже если пройдёте пешком одну-две остановки по дороге с работы, польза будет большая.",
+        "en": "Walk briskly for at least half an hour every day. You don't need a gym: even walking a stop or two on the way home from work makes a big difference."
+      },
+      {
+        "who": "B",
+        "uz": "Bu qoʻlimdan keladi. Dorini qancha muddat ichaman? Umrbod emasmi?",
+        "ru": "Это мне под силу. А лекарство сколько пить? Не всю жизнь?",
+        "en": "I can manage that. How long do I take the medication? Not for life, I hope?"
+      },
+      {
+        "who": "A",
+        "uz": "Hozircha uch oyga yozaman. Bir oydan keyin qon bosimini qayta oʻlchaymiz, uch oydan soʻng tahlillarni qaytadan topshirasiz. Natijaga qarab, dozani kamaytirishimiz yoki umuman toʻxtatishimiz mumkin.",
+        "ru": "Пока выпишу на три месяца. Через месяц снова измерим давление, а через три месяца пересдадите анализы. По результатам сможем снизить дозу или вовсе отменить.",
+        "en": "For now I'll prescribe it for three months. We'll check your blood pressure again in a month, and you'll redo the tests in three months. Depending on the results, we may lower the dose or stop it altogether."
+      },
+      {
+        "who": "B",
+        "uz": "Tushunarli. Uyda qon bosimini oʻlchab tursam, foydali boʻladimi?",
+        "ru": "Понятно. А дома имеет смысл измерять давление?",
+        "en": "I see. Would it help to measure my blood pressure at home?"
+      },
+      {
+        "who": "A",
+        "uz": "Albatta. Ertalab va kechqurun oʻlchab, daftarga yozib boring. Agar bosim yuz saksondan oshsa yoki koʻkragingizda ogʻriq sezsangiz, darhol tez yordam chaqiring.",
+        "ru": "Конечно. Измеряйте утром и вечером и записывайте в тетрадь. Если давление поднимется выше ста восьмидесяти или появится боль в груди, сразу вызывайте скорую.",
+        "en": "Definitely. Measure it morning and evening and write it down in a notebook. If it goes above 180 or you feel chest pain, call an ambulance immediately."
+      },
+      {
+        "who": "B",
+        "uz": "Xoʻp, doktor. Maslahatlaringiz uchun rahmat. Bu safar gapingizga albatta amal qilaman.",
+        "ru": "Хорошо, доктор. Спасибо за советы. На этот раз обязательно буду их выполнять.",
+        "en": "All right, doctor. Thank you for the advice. This time I'll definitely follow it."
+      }
+    ],
+    "vocab": [
+      "tahlil",
+      "koʻrsatkich",
+      "meʼyor",
+      "qon bosimi",
+      "turmush tarzi",
+      "cheklamoq",
+      "oʻlchamoq",
+      "ogohlantirish"
+    ],
+    "note_ru": "«Qoʻlimdan keladi» — «мне это по силам». Оборот «-ib bormoq/-ib turmoq» передаёт регулярное действие: yozib boring — «записывайте (постоянно)», oʻlchab tursam — «если буду регулярно измерять».",
+    "note_uz": "«Qoʻlimdan keladi» — «buni uddalay olaman» degani. «-ib bormoq/-ib turmoq» harakatning muntazam davom etishini bildiradi: yozib boring, oʻlchab tursam.",
+    "note_en": "“Qoʻlimdan keladi” means “I can manage that”. “-ib bormoq / -ib turmoq” express a regular, ongoing action: yozib boring — “keep writing it down”, oʻlchab tursam — “if I measure it regularly”."
+  }
+]

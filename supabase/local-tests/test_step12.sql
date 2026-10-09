@@ -123,5 +123,5 @@ select pg_temp.check((select cefr = 'A2' from public.words where id = (select id
 reset role;
 
 -- ===== цены
-select pg_temp.check((select price_uzs = 100000 and price_stars = 450 from public.plans where tier = 'basic' and months = 1), '«Базовая» на месяц — 100 000 сум / 450 ⭐');
-select pg_temp.check((select price_uzs = 200000 from public.plans where tier = 'advanced' and months = 1), '«Продвинутая» на месяц — 200 000 сум');
+select pg_temp.check((select price_uzs = 100000 and price_stars = 450 from public.plans where tier = 'basic' and months = 1 and seats = 1), '«Базовая» на месяц — 100 000 сум / 450 ⭐');
+select pg_temp.check((select price_uzs = 200000 from public.plans where tier = 'advanced' and months = 1 and seats = 1), '«Продвинутая» на месяц — 200 000 сум');

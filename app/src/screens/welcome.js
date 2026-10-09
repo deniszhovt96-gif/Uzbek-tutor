@@ -8,6 +8,7 @@ const SLIDES = [
   { art: 'tvtower', key: 'w1' },
   { art: 'choynak', key: 'w2' },
   { art: 'gate', key: 'w3' },
+  { art: 'registan', key: 'wP', placement: true },
   { art: 'suzani', key: 'w4' },
 ];
 
@@ -32,6 +33,15 @@ export function renderWelcome(app, params = {}) {
     const list = t(`${s.key}Points`);
     const points = (Array.isArray(list) ? list : []).map((p) => h('li', {}, icon('check'), h('span', {}, p)));
     const extra = [];
+    if (s.placement) {
+      // уже знаете узбекский? — тест уровня A1 сразу (сдали — откроется A2 и т. д.)
+      extra.push(h('button', { type: 'button', class: 'btn', onClick: async () => {
+        haptic();
+        if (!replay) app.me = await rpc('update_settings', { p_ui_lang: null, p_settings: { onboarded: true, remind } }).catch(() => app.me);
+        app.tab('home');
+        app.go('test', { cefr: 'A1' });
+      } }, icon('test'), t('wPTest')));
+    }
     if (last) {
       // напоминания — сразу здесь, чтобы не искать в настройках
       extra.push(h('button', { type: 'button', class: `card remind-toggle ${remind ? 'on' : ''}`, onClick: () => { remind = !remind; haptic(); draw(); } },

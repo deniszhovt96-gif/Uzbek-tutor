@@ -58,7 +58,16 @@ export function playFilword({ app, items, key, again }) {
   });
 
   const tryMatch = () => {
-    const wi = words.findIndex((w, k) => !found.has(k) && w.cells.length === sel.length && w.cells.every((c, j) => c === sel[j]));
+    // слово засчитывается, если выделены его клетки и буквы читаются как слово — с любой стороны
+    // (ikki, ota…): путь может идти от любого конца и по-другому через те же клетки
+    const text = sel.map((i) => grid[i]).join('');
+    const rev = sel.map((i) => grid[i]).reverse().join('');
+    const wi = words.findIndex((w, k) => {
+      if (found.has(k) || w.cells.length !== sel.length) return false;
+      if (!w.cells.every((c) => sel.includes(c))) return false;
+      const word = w.cells.map((c) => grid[c]).join('');
+      return text === word || rev === word;
+    });
     if (wi < 0) return false;
     found.add(wi);
     haptic('success');

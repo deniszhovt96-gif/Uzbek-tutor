@@ -8,12 +8,14 @@ import { playPairs } from './games/pairs.js';
 import { playTrueFalse } from './games/truefalse.js';
 import { playGuess } from './games/guess.js';
 import { playFilword } from './games/filword.js';
+import { playMistakes } from './games/mistakes.js';
 
 export const GAMES = {
   pairs: { icon: 'pairs', title: 'gamePairs', desc: 'gamePairsDesc', feature: 'games', min: 5, run: playPairs },
   truefalse: { icon: 'truefalse', title: 'gameTF', desc: 'gameTFDesc', feature: 'games', min: 6, run: playTrueFalse },
   guess: { icon: 'guess', title: 'gameGuess', desc: 'gameGuessDesc', feature: 'games', min: 3, run: playGuess },
   filword: { icon: 'filword', title: 'gameFilword', desc: 'gameFilwordDesc', feature: 'filword', min: 6, run: playFilword },
+  mistakes: { icon: 'mistakes', title: 'gameMistakes', desc: 'gameMistakesDesc', feature: 'mistakes', min: 0, run: playMistakes, own: true },
 };
 
 // Рекорды хранятся на телефоне
@@ -44,7 +46,7 @@ export async function renderGames(app, { game } = {}) {
         if (!ok) return lockedSheet(app, home.features[g.feature].min_tier);
         app.go('games', { game: key });
       } },
-        h('span', { class: `tile-icon ${key === 'filword' ? 'gold' : ''}` }, icon(g.icon)),
+        h('span', { class: `tile-icon ${key === 'filword' || key === 'mistakes' ? 'gold' : ''}` }, icon(g.icon)),
         h('div', {}, h('h3', {}, t(g.title)), h('div', { class: 'small muted' }, t(g.desc)),
           best !== null ? h('div', { class: 'tiny muted' }, t('best', best)) : null),
         ok ? icon('chevron', 'ic chev') : icon('lock', 'ic chev'));
@@ -53,6 +55,10 @@ export async function renderGames(app, { game } = {}) {
 
 async function runGame(app, key) {
   const g = GAMES[key];
+  if (g.own) {
+    const audioEnabled = !(app.me.settings && app.me.settings.audio_exercises === false);
+    return g.run({ app, key, audioEnabled, again: () => app.replace('games', { game: key }) });
+  }
   mount(spinner(t('loading')));
   const data = await rpc('start_practice', { p_feature: g.feature, p_count: 60 });
   if (data.error === 'locked_tier') { app.back(); lockedSheet(app, data.need); return; }
