@@ -91,7 +91,8 @@ export async function renderSubscription(app, params = {}) {
         h('p', { class: 'small muted' }, t('groupCodesHint')),
         groupCodes.map((c) => h('div', { class: 'pay-row' },
           h('div', {}, h('b', { class: 'code-text' }, c.code), h('div', { class: 'tiny muted' }, `${tierName(c.tier)} · ${t('months', c.months)}`)),
-          c.used ? h('span', { class: 'chip' }, t('codeUsed'))
+          c.revoked ? h('span', { class: 'chip' }, t('codeRevoked'))
+            : c.used ? h('span', { class: 'chip' }, t('codeUsed'))
             : h('button', { class: 'btn btn-small btn-secondary', type: 'button', onClick: () => copyCode(c.code) }, t('copy')))))] : null,
       ref && ref.code ? referralBlock(ref) : null,
       h('h2', {}, t('codeLabel')),

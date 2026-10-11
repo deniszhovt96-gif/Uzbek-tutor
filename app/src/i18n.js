@@ -1200,8 +1200,8 @@ Object.assign(ru, {
   anActivity: 'Активность за 7 дней', anSessions7: 'сессий', anAnswers7: 'ответов', anAccuracy7: 'точность',
   anTopics7: 'тем прочитано', anDialogs7: 'диалогов', anMorph7: 'тренировок форм', anTests: 'Сдали тест уровня', anWordsStarted: 'Слов в изучении у всех',
   forMe: 'Для себя', forGroup: 'Группа из 3 (−15%)', perPersonMonth: (n) => `${n} ⭐ в месяц с человека`,
-  groupHint: 'Вы оплачиваете подписку себе и получаете 2 кода для друзей — каждый активирует свой код в разделе «Подписка».',
-  groupCodesTitle: 'Коды для друзей', groupCodesHint: 'Отправьте код другу: он вводит его ниже, в поле «Код подписки».', codeUsed: 'использован', copy: 'Копировать',
+  groupHint: 'Вы оплачиваете подписку себе и получаете 2 кода для друзей — каждый активирует свой код в разделе «Подписка». Групповая подписка возврату не подлежит.',
+  groupCodesTitle: 'Коды для друзей', groupCodesHint: 'Отправьте код другу: он вводит его ниже, в поле «Код подписки».', codeUsed: 'использован', codeRevoked: 'отменён', copy: 'Копировать',
 });
 Object.assign(uz, {
   repTitle: 'Tuzatish kerak', repWhole: 'Butun jadval', repPlaceholder: 'Nima notoʻgʻri? Masalan: «tarjima boshqacha boʻlishi kerak»',
@@ -1265,8 +1265,8 @@ Object.assign(uz, {
   anActivity: '7 kunlik faollik', anSessions7: 'mashgʻulot', anAnswers7: 'javob', anAccuracy7: 'aniqlik',
   anTopics7: 'oʻqilgan mavzu', anDialogs7: 'dialog', anMorph7: 'shakl mashqlari', anTests: 'Daraja testini topshirganlar', anWordsStarted: 'Barcha foydalanuvchilarda oʻrganilayotgan soʻzlar',
   forMe: 'Oʻzim uchun', forGroup: '3 kishilik guruh (−15%)', perPersonMonth: (n) => `kishi boshiga oyiga ${n} ⭐`,
-  groupHint: 'Obunani oʻzingiz uchun toʻlaysiz va doʻstlaringiz uchun 2 ta kod olasiz — har biri oʻz kodini «Obuna» boʻlimida faollashtiradi.',
-  groupCodesTitle: 'Doʻstlar uchun kodlar', groupCodesHint: 'Kodni doʻstingizga yuboring: u uni pastdagi «Obuna kodi» maydoniga kiritadi.', codeUsed: 'ishlatilgan', copy: 'Nusxa olish',
+  groupHint: 'Obunani oʻzingiz uchun toʻlaysiz va doʻstlaringiz uchun 2 ta kod olasiz — har biri oʻz kodini «Obuna» boʻlimida faollashtiradi. Guruh obunasi uchun pul qaytarilmaydi.',
+  groupCodesTitle: 'Doʻstlar uchun kodlar', groupCodesHint: 'Kodni doʻstingizga yuboring: u uni pastdagi «Obuna kodi» maydoniga kiritadi.', codeUsed: 'ishlatilgan', codeRevoked: 'bekor qilingan', copy: 'Nusxa olish',
 });
 Object.assign(en, {
   repTitle: 'Needs fixing', repWhole: 'Whole table', repPlaceholder: 'What is wrong? E.g. “a better translation is …”',
@@ -1330,8 +1330,8 @@ Object.assign(en, {
   anActivity: 'Activity in 7 days', anSessions7: 'sessions', anAnswers7: 'answers', anAccuracy7: 'accuracy',
   anTopics7: 'topics read', anDialogs7: 'dialogues', anMorph7: 'form practices', anTests: 'Passed a level test', anWordsStarted: 'Words in progress (all users)',
   forMe: 'For me', forGroup: 'Group of 3 (−15%)', perPersonMonth: (n) => `${n} ⭐ per person per month`,
-  groupHint: 'You pay for your own plan and get 2 codes for friends — each activates their code under “Subscription”.',
-  groupCodesTitle: 'Codes for friends', groupCodesHint: 'Send a code to a friend: they enter it below in the “Subscription code” field.', codeUsed: 'used', copy: 'Copy',
+  groupHint: 'You pay for your own plan and get 2 codes for friends — each activates their code under “Subscription”. Group plans are non-refundable.',
+  groupCodesTitle: 'Codes for friends', groupCodesHint: 'Send a code to a friend: they enter it below in the “Subscription code” field.', codeUsed: 'used', codeRevoked: 'cancelled', copy: 'Copy',
 });
 
 // ---------------------------------------------------------------- шаг 17: рефералы и купоны

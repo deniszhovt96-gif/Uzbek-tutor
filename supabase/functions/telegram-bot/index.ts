@@ -42,12 +42,13 @@ const TEXT = {
     paid: (tier: string, until: string) => `Оплата получена ✅\nПодписка «${tier === "basic" ? "Базовая" : "Продвинутая"}» действует до ${until}.`,
     payFailed: "Оплата получена, но подписку не удалось продлить автоматически. Мы уже разбираемся — напишите /paysupport.",
     paySupport: (admin: string) =>
-      `Помощь с оплатой.\n\nЕсли звёзды списались, а подписка не появилась, или нужна отмена — напишите администратору: ${admin}.\nУкажите дату оплаты. Возврат звёзд возможен, если подпиской ещё не пользовались.`,
+      `Помощь с оплатой.\n\nЕсли звёзды списались, а подписка не появилась, или нужна отмена — напишите администратору: ${admin}.\nУкажите дату оплаты. Возврат звёзд возможен, если подпиской ещё не пользовались. Групповая подписка возврату не подлежит.`,
     terms:
-      "Условия подписки\n\n• Подписка оплачивается звёздами Telegram на 1, 3, 6 или 12 месяцев и не продлевается автоматически.\n• Новая оплата того же уровня продлевает подписку с даты её окончания. Если действуют обе подписки, сначала работает «Продвинутая», а «Базовая» продолжается после неё на оставшийся срок.\n• «Базовая»: лёгкая программа, до 2 сеансов с новыми словами в день (повторение без ограничений), тренировка, игры, грамматика. «Продвинутая»: любая интенсивность и сеансы без ограничений, дополнительно история, обществознание, культура, филворд, расширенная статистика.\n• Пригласите друга по своей ссылке (Настройки → Подписка): он получит купон −5% на первую оплату, а вы — купон −5%, когда он оформит подписку. Купоны личные, не сгорают; купон снижает цену тарифа (уже со скидкой за срок) ещё на 5%; на обычную подписку — 1 купон, на групповую — до 3 (каждый −5% на долю одного участника).\n• Вопросы и возвраты — /paysupport.",
+      "Условия подписки\n\n• Подписка оплачивается звёздами Telegram на 1, 3, 6 или 12 месяцев и не продлевается автоматически.\n• Новая оплата того же уровня продлевает подписку с даты её окончания. Если действуют обе подписки, сначала работает «Продвинутая», а «Базовая» продолжается после неё на оставшийся срок.\n• «Базовая»: лёгкая программа, до 2 сеансов с новыми словами в день (повторение без ограничений), тренировка, игры, грамматика. «Продвинутая»: любая интенсивность и сеансы без ограничений, дополнительно история, обществознание, культура, филворд, расширенная статистика.\n• Пригласите друга по своей ссылке (Настройки → Подписка): он получит купон −5% на первую оплату, а вы — купон −5%, когда он оформит подписку. Купоны личные, не сгорают; купон снижает цену тарифа (уже со скидкой за срок) ещё на 5%; на обычную подписку — 1 купон, на групповую — до 3 (каждый −5% на долю одного участника).\n• Групповая подписка возврату не подлежит. Если звёзды за неё всё же вернёт Telegram, подписка отключится у покупателя и у всех, кто активировал коды группы; продолжить можно, оформив личную подписку.\n• Вопросы и возвраты — /paysupport.",
     refundUsage: "Формат: /refund ID_платежа",
     refundDone: (stars: number) => `Возврат выполнен: ${stars} ⭐. Подписка по этому платежу отменена.`,
     refundFail: (e: string) => `Возврат не выполнен: ${e}`,
+    refundGroup: "Это групповая подписка — по условиям она возврату не подлежит. Возврат не выполнен.",
     notAdmin: "Команда доступна только администратору.",
     badArgs: "Формат: /gencode basic|advanced 1|3|6|12 количество [активаций]\nНапример: /gencode advanced 3 10",
     codes: (tier: string, months: number, n: number, uses: number) =>
@@ -71,10 +72,11 @@ const TEXT = {
     paySupport: (admin: string) =>
       `Toʻlov boʻyicha yordam.\n\nYulduzlar yechilgan, lekin obuna paydo boʻlmagan boʻlsa yoki bekor qilish kerak boʻlsa — administratorga yozing: ${admin}.\nToʻlov sanasini koʻrsating.`,
     terms:
-      "Obuna shartlari\n\n• Obuna Telegram yulduzlari bilan 1, 3, 6 yoki 12 oyga toʻlanadi va avtomatik uzaytirilmaydi.\n• Xuddi shu darajadagi yangi toʻlov obunani tugash sanasidan uzaytiradi.\n• Doʻstingizni havolangiz orqali taklif qiling (Sozlamalar → Obuna): u birinchi toʻlovga −5% kupon oladi, siz esa u obuna boʻlganda −5% kupon olasiz. Kuponlar shaxsiy, muddatsiz; kupon tarif narxini (muddat chegirmasi bilan) yana 5% kamaytiradi; oddiy obunaga 1 ta, guruh obunasiga 3 tagacha (har biri bitta ishtirokchi ulushiga −5%).\n• Savollar va qaytarish — /paysupport.",
+      "Obuna shartlari\n\n• Obuna Telegram yulduzlari bilan 1, 3, 6 yoki 12 oyga toʻlanadi va avtomatik uzaytirilmaydi.\n• Xuddi shu darajadagi yangi toʻlov obunani tugash sanasidan uzaytiradi.\n• Doʻstingizni havolangiz orqali taklif qiling (Sozlamalar → Obuna): u birinchi toʻlovga −5% kupon oladi, siz esa u obuna boʻlganda −5% kupon olasiz. Kuponlar shaxsiy, muddatsiz; kupon tarif narxini (muddat chegirmasi bilan) yana 5% kamaytiradi; oddiy obunaga 1 ta, guruh obunasiga 3 tagacha (har biri bitta ishtirokchi ulushiga −5%).\n• Guruh obunasi uchun pul qaytarilmaydi. Agar yulduzlarni Telegram baribir qaytarsa, obuna xaridorda ham, guruh kodlarini faollashtirganlarda ham oʻchadi; davom etish uchun shaxsiy obuna rasmiylashtiring.\n• Savollar va qaytarish — /paysupport.",
     refundUsage: "Format: /refund ID",
     refundDone: (stars: number) => `Qaytarildi: ${stars} ⭐.`,
     refundFail: (e: string) => `Qaytarib boʻlmadi: ${e}`,
+    refundGroup: "Bu guruh obunasi — shartlarga koʻra pul qaytarilmaydi.",
     notAdmin: "Bu buyruq faqat administrator uchun.",
     badArgs: "Format: /gencode basic|advanced 1|3|6|12 soni [faollashtirish]",
     codes: (tier: string, months: number, n: number, uses: number) =>
@@ -98,10 +100,11 @@ const TEXT = {
     paySupport: (admin: string) =>
       `Payment help.\n\nIf stars were charged but the subscription did not appear, or you need a refund, contact the administrator: ${admin}.\nPlease include the payment date.`,
     terms:
-      "Subscription terms\n\n• Plans are paid with Telegram Stars for 1, 3, 6 or 12 months and do not renew automatically.\n• A new payment of the same plan extends it from its end date.\n• Invite a friend with your link (Settings → Subscription): they get a −5% coupon for their first payment, and you get a −5% coupon when they subscribe. Coupons are personal and never expire; a coupon takes another 5% off the plan price (already including the term discount); 1 coupon per regular plan, up to 3 per group plan (each −5% off one member’s share).\n• Questions and refunds — /paysupport.",
+      "Subscription terms\n\n• Plans are paid with Telegram Stars for 1, 3, 6 or 12 months and do not renew automatically.\n• A new payment of the same plan extends it from its end date.\n• Invite a friend with your link (Settings → Subscription): they get a −5% coupon for their first payment, and you get a −5% coupon when they subscribe. Coupons are personal and never expire; a coupon takes another 5% off the plan price (already including the term discount); 1 coupon per regular plan, up to 3 per group plan (each −5% off one member’s share).\n• Group plans are non-refundable. If Telegram refunds the stars anyway, the plan is cancelled for the buyer and for everyone who activated the group codes; to continue, take a personal plan.\n• Questions and refunds — /paysupport.",
     refundUsage: "Format: /refund ID",
     refundDone: (stars: number) => `Refunded: ${stars} ⭐.`,
     refundFail: (e: string) => `Refund failed: ${e}`,
+    refundGroup: "This is a group plan — it is non-refundable under the terms. No refund was made.",
     notAdmin: "This command is for administrators only.",
     badArgs: "Format: /gencode basic|advanced 1|3|6|12 count [uses]",
     codes: (tier: string, months: number, n: number, uses: number) =>
@@ -115,6 +118,12 @@ const GROUP_NOTE: Record<Lang, string> = {
   ru: "Групповая: вам подписка и 2 кода для друзей.",
   uz: "Guruh: sizga obuna va doʻstlar uchun 2 ta kod.",
   en: "Group: your plan plus 2 codes for friends.",
+};
+// Групповая подписка отменена возвратом через Telegram → предложение личного тарифа
+const GROUP_ENDED: Record<Lang, (tier: string, months: number, stars: number) => string> = {
+  ru: (tier, m, st) => `Групповая подписка отменена: за неё был оформлен возврат звёзд, поэтому доступ по ней закрыт.\n\nЧтобы продолжить, оформите личную подписку «${tier}» на ${m} мес. — ${st} ⭐ (Настройки → Подписка).`,
+  uz: (tier, m, st) => `Guruh obunasi bekor qilindi: u uchun yulduzlar qaytarildi, shuning uchun kirish yopildi.\n\nDavom etish uchun «${tier}» shaxsiy obunasini ${m} oyga rasmiylashtiring — ${st} ⭐ (Sozlamalar → Obuna).`,
+  en: (tier, m, st) => `Your group plan was cancelled because its stars were refunded, so access through it has ended.\n\nTo continue, take a personal “${tier}” plan for ${m} mo. — ${st} ⭐ (Settings → Subscription).`,
 };
 // Реферальная программа: купоны −5%
 const COUPON_NOTE: Record<Lang, (n: number) => string> = {
@@ -309,14 +318,23 @@ async function onPaid(token: string, msg: any): Promise<void> {
 async function onRefunded(token: string, msg: any): Promise<void> {
   const db = dbClient();
   const rp = msg.refunded_payment;
-  const { data, error } = await db.rpc("stars_refund_payment", { p_charge_id: rp.telegram_payment_charge_id });
+  const { data, error } = await db.rpc("stars_refund_payment", { p_charge_id: rp.telegram_payment_charge_id, p_forced: true });
   if (error || !data?.ok) {
     console.error("stars_refund_payment failed", error, JSON.stringify(data), rp.telegram_payment_charge_id);
     await notifyAdmins(db, token, `⚠️ Возврат ${rp.total_amount} ⭐ не найден в базе.\nПользователь: ${msg.from?.id}\nID: ${rp.telegram_payment_charge_id}`);
     return;
   }
   if (data.duplicate) return;   // возврат уже обработан командой /refund
-  await notifyAdmins(db, token, await adminCard(db, rp.telegram_payment_charge_id, `↩️ <b>Возврат ${rp.total_amount} ⭐</b> (не через /refund) — подписка по платежу отменена`, false), true);
+  // групповая подписка: всем, у кого она отключилась, — предложение личного тарифа
+  const appUrl = Deno.env.get("APP_URL");
+  for (const o of data.offers ?? []) {
+    const ol: Lang = o.lang === "uz" || o.lang === "en" ? o.lang : "ru";
+    await tgCall(token, "sendMessage", {
+      chat_id: o.tg_id, text: GROUP_ENDED[ol](TEXT[ol].tierName(o.tier), Number(o.months), Number(o.stars)),
+      ...(appUrl ? { reply_markup: { inline_keyboard: [[{ text: TEXT[ol].open, web_app: { url: appUrl } }]] } } : {}),
+    }).catch(() => {});
+  }
+  await notifyAdmins(db, token, await adminCard(db, rp.telegram_payment_charge_id, `↩️ <b>Возврат ${rp.total_amount} ⭐</b> (не через /refund) — подписка по платежу отменена` + (Number(data.seats) > 1 ? `\nГрупповая: доступ снят у ${(data.offers ?? []).length} чел., коды отключены, им предложен личный тариф.` : ""), false), true);
 }
 
 async function notifyAdmins(db: any, token: string, text: string, html = false): Promise<void> {
@@ -608,12 +626,18 @@ async function handler(req: Request): Promise<Response> {
         await tgCall(token, "sendMessage", { chat_id: chatId, text: t.refundUsage });
         return ok();
       }
-      const { data: pay } = await db.from("payments").select("stars,status,user_id").eq("charge_id", chargeId).maybeSingle();
+      const { data: pay } = await db.from("payments").select("stars,status,user_id,plan_id").eq("charge_id", chargeId).maybeSingle();
       if (!pay) {
         await tgCall(token, "sendMessage", { chat_id: chatId, text: t.refundFail("not_found") });
         return ok();
       }
       const { data: prof } = await db.from("profiles").select("tg_id").eq("id", pay.user_id).maybeSingle();
+      // групповая подписка возврату не подлежит
+      const { data: pplan } = pay.plan_id ? await db.from("plans").select("seats").eq("id", pay.plan_id).maybeSingle() : { data: null };
+      if (pay.status !== "refunded" && (pplan?.seats ?? 1) > 1) {
+        await tgCall(token, "sendMessage", { chat_id: chatId, text: t.refundGroup });
+        return ok();
+      }
       if (pay.status !== "refunded") {
         const r = await tgApi(token, "refundStarPayment", { user_id: prof?.tg_id, telegram_payment_charge_id: chargeId });
         if (!r.ok) {
