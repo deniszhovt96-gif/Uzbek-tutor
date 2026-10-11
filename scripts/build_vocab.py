@@ -35,7 +35,13 @@ WORD_FIXES = ROOT / "data" / "word_fixes.csv"
 LEVELS = ROOT / "data" / "levels.csv"
 COLLOQUIAL = ROOT / "data" / "source" / "colloquial.json"
 COLLOQ_PREFIX = "Разговорная речь. "
+# Шаг 21: разговорная лексика — две группы. Самые нужные фразы (data/colloquial_core.txt) — на A1 сразу после
+# «Приветствий», остальное — одной темой в начале A2. На пути обе отмечены «разговорная».
+COLLOQ_CORE_FILE = ROOT / "data" / "colloquial_core.txt"
+COLLOQ_CORE_TOPIC = COLLOQ_PREFIX + "Самое нужное"
+COLLOQ_REST_TOPIC = COLLOQ_PREFIX + "Живая речь Ташкента"
 SUPPLEMENT = ROOT / "data" / "source" / "supplement.json"   # недостающие слова (числа 10–19, 30–33…), ID с 21001
+SYN_NOTES = ROOT / "data" / "syn_notes.csv"     # чем слово отличается от синонимов с тем же переводом (шаг 21)
 TOPIC_NAMES = ROOT / "data" / "topic_names.csv"   # переводы названий тем: name_ru,name_uz,name_en
 AUDIO_VOICED = ROOT / "data" / "audio_voiced.txt"  # файлы, озвученные workflow «Озвучка» (scripts/tts.py)
 OUT = ROOT / "data" / "build"
@@ -231,6 +237,9 @@ def read_colloquial(existing_keys):
     if not COLLOQUIAL.exists():
         return [], []
     items = json.loads(COLLOQUIAL.read_text(encoding="utf-8"))
+    core = set()
+    if COLLOQ_CORE_FILE.exists():
+        core = {int(x.split("#")[0]) for x in COLLOQ_CORE_FILE.read_text(encoding="utf-8").split("\n") if x.split("#")[0].strip()}
     out, skipped = [], []
     for e in items:
         if key_uz(e["uz"]) in existing_keys:
@@ -238,8 +247,8 @@ def read_colloquial(existing_keys):
             continue
         ex = [(e.get("ex_uz"), e.get("ex_ru")), (e.get("ex2_uz"), e.get("ex2_ru"))]
         out.append({
-            "id": int(e["id"]), "topic": COLLOQ_PREFIX + e["topic"].strip(), "topic_no": None,
-            "ru": e["ru"].strip(), "uz": e["uz"].strip(), "cefr": e["cefr"],
+            "id": int(e["id"]), "topic": COLLOQ_CORE_TOPIC if int(e["id"]) in core else COLLOQ_REST_TOPIC, "topic_no": None,
+            "ru": e["ru"].strip(), "uz": e["uz"].strip(), "cefr": "A1" if int(e["id"]) in core else "A2",
             "ex": [x for x in ex if x[0] and x[1]],
             "register": "colloquial", "literary": e.get("literary") or "", "note": e.get("note") or "",
             "en": e.get("en") or "", "level_fixed": True,
@@ -428,6 +437,14 @@ def main():
     for i, t in enumerate(sorted(topics.values(), key=lambda t: t["first"]), start=1):
         t["id"] = i
         t["cefr"] = min(t["cefr"], key=lambda c: CEFR_RANK.get(c, 9))
+    # порядок тем (sort_order и порядок изучения слов): разговорные группы — на своих местах
+    greet = next((t["id"] for t in topics.values() if t["name"].startswith("Приветствия")), 2)
+    for t in topics.values():
+        t["sort"] = t["id"] * 10
+        if t["name"] == COLLOQ_CORE_TOPIC:
+            t["sort"] = greet * 10 + 5          # A1: сразу после «Приветствий»
+        elif t["name"] == COLLOQ_REST_TOPIC:
+            t["sort"] = 0                        # A2: первой темой
 
     # -- слова
     for d in data:
@@ -453,7 +470,7 @@ def main():
 
     # полные дубли (узб. + рус. совпадают) → одна карточка: основная = та, что раньше
     # всех в порядке изучения (CEFR → тема → ID), чтобы слово не откладывалось до B2
-    learn_pos = lambda i: (CEFR_RANK[by_id[i]["cefr"]], topics[by_id[i]["topic"]]["id"], i)
+    learn_pos = lambda i: (CEFR_RANK[by_id[i]["cefr"]], topics[by_id[i]["topic"]]["sort"], i)
     groups = defaultdict(list)
     for d in data:
         groups[(d["uz_key"], d["ru_key"])].append(d["id"])
@@ -483,7 +500,7 @@ def main():
         d["accept_uz"] = uz_by_ruwhole[d["ru_whole"]]
 
     # порядок изучения: CEFR → тема → ID
-    order = sorted(data, key=lambda d: (CEFR_RANK[d["cefr"]], topics[d["topic"]]["id"], d.get("order", d["id"])))
+    order = sorted(data, key=lambda d: (CEFR_RANK[d["cefr"]], topics[d["topic"]]["sort"], d.get("order", d["id"])))
     for i, d in enumerate(order, start=1):
         d["sort_key"] = i
 
@@ -538,12 +555,16 @@ def main():
             except ValueError:
                 no = ""
             tr = topic_tr.get(t["name"], {})
-            w.writerow([t["id"], no, t["name"], tr.get("name_uz", ""), tr.get("name_en", ""), t["cefr"], t["id"]])
+            w.writerow([t["id"], no, t["name"], tr.get("name_uz", ""), tr.get("name_en", ""), t["cefr"], t["sort"]])
     with open(OUT / "words.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["id", "topic_id", "cefr", "uz", "ru", "uz_key", "accept_ru", "accept_uz",
                     "word_class", "canonical_id", "audio_ok", "sort_key", "register", "literary", "note", "en",
-                    "pos", "morph"])
+                    "pos", "morph", "syn_note"])
+        syn = {}
+        if SYN_NOTES.exists():
+            with open(SYN_NOTES, encoding="utf-8") as sf:
+                syn = {int(r["word_id"]): r["note"].strip() for r in csv.DictReader(sf) if r.get("note")}
         for d in sorted(data, key=lambda x: x["id"]):
             audio = "f" if (d["id"] in uz_changed or d.get("register") == "colloquial" or d.get("no_audio")) else "t"
             if f"word_{d['id']}.mp3" in voiced:
@@ -556,7 +577,8 @@ def main():
                         json.dumps(verb_forms[d["id"]], ensure_ascii=False, separators=(",", ":"))
                         if d["class"] == "verb" and d["id"] in verb_forms
                         else json.dumps(noun_forms[d["id"]], ensure_ascii=False, separators=(",", ":"))
-                        if d.get("pos") == "n" and d["id"] in noun_forms else ""])
+                        if d.get("pos") == "n" and d["id"] in noun_forms else "",
+                        syn.get(d["id"], "")])
     with open(OUT / "examples.csv", "w", newline="", encoding="utf-8") as f:
         link_examples(examples, data)
         cols = ["word_id", "n", "uz", "ru", "blank_start", "blank_len", "blank_answer", "audio_ok", "is_hidden", "word_ids", "n_words"]

@@ -178,6 +178,7 @@ export async function wordSheet(app, id, onChanged) {
           w.literary && w.literary !== w.uz ? h('span', { class: 'small' }, ` ${t('literaryForm')}: `, h('b', {}, w.literary)) : null,
           w.note ? h('div', { class: 'tiny muted' }, w.note) : null)
       : null,
+    w.syn_note ? h('div', { class: 'syn-note small' }, h('b', {}, `${t('synDiff')}: `), w.syn_note) : null,
     st ? h('p', { class: 'small', style: { textAlign: 'center' } },
       t('dictLevel', st), w.due_on ? ` · ${t('dictNext', formatDate(w.due_on))}` : '')
       : h('p', { class: 'small muted', style: { textAlign: 'center' } }, t('dictNotStarted')),

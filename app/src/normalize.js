@@ -25,6 +25,25 @@ export function keyRu(s) {
     .trim();
 }
 
+// Число слов (без пояснений в скобках) — варианты ответа подбираются той же длины
+export function wordCount(s) {
+  const t = String(s ?? '').replace(/\([^)]*\)/g, ' ').replace(/[-–—]/g, ' ').trim();
+  return t ? t.split(/\s+/).length : 0;
+}
+
+// Ответ на узбекском без личных местоимений тоже верный: «boraman» = «Men boraman.»
+const PRON = new Set(['men', 'sen', 'u', 'biz', 'siz', 'ular']);
+export function stripPron(s) {
+  return keyUz(s).split(' ').filter((w) => w && !PRON.has(w)).join(' ');
+}
+export function uzSame(a, b) {
+  const ka = keyUz(a);
+  if (!ka) return false;
+  if (ka === keyUz(b)) return true;
+  const sa = stripPron(a);
+  return sa !== '' && sa === stripPron(b);
+}
+
 // Узбекский текст с ввода пользователя приводим к виду для показа (oʻ gʻ, ʼ)
 export function displayUz(s) {
   const str = String(s ?? '').normalize('NFC');

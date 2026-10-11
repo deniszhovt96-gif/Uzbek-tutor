@@ -95,6 +95,7 @@ export async function renderPath(app) {
         els.push(h('div', { class: `node-label ${left ? 'left' : ''}`,
           style: { top: `${y - 18}px`, width: `${width}px`, left: left ? `${x - half - width}px` : `${x + half}px` } },
           h('div', {}, topicName(tp)),
+          tp.colloquial ? h('span', { class: 'colloq-tag' }, t('colloquialShort')) : null,
           h('div', { class: 'muted' }, `${tp.started}/${tp.total}`)));
         points.push([x, y]);
         if (tp.started > 0 || isCurrent) doneUntil = points.length;

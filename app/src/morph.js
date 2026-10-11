@@ -45,7 +45,8 @@ export function commonRoot(forms, base) {
 
 // Ответ в клетке: можно написать только окончание (после корня) или всю форму
 export function cellOk(answer, cell, root, extra = []) {
-  const a = keyUz(answer || '');
+  // «men boraman» — тоже верно: личное местоимение перед формой не мешает
+  const a = keyUz(answer || '').replace(/^(men|sen|u|biz|siz|ular|mening|sening|uning|bizning|sizning|ularning) (?=\S)/, '');
   const variants = [...acceptedForms(cell), ...extra.flatMap((x) => (x ? acceptedForms(x) : []))];
   return variants.some((v) => {
     const k = keyUz(v);

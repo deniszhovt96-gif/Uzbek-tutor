@@ -320,5 +320,33 @@
   "ex_ru": "Попробуйте это блюдо.",
   "ex2_uz": "Men sinab koʻrdim.",
   "ex2_ru": "Я попробовал."
+ },
+ {
+  "id": 21026,
+  "topic": "Самые важные глаголы - 1",
+  "uz": "kiyinmoq",
+  "ru": "одеваться",
+  "en": "",
+  "cefr": "A2",
+  "register": "lit",
+  "after": 179,
+  "ex_uz": "Tez kiyin, kech qolamiz.",
+  "ex_ru": "Быстро одевайся, мы опоздаем.",
+  "ex2_uz": "U issiq kiyindi.",
+  "ex2_ru": "Он тепло оделся."
+ },
+ {
+  "id": 21027,
+  "topic": "Самые важные глаголы - 1",
+  "uz": "kiydirmoq",
+  "ru": "одевать (кого-то)",
+  "en": "",
+  "cefr": "A2",
+  "register": "lit",
+  "after": 179,
+  "ex_uz": "Ona bolasini kiydirdi.",
+  "ex_ru": "Мама одела ребёнка.",
+  "ex2_uz": "Qizchaga yangi koʻylak kiydiring.",
+  "ex2_ru": "Наденьте на девочку новое платье."
  }
 ]

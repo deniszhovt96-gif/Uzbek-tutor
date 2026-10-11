@@ -9,6 +9,7 @@ import { playTrueFalse } from './games/truefalse.js';
 import { playGuess } from './games/guess.js';
 import { playFilword } from './games/filword.js';
 import { playMistakes } from './games/mistakes.js';
+import { playMarathon } from './games/marathon.js';
 
 export const GAMES = {
   pairs: { icon: 'pairs', title: 'gamePairs', desc: 'gamePairsDesc', feature: 'games', min: 5, run: playPairs },
@@ -16,6 +17,7 @@ export const GAMES = {
   guess: { icon: 'guess', title: 'gameGuess', desc: 'gameGuessDesc', feature: 'games', min: 3, run: playGuess },
   filword: { icon: 'filword', title: 'gameFilword', desc: 'gameFilwordDesc', feature: 'filword', min: 6, run: playFilword },
   mistakes: { icon: 'mistakes', title: 'gameMistakes', desc: 'gameMistakesDesc', feature: 'mistakes', min: 0, run: playMistakes, own: true },
+  marathon: { icon: 'route', title: 'gameMarathon', desc: 'gameMarathonDesc', feature: 'games', min: 0, run: playMarathon, own: true },
 };
 
 // Рекорды хранятся на телефоне

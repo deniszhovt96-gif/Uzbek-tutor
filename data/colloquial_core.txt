@@ -1,0 +1,44 @@
+# Самые нужные разговорные фразы — отдельная тема на A1 («Разговорная речь. Самое нужное»).
+# Остальная разговорная лексика из colloquial.json — одной темой в начале A2. Одна строка — один ID.
+20001 # Qalesan?
+20002 # Qalesiz?
+20003 # Nima gap?
+20005 # Tinchmi?
+20006 # Tinchlik
+20007 # Zoʻr
+20008 # Yomonmas
+20015 # Kettim
+20016 # Kettik
+20017 # Yaxshi qoling
+20018 # Yaxshi boring
+20019 # Koʻrishamiz
+20020 # Sogʻ boʻl
+20021 # Salom ayt
+20024 # Bir minut
+20025 # Shoshmang
+20036 # Bemalol
+20037 # Kirsam maylimi?
+20040 # Hech qisi yoʻq
+20043 # Labbay?
+20044 # Nima dedingiz?
+20045 # Sekinroq gapiring
+20048 # Xoʻp
+20051 # Boʻpti
+20053 # Kelishdik
+20059 # Kerakmas
+20060 # Yoʻq-e
+20066 # Koʻramiz
+20067 # Xudo xohlasa
+20071 # Menga baribir
+20072 # Voy!
+20075 # Iye!
+20078 # Zoʻr-ku!
+20080 # Barakalla!
+20088 # Rostdan-a?
+20089 # Shunaqami?
+20096 # Xudoga shukur
+20110 # Joʻra
+20195 # Nechi pul?
+20213 # Manavini bering
+20214 # Boshqa nima?
+20215 # Hammasi shu

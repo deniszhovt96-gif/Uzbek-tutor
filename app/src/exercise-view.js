@@ -32,6 +32,7 @@ export function renderCard(item, { audioEnabled, onNext }) {
             item.literary && item.literary !== item.uz ? h('span', { class: 'small' }, ` ${t('literaryForm')}: `, h('b', {}, item.literary)) : null,
             item.note ? h('div', { class: 'tiny muted' }, item.note) : null)
         : null,
+      item.syn_note ? h('div', { class: 'syn-note small' }, h('b', {}, `${t('synDiff')}: `), item.syn_note) : null,
       examples.length ? h('div', { class: 'examples' }, h('div', { class: 'label' }, t('examples')), examples) : null),
     canConjugate(item) ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => conjSheet(item) }, icon('practice'), t('conjBtn')) : null,
     h('button', { class: 'btn btn-big', onClick: onNext }, t('gotIt')));
@@ -74,6 +75,8 @@ export function renderExercise(ex, { audioEnabled, onAnswer, onNext }) {
       word.audio_ok && audioEnabled ? audioButton(() => play(wordAudio(word.id))) : null,
       ex.example && ex.exampleAudio && audioEnabled ? audioButton(exAudio) : null,
       canConjugate(word) ? h('button', { class: 'chip-btn conj-chip', type: 'button', onClick: () => conjSheet(word) }, t('conjBtn')) : null));
+    // чем слово отличается от синонимов — после ошибки
+    if (!correct && word.syn_note) parts.push(h('div', { class: 'syn-note small' }, h('b', {}, `${t('synDiff')}: `), word.syn_note));
     const nextBtn = h('button', { class: 'btn btn-big', onClick: onNext }, t('next'));
     feedback.className = `feedback show ${correct ? 'good' : 'bad'}`;
     feedback.replaceChildren(...parts, nextBtn);

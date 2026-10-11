@@ -156,7 +156,7 @@ function codeBlock(app) {
       const r = await rpc('redeem_code', { p_code: code });
       if (r.ok) {
         haptic('success');
-        status.textContent = t('codeOk', tierName(r.tier), formatDate(r.ends_at));
+        status.textContent = t('codeOk', tierName(r.tier), formatDate(r.ends_at)) + (r.alpha ? ` ${t('alphaOn')}` : '');
         status.className = 'small ok';
         input.value = '';
         setTimeout(() => renderSubscription(app), 1200);

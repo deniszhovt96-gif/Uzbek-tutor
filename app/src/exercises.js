@@ -1,6 +1,6 @@
 // Генерация упражнений из карточки слова (её отдаёт start_session).
 // Чистые функции без DOM — их легко проверить и переиспользовать в мобильном приложении.
-import { keyRu, keyUz } from './normalize.js';
+import { keyRu, keyUz, wordCount, uzSame } from './normalize.js';
 
 // Типы по уровню слова (см. документ: «Упражнения»): от узнавания к вспоминанию
 export const TYPES_BY_LEVEL = [
@@ -25,6 +25,13 @@ export function shuffle(arr, rnd = Math.random) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+// Сначала варианты с тем же числом слов, что и верный ответ, затем самые близкие по длине
+function sameLength(list, correct) {
+  const n = wordCount(correct);
+  list.sort((a, b) => Math.abs(wordCount(a) - n) - Math.abs(wordCount(b) - n));
+  return list;
 }
 
 // Позиция верного ответа: не больше 2 раз подряд на одном месте
@@ -159,7 +166,10 @@ export function buildExercise(item, type, opts = {}) {
     case 'uz_ru_choice': {
       const wrong = uniqueBy(shuffle(ds, rnd), (d) => keyRu(d.ru), [keyRu(item.ru), ...item.accept_ru])
         .filter((d) => !d.ru.split(',').some((p) => item.accept_ru.includes(keyRu(p))))
-        .slice(0, 3).map((d) => d.ru);
+        .map((d) => d.ru);
+      // варианты той же длины, что и верный ответ (по числу слов)
+      sameLength(wrong, item.ru);
+      wrong.length = Math.min(wrong.length, 3);
       if (wrong.length < 3) return null;
       const { options, correctIndex } = placeCorrect(item.ru, wrong, rnd);
       return { ...base, target: 'ru', prompt: item.uz, promptKind: 'uz', audio: audioOn, options, correctIndex };
@@ -168,7 +178,9 @@ export function buildExercise(item, type, opts = {}) {
     case 'audio_choice': {
       if (type === 'audio_choice' && !audioOn) return null;
       const wrong = uniqueBy(shuffle(ds, rnd), (d) => keyUz(d.uz), [item.uz_key || keyUz(item.uz), ...item.accept_uz])
-        .slice(0, 3).map((d) => d.uz);
+        .map((d) => d.uz);
+      sameLength(wrong, item.uz);
+      wrong.length = Math.min(wrong.length, 3);
       if (wrong.length < 3) return null;
       const { options, correctIndex } = placeCorrect(item.uz, wrong, rnd);
       return { ...base, target: 'uz', prompt: type === 'audio_choice' ? null : item.ru,
@@ -224,7 +236,9 @@ export function buildExercise(item, type, opts = {}) {
       if (!ex) return null;
       const own = new Set(examplesFor(item).map((e) => keyRu(e.ru)));
       const wrong = uniqueBy(shuffle(opts.sentencePool || [], rnd), keyRu, [...own])
-        .filter((ru) => ru.length < 140).slice(0, 3);
+        .filter((ru) => ru.length < 140);
+      sameLength(wrong, ex.ru);
+      wrong.length = Math.min(wrong.length, 3);
       if (wrong.length < 3) return null;
       const { options, correctIndex } = placeCorrect(ex.ru, wrong, rnd);
       return { ...base, target: 'sentence_ru', prompt: ex.uz, promptKind: 'uz_sentence', answer: ex.ru,
@@ -308,10 +322,10 @@ export function checkAnswer(ex, answer) {
   if (ex.target === 'ru') return keyRu(answer) !== '' && ex.word.accept_ru.includes(keyRu(answer));
   if (ex.target === 'uz') {
     const k = keyUz(answer);
-    return k !== '' && (k === keyUz(ex.word.uz) || ex.word.accept_uz.includes(k));
+    return k !== '' && (k === keyUz(ex.word.uz) || ex.word.accept_uz.includes(k) || uzSame(answer, ex.word.uz));
   }
   if (ex.target === 'blank' || ex.target === 'token' || ex.target === 'sentence_uz') {
-    return keyUz(answer) !== '' && keyUz(answer) === keyUz(ex.answer);
+    return uzSame(answer, ex.answer);
   }
   if (ex.target === 'sentence_ru') return keyRu(answer) !== '' && keyRu(answer) === keyRu(ex.answer);
   return false;

@@ -32,7 +32,7 @@ const TEXT = {
       `Ассалому алайкум, ${name}! 👋\n\nЭто самоучитель узбекского языка: 8 700+ слов с озвучкой, примеры, грамматика, история и обществознание Узбекистана.\n\nНажмите кнопку ниже, чтобы начать.`,
     open: "Открыть приложение",
     help: "Команды:\n/start — открыть приложение\n/paysupport — помощь с оплатой\n/terms — условия подписки\n/id — мой Telegram ID\n/help — помощь",
-    adminHelp: "\n\nАдминистратор:\n/gencode basic|advanced 1|3|6|12 количество [активаций]\nНапример: /gencode basic 1 5\n/refund ID_платежа — вернуть звёзды\n/grant ID|@username basic|advanced месяцев — выдать подписку\nНапример: /grant 123456789 advanced 1",
+    adminHelp: "\n\nАдминистратор:\n/gencode basic|advanced 1|3|6|12 количество [активаций]\nНапример: /gencode basic 1 5\n/refund ID_платежа — вернуть звёзды\n/grant ID|@username basic|advanced месяцев — выдать подписку\nНапример: /grant 123456789 advanced 1\n/alphacode количество [месяцев] — коды альфа-тестера («Продвинутая» + вся грамматика открыта)",
     tierName: (tier: string) => (tier === "basic" ? "Базовая" : "Продвинутая"),
     invoiceTitle: (tier: string, months: number) => `Подписка «${tier === "basic" ? "Базовая" : "Продвинутая"}» · ${months} мес.`,
     invoiceDesc: (tier: string, months: number) =>
@@ -60,7 +60,7 @@ const TEXT = {
       `Assalomu alaykum, ${name}! 👋\n\nBu oʻzbek tilini oʻrganish ilovasi: 8 700+ soʻz ovozli, misollar, grammatika, tarix va jamiyatshunoslik.\n\nBoshlash uchun quyidagi tugmani bosing.`,
     open: "Ilovani ochish",
     help: "Buyruqlar:\n/start — ilovani ochish\n/paysupport — toʻlov boʻyicha yordam\n/terms — obuna shartlari\n/id — mening Telegram ID\n/help — yordam",
-    adminHelp: "\n\nAdministrator:\n/gencode basic|advanced 1|3|6|12 soni [faollashtirish]\n/refund ID — yulduzlarni qaytarish\n/grant ID|@username basic|advanced oy — obuna berish",
+    adminHelp: "\n\nAdministrator:\n/gencode basic|advanced 1|3|6|12 soni [faollashtirish]\n/refund ID — yulduzlarni qaytarish\n/grant ID|@username basic|advanced oy — obuna berish\n/alphacode soni [oy] — alfa-tester kodlari",
     tierName: (tier: string) => (tier === "basic" ? "Asosiy" : "Kengaytirilgan"),
     invoiceTitle: (tier: string, months: number) => `«${tier === "basic" ? "Asosiy" : "Kengaytirilgan"}» obuna · ${months} oy`,
     invoiceDesc: (tier: string, months: number) =>
@@ -88,7 +88,7 @@ const TEXT = {
       `Assalomu alaykum, ${name}! 👋\n\nThis is an Uzbek self-study app: 8,700+ words with audio, examples, grammar, history and civics of Uzbekistan.\n\nTap the button below to start.`,
     open: "Open the app",
     help: "Commands:\n/start — open the app\n/paysupport — payment help\n/terms — subscription terms\n/id — my Telegram ID\n/help — help",
-    adminHelp: "\n\nAdmin:\n/gencode basic|advanced 1|3|6|12 count [uses]\n/refund ID — refund stars\n/grant ID|@username basic|advanced months — grant a subscription",
+    adminHelp: "\n\nAdmin:\n/gencode basic|advanced 1|3|6|12 count [uses]\n/refund ID — refund stars\n/grant ID|@username basic|advanced months — grant a subscription\n/alphacode count [months] — alpha tester codes (Advanced + all grammar unlocked)",
     tierName: (tier: string) => (tier === "basic" ? "Basic" : "Advanced"),
     invoiceTitle: (tier: string, months: number) => `${tier === "basic" ? "Basic" : "Advanced"} plan · ${months} mo.`,
     invoiceDesc: (tier: string, months: number) =>
@@ -688,6 +688,22 @@ async function handler(req: Request): Promise<Response> {
       await tgApi(token, "sendMessage", { chat_id: tgId,
         text: `🎁 Вам выдана подписка «${tierRu}» на ${args.months} мес. — до ${d(g.ends_at)}.\nОткройте приложение, чтобы продолжить.`,
         reply_markup: { inline_keyboard: [[{ text: t.open, web_app: { url: appUrl } }]] } }).catch(() => {});
+    } else if (command === "/alphacode") {
+      if (!(await isAdmin())) {
+        await tgCall(token, "sendMessage", { chat_id: chatId, text: t.notAdmin });
+        return ok();
+      }
+      const [, countS, monthsS] = text.trim().split(/\s+/);
+      const count = Number(countS), months = monthsS ? Number(monthsS) : 1;
+      if (!Number.isInteger(count) || count < 1 || count > 50 || ![1, 3, 6, 12].includes(months)) {
+        await tgCall(token, "sendMessage", { chat_id: chatId, text: "Формат: /alphacode количество [месяцев]\nНапример: /alphacode 5 1" });
+        return ok();
+      }
+      const { data, error } = await db.rpc("admin_create_alpha_codes", { p_count: count, p_months: months, p_created_by: from.id });
+      if (error) throw error;
+      const codes = (data as string[]).map((c) => `<code>${escapeHtml(c)}</code>`).join("\n");
+      await tgCall(token, "sendMessage", { chat_id: chatId, parse_mode: "HTML",
+        text: `🧪 Коды альфа-тестера (${count} шт.): «Продвинутая» на ${months} мес. + вся грамматика открыта, все времена спряжения доступны.\nКод вводится в приложении: Настройки → Подписка → «Код подписки».\n\n${codes}` });
     } else if (command === "/gencode") {
       if (!(await isAdmin())) {
         await tgCall(token, "sendMessage", { chat_id: chatId, text: t.notAdmin });

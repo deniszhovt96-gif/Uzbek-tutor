@@ -842,3 +842,37 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding
 .station-k { font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 700; }
 .station-n { font-size: 12.5px; font-weight: 600; line-height: 1.2; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .ref-img { width: 100%; border-radius: 14px; display: block; aspect-ratio: 4 / 5; object-fit: cover; }
+
+/* шаг 21: синонимы, марафон, разговорные темы на пути */
+.syn-note { margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: var(--accent-soft); line-height: 1.4; text-align: left; }
+.colloq-tag { display: inline-block; margin: 2px 0; padding: 1px 7px; border-radius: 999px; font-size: 10px; font-weight: 700;
+  background: var(--gold-soft); color: var(--gold); text-transform: lowercase; }
+.marathon-level { display: grid; gap: 8px; }
+.marathon-level.dim { opacity: .55; }
+.row-between { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.row-gap { display: flex; gap: 8px; flex-wrap: wrap; }
+.row-gap .btn { flex: 1; }
+.icon-btn { border: 0; background: transparent; color: var(--muted); padding: 4px; display: grid; place-items: center; }
+.icon-btn .ic { width: 20px; height: 20px; }
+
+/* шаг 21: цвета групп на главной (вариант A) — меняется только значок, стиль плиток прежний.
+   Игры — фиолетовые; Грамматика — индиго; История и Культура — синий и зелёный флага Узбекистана; Обществознание — серо-синее */
+:root {
+  --c-games: #7a5cc4; --c-games-soft: rgba(122, 92, 196, 0.14);
+  --c-gram: #5160c9;  --c-gram-soft: rgba(84, 96, 208, 0.13);
+  --c-hist: #0a85a8;  --c-hist-soft: rgba(0, 138, 176, 0.14);
+  --c-cult: #1c8f45;  --c-cult-soft: rgba(30, 158, 74, 0.14);
+  --c-civ: #465f8f;   --c-civ-soft: rgba(70, 100, 150, 0.13);
+}
+[data-theme="dark"] {
+  --c-games: #a88ef0; --c-games-soft: rgba(168, 142, 240, 0.17);
+  --c-gram: #8d98f2;  --c-gram-soft: rgba(141, 152, 242, 0.16);
+  --c-hist: #3fb8db;  --c-hist-soft: rgba(63, 184, 219, 0.16);
+  --c-cult: #4cc977;  --c-cult-soft: rgba(76, 201, 119, 0.16);
+  --c-civ: #8ea6d6;   --c-civ-soft: rgba(142, 166, 214, 0.16);
+}
+.tile.c-games .tile-icon { background: var(--c-games-soft); color: var(--c-games); }
+.tile.c-gram .tile-icon { background: var(--c-gram-soft); color: var(--c-gram); }
+.tile.c-hist .tile-icon { background: var(--c-hist-soft); color: var(--c-hist); }
+.tile.c-cult .tile-icon { background: var(--c-cult-soft); color: var(--c-cult); }
+.tile.c-civ .tile-icon { background: var(--c-civ-soft); color: var(--c-civ); }

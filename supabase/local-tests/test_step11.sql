@@ -136,7 +136,12 @@ update public.word_progress set level = 5 where user_id = '11110000-0000-0000-00
 create temp table lv as select word_id, level from public.word_progress where user_id = '11110000-0000-0000-0000-000000000002';
 set role authenticated;
 create temp table rq as select public.start_review_quiz() as r;
-select pg_temp.check((select (r->>'total')::int = 20 from rq), 'контрольная: 20 вопросов');
+reset role;
+create temp table rq_n as select least(20, count(*))::int n from public.word_progress wp join public.words w on w.id = wp.word_id
+  where wp.user_id = '11110000-0000-0000-0000-000000000002' and wp.level >= 2 and w.test_ok and w.is_active;
+grant select on rq_n to authenticated;
+set role authenticated;
+select pg_temp.check((select (r->>'total')::int = (select n from rq_n) from rq), 'контрольная: до 20 вопросов (без слов, созвучных русским, — шаг 21)');
 select pg_temp.check((select count(distinct q->>'type') = 4 from rq, jsonb_array_elements(r->'questions') q), 'контрольная: 4 вида вопросов');
 select pg_temp.check((select bool_and(jsonb_array_length(q->'options') = 4) from rq, jsonb_array_elements(r->'questions') q where q ? 'options'), 'по 4 варианта');
 select public.answer_word_check((r->>'attempt_id')::uuid, 0, 'неверно') from rq;
