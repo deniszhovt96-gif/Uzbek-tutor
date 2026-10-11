@@ -44,6 +44,12 @@ select pg_temp.check((select bool_and((select count(distinct public.wc(o #>> '{}
                       from lq where q->>'type' in ('uz_ru_choice','ru_uz_choice','audio_choice','sentence_choice')), 'варианты одной длины');
 select pg_temp.check(public.wc('стоить (того)') = 1 and public.wc('kiyim ilgich') = 2, 'подсчёт слов');
 
+-- сложность: позиция в уровне + длина + доля ошибок всех пользователей
+select pg_temp.check((select count(*) > 7000 from public.word_difficulty), 'сложность посчитана для всех слов');
+select pg_temp.check((select d1.hard < d2.hard from public.word_difficulty d1, public.word_difficulty d2
+                      where d1.word_id = (select id from public.words where uz = 'men' and is_active limit 1)
+                        and d2.word_id = (select id from public.words where uz = 'qisqichbaqa' and cefr = 'A1' and is_active limit 1)), 'men легче, чем qisqichbaqa');
+
 -- 6: синонимы — пояснение в карточке
 select pg_temp.check((select public.word_card(id, '21010000-0000-0000-0000-000000000001', now())->>'syn_note' like '%muloqot%'
                       from public.words where uz = 'suhbat' and ru = 'разговор'), 'suhbat: пояснение разницы с muloqot');

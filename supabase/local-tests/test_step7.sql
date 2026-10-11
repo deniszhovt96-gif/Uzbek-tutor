@@ -69,7 +69,7 @@ set request.jwt.claim.sub = 'bbbbbbbb-0000-0000-0000-000000000002';
 reset role;
 insert into public.word_progress (user_id, word_id, level, level_at, due_on, first_seen_at)
 select 'bbbbbbbb-0000-0000-0000-000000000002', id, 5, '2026-10-09', '2026-10-20', '2026-10-01'
-from public.words where cefr = 'A1' and canonical_id is null and is_active order by sort_key limit 3;
+from public.words where cefr = 'A1' and canonical_id is null and is_active and test_ok and length(uz_key) >= 3 order by sort_key limit 3;
 set role authenticated;
 select pg_temp.check(public.start_practice('games', 20)->>'error' = 'locked_tier', 'игры закрыты в бесплатной подписке');
 create temp table t2 as select public.start_level_test('A1') as r;
