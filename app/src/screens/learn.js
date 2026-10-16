@@ -25,6 +25,12 @@ export async function renderLearn(app, { mode = 'normal', topicId = null }) {
   }
   if (data.error) throw new Error(data.error);
   if (!data.items.length) {
+    // в «Повторении» новых слов нет: если повторять нечего — предлагаем изучить новые
+    if (mode === 'review') {
+      message(t('emptyReview'), h('button', { class: 'btn', onClick: () => app.replace('learn', { mode: 'normal' }) }, t('secLearn')),
+        h('button', { class: 'btn btn-secondary', onClick: () => app.home() }, t('toHome')));
+      return;
+    }
     message(t('emptySession'), h('button', { class: 'btn', onClick: () => app.home() }, t('toHome')));
     return;
   }

@@ -16,7 +16,9 @@
   .head { position: absolute; left: 76px; right: 76px; top: 96px; }
   .brand { display: inline-flex; align-items: center; gap: 14px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.25);
     padding: 10px 22px 10px 12px; border-radius: 40px; font-weight: 700; font-size: 30px; letter-spacing: .2px; }
-  .brand i { width: 46px; height: 46px; border-radius: 50%; background: #fff; color: #0e7c86; display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: 26px; }
+  .brand img { width: 52px; height: 52px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; }
+  .cta .who { display: flex; align-items: center; gap: 18px; }
+  .cta .who img { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px #e8f3f4; }
   h1 { font-size: 80px; line-height: 1.02; font-weight: 800; margin-top: 34px; letter-spacing: -1.5px; }
   h1 em { font-style: normal; color: #ffd27a; }
   .sub { font-size: 32px; opacity: .92; margin-top: 22px; line-height: 1.25; }
@@ -44,17 +46,17 @@
     <path d="M22 60V18h20v42M27 60V36a5 5 0 0 1 10 0v24M8 60V32h14M42 32h14v28M10 32a6 6 0 0 1 10 0M44 32a6 6 0 0 1 10 0M4 60V22h4v38M56 60V22h4v38M2 60h60"/>
   </svg>
   <div class="head">
-    <div class="brand"><i>U</i>Uzbek Tutor</div>
+    <div class="brand"><img src="avatar.png">Uzbek Tutor</div>
     <h1 id="h1"></h1>
     <div class="sub" id="sub"></div>
     <div class="chips" id="chips"></div>
   </div>
   <div class="phones" id="phones">
-    <div class="phone l" style="left:70px"><img src="163-verb.png"></div>
-    <div class="phone c" style="left:360px"><img src="160-home.png"></div>
-    <div class="phone r" style="left:680px"><img src="173-dialog.png"></div>
+    <div class="phone l" style="left:70px"><img data-src="163-verb"></div>
+    <div class="phone c" style="left:360px"><img data-src="160-home"></div>
+    <div class="phone r" style="left:680px"><img data-src="173-dialog"></div>
   </div>
-  <div class="cta" id="cta"><div><b id="cta1"></b><span id="cta2"></span></div><div class="btn" id="cta3"></div></div>
+  <div class="cta" id="cta"><div class="who"><img src="avatar.png"><div><b id="cta1"></b><span id="cta2"></span></div></div><div class="btn" id="cta3"></div></div>
 </div>
 <script>
   const T = {
@@ -71,6 +73,7 @@
   h1.innerHTML = L.h1; sub.textContent = L.sub; chips.innerHTML = L.chips.map((c) => `<span class="chip">${c}</span>`).join('');
   cta1.textContent = L.cta1; cta2.textContent = L.cta2; cta3.textContent = L.cta3;
   // раскладка: телефоны и кнопка — по высоте кадра
+  document.querySelectorAll('img[data-src]').forEach((i) => { i.src = i.dataset.src + (q.get('lang') === 'en' ? '-en' : '') + '.png'; });
   const story = H > 1500;
   phones.style.top = (story ? 860 : 700) + 'px';
   document.querySelectorAll('.phone').forEach((p) => { if (!p.classList.contains('c')) p.style.top = '60px'; });

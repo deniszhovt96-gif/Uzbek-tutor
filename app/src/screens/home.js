@@ -100,7 +100,7 @@ export async function renderHome(app) {
 
   const tiles = h('div', { class: 'tiles' },
     tile('learn', t('secLearn'), () => app.go('learn', { mode: 'normal' })),
-    tile('review', t('secReview'), () => app.go('learn', { mode: me.tier === 'free' ? 'normal' : 'review' })),
+    tile('review', t('secReview'), () => app.go('learn', { mode: 'review' })),
     tile('practice', t('secPractice'), gated('practice', () => app.go('practice')), { badge: lockBadge('practice') }),
     tile('games', t('secGames'), gated('games', () => app.go('games')), { badge: lockBadge('games'), cls: 'c-games' }),
     tile('sparkle', t('secQuiz'), () => app.go('wordcheck', { mode: 'review' }), { cls: 'gold' }),

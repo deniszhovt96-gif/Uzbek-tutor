@@ -1,6 +1,11 @@
 -- Проверка шага 9: курсы. Запуск после загрузки data/build/courses.sql.
 \set ON_ERROR_STOP 1
 \pset tuples_only on
+-- шаг 22: таблицы словаря закрыты для пользователей; тест читает их напрямую — временно открываем (только локально)
+grant select on public.topics, public.words, public.course_units to authenticated;
+drop policy if exists t22_topics on public.topics; drop policy if exists t22_words on public.words; drop policy if exists t22_units on public.course_units;
+create policy t22_topics on public.topics for select to authenticated using (true);
+create policy t22_words on public.words for select to authenticated using (true);
 delete from public.profiles where tg_id in (9101, 9102, 9103);
 insert into public.profiles (id, tg_id, first_name) values
   ('ffffffff-0000-0000-0000-000000000001', 9101, 'Free'),
@@ -66,3 +71,8 @@ select pg_temp.check((select count(*) = 13 from jsonb_array_elements(public.get_
 select pg_temp.check(not has_table_privilege('authenticated', 'public.course_units', 'select') or
                      (select count(*) = 0 from public.course_units), 'тексты курсов не читаются напрямую — только через функции');
 reset role;
+
+-- шаг 22: вернуть закрытый доступ
+reset role;
+revoke select on public.topics, public.words, public.course_units from authenticated;
+drop policy if exists t22_topics on public.topics; drop policy if exists t22_words on public.words; drop policy if exists t22_units on public.course_units;

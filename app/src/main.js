@@ -122,6 +122,18 @@ function updateTabbar() {
   });
 }
 
+// Запасная стрелка «назад» в самом приложении — если клиент Telegram не показывает свою (старые версии, веб)
+function fallbackBack(webApp) {
+  const native = webApp && webApp.BackButton && (!webApp.isVersionAtLeast || webApp.isVersionAtLeast('6.1'));
+  let btn = document.getElementById('fallback-back');
+  if (native) { if (btn) btn.hidden = true; return; }
+  if (!btn) {
+    btn = h('button', { id: 'fallback-back', class: 'fallback-back', type: 'button', 'aria-label': t('back'), onClick: () => app.back() }, icon('chevron'));
+    document.body.append(btn);
+  }
+  btn.hidden = app.stack.length <= 1;
+}
+
 function render() {
   const { screen, params } = app.stack[app.stack.length - 1];
   const webApp = tg();
@@ -129,6 +141,7 @@ function render() {
     if (app.stack.length > 1) webApp.BackButton.show();
     else webApp.BackButton.hide();
   }
+  fallbackBack(webApp);
   updateTabbar();
   Promise.resolve(SCREENS[screen](app, params)).then(updateTabbar).catch(showError);
 }

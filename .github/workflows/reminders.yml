@@ -34,6 +34,9 @@ jobs:
           TOKEN=$(python3 -c 'import secrets; print(secrets.token_urlsafe(32))')
           echo "::add-mask::$TOKEN"
           psql "$URL" -v ON_ERROR_STOP=1 -q -c "insert into public.cron_tokens (token) values ('$TOKEN')"
+          # ежедневная чистка данных (шаг 22): функция сама выполняется не чаще раза в сутки
+          CLEAN=$(psql "$URL" -tA -q -c "select public.maintenance_daily()" 2>&1 || echo "чистка: ошибка")
+          echo "Чистка данных: $CLEAN" >> "$GITHUB_STEP_SUMMARY"
           RES=$(curl -sS -m 300 -X POST "$BOT_URL" -H "X-Cron-Token: $TOKEN" -H 'Content-Type: application/json' -d '{}')
           echo "Ответ бота: $RES"
           echo "Напоминания: $RES" >> "$GITHUB_STEP_SUMMARY"

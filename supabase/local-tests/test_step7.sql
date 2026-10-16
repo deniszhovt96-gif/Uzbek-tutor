@@ -2,6 +2,12 @@
 \set ON_ERROR_STOP 1
 \pset tuples_only on
 \timing off
+-- шаг 22: таблицы словаря закрыты для пользователей; тест читает их напрямую — временно открываем (только локально)
+grant select on public.topics, public.words, public.course_units to authenticated;
+drop policy if exists t22_topics on public.topics; drop policy if exists t22_words on public.words; drop policy if exists t22_units on public.course_units;
+create policy t22_topics on public.topics for select to authenticated using (true);
+create policy t22_words on public.words for select to authenticated using (true);
+create policy t22_units on public.course_units for select to authenticated using (true);
 delete from public.profiles where tg_id in (7001, 7002);
 insert into public.profiles (id, tg_id, first_name, timezone) values
   ('bbbbbbbb-0000-0000-0000-000000000001', 7001, 'Pass', 'Asia/Tashkent'),
@@ -156,3 +162,8 @@ set role anon;
 select pg_temp.check(not has_function_privilege('anon', 'public.start_level_test(text)', 'execute'), 'аноним не может начать тест');
 select pg_temp.check(not has_table_privilege('authenticated', 'public.level_test_attempts', 'select'), 'таблица попыток (с ответами) закрыта для чтения');
 reset role;
+
+-- шаг 22: вернуть закрытый доступ
+reset role;
+revoke select on public.topics, public.words, public.course_units from authenticated;
+drop policy if exists t22_topics on public.topics; drop policy if exists t22_words on public.words; drop policy if exists t22_units on public.course_units;

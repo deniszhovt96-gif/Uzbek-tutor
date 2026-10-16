@@ -3,6 +3,12 @@
 \set ON_ERROR_STOP 1
 \pset tuples_only on
 \timing off
+-- шаг 22: таблицы словаря закрыты для пользователей; тест читает их напрямую — временно открываем (только локально)
+grant select on public.topics, public.words, public.course_units to authenticated;
+drop policy if exists t22_topics on public.topics; drop policy if exists t22_words on public.words; drop policy if exists t22_units on public.course_units;
+create policy t22_topics on public.topics for select to authenticated using (true);
+create policy t22_words on public.words for select to authenticated using (true);
+create policy t22_units on public.course_units for select to authenticated using (true);
 delete from public.profiles where tg_id in (1201, 1202, 1203, 1299);
 insert into public.admins (tg_id) values (1299) on conflict do nothing;
 insert into public.profiles (id, tg_id, first_name, timezone) values
@@ -125,3 +131,8 @@ reset role;
 -- ===== цены
 select pg_temp.check((select price_uzs = 100000 and price_stars = 450 from public.plans where tier = 'basic' and months = 1 and seats = 1), '«Базовая» на месяц — 100 000 сум / 450 ⭐');
 select pg_temp.check((select price_uzs = 200000 from public.plans where tier = 'advanced' and months = 1 and seats = 1), '«Продвинутая» на месяц — 200 000 сум');
+
+-- шаг 22: вернуть закрытый доступ
+reset role;
+revoke select on public.topics, public.words, public.course_units from authenticated;
+drop policy if exists t22_topics on public.topics; drop policy if exists t22_words on public.words; drop policy if exists t22_units on public.course_units;

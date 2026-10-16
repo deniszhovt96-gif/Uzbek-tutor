@@ -2,6 +2,12 @@
 \set ON_ERROR_STOP 1
 \pset tuples_only on
 \timing off
+-- шаг 22: таблицы словаря закрыты для пользователей; тест читает их напрямую — временно открываем (только локально)
+grant select on public.topics, public.words, public.course_units to authenticated;
+drop policy if exists t22_topics on public.topics; drop policy if exists t22_words on public.words; drop policy if exists t22_units on public.course_units;
+create policy t22_topics on public.topics for select to authenticated using (true);
+create policy t22_words on public.words for select to authenticated using (true);
+create policy t22_units on public.course_units for select to authenticated using (true);
 delete from public.profiles where tg_id in (1101, 1102, 1103, 1104);
 insert into public.admins (tg_id) values (1199) on conflict do nothing;
 insert into public.profiles (id, tg_id, first_name, timezone) values
@@ -150,3 +156,8 @@ select pg_temp.check((select count(*) = 0 from public.word_progress wp join lv u
                       where wp.user_id = '11110000-0000-0000-0000-000000000002' and wp.level <> lv.level), 'контрольная не меняет уровни');
 select pg_temp.check(not has_table_privilege('authenticated', 'public.word_check_attempts', 'select'), 'попытки (с ответами) не читаются напрямую');
 select pg_temp.check((select value #>> '{}' from public.app_config where key = 'community_url') = 'https://t.me/+luNI8b4qZ1Y4MTA6', 'ссылка на группу');
+
+-- шаг 22: вернуть закрытый доступ
+reset role;
+revoke select on public.topics, public.words, public.course_units from authenticated;
+drop policy if exists t22_topics on public.topics; drop policy if exists t22_words on public.words; drop policy if exists t22_units on public.course_units;

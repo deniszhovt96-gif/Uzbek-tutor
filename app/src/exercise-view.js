@@ -5,7 +5,7 @@ import { icon } from './icons.js';
 import { play, wordAudio, exampleAudio } from './audio.js';
 import { correctAnswerText, cardExamples } from './exercises.js';
 import { diffChars, displayUz } from './normalize.js';
-import { conjSheet, canConjugate } from './screens/conj.js';
+import { conjSheet, canConjugate, declSheet, canDecline } from './screens/conj.js';
 
 export const PROMPT_KEY = {
   uz_ru_choice: 'exUzRu', ru_uz_choice: 'exRuUz', audio_choice: 'exAudio', letters: 'exLetters',
@@ -34,7 +34,9 @@ export function renderCard(item, { audioEnabled, onNext }) {
         : null,
       item.syn_note ? h('div', { class: 'syn-note small' }, h('b', {}, `${t('synDiff')}: `), item.syn_note) : null,
       examples.length ? h('div', { class: 'examples' }, h('div', { class: 'label' }, t('examples')), examples) : null),
-    canConjugate(item) ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => conjSheet(item) }, icon('practice'), t('conjBtn')) : null,
+    // внутри занятия шторка открывается без перехода на другой экран — занятие не прерывается
+    canConjugate(item) ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => conjSheet(item, null) }, icon('practice'), t('conjBtn'))
+      : canDecline(item) ? h('button', { class: 'btn btn-secondary', type: 'button', onClick: () => declSheet(item, null) }, icon('grammar'), t('declBtn')) : null,
     h('button', { class: 'btn btn-big', onClick: onNext }, t('gotIt')));
 }
 
@@ -50,6 +52,7 @@ export function renderExercise(ex, { audioEnabled, onAnswer, onNext }) {
   const submit = (answerText, extra = {}) => {
     if (answered) return;
     answered = true;
+    document.querySelectorAll('.skip-btn').forEach((el) => { el.hidden = true; });
     const correct = onAnswer(answerText);
     haptic(correct ? 'success' : 'error');
     if (extra.mark) extra.mark(correct);
@@ -74,7 +77,8 @@ export function renderExercise(ex, { audioEnabled, onAnswer, onNext }) {
     parts.push(h('div', { class: 'pair' }, `${word.uz} — ${word.ru}`,
       word.audio_ok && audioEnabled ? audioButton(() => play(wordAudio(word.id))) : null,
       ex.example && ex.exampleAudio && audioEnabled ? audioButton(exAudio) : null,
-      canConjugate(word) ? h('button', { class: 'chip-btn conj-chip', type: 'button', onClick: () => conjSheet(word) }, t('conjBtn')) : null));
+      canConjugate(word) ? h('button', { class: 'chip-btn conj-chip', type: 'button', onClick: () => conjSheet(word, null) }, t('conjBtn'))
+        : canDecline(word) ? h('button', { class: 'chip-btn conj-chip', type: 'button', onClick: () => declSheet(word, null) }, t('declBtn')) : null));
     // чем слово отличается от синонимов — после ошибки
     if (!correct && word.syn_note) parts.push(h('div', { class: 'syn-note small' }, h('b', {}, `${t('synDiff')}: `), word.syn_note));
     const nextBtn = h('button', { class: 'btn btn-big', onClick: onNext }, t('next'));
@@ -153,12 +157,20 @@ export function renderExercise(ex, { audioEnabled, onAnswer, onNext }) {
         } }, tile.ch));
     body.append(h('div', { class: 'letters-row' }, tiles));
   } else {
-    body.append(...typedInput(ex, submit, ex.type === 'fix_error' ? ex.distorted : ''));
+    body.append(...typedInput(ex, submit, ex.type === 'fix_error' ? ex.distorted : '').filter(Boolean));
   }
 
+  // «Не знаю»: показываем верный ответ, задание засчитывается как ошибка и вернётся позже
+  const skip = h('button', { class: 'skip-btn', type: 'button', onClick: () => {
+    if (answered) return;
+    body.querySelectorAll('button, input, textarea').forEach((el) => { el.disabled = true; });
+    skip.hidden = true;
+    submit('', { skipped: true });
+  } }, t('skipEx'));
   return h('div', {},
     h('div', { class: 'label' }, t(PROMPT_KEY[ex.type])),
     h('div', { class: 'card ex-card' }, promptEl, body),
+    skip,
     feedback);
 }
 
